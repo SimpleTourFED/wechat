@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="/images/logo.ico" rel="icon" type="image/x-icon"/>
+    <link rel="stylesheet" href="/css/booking.scss?__inline" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+<div class="main-wrap">
+    <header>
+        <div class="back">后退</div>
+        <div class="center">填写信息</div>
+        <div class="home">个人中心</div>
+    </header>
+    <div class="main">
+        <div class="select-product">
+            <div class="status">商品已添加到行程</div>
+            <div class="reselect" data-href="">重新选择</div>
+        </div>
+        <div class="tp">
+            <div class="tourism-list">
+                <div class="tourism last">
+                    <div class="topbar">
+                        <div class="status">即将开始</div>
+                        <div class="time">出行日期2015-09-02</div>
+                    </div>
+                    <div class="tourism-name">九寨沟三日巴士车位＋景区门票＋产品说明＋经典特价活动＋餐饮</div>
+                </div>
+            </div>
+            <div class="product-list">
+                <div class="product">
+                    <img src="images/3.png"/>
+                    <div class="title">简途专属－蜀风雅韵川剧甲票两张＋大龙+麻辣烫一火锅双人餐（送接机票)</div>
+                </div>
+            </div>
+        </div>
+        <div class="date-num">
+            <div class="select-date">
+                <div class="title">选择日期</div>
+                <div class="time">
+                    <span class="day">今天</span>
+                    <span class="date">4月18日</span>
+                </div>
+            </div>
+            <div class="select-num">
+                <div class="title">购买数量</div>
+                <div class="setNum">
+                    <div class="reduce disabled">—</div>
+                    <div class="num">1</div>
+                    <div class="add">+</div>
+                </div>
+            </div>
+        </div>
+        <div class="select-contact">
+            <div class="title">从出行人中选择预定联系人</div>
+            <div class="contacts">
+                <!--<div data-id="${certView.id}" data-isComplete="${certView.isInfoCompleted}" data-name="${certView.name}"-->
+                     <!--data-mobile="${certView.mobile}" data-idno="${certView.idNo}" data-idType="${certView.idType.value}" class="contact">-->
+                    <!--${certView.name}-->
+                <!--</div>-->
+                <div class="contact selected">设计师</div>
+                <div class="contact">设计师</div>
+                <div class="contact">设计师</div>
+                <div class="contact">设计师</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <a>去支付</a>
+    </div>
+</div>
+<div class="calendar-wrap future">
+    <div class="calendar"></div>
+</div>
+<div class="edit-wrap future">
+    <header>
+        <div class="back">后退</div>
+        <div class="center">编辑旅客</div>
+        <div class="home">个人中心</div>
+    </header>
+    <div class="main">
+        <div class="edit-title">旅客信息</div>
+        <div class="edit-content">
+            <div class="edit-item">
+                <div class="edit-label">姓&nbsp;&nbsp;&nbsp;&nbsp;名：</div>
+                <div class="edit-input">
+                    <input tabindex="-1" placeholder="*必填，姓名" name="editName" type="text">
+                </div>
+            </div>
+
+            <div class="edit-item">
+                <div class="edit-label">手&nbsp;机&nbsp;号：</div>
+                <div class="edit-input">
+                    <input tabindex="-1" placeholder="*必填，用于接收出行短信" name="editMobile" type="text">
+                </div>
+            </div>
+
+            <div class="edit-item">
+                <div class="edit-label">身&nbsp;份&nbsp;证：</div>
+                <div class="edit-input">
+                    <input tabindex='-1' placeholder="*必填，用于验证身份" name="editId" type="text">
+                </div>
+            </div>
+        </div>
+        <button tabindex="-1" class="save-cert">确&nbsp;&nbsp;定</button>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script type="text/javascript" src="/common/js/base.js"></script>
+<script type="text/javascript" src="/common/js/product_calendar.c12cfd0.js"></script>
+<script type="text/javascript">
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                    docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                };
+        if (!doc.addEventListener) return;
+        recalc();
+        document.body.style.visibility = 'visible';
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+        document.addEventListener('touchmove', function (e) {
+            e.preventDefault();//阻止touchmove默认事件
+        }, false);
+    })(document, window);
+    $(document).ready(function () {
+        $('header .back').click(function () {
+            if (!$(this).hasClass('no-icon')) {
+                history.go(-1);
+            }
+        });
+        $('header .home').sidebar();// 后台传入用户电话号码
+        //重新选择
+        $('.reselect').click(function(e){
+            location.href = $(this).attr('data-href');
+        });
+        //修改人数
+        var certNum = 1;
+        function judgeNum(certs_num, count) {
+            if (certs_num == 1) {
+                $('.reduce').addClass('disabled');
+            } else {
+                $('.reduce').removeClass('disabled');
+            }
+            if (count == certs_num) {
+                $('.add').addClass('disabled');
+            } else {
+                $('.add').removeClass('disabled');
+            }
+        }
+        $('.setNum .reduce').click(function(e){
+            var $selected = $('.day_td.selected');
+            var count = $selected.att('data-count');
+            if(certNum != 1){
+                certNum --;
+                $('.setNum .num').html(certNum);
+            }
+            judgeNum(certNum, count);
+        });
+        $('.setNum .add').click(function(e){
+            var $selected = $('.day_td.selected');
+            var count = $selected.attr('data-count');
+            if($selected.hasClass('selected')){
+                if(count && certNum >= count){
+                    $.alert({
+                        msg: '库存已达上限'
+                    });
+                }else{
+                    certNum ++;
+                    $('.certs_nums').html(certNum);
+                }
+            }else{
+                $.alert({
+                    msg: '请您先选择日期'
+                });
+            }
+            judgeNum(certNum, count);
+        });
+        //选择日期
+        var currentDay = '2016-06-14';
+        var currentArray = currentDay.split('-');
+        var $calendar = $('.calendar').calendar({
+            'currentDay': (+currentArray[0]) + '-' + (+currentArray[1]) + '-' + (+currentArray[2]),
+            'id': 238,
+            'url': '/mobile/gateway/wechat/product/stocks',
+            'yearMonth': (+currentArray[0]) + '-' + (+currentArray[1]),
+            'selectDay': '',
+            'firstDate': (+currentArray[0]) + '-' + (+currentArray[1]),
+            'table': '',
+            'judgeNum': judgeNum
+        });
+        $('.select-date .time').click(function(e){
+            $.calendar_loading.loading();
+            $('.calendar-wrap').removeClass('future').addClass('transition');
+            if (history.pushState) {
+                history.pushState('calendar', '', '');
+            }
+        });
+        //选择联系人
+        var $contact;
+        $('.contacts .contact').on('click',function(e){
+            var $this = $(this);
+            $contact = $this;
+            if (!$this.hasClass('selected')) {
+                var id = $(this).attr('data-id');
+                var name = $(this).attr('data-name');
+                var mobile = $(this).attr('data-mobile');
+                var idNo = $(this).attr('data-idno');
+                var isComplete = $(this).attr('data-isComplete');
+                if (isComplete == 1) {
+                    $this.addClass('selected');
+                } else {
+                    $.confirm({
+                        title: ['您选择的出行人信息不完整，请先补充完整，再进行选择'],
+                        detail : [''],
+                        yes : '补全信息',
+                        cancel: '取消',
+                        yesFun:function(){
+                            $('.edit-wrap').removeClass('future').addClass('transition');
+                            $('header .center').text('编辑旅客信息');
+                            $('.edit-wrap [name=editName]').val(name);
+                            $('.edit-wrap [name=editMobile]').val(mobile);
+                            $('.edit-wrap [name=editId]').val(idNo);
+                            if (history.pushState) {
+                                history.pushState('edit', '', '');
+                            }
+                        },
+                        cancelFun:function(){
+
+                        }
+                    });
+                }
+            }else{
+                $this.removeClass('selected');
+            }
+        });
+        // 保存编辑后的联系人
+        $('.edit-wrap button').click(function () {
+            if ($('.edit-wrap [name=editName]').length) {
+                var vName = nameValidate($('.edit-wrap [name=editName]').val());
+            }
+            if ($('.edit-wrap [name=editMobile]').length) {
+                var vMobile = mobileValidate($('.edit-wrap [name=editMobile]').val());
+            }
+            if ($('.edit-wrap [name=editId]').length) {
+                var vId = idValidate($('.edit-wrap [name=editId]').val());
+            }
+            if (vName && !vName.flag) {
+                $.alert({
+                    msg: '姓名' + vName.msg
+                });
+            } else if (vMobile && !vMobile.flag) {
+                $.alert({
+                    msg: vMobile.msg
+                });
+            } else if (vId && !vId.flag) {
+                $.alert({
+                    msg: vId.msg
+                });
+            } else {
+                if ($('.edit-wrap [name=editName]').length) {
+                    $contact.attr('data-name', $.trim($('.edit-wrap [name=editName]').val()));
+                }
+                if ($('.edit-wrap [name=editMobile]').length) {
+                    $contact.attr('data-mobile', $.trim($('.edit-wrap [name=editMobile]').val()));
+                }
+                if ($('.edit-wrap [name=editId]').length) {
+                    $contact.attr('data-idNo', $.trim($('.edit-wrap [name=editId]').val()));
+                }
+                $contact.attr('data-isComplete', '1');
+                $contact.trigger('click');
+                history.go(-1);
+            }
+        });
+        // 验证规则
+        function nameValidate(name) {
+            var validateObj = {
+                flag: true,
+                msg: ''
+            };
+            var $name = $.trim(name);
+            if ($name == '') {
+                validateObj.flag = false;
+                validateObj.msg = '请输入姓名'
+            } else if (!(/^\s*[a-zA-Z]{1,}\s*$/.test($name) || /^\s*[\u4e00-\u9fa5]{1,}\s*$/.test($name))) {
+                validateObj.flag = false;
+                validateObj.msg = '姓名只能为全中文或全英文'
+            } else if($name.length > 30) {
+                validateObj.flag = false;
+                validateObj.msg = '姓名最多输入30位'
+            }
+            return validateObj;
+        }
+        function mobileValidate(mobile) {
+            var validateObj = {
+                flag: true,
+                msg: ''
+            };
+            var $mobile = $.trim(mobile);
+            if ($mobile == '') {
+                validateObj.flag = false;
+                validateObj.msg = '请输入手机号码'
+            } else if (!/^0?(13|14|15|17|18)[0-9]{9}$/.test($.trim(mobile))) {
+                validateObj.flag = false;
+                validateObj.msg = '手机号格式错误'
+            }
+            return validateObj;
+        }
+
+        function idValidate(id) {
+            var validateObj = {
+                flag: true,
+                msg: ''
+            };
+            var $id = $.trim(id);
+            var l = function (e) {
+                var t = !0, i = /^(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx])$)$/;
+                if (i.test(e))
+                    if (18 == e.length) {
+                        for (var a = new Array(7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2), l = new Array(1, 0, 10, 9, 8, 7, 6, 5, 4, 3, 2), n = 0, r = 0; 17 > r; r++)
+                            n += e.substring(r, r + 1) * a[r];
+                        var s = n % 11
+                                , o = e.substring(17);
+                        2 == s ? "X" == o || "x" == o || (t = !1) : o == l[s] || (t = !1)
+                    } else
+                        t = !1;
+                else
+                    t = !1;
+                return t
+            }
+            if ($id == '') {
+                validateObj.flag = false;
+                validateObj.msg = '请输入身份证号'
+            } else if (!l($id)) {
+                validateObj.flag = false;
+                validateObj.msg = '身份证号不正确'
+            }
+            return validateObj;
+        }
+
+        function validate(item, value) {
+            if (item == 'name') {
+                return nameValidate(value);
+            } else if (item == 'mobile') {
+                return mobileValidate(value);
+            } else if (item == 'idNo') {
+                return idValidate(value);
+            } else {
+                return {
+                    flag: true,
+                    msg: ''
+                }
+            }
+        }
+        if (history.pushState) {
+            window.addEventListener('popstate', function () {
+                $('.calendar-wrap').addClass('future').addClass('transition');
+                $('.edit-wrap').addClass('future').addClass('transition');
+            })
+        }
+    });
+</script>
+</html>

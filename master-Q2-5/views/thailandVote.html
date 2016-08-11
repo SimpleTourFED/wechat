@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <title>简途旅行</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="/images/logo.ico" rel="icon" type="image/x-icon"/>
+    <link rel="stylesheet" href="/css/thailandVote.scss?__inline" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+<div class="wrapper">
+    <img src="/images/thailand/background.jpeg" alt="">
+    <div class="wheel">
+        <img class="wheel-img" src="/images/thailand/wheel.png" alt="">
+        <img class="pointer-img" src="/images/thailand/pointer.png" alt="">
+    </div>
+    <div class="input-gp">
+        <input type="number" name="mobile" pattern="\d*" placeholder="请输入手机号码" value="">
+        <label id="clickme" for="">点我抽奖</label>
+    </div>
+    <div class="tips">
+        对不起,您输入的手机号码有误
+    </div>
+    <div class="products">
+        <div class="title">
+            <img src="/images/thailand/title.png" alt="">
+        </div>
+        <div class="product">
+            <img src="/images/thailand/product1.png" alt="">
+        </div>
+        <div class="product">
+            <img src="/images/thailand/product2.png" alt="">
+        </div>
+        <div class="product">
+            <img src="/images/thailand/product3.png" alt="">
+        </div>
+        <div class="product">
+            <img src="/images/thailand/product4.png" alt="">
+        </div>
+        <div class="more-btn">
+            <img src="/images/thailand/more-btn.png" alt="">
+        </div>
+    </div>
+    <div class="rule">
+        <img src="/images/thailand/rule.png" alt="">
+    </div>
+    <div class="logo">
+        <img src="/images/thailand/logo.png" alt="">
+    </div>
+</div>
+<script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script type="text/javascript" src="/common/js/alert.js"></script>
+<script type="text/javascript">
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                    docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+    $(document).ready(function() {
+        $('#clickme').click(function(e) {
+            e.preventDefault();
+            var mobile = $.trim($('input[name=mobile]').val());
+            if(!mobile) {
+                $.alert({
+                    msg: '请输入您的手机号码'
+                });
+            } else if(!/^0?(13|14|15|17|18)[0-9]{9}$/.test(mobile)) {
+                $.alert({
+                    msg : '请输入正确的手机号码'
+                });
+            } else {
+                var times = 1;
+                var count = function(){
+//                    if(times == 1) {
+//                        $('.wheel-img').css({
+//                            '-webkit-transition': '2s cubic-bezier(0.39,0,0.65,0.87)',
+//                            'transition': '2s cubic-bezier(0.39,0,0.65,0.87)',
+//                            '-webkit-transform':'rotate('+(360*times)+'deg)',
+//                            'transform':'rotate('+(360*times)+'deg)'
+//                        });
+//                    } else {
+                        $('.wheel-img').css({
+                            '-webkit-transition': '1s cubic-bezier(0.39,0,0.65,0.87)',
+                            'transition': '1s cubic-bezier(0.39,0,0.65,0.87)',
+                            '-webkit-transform':'rotate('+(360*times)+'deg)',
+                            'transform':'rotate('+(360*times)+'deg)'
+                        });
+//                    }
+                    times++;
+                };
+                count();
+                var t = setInterval(count,1000);
+                setTimeout(function() {
+                    clearTimeout(t);
+                    $('.wheel-img').css({
+                        '-webkit-transition':'2s cubic-bezier(0,-0.06,0.58,1)',
+                        'transition': '2s cubic-bezier(0,-0.06,0.58,1)',
+                        '-webkit-transform':'rotate(1366deg)',
+                        'transform':'rotate(1366deg)'
+                    });
+                },5000);
+            }
+            $('.more-btn').click(function() {
+
+            });
+        });
+    })
+</script>
+</body>
+</html>

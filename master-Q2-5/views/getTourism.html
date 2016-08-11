@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="/images/logo.ico" rel="icon" type="image/x-icon"/>
+    <link rel="stylesheet" href="/css/getTourism.scss?__inline" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+<div class="topContent">
+    <input type="text" placeholder="请输入您的订单号"/>
+    <a class="getT">获取行程</a>
+    <span>可向下单人或行车助理获取单号</span>
+</div>
+<div class="ccs"><a href="tel:4008003351">&nbsp;联系客服</a></div>
+<ul class="qa">
+    <li class="first">
+        <div class="question">为什么购买简途玩乐需要先有行程？</div>
+        <div class="answer">九寨沟三日巴士车位＋景区门票＋产品说明＋经典特价活动＋餐饮 九寨沟三日巴士车位＋景区门票＋产品说明＋经典特价活动＋餐饮</div>
+    </li>
+    <li class="second">
+        <div class="question">如何获取行程?</div>
+        <div class="answer">九寨沟三日巴士车位＋景区门票＋产品说明＋经典特价活动＋餐饮 九寨沟三日巴士车位＋景区门票＋产品说明＋经典特价活动＋餐饮</div>
+    </li>
+    <li class="third">
+        <div class="question">我在车上，但没有行程?</div>
+        <div class="answer">九寨沟三日巴士车位＋景区门票＋产品说明＋经典特价活动＋餐饮 九寨沟三日巴士</div>
+    </li>
+</ul>
+</body>
+<script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script type="text/javascript" src="/common/js/base.js"></script>
+<script type="text/javascript">
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                    docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                };
+        if (!doc.addEventListener) return;
+        recalc();
+        document.body.style.visibility = 'visible';
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+        document.addEventListener('touchmove', function (e) {
+            e.preventDefault();//阻止touchmove默认事件
+        }, false);
+    })(document, window);
+    $(document).ready(function () {
+        function judge($this){
+            if($this.val().length > 11){
+                $this.addClass('error');
+            }else{
+                $this.removeClass('error');
+            }
+        }
+        $('.topContent input[type=text]').on('focus',function(){
+            judge($(this));
+        });
+        $('.topContent input[type=text]').on('keyup', function(){
+            judge($(this));
+        });
+        $('.topContent .getT').click(function(e){
+            var $this = $(this);
+            var OrderNo = $this.siblings('input[type=text]').val();
+            $this.addClass('disabled');
+            if(OrderNo && !$this.siblings('input[type=text]').hasClass('error')){
+                $.ajax({
+                    url: "/mobile/gateway/wechat/coupon/newyear/fetch",
+                        data: {
+                            mobile: mobile
+                        },
+                        type: 'post',
+                        success: function (data) {
+                            var dataJson = JSON.parse(data);
+                            if (dataJson.code == 0) {
+                              location.herf = dataJson.url;
+                            } else {
+                                $.confirm({
+                                    title:dataJson.msg,
+                                    detail : [''],
+                                    yes : '确定',
+                                });
+                                $this.removeClass('disabled');
+                            }
+                        },
+                        error: function(data){
+                            $this.removeClass('disabled');
+                            $.confirm({
+                                title:'网络异常,请重试!',
+                                detail : [''],
+                                yes : '确定',
+                            });
+                        }
+                })
+            }else{
+                $.alert({
+                    msg: '订单号格式错误'
+                });
+                $this.siblings('input[type=text]').addClass('error');
+                $this.removeClass('disabled');
+            }
+        });
+    });
+</script>
+</html>

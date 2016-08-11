@@ -1,0 +1,94 @@
+@import "/common/css/base";
+.bg{
+  width: 100%;
+  height: 1130px;
+  background-color: green;
+}
+@mixin border-radius($radius: 4px) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+.infoModal{
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  position: absolute;
+  z-index: 20;
+  top:0;
+  left: 0;
+  right: 0;
+  &.hide{
+    display: none;
+  }
+  .overlay{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    top:0;
+    left: 0;
+    right: 0;
+    z-index: 25;
+  }
+  .content-wrap{
+    position: relative;
+    z-index: 30;
+  }
+  .content{
+    background-color: #fff;
+    width: rem(280px);
+    margin: rem(25px) auto rem(18px);
+    height: rem(405px);
+    padding: 4px;
+    @include border-radius(4px);
+    .placeholderImg{
+      width: 100%;
+      height: rem(136px);
+      background-color: #F8E71C;
+      @include border-radius(2px);
+      line-height: 1;
+    }
+    .copy{
+      text-align: center;
+      margin-top: 24px;
+      .title{
+        font-size: rem(18px);
+        color: #D71345;
+      }
+      .article{
+        width: rem(196px);
+        margin: rem(10px) auto;
+        font-size: rem(14px);
+        line-height: rem(20px);
+        color: #424242;
+      }
+      .notes{
+        font-size: rem(12px);
+        line-height: rem(20px);
+        color: #F47474;
+      }
+    }
+    .noPrompt{
+      padding-top: 20px;
+      line-height: 1;
+      text-align: center;
+      font-size: rem(14px);
+      color: #737373;
+      vertical-align: bottom;
+      input{
+        vertical-align: bottom;
+        color: #F8E71C;
+      }
+    }
+  }
+  .close{
+    width: rem(30px);
+    height: rem(30px);
+    background: url(../images/close.png) no-repeat center;
+    background-size: cover;
+    margin: 0 auto;
+  }
+}

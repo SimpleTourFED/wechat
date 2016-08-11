@@ -1,0 +1,22 @@
+@import "/common/css/base";
+.page-wrapper {
+  width: rem(375px);
+  height: rem(603px);
+  background: url("/master-Q2-5/images/app-share-bg2.jpg") no-repeat center;
+  background-size: cover;
+  a {
+    display: inline-block;
+    position: fixed;
+    bottom: rem(24px);
+    left: 50%;
+    margin-left: rem(-125px);
+    width: rem(250px);
+    height:rem(48px);
+    line-height:rem(48px);
+    background-color: #FFBA3F;
+    color: #fff;
+    text-align: center;
+    font-size: rem(17px);
+    border-radius: 4px;
+  }
+}

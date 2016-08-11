@@ -1,0 +1,279 @@
+$baseFontSize: 20px !default;
+$red: #D71345 !default;
+$opacity: 1 !default;
+@function rem($px) {
+  @return $px / $baseFontSize * 1rem;
+}
+
+@mixin displayflex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex($size:1) {
+  -webkit-box-flex: $size;
+  -moz-box-flex: $size;
+  -webkit-flex: $size;
+  -ms-flex: $size;
+  flex: $size;
+}
+
+@mixin flexflowCol($direction:column,$dir:vertical) {
+  -webkit-box-orient: $dir;
+  -ms-box-orient: $dir;
+  -moz-box-orient: $dir;
+  -webkit-flex-flow: $direction nowrap;
+  -ms-flex-flow: $direction nowrap;
+  -moz-flex-flow: $direction nowrap;
+  flex-flow: $direction nowrap;
+}
+
+@mixin flexflowRow($direction:row,$dir:horizontal) {
+  -webkit-box-orient: $dir;
+  -ms-box-orient: $dir;
+  -moz-box-orient: $dir;
+  -webkit-flex-flow: $direction nowrap;
+  -ms-flex-flow: $direction nowrap;
+  -moz-flex-flow: $direction nowrap;
+  flex-flow: $direction nowrap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  font-family: Helvetica, sans-serif;
+  -webkit-touch-callout: none;
+  box-sizing: border-box;
+  outline: none;
+}
+
+a:active, a:hover, a:link, a:visited {
+  text-decoration: none;
+  outline: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  border: none;
+  vertical-align: top;
+  font-size: rem(15px);
+  color: #535353;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  background: #F6F6F6;
+}
+
+html {
+  font-size: 20px;
+}
+
+.top_banner {
+  width: rem(260px);
+  height: rem(69px);
+  margin: rem(15px) auto;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.bottom_banner {
+  width: rem(273px);
+  height: rem(33px);
+  margin: 0 auto;
+}
+
+footer {
+  a {
+    display: block;
+    width: rem(288px);
+    height: rem(44px);
+    line-height: rem(44px);
+    color: #fff;
+    font-size: rem(14px);
+    margin: rem(13px) auto rem(30px);
+    text-align: center;
+    background-color: #DC253B;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    &:before {
+      content: '';
+      display: inline-block;
+      width: rem(20px);
+      height: rem(22px);
+      margin: rem(11px) rem(15px);
+      background: url(/images/guide.png) no-repeat center;
+      background-size: cover;
+      vertical-align: top;
+    }
+  }
+}
+
+.content {
+  padding: rem(5px) rem(16px) 0 rem(16px);
+  padidng-bottom: 0;
+  .play {
+    padding-bottom: rem(30px);
+    .play_title {
+      color: #535353;
+      font-size: rem(15px);
+      padding-bottom: rem(10px);
+      line-height: rem(20px);
+    }
+    .play_title.ticket {
+      &:before {
+        content: '';
+        display: inline-block;
+        width: rem(20px);
+        height: rem(20px);
+        background: url(/images/ticket_icon.png) no-repeat center;
+        background-size: cover;
+        vertical-align: top;
+      }
+    }
+    .play_title.spot {
+      &:before {
+        content: '';
+        display: inline-block;
+        width: rem(20px);
+        height: rem(20px);
+        background: url(/images/spot_icon.png) no-repeat center;
+        background-size: cover;
+        vertical-align: top;
+      }
+    }
+    .play_title.location {
+      &:before {
+        content: '';
+        display: inline-block;
+        width: rem(20px);
+        height: rem(20px);
+        background: url(/images/location_icon.png) no-repeat center;
+        background-size: cover;
+        vertical-align: top;
+      }
+    }
+    .play_desc {
+      .product_ticket {
+        color: #737373;
+        font-size: rem(13px);
+        line-height: rem(20px);
+        padding-top: rem(15px);
+        .product_name {
+          margin-bottom: rem(5px);
+          //font-weight: 500;
+        }
+        .low_season, .busy_season {
+          @include displayflex;
+          @include flexflowRow();
+          .label {
+            @include flex(1);
+          }
+          .price {
+            width: rem(70px);
+            text-align: right;
+          }
+        }
+        &.first{
+          padding-top: 0;
+        }
+      }
+      .ticket {
+        @include displayflex;
+        @include flexflowRow();
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+        border-radius: 4px;
+        border: 1px solid #CFCFCF;
+        background: #fff;
+        margin-top: rem(14px);
+        .left {
+          @include flex(1);
+          padding: rem(8px) rem(15px);
+          .title {
+            color: #DC253B;
+            font-size: rem(15px);
+            padding-bottom: rem(3px);
+          }
+          .detail {
+            .sc-price,.jg-price {
+              font-size: rem(12px);
+              color: #535353;
+              .label {
+                color: #AEAEAE;
+                font-size: rem(12px);
+              }
+            }
+            .jg-price {
+              margin-left: rem(18px);
+            }
+          }
+        }
+        .right {
+          display: inline-block;
+          width: rem(50px);
+          text-align: center;
+          color: #fff;
+          padding: rem(9px);
+          font-size: rem(15px);
+          background-color: #DC253B;
+          word-break: break-all;
+          -webkit-border-radius: 0 4px 4px 0;
+          -moz-border-radius: 0 4px 4px 0;
+          -ms-border-radius: 0 4px 4px 0;
+          -o-border-radius: 0 4px 4px 0;
+          border-radius: 0 4px 4px 0;
+        }
+      }
+      .map {
+        width: rem(288px);
+        height: rem(301px);
+      }
+      p{
+        font-size: rem(13px);
+        color: #737373;
+        line-height: rem(20px);
+        padding-bottom: rem(15px);
+      }
+      p.last{
+        padding: 0;
+      }
+      .text_content{
+        padding-top: rem(10px);
+      }
+      .text_desc{
+        font-size: rem(13px);
+        color: #737373;
+        line-height: rem(20px);
+        padding-bottom: rem(10px);
+      }
+      .img_desc{
+        img{
+          width: rem(288px);
+          height: rem(144px);
+        }
+      }
+    }
+  }
+  .recommend{
+    color: #F44D79;
+    font-size: rem(15px);
+    .re_title{
+      padding-bottom: rem(15px);
+    }
+  }
+}

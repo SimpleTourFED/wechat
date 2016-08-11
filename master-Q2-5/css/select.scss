@@ -1,0 +1,92 @@
+@import "/common/css/base";
+body {
+  background-color: #f5f5f5;
+}
+.main {
+  min-height: 100%;
+  padding-top: 2rem;
+  padding-bottom: rem(60px);
+  .header {
+    @include displayflex;
+    @include flexflowRow();
+    padding: rem(8px) rem(10px) rem(8px) rem(12px);
+    border-bottom: 1px solid #D8D8D8;
+    background: #fff;
+    img {
+      width: rem(44px);
+      height: rem(44px);
+      margin-right: rem(10px);
+    }
+    .title {
+      @include flex(1);
+      max-height: rem(44px);
+      color: #737373;
+      font-size: rem(14px);
+      line-height: rem(22px);
+      overflow: hidden;
+    }
+  }
+  .select {
+    width: 100%;
+    height: 2rem;
+    color: #D71345;
+    font-size: 0.7rem;
+    padding-left: 0.7rem;
+    line-height: 2rem;
+    border-bottom: 1px solid #D8D8D8;
+    margin-bottom: 1rem;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(177,177,177,0.5);
+    //filter: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=135, Strength=5);
+    -moz-box-shadow: 0 1px 2px rgba(177,177,177,0.5);
+    -webkit-box-shadow: 0 1px 2px rgba(177,177,177,0.5);
+  }
+  .products {
+    border-top: 1px solid #D8D8D8;
+    background-color: #fff;
+    font-size: rem(14px);
+    box-shadow: 0 1px 2px rgba(177,177,177,0.5);
+    //filter: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=135, Strength=5);
+    -moz-box-shadow: 0 1px 2px rgba(177,177,177,0.5);
+    -webkit-box-shadow: 0 1px 2px rgba(177,177,177,0.5);
+    .product {
+      padding: rem(14px) rem(10px) rem(12px) rem(13px);
+      border-bottom: 1px solid #D8D8D8;
+      .product-tips {
+        overflow: hidden;
+        padding-bottom: rem(8px);
+        .status {
+          color: #D71345;
+          font-size: rem(14px);
+        }
+        .time {
+          float: right;
+          font-size: rem(14px);
+          color: #737373;
+        }
+      }
+      .product-name {
+        font-size: rem(14px);
+        color: #737373;
+        line-height: rem(18px);
+      }
+    }
+  }
+}
+.footer{
+  position: fixed;
+  bottom: 0;
+  height: 40/20rem;
+  width: 100%;
+  a{
+    display: block;
+    background-color: #D71345;
+    color:white;
+    line-height: 2rem;
+    text-align: center;
+    font-size: .7rem;
+  }
+  a:active{
+    background-color: #E12051;
+  }
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="format-detection" content="telephone=no;email=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>巴士上车点</title>
+    <link href="/css/bus.scss?__inline" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="top_banner">
+    <img src="/images/jzg/jzg_top_banner@3x.png" alt="banner"/>
+</div>
+<div class="content">
+    <div class="item">
+        <div class="item_title bus">
+            <span class="bus"></span>
+            简途巴士是这样的
+        </div>
+        <div class="item_content">
+            <img class="bb_bus" src="/images/jzg/jzg_bb_bus.png" alt="棒棒巴士图片"/>
+            <img class="ml_bus" src="/images/jzg/jzg_ml_bus.png" alt="麻辣巴士图片"/>
+        </div>
+    </div>
+    <div class="item">
+        <div class="item_title bus">
+            <span class="location"></span>
+            成都巴士上车点
+        </div>
+        <div class="item_content">
+            <p class="desc">一环路百花潭公园西门 ，具体位置点下面：</p>
+            <img class="map" src="/images/jzg/jzg_map_bht.png" alt="地图"/>
+        </div>
+    </div>
+    <div class="item">
+        <div class="item_title bus">
+            <span class="stop"></span>
+            上车点抵达方式
+        </div>
+        <div class="item_content">
+            <p class="li">
+                1.打车：不熟悉路线？打车太难？小简为你准备好了简途市内接驳车，可直接进行微信预定，轻松直达上车点，无忧省心睡好觉哟~链接地址</br>
+                当然，成都市内也可以无障碍使用滴滴、uber，如果你能提前跟师傅约好就更棒了。
+            </p>
+            <p class="li last">
+                2.公交：周围有公交站如下，<br>
+                芳邻路西站：126路、127路 <br>
+                百花西路公交站：170路 <br>
+                望仙场公交站：1024路 <br>
+                青羊宫公交站：11路、19路、27路、34路、35路、42路等
+            </p>
+        </div>
+    </div>
+</div>
+<div class="bottom_banner">
+    <img src="/images/bottom_banner@3x.png" alt="banner"/>
+</div>
+<footer>
+    <a href="#">去查看全部九寨沟攻略</a>
+</footer>
+<script type="text/javascript">
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    // 针对uc横竖屏rem html没有重绘的问题
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                    //
+                    docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script>
+</body>
+</html>

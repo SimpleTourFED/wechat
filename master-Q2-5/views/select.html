@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="/images/logo.ico" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/select.scss?__inline" media="screen" title="no title" charset="utf-8">
+</head>
+<body style="visibility: hidden">
+<header>
+    <div class="back">后退</div>
+    <div class="center">选择产品</div>
+    <div class="home">个人中心</div>
+</header>
+<div class="main">
+    <div class="header">
+        <img src="images/3.png"/>
+        <div class="title">简途专属－蜀风雅韵川剧甲票两张＋大龙+麻辣烫一火锅双人餐（送接机票)</div>
+    </div>
+    <div class="select">请选择要添加本商品的行程</div>
+    <div class="products">
+        <div class="product" data-href="http://baidu.com">
+            <div class="product-tips">
+                <span class="status">即将开始</span>
+                <span class="time">出行日期2015-09-02</span>
+            </div>
+            <div class="product-name">
+                九寨沟三日巴士车位＋景区门票＋产品说明＋经典特价活动＋餐饮
+            </div>
+        </div>
+        <div class="product">
+            <div class="product-tips">
+                <span class="status">即将开始</span>
+                <span class="time">出行日期2015-09-02</span>
+            </div>
+            <div class="product-name">
+                九寨沟三日巴士车位＋景区门票＋产品说明＋经典特价活动＋餐饮
+            </div>
+        </div>
+        <div class="product">
+            <div class="product-tips">
+                <span class="status">即将开始</span>
+                <span class="time">出行日期2015-09-02</span>
+            </div>
+            <div class="product-name">
+                九寨沟三日巴士车位＋景区门票＋产品说明＋经典特价活动＋餐饮
+            </div>
+        </div>
+        <div class="product">
+            <div class="product-tips">
+                <span class="status">即将开始</span>
+                <span class="time">出行日期2015-09-02</span>
+            </div>
+            <div class="product-name">
+                九寨沟三日巴士车位＋景区门票＋产品说明＋经典特价活动＋餐饮
+            </div>
+        </div>
+        <div class="product">
+            <div class="product-tips">
+                <span class="status">即将开始</span>
+                <span class="time">出行日期2015-09-02</span>
+            </div>
+            <div class="product-name">
+                九寨沟三日巴士车位＋景区门票＋产品说明＋经典特价活动＋餐饮
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <a>为什么要添加到行程？</a>
+</div>
+</body>
+<script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script type="text/javascript" src="/common/js/base.js"></script>
+<script type="text/javascript">
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                    docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                };
+        if (!doc.addEventListener) return;
+        recalc();
+        document.body.style.visibility = 'visible';
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+        document.addEventListener('touchmove', function (e) {
+            e.preventDefault();//阻止touchmove默认事件
+        }, false);
+    })(document, window);
+    $(document).ready(function() {
+        $('header .back').click(function () {
+            if (!$(this).hasClass('no-icon')) {
+                history.go(-1);
+            }
+        });
+        $('header .home').sidebar();// 后台传入用户电话号码
+        $('.products .product').on('click',function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            if($(this).attr('data-href')){
+                location.href = $(this).attr('data-href');
+            }
+        });
+    })
+</script>
+</html>

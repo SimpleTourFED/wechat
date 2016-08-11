@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="format-detection" content="telephone=no;email=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>沿途巴士停靠点</title>
+    <link href="/css/stops.scss?__inline" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="top_banner">
+    <img src="/images/top_banner@3x.png" alt="banner"/>
+</div>
+<div class="content">
+    <div class="stop">
+        <div class="stop_title stop">
+            停靠点一：映秀镇
+        </div>
+        <div class="stop_desc">
+            <div class="node first">
+                <div class="line">
+                    <span class="circle"></span>
+                    <span class="pink_line"></span>
+                </div>
+                <div class="substance">
+                    <p>
+                        8：45抵达映秀镇，小简给大家留出了一个小时的充足时间来参观地震遗址。但由于5-11月是九寨沟的旅游旺季，经常会出现堵车状况，所以为了节省大家时间，我们在5-11月期间会不做停留，请大家理解。
+                    </p>
+                    <img src="/images/stop_001.png" alt=""/>
+                </div>
+            </div>
+            <div class="node last">
+                <div class="line">
+                    <span class="circle"></span>
+                    <span class="pink_line"></span>
+                    <span class="circle last"></span>
+                </div>
+                <div class="substance">
+                    <p>
+                        8：45抵达映秀镇，小简给大家留出了一个小时的充足时间来参观地震遗址。但由于5-11月是九寨沟的旅游旺季，经常会出现堵车状况，所以为了节省大家时间，我们在5-11月期间会不做停留，请大家理解。
+                    </p>
+                    <img src="/images/stop_002.png" alt=""/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="stop">
+        <div class="stop_title stop">
+            停靠点二：叠溪海子
+        </div>
+        <div class="stop_desc">
+            <div class="node first last">
+                <div class="line">
+                    <span class="circle"></span>
+                    <span class="pink_line"></span>
+                    <span class="circle last"></span>
+                </div>
+                <div class="substance">
+                    <p>
+                        12:30 抵达高原堰塞湖【叠溪海子】，车辆停靠一小时，大家可以尽情用餐和游玩。
+                    </p>
+                    <img src="/images/stop_001.png" alt=""/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="stop">
+        <div class="stop_title stop">
+            停靠点三：松潘古城
+        </div>
+        <div class="stop_desc">
+            <div class="node first last">
+                <div class="line">
+                    <span class="circle"></span>
+                    <span class="pink_line"></span>
+                    <span class="circle last"></span>
+                </div>
+                <div class="substance">
+                    <p>
+                        15：30
+                        抵达【松潘古城】，小简留出了一小时时间让大家感受古城的历史沧桑感。松潘是历史上有名的边陲重镇，被称作“川西门户”，是川、甘、青三地茶马贸易的集散地，有“高原古城”之称，至今已有2300多年历史。
+                    </p>
+                    <img src="/images/stop_003.png" alt=""/>
+                    <div class="ticket">
+                        <div class="left">
+                            <div class="title">松潘古镇门票</div>
+                            <div class="detail">
+                                <span class="sc-price">
+                                    <span class="lable">市场价</span>
+                                    <span>150</span>
+                                </span>
+                                <span class="jg-price">
+                                    <span class="label">抢购价</span>
+                                    <span>30</span>
+                                </span>
+                            </div>
+                        </div>
+                        <a href="#" class="right">立即抢购</a>
+                    </div>
+                    <p>18:30   抵达九寨沟</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="stop">
+        <div class="stop_title parking">
+            目的地停车
+        </div>
+        <div class="stop_desc">
+            <div class="node noLine">
+                <div class="substance">
+                    <p>
+                        九寨沟停车点：梦幻九寨停车场<br>
+                        简途套餐住宿点：寻迹丽景山舍酒店<br>
+                        简途高端套餐住宿点：九寨天堂甲蕃古城假日酒店&九寨天堂洲际酒店
+                    </p>
+                    <img src="/images/stop_map.png" alt=""/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bottom_banner">
+    <img src="/images/bottom_banner@3x.png" alt="banner"/>
+</div>
+<footer>
+    <a href="#">去查看全部九寨沟攻略</a>
+</footer>
+<script type="text/javascript">
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    // 针对uc横竖屏rem html没有重绘的问题
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                    //
+                    docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script>
+</body>
+</html>

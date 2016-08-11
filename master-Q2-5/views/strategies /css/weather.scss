@@ -1,0 +1,178 @@
+$baseFontSize : 20px !default;
+$red : #D71345 !default;
+$opacity: 1 !default;
+@function rem($px) {
+  @return $px / $baseFontSize * 1rem;
+}
+*{
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color:rgba(255,255,255,0);
+  font-family: Helvetica, sans-serif;
+  -webkit-touch-callout: none;
+  box-sizing: border-box;
+  outline: none;
+}
+a:active,a:hover,a:link,a:visited{
+  text-decoration: none;
+  outline: none;
+}
+img{
+  width: 100%;
+  height: 100%;
+  border: none;
+  vertical-align: top;
+  font-size: rem(15px);
+  color: #535353;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  background: #F6F6F6;
+}
+html {
+  font-size: 20px;
+}
+.top_banner{
+  width: rem(260px);
+  height: rem(69px);
+  margin: rem(15px) auto;
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+.bottom_banner{
+  width: rem(273px);
+  height: rem(33px);
+  margin: 0 auto;
+}
+footer{
+  a{
+    display: block;
+    width: rem(288px);
+    height: rem(44px);
+    line-height: rem(44px);
+    color: #fff;
+    font-size: rem(14px);
+    margin: rem(13px) auto rem(30px);
+    text-align: center;
+    background-color: #DC253B;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    &:before{
+      content: '';
+      display: inline-block;
+      width: rem(20px);
+      height: rem(22px);
+      margin: rem(11px) rem(15px);
+      background: url(/images/guide.png) no-repeat center;
+      background-size: cover;
+      vertical-align: top;
+    }
+  }
+}
+.content {
+  padding: rem(5px) rem(16px) 0 rem(16px);
+  .weather{
+    padding-bottom: rem(30px);
+    .weather_date{
+      color: #535353;
+      font-size: rem(14px);
+      padding-bottom: rem(10px);
+      line-height: rem(20px);
+      .date,.day{
+        margin: 0 rem(3px);
+      }
+      &:before{
+        content: '';
+        display: inline-block;
+        width: rem(18px);
+        height: rem(18px);
+        margin-top: rem(1px);
+        background: url(/images/date_icon.png) no-repeat center;
+        background-size: cover;
+        vertical-align: top;
+      }
+    }
+    .weather_card{
+      width: rem(288px);
+      height: rem(95px);
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      -ms-border-radius: 4px;
+      -o-border-radius: 4px;
+      border-radius: 4px;
+      overflow: hidden;
+      color: #fff;
+      padding: rem(12px) rem(18.5px);
+      span{
+        display: inline-block;
+      }
+      &.sunny{
+        background: url(/images/sunny_bg.png) no-repeat center;
+        background-size: cover;
+      }
+      &.rain{
+        background: url(/images/rain_bg.png) no-repeat center;
+        background-size: cover;
+      }
+      &.thundershower{
+        background: url(/images/thundershower_bg.png) no-repeat center;
+        background-size: cover;
+      }
+      &.cloudy{
+        background: url(/images/cloudy_bg.png) no-repeat center;
+        background-size: cover;
+      }
+      &.fog{
+        background: url(/images/fog_bg.png) no-repeat center;
+        background-size: cover;
+      }
+      &.hail{
+        background: url(/images/hail_bg.png) no-repeat center;
+        background-size: cover;
+      }
+      &.snow{
+        background: url(/images/snow_bg.png) no-repeat center;
+        background-size: cover;
+      }
+      .up{
+        padding-bottom: rem(16px);
+        .centigrade{
+          height: rem(42px);
+          line-height: rem(42px);
+          font-size: rem(30px);
+          &:after{
+            content: '';
+            display: inline-block;
+            width: rem(5px);
+            height: rem(5px);
+            margin-top: rem(10px);
+            margin-left: rem(3px);
+            background: url(/images/degree_circle.png) no-repeat center;
+            background-size: cover;
+            vertical-align: top;
+          }
+        }
+      }
+      .down{
+        font-size: rem(13px);
+        line-height: rem(15px);
+        overflow: hidden;
+        .wind{
+          float: left;
+        }
+        .weatherName{
+          width: rem(60px);
+          text-align: center;
+          float: right;
+        }
+      }
+    }
+  }
+}

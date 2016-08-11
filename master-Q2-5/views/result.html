@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <title>简途旅行</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="/images/logo.ico" rel="icon" type="image/x-icon"/>
+    <link rel="stylesheet" href="../css/queryResult.scss?__inline" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+    <div class="page-group" style="visibility: hidden">
+        <div class="page page-current" style="background-color: #F6F6F6;" id="main">
+            <!--每个page的页头-->
+            <header>
+                <div class="back">后退</div>
+                <div class="center">搜索结果</div>
+                <div class="home">个人中心</div>
+            </header>
+            <div class="page-content">
+                <div style="position: relative;min-height: 100%;">
+                    <div class="filter-cover"></div>
+                    <div class="search-wrapper">
+                        <div class="search-input">
+                            <div class="cutline"></div>
+                            <div class="line"></div>
+                            <div class="start turnTo" href="#tab-depart">
+                                <div class="dot"></div>
+                                <div class="type">出发地</div>
+                                <div class="name">成都</div>
+                            </div>
+                            <div class="destination turnTo" href="#tab-arrive">
+                                <div class="dot"></div>
+                                <div class="type">目的地</div>
+                                <div class="name selected">重启</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-box-space inline-space">
+                        <div class="filter-box">
+                            <div class="condition hide" data-type="pkg-box">巴士筛选</div>
+                            <span></span>
+                            <div class="condition hide" data-type="tourism-type-box">行程类型</div>
+                            <span></span>
+                            <div class="condition hide" data-type="tourism-days-box">行程天数</div>
+                            <div class="pkg-box filter-content">
+                                <h5>选择您想要筛选的巴士类型（可多选）</h5>
+                                <ul>
+                                    <li class="bus" data-type="bus">纯巴士</li>
+                                    <li class="entertainment" data-type="entertainment">巴士+娱乐</li>
+                                    <li class="scenic" data-type="scenic">巴士+门票</li>
+                                    <li class="catering" data-type="catering">巴士+餐饮</li>
+                                    <li class="hotel" data-type="hotel">巴士+住宿</li>
+                                </ul>
+                                <div class="btn-gp">
+                                    <div class="clear-btn">清空</div>
+                                    <div class="confirm-btn">确认</div>
+                                </div>
+                            </div>
+                            <div class="tourism-type-box filter-content">
+                                <ul>
+                                    <li class="all" data-value="all">全部行程</li>
+                                    <li class="single" data-value="single">单程</li>
+                                    <li class="round" data-value="round">往返</li>
+                                </ul>
+                            </div>
+                            <div class="tourism-days-box filter-content">
+                                <ul>
+                                    <li class="all" data-value="all">全部天数</li>
+                                    <li class="one" data-value="one">一日行</li>
+                                    <li class="two" data-value="two">两日行</li>
+                                    <li class="three" data-value="three">三日行</li>
+                                    <li class="four" data-value="four">四日及以上</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="font-size: 0.5rem;line-height: 1rem;padding-left: 0.5rem;margin-bottom: -0.5rem">共搜索到1个简途巴士产品供您选择</div>
+                    <div class="presell-wrap">
+                        <div class="presell red bus" data-days="two" data-type="single" data-href="/mobile/gateway/wechat/presell/batch/${presellTourismView.value.id}?statisticSearchPresell=${presellTourismView_index+1}">
+                            <div class="presell-header">安师大</div>
+                            <div class="presell-content">阿萨德的收费的</div>
+                            <div class="presell-footer">
+                                <div class="left">已售卖&nbsp;&nbsp;<span class="yellownum">123</span>份</div>
+                                <div class="right">
+                                    <span class="oldPrice">市场价&nbsp;¥120</span>
+                        <span class="nowPrice">
+                            ¥<span class="rednum">120</span>
+                        </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--巴士车位-->
+                    <div class="bus-group">
+                        <div data-href="" data-days="one" data-type="single"  class="bus-item bus">
+                            <div class="left">
+                                <div class="start-time">
+                                    发车时间：2134-12-12
+                                </div>
+                                <div class="destinations">
+                                    <div class="destination">
+                                        成都
+                                    </div>
+                                    <div class="destination-line"></div>
+                                    <div class="destination">
+                                        谁的
+                                    </div>
+                                    <div class="destination-line"></div>
+                                    <div class="destination">
+                                        安师大
+                                    </div>
+                                </div>
+                                <div class="detail">
+                                    <div class="day">
+                                        行程1天
+                                    </div>
+                                    <div class="status">
+                                        单程
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="center"></div>
+                            <div class="right">
+                                9999元
+                            </div>
+                        </div>
+                        <div data-href="" data-days="two" data-type="round"  class="bus-item bus">
+                            <div class="left">
+                                <div class="start-time">
+                                    发车时间：2134-12-12
+                                </div>
+                                <div class="destinations">
+                                    <div class="destination">
+                                        成都
+                                    </div>
+                                    <div class="destination-line"></div>
+                                    <div class="destination">
+                                        谁的
+                                    </div>
+                                    <div class="destination-line"></div>
+                                    <div class="destination">
+                                        安师大
+                                    </div>
+                                </div>
+                                <div class="detail">
+                                    <div class="day">
+                                        行程1天
+                                    </div>
+                                    <div class="status round">
+                                        往返
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="center"></div>
+                            <div class="right">
+                                9999元
+                            </div>
+                        </div>
+                    </div>
+                    <!--巴士套餐-->
+                    <div class="package-group">
+                        <div data-href = "" data-days="one" data-type="single"  class="package-item hotel">
+                            <div class="img-box">
+                                <img src="http://images.simpletour.com/simpletour/images/wechat_tourism/b2e4ce3de537fb248abdf932c0628418.jpg!16">
+                                <div class="tips-group">
+                                    <div class="tips ticket">车</div>
+                                    <div class="tips hotel">住</div>
+                                </div>
+                            </div>
+                            <div class="describe">
+                                <div class="describe-title">
+                                    <div class="name">qwerewr</div>
+                                    <div class="price">1234元</div>
+                                </div>
+                                <div class="detail">
+                                    阿萨德股份大股东方
+                                </div>
+                            </div>
+                        </div>
+                        <div data-href = "" data-days="two" data-type="round"  class="package-item hotel catering entertainment scenic">
+                            <div class="img-box">
+                                <img src="http://images.simpletour.com/simpletour/images/wechat_tourism/b2e4ce3de537fb248abdf932c0628418.jpg!16">
+                                <div class="tips-group">
+                                    <div class="tips ticket">车</div>
+                                    <div class="tips hotel">住</div>
+                                    <div class="tips catering">餐</div>
+                                    <div class="tips entertainment">娱</div>
+                                    <div class="tips scenic">景</div>
+                                </div>
+                            </div>
+                            <div class="describe">
+                                <div class="describe-title">
+                                    <div class="name">qwerewr</div>
+                                    <div class="price">1234元</div>
+                                </div>
+                                <div class="detail">
+                                    阿萨德股份大股东方
+                                </div>
+                            </div>
+                        </div>
+                        <div data-href = "" data-days="three" data-type="round"  class="package-item hotel catering">
+                            <div class="img-box">
+                                <img src="http://images.simpletour.com/simpletour/images/wechat_tourism/b2e4ce3de537fb248abdf932c0628418.jpg!16">
+                                <div class="tips-group">
+                                    <div class="tips ticket">车</div>
+                                    <div class="tips hotel">住</div>
+                                    <div class="tips catering">餐</div>
+                                </div>
+                            </div>
+                            <div class="describe">
+                                <div class="describe-title">
+                                    <div class="name">qwerewr</div>
+                                    <div class="price">1234元</div>
+                                </div>
+                                <div class="detail">
+                                    阿萨德股份大股东方
+                                </div>
+                            </div>
+                        </div>
+                        <div data-href = "" data-days="four" data-type="single"  class="package-item scenic">
+                            <div class="img-box">
+                                <img src="http://images.simpletour.com/simpletour/images/wechat_tourism/b2e4ce3de537fb248abdf932c0628418.jpg!16">
+                                <div class="tips-group">
+                                    <div class="tips ticket">车</div>
+                                    <div class="tips scenic">景</div>
+                                </div>
+                            </div>
+                            <div class="describe">
+                                <div class="describe-title">
+                                    <div class="name">qwerewr</div>
+                                    <div class="price">1234元</div>
+                                </div>
+                                <div class="detail">
+                                    阿萨德股份大股东方
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page" id="tab-depart">
+            <!--每个page的页头-->
+            <header>
+                <div class="back">后退</div>
+                <div class="center">选择出发地</div>
+                <div class="home">个人中心</div>
+            </header>
+            <div class="page-content">
+                <div class="detination-wrapper">
+                    <div class="destination-gp">
+                        <div class="destination-title">
+                            重庆
+                        </div>
+                        <div class="destinations">
+                            <div class="items">
+                                <div class="item hot  active" data-id="${homeLocationElementMapView.value.id}">
+                                    <div class="isHot"></div>
+                                    <div class="hot-font">热</div>
+                                    <div class="place-name">安师大</div>
+                                </div>
+
+                                <div class="item  active" data-id="${homeLocationElementMapView.value.id}">
+                                    <div class="place-name">安师大</div>
+                                </div>
+                                <div class="item hot last active" data-id="${homeLocationElementMapView.value.id}">
+                                    <div class="isHot"></div>
+                                    <div class="hot-font">热</div>
+                                    <div class="place-name">安师大</div>
+                                </div>
+                                <div class="item active" data-id="${homeLocationElementMapView.value.id}">
+                                    <div class="place-name">安师大</div>
+                                </div>
+                                <div class="item hot " data-id="${homeLocationElementMapView.value.id}">
+                                    <div class="isHot"></div>
+                                    <div class="hot-font">热</div>
+                                    <div class="place-name">安师大</div>
+                                </div>
+                                <div class="item last" data-id="${homeLocationElementMapView.value.id}">
+                                    <div class="place-name">安师大</div>
+                                </div>
+                                <div class="item hot" data-id="${homeLocationElementMapView.value.id}">
+                                    <div class="isHot"></div>
+                                    <div class="hot-font">热</div>
+                                    <div class="place-name">安师大</div>
+                                </div>
+                                <div class="item" data-id="${homeLocationElementMapView.value.id}">
+                                    <div class="place-name">安师大时</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="destination-gp">
+                        <div class="destination-title">
+                            重庆
+                        </div>
+                        <div class="destinations">
+                            <div class="items">
+                                <div class="item hot  active" data-id="${homeLocationElementMapView.value.id}">
+                                    <div class="isHot"></div>
+                                    <div class="hot-font">热</div>
+                                    <div class="place-name">安师大安师大</div>
+                                </div>
+
+                                <div class="item  active" data-id="${homeLocationElementMapView.value.id}">
+                                    <div class="place-name">安师大安师大安师大安师大安师大</div>
+                                </div>
+                                <div class="item hot last active" data-id="${homeLocationElementMapView.value.id}">
+                                    <div class="isHot"></div>
+                                    <div class="hot-font">热</div>
+                                    <div class="place-name">安师大安师大安师大安师大安师大</div>
+                                </div>
+                                <div class="item active" data-id="${homeLocationElementMapView.value.id}">
+                                    <div class="place-name">安师大</div>
+                                </div>
+                                <div class="item hot " data-id="${homeLocationElementMapView.value.id}">
+                                    <div class="isHot"></div>
+                                    <div class="hot-font">热</div>
+                                    <div class="place-name">安师大</div>
+                                </div>
+                                <div class="item last" data-id="${homeLocationElementMapView.value.id}">
+                                    <div class="place-name">安师大安师大安师大安师大安师大</div>
+                                </div>
+                                <div class="item hot" data-id="${homeLocationElementMapView.value.id}">
+                                    <div class="isHot"></div>
+                                    <div class="hot-font">热</div>
+                                    <div class="place-name">安师大安师大安师大安师大安师大</div>
+                                </div>
+                                <div class="item" data-id="${homeLocationElementMapView.value.id}">
+                                    <div class="place-name">安师大安师大安师大安师大安师大</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page" id="tab-arrive">
+            <!--每个page的页头-->
+            <header>
+                <div class="back">后退</div>
+                <div class="center">选择目的地</div>
+                <div class="home">个人中心</div>
+            </header>
+            <div class="page-content">
+                <div class="detination-wrapper">
+                    <div class="destination-gp">
+                        <div class="destination-title">
+                            重庆
+                        </div>
+                        <div class="destinations">
+                            <div class="items">
+                                <div class="item hot last active" data-id="${homeLocationElementMapView.value.id}">
+                                    <div class="isHot"></div>
+                                    <div class="hot-font">热</div>
+                                    <div class="place-name">安师大</div>
+                                </div>
+
+                                <div class="item last active" data-id="${homeLocationElementMapView.value.id}">
+                                    <div class="place-name">安师大</div>
+                                </div>
+                                <div class="item hot active" data-id="${homeLocationElementMapView.value.id}">
+                                    <div class="isHot"></div>
+                                    <div class="hot-font">热</div>
+                                    <div class="place-name">安师大</div>
+                                </div>
+                                <div class="item active" data-id="${homeLocationElementMapView.value.id}">
+                                    <div class="place-name">安师大</div>
+                                </div>
+                                <div class="item hot last" data-id="${homeLocationElementMapView.value.id}">
+                                    <div class="isHot"></div>
+                                    <div class="hot-font">热</div>
+                                    <div class="place-name">安师大</div>
+                                </div>
+                                <div class="item last" data-id="${homeLocationElementMapView.value.id}">
+                                    <div class="place-name">安师大</div>
+                                </div>
+                                <div class="item hot" data-id="${homeLocationElementMapView.value.id}">
+                                    <div class="isHot"></div>
+                                    <div class="hot-font">热</div>
+                                    <div class="place-name">安师大</div>
+                                </div>
+                                <div class="item" data-id="${homeLocationElementMapView.value.id}">
+                                    <div class="place-name">安师大时</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="destination-gp">
+                        <div class="destination-title">
+                            重庆
+                        </div>
+                        <div class="destinations">
+                            <div class="items">
+                                <div class="item hot last active" data-id="${homeLocationElementMapView.value.id}">
+                                    <div class="isHot"></div>
+                                    <div class="hot-font">热</div>
+                                    <div class="place-name">安师大</div>
+                                </div>
+
+                                <div class="item last active" data-id="${homeLocationElementMapView.value.id}">
+                                    <div class="place-name">安师大</div>
+                                </div>
+                                <div class="item hot active" data-id="${homeLocationElementMapView.value.id}">
+                                    <div class="isHot"></div>
+                                    <div class="hot-font">热</div>
+                                    <div class="place-name">安师大</div>
+                                </div>
+                                <div class="item active" data-id="${homeLocationElementMapView.value.id}">
+                                    <div class="place-name">安师大</div>
+                                </div>
+                                <div class="item hot last" data-id="${homeLocationElementMapView.value.id}">
+                                    <div class="isHot"></div>
+                                    <div class="hot-font">热</div>
+                                    <div class="place-name">安师大</div>
+                                </div>
+                                <div class="item last" data-id="${homeLocationElementMapView.value.id}">
+                                    <div class="place-name">安师大</div>
+                                </div>
+                                <div class="item hot" data-id="${homeLocationElementMapView.value.id}">
+                                    <div class="isHot"></div>
+                                    <div class="hot-font">热</div>
+                                    <div class="place-name">安师大</div>
+                                </div>
+                                <div class="item" data-id="${homeLocationElementMapView.value.id}">
+                                    <div class="place-name">安师按时</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="/common/js/zepto.min.js"></script>
+    <script type="text/javascript" src="/common/js/sidebar.js"></script>
+    <script type="text/javascript" src="/common/js/alert.js" async="async"></script>
+    <script type="text/javascript" src="/common/js/pages.js"></script>
+    <script type="text/javascript">
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        var style;
+                        if (style = document.getElementById("forhtml")) {
+                            style.parentNode.removeChild(style);
+                        }
+                        style = document.createElement("style");
+                        style.id = "forhtml";
+                        document.head.appendChild(style);
+                        style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                        docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                    };
+            recalc();
+            doc.getElementsByClassName('page-group')[0].style.visibility = 'visible';
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+//            doc.querySelector('.page-content').addEventListener('scroll', onScroll)
+        })(document, window);
+
+        $(document).ready(function() {
+            /* ============================================
+             这里判断如果是ios则使用sticky布局
+             ============================================== */
+            if(window.navigator.userAgent.indexOf('Mac OS X') != '-1'){
+                $('.filter-box-space').addClass('sticky');
+            }else{
+                $('.page-content').scroll(function() {
+                    var origOffsetY = document.querySelector('.inline-space').offsetTop;
+                    if(document.querySelector('.page-content').scrollTop >= origOffsetY ) {
+//                    $('.fixed-space').show();
+                        $('.filter-box').css({'position':'fixed',top:'2rem'})
+                    } else {
+//                    $('.fixed-space').hide();
+                        $('.filter-box').css({'position':'relative',top:'0'})
+                    }
+                });
+            }
+            $('.page-group').pageInit({
+                router : '.turnTo' ,//router的className
+                routerFun : function(){}
+            });
+            $('header .back').click(function () {
+                if (!$(this).hasClass('no-icon')) {
+                    history.go(-1);
+                }
+            });
+            $('header .home').sidebar();// 后台传入用户电话号码
+            // 点击筛选条件
+            $('.condition').click(function(e) {
+                var $this = $(this);
+                if($this.hasClass('choose')) {
+                    $('.filter-content').hide();
+                    $('.filter-cover').hide();
+                    $this.removeClass('choose');
+                    $this.addClass('hide');
+                } else {
+                    $('.condition').removeClass('choose').addClass('hide');
+                    $this.removeClass('hide');
+                    $this.addClass('choose');
+                    $this.hasClass('selected') && $this.removeClass('selected');
+                    var type = $(this).attr('data-type');
+                    $('.filter-content').hide();
+                    $('.filter-cover').show();
+                    $('.'+type).toggle('slow');
+                }
+            });
+            /* ============================================
+             ************   pkg-box筛选框中的操作   ************
+             ============================================== */
+            $('.pkg-box li').click(function(e) {
+                var $this = $(this);
+                if($this.hasClass('pkg-select')) {
+                    $this.removeClass('pkg-select');
+                } else {
+                    $this.addClass('pkg-select');
+                }
+            });
+            $('.clear-btn').click(function() {
+                $('.pkg-box li.pkg-select').removeClass('pkg-select');
+            });
+            $('.confirm-btn').click(function() {
+                $('.filter-box .condition').forEach(function(item) {
+                    $(item).attr('data-type') == 'pkg-box' && (function() {
+                        if($('.pkg-box li.pkg-select').length == 0) {
+                            $(item).removeClass('choose').addClass('hide');
+                        } else {
+                            $(item).removeClass('choose').addClass('hide selected');
+                        }
+                        $('.pkg-box').hide();
+                        $('.filter-cover').hide();
+                    })();
+                });
+                filterTourism();
+            });
+            /* ============================================
+             ************   筛选行程类型   ************
+             ============================================== */
+            $('.tourism-type-box li').click(function() {
+                var $this = $(this);
+                $('.tourism-type-box li').removeClass('type-select');
+                $this.addClass('type-select');
+                $('.filter-box .condition').forEach(function(item) {
+                    $(item).attr('data-type') == 'tourism-type-box' && (function() {
+                        if($this.hasClass('all')) {
+                            $(item).removeClass('choose').removeClass('selected').addClass('hide').text('行程类型');
+                        } else {
+                            $(item).removeClass('choose').addClass('hide selected').text($this.text());
+                        }
+
+                        $('.tourism-type-box').hide();
+                        $('.filter-cover').hide();
+                    })();
+                });
+                filterTourism();
+            });
+            /* ============================================
+             ************   筛选行程天数   ************
+             ============================================== */
+            $('.tourism-days-box li').click(function() {
+                var $this = $(this);
+                $('.tourism-days-box li').removeClass('days-select');
+                $this.addClass('days-select');
+
+                $('.filter-box .condition').forEach(function(item) {
+                    $(item).attr('data-type') == 'tourism-days-box' && (function() {
+                        if($this.hasClass('all')) {
+                            $(item).removeClass('choose').removeClass('choose').addClass('hide').text('行程天数');
+                        } else {
+                            $(item).removeClass('choose').addClass('hide selected').text($this.text());
+                        }
+                        $('.tourism-days-box').hide();
+                        $('.filter-cover').hide();
+                    })();
+                });
+                filterTourism();
+            });
+            /* ============================================
+             ************   筛选函数   ************
+             ============================================== */
+            function filterTourism() {
+                $('.presell,.bus-item,.package-item').show();
+                var tourismType = $('.tourism-type-box li.type-select').attr('data-value') || 'all',
+                        tourismDays = $('.tourism-days-box li.days-select').attr('data-value') || 'all',
+                        tourismPkg = [];
+                $('.pkg-box li.pkg-select').forEach(function(item) {
+                    tourismPkg.push($(item).attr('data-type'));
+                });
+
+                if(tourismPkg.length == 0) {
+                    $('.presell,.bus-item,.package-item').show();
+                }
+                // 纯巴士
+                $('.presell.bus,.bus-item').forEach(function(item) {
+                    // 行程类型判断
+                    if(tourismType != 'all') {
+                        if($(item).attr('data-type') != tourismType) {
+                            $(item).hide();
+                        }
+                    }
+                    // 行程天数判断
+                    if(tourismDays != 'all') {
+                        if($(item).attr('data-days') != tourismDays) {
+                            $(item).hide();
+                        }
+                    }
+
+                    if(tourismPkg.length) {
+                        var hasBus = false;
+                        for(var j = 0; j < tourismPkg.length; j++) {
+                            if(tourismPkg[j] == 'bus') {
+                                hasBus = true;
+                            }
+                        }
+                        if (!hasBus) {
+                            $(item).hide();
+                        }
+                    }
+                });
+                $('.presell.pkg,.package-item').forEach(function(item) {
+                    // 行程类型判断
+                    if(tourismType != 'all') {
+                        if($(item).attr('data-type') != tourismType) {
+                            $(item).hide();
+                        }
+                    }
+                    // 行程天数判断
+                    if(tourismDays != 'all') {
+                        if($(item).attr('data-days') != tourismDays) {
+                            $(item).hide();
+                        }
+                    }
+
+                    for(var i = 0, len = tourismPkg.length; i < len; i++) {
+                        if(!$(item).hasClass(tourismPkg[i])) {
+
+                            $(item).hide();
+                        }
+                    }
+                });
+            }
+            /* ============================================
+             ************   跳转事件   ************
+             ============================================== */
+            var startObj = {x:0,y:0};
+            var endObj = {x:0,y:0};
+            document.addEventListener('touchstart',function(event){
+                startObj.x = event.touches[0].pageX;
+                startObj.y = event.touches[0].pageY;
+                endObj.x = 0;
+                endObj.y = 0;
+            })
+            document.addEventListener('touchmove',function(event){
+                endObj.x = event.touches[0].pageX - startObj.x;
+                endObj.y = event.touches[0].pageY - startObj.y;
+            })
+            $('.bus-item').tap(function(e) {
+                e.preventDefault();
+                if(Math.abs(endObj.x)<2 && Math.abs(endObj.y)<2){
+                    location.href = $(this).attr('data-href');
+                }
+            })
+            $('.package-item').tap(function(e) {
+                e.preventDefault();
+                if(Math.abs(endObj.x)<2 && Math.abs(endObj.y)<2){
+                    location.href = $(this).attr('data-href');
+                };
+            })
+            $('.presell').tap(function(e){
+                e.preventDefault();
+                e.stopPropagation();
+                if($(this).attr('data-href')) {
+                    location.href =  $(this).attr('data-href');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

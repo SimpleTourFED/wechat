@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="/images/logo.ico" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/actPageCover.scss?__inline" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+<div class="bg"></div>
+<div class="infoModal">
+    <div class="overlay"></div>
+    <div class="content-wrap">
+        <div class="content">
+            <div class="placeholderImg"></div>
+            <div class="copy">
+                <div class="title">途中玩乐</div>
+                <p class="article">
+                    选择困难症状？出发太匆忙？
+                    我们为你精心物色的目的地最棒
+                    吃，住，游，娱！<br/>
+                    安全可信的商家，超高性价比
+                    让你在旅途中一边玩一边选！
+                </p>
+                <div class="notes">
+                    部分商品需要在行程中提供服务<br/>
+                    需要您添加或选择需要提（占位符）行程
+                </div>
+            </div>
+            <div class="noPrompt">
+                <input type="checkbox"/>&nbsp;不再显示该信息
+            </div>
+        </div>
+        <div class="close"></div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script type="text/javascript">
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                    docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+    $(document).ready(function() {
+
+    });
+</script>
+</html>

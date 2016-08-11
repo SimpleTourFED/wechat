@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="format-detection" content="telephone=no;email=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>沿途巴士停靠点</title>
+    <link href="/css/tips.scss?__inline" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="top_banner">
+    <img src="/images/top_banner@3x.png" alt="banner"/>
+</div>
+<div class="content">
+    <div class="tips">
+        <!--tips|travel-->
+        <div class="tips_title tips">
+            注意事项
+        </div>
+        <div class="tips_desc">
+            <p>
+                1、九寨沟区属中高海拔地区，一般旅游者不会有太大的高山反应，但也要量力而行，游客不宜剧烈运动，宜少饮酒，多食蔬菜、水果，以防发生高山 反应。年老体弱者，应备好常用药品，最好能配备小型氧气瓶(此物可以成都购买)。小简提醒喜好喝酒的朋友在九寨就不要喝太多了哦~
+            </p>
+            <p>
+                2、爱好摄影、登山的朋友，请带好有关器材，多备电池或胶卷，景区内价格较贵。
+            </p>
+            <p>
+                3、九寨沟内门票是每进一次就要购买一次。如果需要第二次进沟的朋友，需在购买第一次门票时在售票处进行登记，那么第二次进沟门票就可以享受免费，但还是需要购买第二次进沟的观光车票，所以请您安排好，以免浪费门票钱。
+            </p>
+            <p>
+                4、请尊重当地少数名族的生活和信仰，避免与当地居民发生冲突。56个民族，56支花，56个兄弟姐妹是一家~~~
+            </p>
+            <div class="attention">
+                <div class="aTitle">
+                    小简也整理了一下在藏区的一些禁忌，供大家了解：
+                </div>
+                <div class="aContent">
+                    <p>A&nbsp;&nbsp;藏族人绝对禁吃驴、马肉和狗肉，有些地区也不吃鱼肉；</p>
+
+                    <p>B&nbsp;&nbsp;敬酒时，客人须先用无名指蘸一点酒弹向空中，连续三次，以示祭天，地和祖先，接着轻轻呷一口，主人会及时添满，再喝一口再添满，连喝三口，至第四次添满时，必须一饮而尽；</p>
+
+                    <p>C&nbsp;&nbsp;吃饭时要食不满口，咬不出声，喝不出响；</p>
+
+                    <p>D&nbsp;&nbsp;喝酥油茶时，主人倒茶，客人要待主人双手捧到面前时，才能接过来喝；</p>
+
+                    <p>E&nbsp;&nbsp;禁忌在别人后背吐唾沫，拍手掌；</p>
+
+                    <p>F&nbsp;&nbsp;行路遇到寺院，玛尼堆，佛塔等宗教设施，必须从左往右绕行；</p>
+
+                    <p>G&nbsp;&nbsp;不得跨越法器，火盆；</p>
+
+                    <p>H&nbsp;&nbsp;经筒，经轮不得逆转；</p>
+
+                    <p class="last">I&nbsp;&nbsp;忌讳别人用手触摸头顶。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tips">
+        <!--tips|travel-->
+        <div class="tips_title travel">
+            旅行必备
+        </div>
+        <div class="tips_desc">
+            <p>1、景区昼夜温差大，请带足保暖防寒衣物，并备常用药品。</p>
+
+            <p>2、景区日照强，紫外线强。长时间在户外活动,请戴上太阳帽,涂抹防霜,以保护皮肤。</p>
+
+            <p class="last">3、景区内只有诺日朗一个用餐点，价格较贵，大家可以提前买些干粮带上。</p>
+        </div>
+        </div>
+    </div>
+</div>
+<div class="bottom_banner">
+    <img src="/images/bottom_banner@3x.png" alt="banner"/>
+</div>
+<footer>
+    <a href="#">去查看全部九寨沟攻略</a>
+</footer>
+<script type="text/javascript">
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    // 针对uc横竖屏rem html没有重绘的问题
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                    //
+                    docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script>
+</body>
+</html>

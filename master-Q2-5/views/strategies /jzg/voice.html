@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="format-detection" content="telephone=no;email=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>沿途巴士停靠点</title>
+    <link href="/css/voice.scss?__inline" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="top_banner">
+    <img src="/images/top_banner@3x.png" alt="banner"/>
+</div>
+<div class="content">
+    <div class="voice">
+        <!--zan|spot-->
+        <div class="voice_title spot">
+            九寨沟简介：
+        </div>
+        <div class="voice_desc">
+            <div class="node">
+                <div class="node_content">
+                    <p>
+                        九寨沟位于四川省阿坝藏族羌族自治州九寨沟县境内，是中国第一个以保护自然风景为主要目的的自然保护区。地处青藏高原向四川盆地过渡地带，距离成都市400多千米，是一条纵深50余千米的山沟谷地，总面积64297公顷，森林覆盖率超过80%。因沟内有树正寨、荷叶寨、则查洼寨等九个藏族村寨坐落在这片高山湖泊群中而得名。
+                        山明水秀，郁郁葱葱，九寨归来不看水的俗语一直流传至今。
+                    </p>
+                    <img src="/images/jzg_voice_001.png" alt="">
+                    <a href="#">播放音频文件</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="voice">
+        <!--zan|spot-->
+        <div class="voice_title zan">
+            九寨沟必游景点
+        </div>
+        <div class="voice_desc">
+            <div class="node">
+                <div class="node_title">
+                    芦苇海
+                </div>
+                <div class="node_content">
+                    <p>
+                        简介：五花海位于九寨沟的日则沟中段，孔雀河上游，由于海底的钙华沉积、各种颜色的藻类以及岸边五彩的林木倒影而呈现出五颜六色。
+                    </p>
+                    <img src="/images/jzg_voice_001.png" alt="">
+                    <a href="#">播放音频文件</a>
+                </div>
+            </div>
+            <div class="node last">
+                <div class="node_title">
+                    芦苇海
+                </div>
+                <div class="node_content">
+                    <p>
+                        简介：五花海位于九寨沟的日则沟中段，孔雀河上游，由于海底的钙华沉积、各种颜色的藻类以及岸边五彩的林木倒影而呈现出五颜六色。
+                    </p>
+                    <img src="/images/jzg_voice_001.png" alt="">
+                    <a href="#">播放音频文件</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="bottom_banner">
+    <img src="/images/bottom_banner@3x.png" alt="banner"/>
+</div>
+<footer>
+    <a href="#">去查看全部九寨沟攻略</a>
+</footer>
+<script type="text/javascript">
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    // 针对uc横竖屏rem html没有重绘的问题
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                    //
+                    docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script>
+</body>
+</html>
