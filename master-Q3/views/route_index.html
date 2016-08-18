@@ -7,17 +7,22 @@
     <meta name="format-detection" content="telephone=no"/>
     <meta name="wap-font-scale" content="no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="/css/appdownload.scss?__inline">
+    <link rel="stylesheet" href="/master-Q3//css/route_index.scss?__inline">
 </head>
 <body>
 <div class="page-group">
     <div class="page page-current">
         <header>
-            <div class="center">我的行程</div>
+            <div class="center">路线</div>
         </header>
         <footer></footer>
         <div class="page-content">
-
+            <div class="topModule">
+                <div class="banner">
+                    <img src="/master-Q3/images/route_index_banner.png" alt=""/>
+                </div>
+            </div>
+            <div class="contentModule"></div>
         </div>
     </div>
 </div>
@@ -37,7 +42,7 @@
                     style = document.createElement("style");
                     style.id = "forhtml";
                     document.head.appendChild(style);
-                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 640) + "px !important;}"));
                 };
         recalc();
         if (!doc.addEventListener) return;
