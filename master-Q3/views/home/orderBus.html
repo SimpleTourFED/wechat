@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/master-Q3/css/orderBus.scss?__inline" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+<div class="page-group">
+    <!--一个页面,如果有多个就是多个page,要首先显示的需要加上page-current类-->
+    <div class="page page-current">
+        <div class="page-content">
+            <div class="search-wrapper">
+                <div class="start">
+                    <div class="bc"></div>
+                    <label for="">出发地</label>
+                    <div class="line"></div>
+                    <div class="name">成都</div>
+                </div>
+                <div class="destination">
+                    <div class="bc"></div>
+                    <label for="">目的地</label>
+                    <div class="line"></div>
+                    <div class="name">九寨</div>
+                </div>
+                <div class="search-button">
+                    去搜索
+                </div>
+            </div>
+            <div class="recommend">
+                <h5>热门巴士自由行套餐推荐</h5>
+                <div class="pkg-item">
+                    <div class="head-image">
+                        <img src="http://images.simpletour.com/simpletour/images/wechat_home/cc25479b9e2f87ea81e8fb1eb76cacde.jpg!middle320" alt="">
+                    </div>
+                    <div class="left-circle"></div>
+                    <div class="right-circle"></div>
+                    <p>套餐名称好吃好吃的九寨沟豪华十八人七天五夜巴士车套餐</p>
+                    <div class="price">
+                        <span class="left">¥1299.99</span>
+                        <span class="right">原件:¥1299.99</span>
+                    </div>
+                    <div class="tags">
+                        <span>app专享价</span>
+                        <span>特价</span>
+                    </div>
+                </div>
+
+                <div class="pkg-item">
+                    <div class="head-image">
+                        <img src="http://images.simpletour.com/simpletour/images/wechat_home/783ca3272f455de77c64bf88e1bf848c.png!middle320" alt="">
+                    </div>
+                    <div class="left-circle"></div>
+                    <div class="right-circle"></div>
+                    <p>套餐名称好吃好吃的九寨沟豪华十八人七天五夜巴士车套餐</p>
+                    <div class="price">
+                        <span class="left">¥1299.99</span>
+                        <span class="right">原价:¥1299.99</span>
+                    </div>
+                    <div class="tags">
+                        <span>app专享价</span>
+                        <span>特价</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 640) + "px !important;}"));
+                    docEl.style.fontSize = 20 * (clientWidth / 640) + 'px';
+                };
+        if (!doc.addEventListener) return;
+        recalc();
+        document.body.style.visibility = 'visible';
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script>
+</body>
+</html>
