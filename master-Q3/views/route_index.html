@@ -21,8 +21,49 @@
                 <div class="banner">
                     <img src="/master-Q3/images/route_index_banner.png" alt=""/>
                 </div>
+                <div class="tabs">
+                    <div class="domestic">
+                        <div class="desc">
+                            <span class="big">国&nbsp;&nbsp;内</span>旅行路线
+                        </div>
+                    </div>
+                    <div class="international">
+                        <div class="desc">
+                            <span class="big">国&nbsp;&nbsp;际</span>旅行路线
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="contentModule"></div>
+            <div class="contentModule">
+                <div class="lines_group">
+                    <div class="title-bar">
+                        <div class="title">
+                            <span class="tag">热门</span>旅游路线
+                        </div>
+                        <a class="more">全部</a>
+                    </div>
+                    <div class="lines">
+                        <div class="line">
+                            <img src="/master-Q3/images/route_line1.png" alt=""/>
+                            <div class="overlay">
+                                <div class="text-layer">
+                                    <span class="chinese">九寨沟</span>
+                                    <span class="pinyin">Jiu zhaigou</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <img src="/master-Q3/images/route_line2.png" alt=""/>
+                            <div class="overlay">
+                                <div class="text-layer">
+                                    <span class="chinese">九寨沟</span>
+                                    <span class="pinyin">Jiu zhaigou</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -42,7 +83,7 @@
                     style = document.createElement("style");
                     style.id = "forhtml";
                     document.head.appendChild(style);
-                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 640) + "px !important;}"));
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
                 };
         recalc();
         if (!doc.addEventListener) return;
