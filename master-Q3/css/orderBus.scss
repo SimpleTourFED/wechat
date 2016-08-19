@@ -165,3 +165,50 @@ body {
     }
   }
 }
+.search-bar {
+  width: 100%;
+  height: rem(88px);
+  background-color: #fff;
+  @include displayflex();
+  @include flexflowRow();
+  .back {
+    width:rem(73px);
+    height:100%;
+    background: url("/master-Q3/images/icon/left_red_arrow@2x.png") no-repeat center;
+    background-size: 30%;
+  }
+  .search-input {
+    position: relative;
+    margin-top: rem(16px);
+    width: rem(456px);
+    height: rem(56px);
+    line-height: rem(56px);
+    font-size: rem(28px);
+    label {
+      position: absolute;
+      top: rem(15px);
+      left:rem(16px);
+      display: inline-block;
+      width: rem(31px);
+      height: rem(25px);
+      background: url("/master-Q3/images/icon/search_icon@2x.png") no-repeat center;
+      background-size: contain;
+    }
+    input {
+      width: 100%;
+      height:100%;
+      background-color: #EBEBEB;
+      border: 0;
+      border-radius: rem(6px);
+      text-indent: rem(64px);
+      font-size: rem(28px);
+    }
+  }
+  .cancel {
+    @include flex(1);
+    text-align: center;
+    color: #E61E4B;
+    line-height: rem(88px);
+    font-size: rem(28px);
+  }
+}

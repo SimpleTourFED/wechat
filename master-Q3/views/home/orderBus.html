@@ -11,16 +11,16 @@
 <body>
 <div class="page-group">
     <!--一个页面,如果有多个就是多个page,要首先显示的需要加上page-current类-->
-    <div class="page page-current">
+    <div class="page">
         <div class="page-content">
             <div class="search-wrapper">
-                <div class="start">
+                <div class="start turnTo" href="#tab-depart">
                     <div class="bc"></div>
                     <label for="">出发地</label>
                     <div class="line"></div>
                     <div class="name">成都</div>
                 </div>
-                <div class="destination">
+                <div class="destination turnTo" href="#tab-arrive">
                     <div class="bc"></div>
                     <label for="">目的地</label>
                     <div class="line"></div>
@@ -66,6 +66,27 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="page page-current" id="tab-depart">
+        <div class="search-bar">
+            <div class="back"></div>
+            <div class="search-input">
+                <label></label>
+                <input oninput="filterResult(event)" type="text" name="search" placeholder="请输入目的地／景点／酒店" />
+                <div class="click-zone"></div>
+            </div>
+            <div class="cancel">
+                搜索
+            </div>
+        </div>
+        <div class="search-result">
+
+        </div>
+        <div class="navBar">
+            <ul>
+
+            </ul>
         </div>
     </div>
 </div>
