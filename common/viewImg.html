@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/common/css/viewImg.scss">
+</head>
+<body>
+    <button>click</button>
+
+    <script src="/common/js/zepto.min.js"></script>
+    <script src="/common/js/viewImg.js"></script>
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        var style;
+                        if (style = document.getElementById("forhtml")) {
+                            style.parentNode.removeChild(style);
+                        }
+                        style = document.createElement("style");
+                        style.id = "forhtml";
+                        document.head.appendChild(style);
+                        style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 640) + "px !important;}"));
+                        docEl.style.fontSize = 20 * (clientWidth / 640) + 'px';
+                    };
+            if (!doc.addEventListener) return;
+            recalc();
+            document.body.style.visibility = 'visible';
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+        $('button').click(function () {
+            $.viewImg(['http://img.alicdn.com/tps/i1/TB1SKhUHVXXXXb7XXXX0HY8HXXX-1024-1024.jpeg','http://img.alicdn.com/tps/i4/TB1AdxNHVXXXXasXpXX0HY8HXXX-1024-1024.jpeg'])
+        })
+    </script>
+
+</body>
+</html>
