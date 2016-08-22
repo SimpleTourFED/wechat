@@ -17,8 +17,8 @@
         l.getViewVisibleZone = function() {
             if(o.visibleZone) {
                 return {
-                    top : document.querySelector(o.visibleZone).scrollTop,
-                    left : document.querySelector(o.visibleZone).scrollLeft,
+                    top : $(o.visibleZone).scrollTop(),
+                    left : $(o.visibleZone).scrollLeft(),
                     width : document.documentElement.clientWidth,
                     height : document.documentElement.clientHeight
                 };
@@ -92,19 +92,19 @@
         };
         l.winScroll();
         var count = 0, timer = null;
-        var oldTop = newTop = document.querySelector(o.visibleZone).scrollTop; //为了方便起见，使用jquery或者zepto框架
+        var oldTop = newTop = $(o.visibleZone).scrollTop(); //为了方便起见，使用jquery或者zepto框架
         function log(){
             if(timer) clearTimeout(timer);
-            newTop = document.querySelector('.page-content').scrollTop;
+            newTop = $(o.visibleZone).scrollTop();
             if(newTop === oldTop) {
                 clearTimeout(timer);
                 l.winScroll();
             } else{
                 oldTop = newTop;
-                timer = setTimeout(log,200);
+                timer = setTimeout(log,100);
             }
         }
-        document.addEventListener('touchmove', log, false); // 监听滚动事件
+        document.addEventListener('touchend', log, false); // 监听滚动事件
         window.addEventListener(resizeEvt, l.winScroll, false); // 监听窗口变化
     }
 

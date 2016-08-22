@@ -12,7 +12,7 @@
 <div class="page-group">
     <!--一个页面,如果有多个就是多个page,要首先显示的需要加上page-current类-->
     <div class="page page-current">
-        <div class="page-content">
+        <div class="page-content content" data-toggle="scroller" data-type="js">
             <div class="search-wrapper">
                 <div class="start turnTo" href="#tab-depart">
                     <div class="bc"></div>
@@ -278,8 +278,8 @@
                     style = document.createElement("style");
                     style.id = "forhtml";
                     document.head.appendChild(style);
-                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 640) + "px !important;}"));
-                    docEl.style.fontSize = 20 * (clientWidth / 640) + 'px';
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                    docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
                 };
         if (!doc.addEventListener) return;
         recalc();
@@ -289,6 +289,7 @@
     })(document, window);
 </script>
 <script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script type="text/javascript" src="/common/js/scroll.js"></script>
 <script type="text/javascript" src="/common/js/lazyLoad.js"></script>
 <script type="text/javascript" src="/common/js/pages.js"></script>
 <script type="text/javascript">
