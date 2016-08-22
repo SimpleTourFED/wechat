@@ -2,6 +2,9 @@
 body {
   background-color: #E7E7E7;
 }
+ul {
+  list-style: none;
+}
 .search-wrapper {
   width:100%;
   height:rem(460px);
@@ -93,12 +96,12 @@ body {
     height: rem(37px);
     line-height: rem(37px);
     border-left: rem(10px) solid #E61E4B;
-    color: #83858C;
+    color: #4a4a4a;
     font-size: rem(26px);
     text-indent: rem(16px);
+    font-weight: 100;
   }
   .pkg-item {
-    position: relative;
     width: rem(588px);
     background-color: #fff;
     margin: rem(25px) auto;
@@ -112,23 +115,28 @@ body {
         height:100%;
       }
     }
-    .left-circle {
-      position: absolute;
-      top:rem(240px);
-      left:rem(-10px);
-      width: rem(20px);
-      height: rem(20px);
-      border-radius: rem(20px);
-      background-color: #E7E7E7;
-    }
-    .right-circle {
-      position: absolute;
-      top:rem(240px);
-      right:rem(-10px);
-      width: rem(20px);
-      height: rem(20px);
-      border-radius: rem(20px);
-      background-color: #E7E7E7;
+    .decorate {
+      width: 100%;
+      height: 0;
+      position: relative;
+      .left-circle {
+        position: absolute;
+        top:rem(-10px);
+        left:rem(-10px);
+        width: rem(20px);
+        height: rem(20px);
+        border-radius: rem(20px);
+        background-color: #E7E7E7;
+      }
+      .right-circle {
+        position: absolute;
+        top:rem(-10px);
+        right:rem(-10px);
+        width: rem(20px);
+        height: rem(20px);
+        border-radius: rem(20px);
+        background-color: #E7E7E7;
+      }
     }
     p {
       padding: rem(10px) rem(26px);
@@ -165,50 +173,155 @@ body {
     }
   }
 }
-.search-bar {
-  width: 100%;
-  height: rem(88px);
-  background-color: #fff;
-  @include displayflex();
-  @include flexflowRow();
-  .back {
-    width:rem(73px);
-    height:100%;
-    background: url("/master-Q3/images/icon/left_red_arrow@2x.png") no-repeat center;
-    background-size: 30%;
-  }
-  .search-input {
-    position: relative;
-    margin-top: rem(16px);
-    width: rem(456px);
-    height: rem(56px);
-    line-height: rem(56px);
-    font-size: rem(28px);
-    label {
-      position: absolute;
-      top: rem(15px);
-      left:rem(16px);
-      display: inline-block;
-      width: rem(31px);
-      height: rem(25px);
-      background: url("/master-Q3/images/icon/search_icon@2x.png") no-repeat center;
-      background-size: contain;
-    }
-    input {
-      width: 100%;
+#tab-depart,#tab-arrive {
+  min-height: 100%;
+  .search-bar {
+    width: 100%;
+    height: rem(88px);
+    background-color: #fff;
+    border-bottom: 1px solid #E4E4E4;
+    @include displayflex();
+    @include flexflowRow();
+    .back {
+      width:rem(73px);
       height:100%;
-      background-color: #EBEBEB;
-      border: 0;
-      border-radius: rem(6px);
-      text-indent: rem(64px);
+      background: url("/master-Q3/images/icon/left_red_arrow@2x.png") no-repeat center;
+      background-size: 30%;
+    }
+    .search-input {
+      position: relative;
+      margin-top: rem(16px);
+      width: rem(456px);
+      height: rem(56px);
+      line-height: rem(56px);
+      font-size: rem(28px);
+      label {
+        position: absolute;
+        top: rem(15px);
+        left:rem(16px);
+        display: inline-block;
+        width: rem(31px);
+        height: rem(25px);
+        background: url("/master-Q3/images/icon/search_icon@2x.png") no-repeat center;
+        background-size: contain;
+      }
+      input {
+        width: 100%;
+        height:100%;
+        background-color: #EBEBEB;
+        border: 0;
+        border-radius: rem(6px);
+        text-indent: rem(64px);
+        font-size: rem(28px);
+      }
+    }
+    .cancel {
+      @include flex(1);
+      text-align: center;
+      color: #E61E4B;
+      line-height: rem(88px);
       font-size: rem(28px);
     }
   }
-  .cancel {
-    @include flex(1);
-    text-align: center;
-    color: #E61E4B;
-    line-height: rem(88px);
-    font-size: rem(28px);
+  .navBar {
+    width: 100%;
+    height: rem(88px);
+    background-color: #fff;
+    @include shadow(0,5px,5px,#bdbdbd);
+    li {
+      position: relative;
+      width: rem(160px);
+      line-height: rem(88px);
+      text-align: center;
+      float: left;
+      font-size: rem(30px);
+      color: #83858C;
+      .bottom-line {
+        position: absolute;
+        bottom: 0;
+        left:50%;
+        margin-left: rem(-40px);
+        width: rem(80px);
+        height: rem(4px);
+        background-color: #ffffff;
+      }
+      &.selected {
+        .bottom-line {
+          width: rem(80px);
+          height: rem(4px);
+          background-color: #E61E4B;
+        }
+      }
+    }
+  }
+  .hot-space {
+    width: 100%;
+    padding-top: rem(24px);
+    background-color: #E0E0E0;
+    h5 {
+      height: rem(30px);
+      border-left: rem(10px) solid #E61E4B;
+      font-size: rem(26px);
+      color: #83858C;
+      text-indent: rem(16px);
+    }
+    ul {
+      font-size: 0;
+      padding:rem(14px) rem(14px) rem(30px) rem(14px);
+      li{
+        display: inline-block;
+        margin: rem(10px) rem(12px);
+        padding: 0 rem(18px);
+        color: #4F545B;
+        font-size: rem(28px);
+        text-align: center;
+        width: rem(180px);
+        height: rem(88px);
+        line-height: rem(88px);
+        background-color: #fff;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        border-radius: rem(6px);
+        &.selected {
+          background-color: #E61E4B;
+          color: white;
+        }
+      }
+    }
+  }
+  .place-list {
+    .item-wrap {
+      width: 100%;
+      .letter {
+        width: 100%;
+        height: rem(50px);
+        line-height: rem(50px);
+        background-color: #F1F1F1;
+        font-size: rem(24px);
+        color: #83858C;
+        text-indent: rem(26px);
+      }
+      ul {
+        background-color: #fff;
+        li{
+          height: rem(88px);
+          line-height: rem(88px);
+          color: #4F545B;
+          font-size: rem(28px);
+          border-bottom: 1px solid #EBEBF5;
+          text-indent: rem(26px);
+          &:last-child {
+            border-bottom: 0;
+          }
+          &.active {
+            background-color: #F1F1F1;
+          }
+          &.selected {
+            color: #E61E4B;
+          }
+        }
+      }
+    }
   }
 }
