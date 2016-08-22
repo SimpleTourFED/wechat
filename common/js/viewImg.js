@@ -5,7 +5,7 @@
     function render(imgArray) {
         var img = '';
         $.each(imgArray,function (i,v) {
-            img += '<div class="img-viewer-swiper-item"><img src="'+v+'" alt=""></div>'
+            img += '<div class="img-viewer-swiper-item"><img src="/master-Q3/images/defalut-img@588250.png" alt=""></div>'
         });
         var imgView = '<div class="img-viewer-overlay overlay-visible"></div><div class="img-viewer" style="display: block"><div class="img-viewer-header"><a href="#"></a><div class="img-viewer-header-text">1 / 4</div></div><div class="img-viewer-content"><div class="img-viewer-swiper-container">'+img+'</div></div></div>';
         var $img = $(imgView).appendTo('body');
