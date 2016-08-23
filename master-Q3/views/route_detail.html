@@ -260,12 +260,14 @@
             var $panel = $this.siblings('.moreNode');
             if ($panel.height()) {
                 $panel.css('height', 0);
+                $this.html('展示全部行程');
 //                clearTimeout(timer);
 //                timer = setTimeout(function () {
                     $secondNode.addClass('interrupt');
 //                }, 100);
             } else {
                 $panel.css('height', '130px');
+                $this.html('收起行程');
                 $secondNode.removeClass('interrupt');
             }
         });
