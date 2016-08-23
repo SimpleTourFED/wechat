@@ -211,10 +211,15 @@ img {
         .content {
           @include flex;
           .name {
+            height: toRem(19px);
             font-size: toRem(14px);
             line-height: toRem(14px);
+            max-width: toRem(252px);
             color: #4F545B;
             padding-bottom: toRem(5px);
+            overflow: hidden;
+            word-break: keep-all;
+            text-overflow: ellipsis;
           }
           .desc {
             font-size: toRem(13px);
@@ -248,6 +253,7 @@ img {
 .tourisms {
   margin-bottom: toRem(14px);
   .tourism {
+    border-bottom: 1px solid #EBEBF5;
     .contain {
       height: toRem(102px);
       overflow: hidden;
@@ -315,9 +321,17 @@ img {
       &.show {
         display: block;
       }
+      .moreProduct{
+        display: none;
+        -webkit-transition: 1s cubic-bezier(0, 1, 0.5, 1);
+        transition: .5s cubic-bezier(0, 1, 0.5, 1);
+      }
+      .moreProduct.show{
+        display: block;
+      }
       .product {
         background-color: #61656A;
-        margin-bottom: toRem(2px);
+        margin-bottom: 2px;
         position: relative;
         @include displayflex;
         @include flexflowRow;
@@ -411,9 +425,11 @@ img {
       .show-moreProduct {
         padding: toRem(12px);
         font-size: toRem(14px);
+        line-height: toRem(14px);
         color: #DADCE0;
         text-align: center;
         background-color: #61656A;
+        vertical-align: top;
         &:after {
           content: '';
           width: toRem(17px);
@@ -459,6 +475,7 @@ img {
     }
     .more {
       color: #83858C;
+      line-height: toRem(15px);
       &:after {
         content: '';
         display: inline-block;
@@ -467,11 +484,7 @@ img {
         background: url(/master-Q3/images/icon/right_grey_arrow@2x.png) no-repeat center;
         background-size: cover;
         vertical-align: top;
-        margin: 0 toRem(13px) 0 toRem(7px);
-        &:after {
-          display: inline-block;
-          content: '';
-        }
+        margin: 0 toRem(13px) 0 toRem(5px);
       }
     }
   }

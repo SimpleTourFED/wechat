@@ -38,7 +38,7 @@
                         </div>
                         <div class="content-wrap">
                             <div class="content">
-                                <div class="name">成都市</div>
+                                <div class="name">成都市成都市成都市成都市成都市成都市成都市</div>
                                 <div class="desc">
                                     这里是文字说明描述，这里是文字说明描述，这里是文字说明描述。
                                 </div>
@@ -89,7 +89,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="show-moreNode">显示全部行程</div>
+                    <div class="show-moreNode show">显示全部行程</div>
                 </div>
             </div>
             <div class="tourisms">
@@ -147,6 +147,50 @@
                                 </div>
                             </div>
                             <a class="right" href="#">预定</a>
+                        </div>
+                        <div class="moreProduct">
+                            <div class="product">
+                                <div class="left">
+                                    <div class="name">去程票+回程票</div>
+                                    <div class="prices">
+                                        <span class="now">¥12982.89</span>
+                                        <span class="old">原价：¥4000</span>
+                                    </div>
+                                    <div class="tags">
+                                        <span class="tag">app专享价</span>
+                                        <span class="tag">特价</span>
+                                    </div>
+                                </div>
+                                <a class="right" href="#">预定</a>
+                            </div>
+                            <div class="product">
+                                <div class="left">
+                                    <div class="name">去程票+回程票＋套餐套餐套餐套餐套餐套餐套餐套餐</div>
+                                    <div class="prices">
+                                        <span class="now">¥12982.89</span>
+                                        <span class="old">原价：¥4000</span>
+                                    </div>
+                                    <div class="tags">
+                                        <span class="tag">app专享价</span>
+                                        <span class="tag">特价</span>
+                                    </div>
+                                </div>
+                                <a class="right" href="#">预定</a>
+                            </div>
+                            <div class="product last">
+                                <div class="left">
+                                    <div class="name">去程票+回程票</div>
+                                    <div class="prices">
+                                        <span class="now">¥12982.89</span>
+                                        <span class="old">原价：¥4000</span>
+                                    </div>
+                                    <div class="tags">
+                                        <span class="tag">app专享价</span>
+                                        <span class="tag">特价</span>
+                                    </div>
+                                </div>
+                                <a class="right" href="#">预定</a>
+                            </div>
                         </div>
                         <div class="show-moreProduct">
                             查看剩余两个套餐
@@ -256,16 +300,13 @@
         $('.show-moreNode').tap(function (e) {
             e.preventDefault();
             e.stopPropagation();
-            var $this = $(this), timer;
+            var $this = $(this);
             var $secondNode = $this.parents('.outline').find('.node').eq(1);
             var $panel = $this.siblings('.moreNode');
             if ($panel.height()) {
                 $panel.css('height', 0);
                 $this.html('展示全部行程');
-//                clearTimeout(timer);
-//                timer = setTimeout(function () {
-                    $secondNode.addClass('interrupt');
-//                }, 100);
+                $secondNode.addClass('interrupt');
             } else {
                 $panel.css('height', '130px');
                 $this.html('收起行程');
@@ -276,6 +317,20 @@
             e.preventDefault();
             e.stopPropagation();
             $(this).parents('.tourism').find('.products').toggleClass('show');
+        });
+        $('.show-moreProduct').on('tap',function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            var $this = $(this);
+//            console.log($this[0]);
+            $this.remove();
+            var $products =  $this.parents('.products');
+            var $moreProduct = $products.find('.moreProduct').toggleClass('show');
+            if($moreProduct.hasClass('show')){
+                $products.find('.product').eq(2).removeClass('last');
+            }else{
+                $products.find('.product').eq(2).addClass('last');
+            }
         });
     });
 </script>
