@@ -3,6 +3,9 @@ $baseFont : 20px !default;
 @function toRem($px) {
   @return $px / $baseFont * 1rem;
 }
+body {
+  background-color: #E7E7E7;
+}
 @mixin box-sizing($set:border-box) {
   -webkit-box-sizing: $set;
   -moz-box-sizing: $set;
@@ -17,6 +20,24 @@ $baseFont : 20px !default;
   -ms-border-radius: toRem($radius);
   -o-border-radius: toRem($radius);
   border-radius: toRem($radius);
+}
+.no-line {
+  margin-top: rem(55px);
+  .img-wp{
+    width: rem(142px);
+    height: rem(124px);
+    margin: 0 auto;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  p {
+    margin-top: rem(18px);
+    font-size: rem(28px);
+    color: #83858C;
+    text-align: center;
+  }
 }
 .tourisms {
   margin-bottom: toRem(14px);
