@@ -211,15 +211,16 @@ img {
         .content {
           @include flex;
           .name {
-            height: toRem(19px);
+            height: toRem(14px);
             font-size: toRem(14px);
             line-height: toRem(14px);
-            max-width: toRem(252px);
+            width: toRem(252px);
             color: #4F545B;
-            padding-bottom: toRem(5px);
+            margin-bottom: toRem(5px);
             overflow: hidden;
-            word-break: keep-all;
+            white-space: nowrap;
             text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
           }
           .desc {
             font-size: toRem(13px);
@@ -253,12 +254,27 @@ img {
 .tourisms {
   margin-bottom: toRem(14px);
   .tourism {
-    border-bottom: 1px solid #EBEBF5;
+    background-color: #fff;
+    &.last{
+      .contain{
+        border: none;
+      }
+    }
+    &.show{
+      .contain .tourism-info .bottom-bar .arrowBtn{
+        background: url(/master-Q3/images/icon/up_red_arrow@2x.png) no-repeat center;
+        background-size: cover;
+      }
+      .products{
+        display: block;
+      }
+    }
     .contain {
       height: toRem(102px);
       overflow: hidden;
-      padding: toRem(16px) toRem(13px);
-      background-color: #fff;
+      padding: toRem(16px) 0;
+      margin: 0 toRem(13px);
+      border-bottom: 1px solid #EBEBF5;
       @include displayflex;
       @include flexflowRow;
       img {
@@ -318,9 +334,6 @@ img {
       background-color: #42464B;
       overflow: hidden;
       display: none;
-      &.show {
-        display: block;
-      }
       .moreProduct{
         display: none;
         -webkit-transition: 1s cubic-bezier(0, 1, 0.5, 1);
@@ -390,6 +403,7 @@ img {
           font-size: toRem(14px);
           color: #fff;
           background-color: #E61E4B;
+          display: inline-block;
           @include border-radius(4px);
         }
         &:before {
@@ -416,6 +430,7 @@ img {
         }
       }
       .product.last {
+        margin-bottom: 0;
         &:before, &:after {
           content: '';
           width: 0;
@@ -424,6 +439,7 @@ img {
       }
       .show-moreProduct {
         padding: toRem(12px);
+        margin-top: 2px;
         font-size: toRem(14px);
         line-height: toRem(14px);
         color: #DADCE0;
@@ -534,7 +550,7 @@ img {
           }
           .pinyin {
             font-size: toRem(13px);
-            line-height: toRem(14px);
+            line-height: toRem(17px);
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;

@@ -29,8 +29,8 @@
                         style = document.createElement("style");
                         style.id = "forhtml";
                         document.head.appendChild(style);
-                        style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 640) + "px !important;}"));
-                        docEl.style.fontSize = 20 * (clientWidth / 640) + 'px';
+                        style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                        docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
                     };
             if (!doc.addEventListener) return;
             recalc();
@@ -39,7 +39,12 @@
             doc.addEventListener('DOMContentLoaded', recalc, false);
         })(document, window);
         $('button').click(function () {
-            $.viewImg(['http://img.alicdn.com/tps/i1/TB1SKhUHVXXXXb7XXXX0HY8HXXX-1024-1024.jpeg','http://img.alicdn.com/tps/i4/TB1AdxNHVXXXXasXpXX0HY8HXXX-1024-1024.jpeg'])
+            $.viewImg([
+'http://img05.tooopen.com/images/20150202/sy_80219211654.jpg',
+'http://img04.tooopen.com/images/20130701/tooopen_10055061.jpg',
+'http://img04.tooopen.com/images/20121109/tooopen_201211091418005900.jpg',
+'http://img04.tooopen.com/images/20121108/tooopen_201211081404152520.jpg'
+            ],2)
         })
     </script>
 

@@ -30,6 +30,12 @@
   -webkit-overflow-scrolling: touch;
   -webkit-transition-property: -webkit-transform;
   transition-property: transform;
+  opacity: 0;
+  -webkit-transition: 400ms;
+  transition:400ms;
+  &.visible{
+    opacity: 1;
+  }
 }
 .img-viewer-header,.img-viewer-footer{
   position: absolute;
@@ -50,9 +56,9 @@
   right: 0;
   left: 0;
   bottom: 0;
-  overflow: auto;
+  overflow: hidden;
   .img-viewer-swiper-container{
-    overflow: hidden;
+    //overflow: hidden;
     -webkit-transition-duration: 400ms;
     transition-duration: 400ms;
     position: relative;
@@ -125,12 +131,11 @@
   }
   a{
     position: absolute;
-    width: rem(20px);
-    height: rem(34px);
-    left:rem(26px);
-    top:rem(27px);
+    width: rem(40px);
+    height: 100%;
+    top:0;
     z-index: 20;
-    background: url("/master-Q3/images/icon/left_red_arrow@2x.png") no-repeat;
+    background: url("/master-Q3/images/icon/left_red_arrow@2x.png") center no-repeat;
     background-size: rem(20px);
   }
 }
