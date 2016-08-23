@@ -313,10 +313,10 @@
                 $secondNode.removeClass('interrupt');
             }
         });
-        $('.arrowBtn').tap(function (e) {
+        $('.tourism').click(function(e){
             e.preventDefault();
             e.stopPropagation();
-            $(this).parents('.tourism').find('.products').toggleClass('show');
+            $(this).find('.products').addClass('show');
         });
         $('.show-moreProduct').on('tap',function(e){
             e.preventDefault();
