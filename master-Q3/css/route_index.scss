@@ -46,6 +46,7 @@ html, body {
 * {
   @include box-sizing();
   outline: none;
+  color: #4F545B;
 }
 
 img {
@@ -59,19 +60,6 @@ img {
   margin-bottom: rem(16px);
   .banner {
     position: relative;
-    //&:after {
-    //  content: '';
-    //  display: block;
-    //  width: rem(152.5px);
-    //  height: rem(31.5px);
-    //  margin: 0 auto;
-    //  background: url(/master-Q3/images/route_slogan.png) no-repeat center;
-    //  background-size: cover;
-    //  position: absolute;
-    //  bottom: rem(22.5px);
-    //  left: 0;
-    //  right: 0;
-    //}
   }
   .tabs {
     height: rem(90px);
@@ -164,6 +152,10 @@ img {
           background-size: cover;
           vertical-align: top;
           margin: 0 rem(13px) 0 rem(7px);
+          &:after{
+            display: inline-block;
+            content: '';
+          }
         }
       }
     }
@@ -206,10 +198,18 @@ img {
             .chinese {
               font-size: rem(15px);
               line-height: rem(17px);
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              color: #fff;
             }
             .pinyin {
               font-size: rem(13px);
               line-height: rem(14px);
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              color: #fff;
             }
           }
         }

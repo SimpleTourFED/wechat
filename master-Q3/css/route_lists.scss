@@ -46,6 +46,7 @@ html, body {
 * {
   @include box-sizing();
   outline: none;
+  color: #4F545B;
 }
 
 img {
@@ -87,11 +88,13 @@ img {
           font-size: rem(17px);
           padding-top: rem(26px);
           padding-bottom: rem(10px);
+          color: #fff;
         }
         .route-tag {
           font-size: 0;
           .tag {
             font-size: rem(12px);
+            color: #fff;
             width: rem(65px);
             height: rem(22px);
             line-height: rem(22px);
@@ -236,7 +239,7 @@ img {
     top: rem(121px);
     left: rem(-4px);
     z-index: 20;
-    @include border-radius(20px);
+    @include border-radius(50px);
   }
   &:after{
     content: '';
@@ -248,7 +251,7 @@ img {
     top: rem(121px);
     right: rem(-4px);
     z-index: 20;
-    @include border-radius(20px);
+    @include border-radius(50px);
   }
 }
 .footer-bus{
