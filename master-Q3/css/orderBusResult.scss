@@ -223,3 +223,72 @@ body {
     }
   }
 }
+.line-plays {
+  h5{
+    height: rem(37px);
+    line-height: rem(37px);
+    border-left: rem(10px) solid #E61E4B;
+    color: #4a4a4a;
+    font-size: rem(26px);
+    text-indent: rem(16px);
+    font-weight: 100;
+  }
+  .pkg-item {
+    width: rem(588px);
+    background-color: #fff;
+    margin: rem(25px) auto rem(50px);
+    padding-bottom: rem(20px);
+    border-radius: rem(6px);
+    .head-image {
+      width:100%;
+      height: rem(250px);
+      img{
+        width:100%;
+        height:100%;
+      }
+    }
+    .decorate {
+      width: 100%;
+      height: 0;
+      position: relative;
+      .left-circle {
+        position: absolute;
+        top:rem(-10px);
+        left:rem(-10px);
+        width: rem(20px);
+        height: rem(20px);
+        border-radius: rem(20px);
+        background-color: #E7E7E7;
+      }
+      .right-circle {
+        position: absolute;
+        top:rem(-10px);
+        right:rem(-10px);
+        width: rem(20px);
+        height: rem(20px);
+        border-radius: rem(20px);
+        background-color: #E7E7E7;
+      }
+    }
+    .content {
+      @include displayflex();
+      @include flexflowRow();
+      p {
+        display: inline-block;
+        width: rem(376px);
+        height: rem(80px);
+        font-size: rem(28px);
+        color: #4F545B;
+      }
+      .price{
+        float: right;
+        font-size: rem(24px);
+        color: #C0C2C9;
+        span {
+          font-size: rem(32px);
+          color: #E61E4B;
+        }
+      }
+    }
+  }
+}
