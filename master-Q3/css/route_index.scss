@@ -1,5 +1,10 @@
 @import "/common/css/base";
-
+$baseFont : 20px !default;
+$red : #D71345 !default;
+$opacity: 1 !default;
+@function toRem($px) {
+  @return $px / $baseFont * 1rem;
+}
 @mixin box-sizing($set:border-box) {
   -webkit-box-sizing: $set;
   -moz-box-sizing: $set;
@@ -9,11 +14,11 @@
 }
 
 @mixin border-radius($radius:4px) {
-  -webkit-border-radius: rem($radius);
-  -moz-border-radius: rem($radius);
-  -ms-border-radius: rem($radius);
-  -o-border-radius: rem($radius);
-  border-radius: rem($radius);
+  -webkit-border-radius: toRem($radius);
+  -moz-border-radius: toRem($radius);
+  -ms-border-radius: toRem($radius);
+  -o-border-radius: toRem($radius);
+  border-radius: toRem($radius);
 }
 
 @mixin linear-gradient-grey {
@@ -46,6 +51,7 @@ html, body {
 * {
   @include box-sizing();
   outline: none;
+  color: #4F545B;
 }
 
 img {
@@ -56,45 +62,32 @@ img {
 
 .topModule {
   background-color: #fff;
-  margin-bottom: rem(16px);
+  margin-bottom: toRem(16px);
   .banner {
     position: relative;
-    //&:after {
-    //  content: '';
-    //  display: block;
-    //  width: rem(152.5px);
-    //  height: rem(31.5px);
-    //  margin: 0 auto;
-    //  background: url(/master-Q3/images/route_slogan.png) no-repeat center;
-    //  background-size: cover;
-    //  position: absolute;
-    //  bottom: rem(22.5px);
-    //  left: 0;
-    //  right: 0;
-    //}
   }
   .tabs {
-    height: rem(90px);
-    padding: rem(15.5px) 0;
+    height: toRem(90px);
+    padding: toRem(15.5px) 0;
     @include displayflex;
     @include flexflowRow;
     .domestic, .international {
       @include flex;
-      padding: rem(6.5px) rem(26px);
+      padding: toRem(6.5px) toRem(26px);
       color: #4F545B;
       font-size: 0;
       @include displayflex;
       @include flexflowRow;
       .desc {
         @include flex;
-        width: rem(57px);
+        width: toRem(57px);
         display: inline-block;
-        font-size: rem(14px);
-        line-height: rem(20px);
-        padding-left: rem(15px);
+        font-size: toRem(14px);
+        line-height: toRem(20px);
+        padding-left: toRem(15px);
         .big {
-          font-size: rem(19px);
-          line-height: rem(26px);
+          font-size: toRem(19px);
+          line-height: toRem(26px);
           display: block;
         }
       }
@@ -104,9 +97,9 @@ img {
       &:before {
         content: '';
         display: inline-block;
-        width: rem(35px);
-        height: rem(35px);
-        margin-top: rem(5.5px);
+        width: toRem(35px);
+        height: toRem(35px);
+        margin-top: toRem(5.5px);
         background: url(/master-Q3/images/icon/china_icon@2x.png) no-repeat center;
         background-size: cover;
       }
@@ -115,9 +108,9 @@ img {
       &:before {
         content: '';
         display: inline-block;
-        width: rem(34.625px);
-        height: rem(34.625px);
-        margin-top: rem(5.5px);
+        width: toRem(34.625px);
+        height: toRem(34.625px);
+        margin-top: toRem(5.5px);
         background: url(/master-Q3/images/icon/international@2x.png) no-repeat center;
         background-size: cover;
       }
@@ -131,25 +124,25 @@ img {
     .title-bar {
       @include displayflex;
       @include flexflowRow;
-      font-size: rem(13px);
-      padding: rem(12.5px) 0;
+      font-size: toRem(13px);
+      padding: toRem(12.5px) 0;
       border-bottom: 1px solid #EBEBF5;
       .title {
-        height: rem(15px);
-        line-height: rem(15px);
+        height: toRem(15px);
+        line-height: toRem(15px);
         color: #4F545B;
         @include flex;
         .tag {
           color: #E61E4B;
-          margin-right: rem(10px);
+          margin-right: toRem(10px);
           &:before {
             content: '';
-            width: rem(5px);
-            height: rem(15px);
+            width: toRem(5px);
+            height: toRem(15px);
             background-color: #E61E4B;
             display: inline-block;
             vertical-align: top;
-            margin-right: rem(8px);
+            margin-right: toRem(8px);
           }
         }
       }
@@ -158,27 +151,31 @@ img {
         &:after {
           content: '';
           display: inline-block;
-          width: rem(9px);
-          height: rem(15px);
+          width: toRem(9px);
+          height: toRem(15px);
           background: url(/master-Q3/images/icon/right_grey_arrow@2x.png) no-repeat center;
           background-size: cover;
           vertical-align: top;
-          margin: 0 rem(13px) 0 rem(7px);
+          margin: 0 toRem(13px) 0 toRem(7px);
+          &:after{
+            display: inline-block;
+            content: '';
+          }
         }
       }
     }
     .lines {
-      padding: rem(15px) rem(13px);
-      margin-left: rem(-10px);
-      margin-top: rem(-10px);
-      margin-bottom: rem(14px);
+      padding: toRem(15px) toRem(13px);
+      margin-left: toRem(-10px);
+      margin-top: toRem(-10px);
+      margin-bottom: toRem(14px);
       font-size: 0;
       .line {
-        width: rem(142px);
-        height: rem(100px);
-        margin-left: rem(10px);
-        margin-top: rem(10px);
-        font-size: rem(15px);
+        width: toRem(142px);
+        height: toRem(100px);
+        margin-left: toRem(10px);
+        margin-top: toRem(10px);
+        font-size: toRem(15px);
         position: relative;
         display: inline-block;
         vertical-align: top;
@@ -190,7 +187,7 @@ img {
           background-color: transparent;
         }
         .overlay {
-          height: rem(55px);
+          height: toRem(55px);
           position: absolute;
           left: 0;
           right: 0;
@@ -199,17 +196,25 @@ img {
           @include linear-gradient-grey;
           @include border-radius(2px);
           .text-layer {
-            padding: rem(12px) rem(13px);
+            padding: toRem(12px) toRem(13px);
             span {
               display: block;
             }
             .chinese {
-              font-size: rem(15px);
-              line-height: rem(17px);
+              font-size: toRem(15px);
+              line-height: toRem(17px);
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              color: #fff;
             }
             .pinyin {
-              font-size: rem(13px);
-              line-height: rem(14px);
+              font-size: toRem(13px);
+              line-height: toRem(14px);
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              color: #fff;
             }
           }
         }
