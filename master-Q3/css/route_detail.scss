@@ -253,12 +253,18 @@ img {
 .tourisms {
   margin-bottom: toRem(14px);
   .tourism {
-    border-bottom: 1px solid #EBEBF5;
+    background-color: #fff;
+    &.last{
+      .contain{
+        border: none;
+      }
+    }
     .contain {
       height: toRem(102px);
       overflow: hidden;
-      padding: toRem(16px) toRem(13px);
-      background-color: #fff;
+      padding: toRem(16px) 0;
+      margin: 0 toRem(13px);
+      border-bottom: 1px solid #EBEBF5;
       @include displayflex;
       @include flexflowRow;
       img {

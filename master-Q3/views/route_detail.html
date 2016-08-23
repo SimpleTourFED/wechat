@@ -210,7 +210,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="tourism">
+                <div class="tourism last">
                     <div class="contain">
                         <img src="/master-Q3/images/detail_001.png" alt=""/>
                         <div class="tourism-info">
@@ -300,9 +300,10 @@
         $('.show-moreNode').tap(function (e) {
             e.preventDefault();
             e.stopPropagation();
-            var $this = $(this);
+            var $this = $(this),height;
             var $secondNode = $this.parents('.outline').find('.node').eq(1);
             var $panel = $this.siblings('.moreNode');
+
             if ($panel.height()) {
                 $panel.css('height', 0);
                 $this.html('展示全部行程');
@@ -316,9 +317,9 @@
         $('.tourism').click(function(e){
             e.preventDefault();
             e.stopPropagation();
-            $(this).find('.products').addClass('show');
+            $(this).find('.products').toggleClass('show');
         });
-        $('.show-moreProduct').on('tap',function(e){
+        $('.show-moreProduct').on('click',function(e){
             e.preventDefault();
             e.stopPropagation();
             var $this = $(this);
