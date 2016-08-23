@@ -322,8 +322,6 @@
             e.preventDefault();
             e.stopPropagation();
             var $this = $(this);
-//            console.log($this[0]);
-            $this.remove();
             var $products =  $this.parents('.products');
             var $moreProduct = $products.find('.moreProduct').toggleClass('show');
             if($moreProduct.hasClass('show')){
@@ -331,6 +329,7 @@
             }else{
                 $products.find('.product').eq(2).addClass('last');
             }
+            $this.remove();
         });
     });
 </script>
