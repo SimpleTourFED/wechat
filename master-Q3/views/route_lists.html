@@ -13,11 +13,12 @@
 <div class="page-group">
     <div class="page page-current">
         <header>
+            <div class="back"></div>
             <div class="center">四川的路线</div>
         </header>
         <div class="page-content">
             <div class="routes">
-                <div class="route">
+                <div class="route" href="/master-Q3/views/route_detail.html">
                     <div class="up">
                         <img src="/master-Q3/images/route_lists_img.png" alt=""/>
                         <div class="overlay">
@@ -116,7 +117,13 @@
         doc.addEventListener('DOMContentLoaded', recalc, false);
     })(document, window);
     $(document).ready(function () {
-
+        $('.route').tap(function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            if($(this).attr('href')){
+                location.href= $(this).attr('href');
+            }
+        });
     });
 </script>
 </body>
