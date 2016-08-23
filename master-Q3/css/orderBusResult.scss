@@ -1,0 +1,204 @@
+@import "/common/css/base";
+$baseFont : 20px !default;
+@function toRem($px) {
+  @return $px / $baseFont * 1rem;
+}
+@mixin box-sizing($set:border-box) {
+  -webkit-box-sizing: $set;
+  -moz-box-sizing: $set;
+  -ms-box-sizing: $set;
+  -o-box-sizing: $set;
+  box-sizing: $set;
+}
+
+@mixin border-radius($radius:4px) {
+  -webkit-border-radius: toRem($radius);
+  -moz-border-radius: toRem($radius);
+  -ms-border-radius: toRem($radius);
+  -o-border-radius: toRem($radius);
+  border-radius: toRem($radius);
+}
+.tourisms {
+  margin-bottom: toRem(14px);
+  .tourism {
+    .contain {
+      height: toRem(102px);
+      overflow: hidden;
+      padding: toRem(16px) toRem(13px);
+      background-color: #fff;
+      @include displayflex;
+      @include flexflowRow;
+      img {
+        width: toRem(70px);
+        height: toRem(70px);
+      }
+      .tourism-info {
+        @include flex;
+        margin-left: toRem(10px);
+        .name {
+          width: toRem(214px);
+          font-size: toRem(16px);
+          color: #4F545B;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          padding-bottom: toRem(14.5px);
+        }
+        .time {
+          width: toRem(214px);
+          line-height: toRem(16px);
+          font-size: toRem(12px);
+          color: #83858C;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        .bottom-bar {
+          position: relative;
+          .price {
+            font-size: toRem(16px);
+            line-height: toRem(16px);
+            margin-top: toRem(6px);
+            color: #E61E4B;
+            &:after {
+              content: '起';
+              font-size: toRem(12px);
+              width: toRem(12px);
+              height: toRem(12px);
+              color: #C0C2C9;
+              margin-left: toRem(5px);
+            }
+          }
+          .arrowBtn {
+            width: toRem(17px);
+            height: toRem(17px);
+            position: absolute;
+            background: url(/master-Q3/images/icon/down_red_arrow@2x.png) no-repeat center;
+            background-size: cover;
+            bottom: 2px;
+            right: 0;
+          }
+        }
+      }
+    }
+    .products {
+      background-color: #42464B;
+      overflow: hidden;
+      display: none;
+      &.show {
+        display: block;
+      }
+      .product {
+        background-color: #61656A;
+        margin-bottom: toRem(2px);
+        position: relative;
+        @include displayflex;
+        @include flexflowRow;
+        -ms-justify-content: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -ms-justify: center;
+        -webkit-justify: center;
+        justify: center;
+        -ms-box-align: center;
+        -webkit-box-align: center;
+        box-align: center;
+        -ms-align-items: center;
+        -webkit-align-items: center;
+        align-items: center;
+        padding: toRem(11px) toRem(13px) toRem(13px) toRem(13px);
+        .left {
+          padding-right: toRem(25px);
+          @include flex;
+          .name {
+            color: #fff;
+            font-size: toRem(14px);
+            padding-bottom: toRem(6px);
+            line-height: toRem(20px);
+          }
+          .prices {
+            padding-bottom: toRem(3px);
+            .now {
+              color: #F5B950;
+              font-size: toRem(17px);
+              margin-right: toRem(18px);
+            }
+            .old {
+              color: #DADCE0;
+              font-size: toRem(12px);
+            }
+          }
+          .tags {
+            font-size: 0;
+            span {
+              display: inline-block;
+              color: #F5B950;
+              font-size: toRem(12px);
+              border: 1px solid #F5B950;
+              padding: toRem(2px) toRem(4px);
+              margin-right: toRem(7.5px);
+              @include border-radius(2px);
+            }
+          }
+        }
+        .right {
+          width: toRem(80px);
+          height: toRem(35px);
+          text-align: center;
+          line-height: toRem(35px);
+          font-size: toRem(14px);
+          color: #fff;
+          background-color: #E61E4B;
+          @include border-radius(4px);
+        }
+        &:before {
+          content: '';
+          width: toRem(13px);
+          height: toRem(13px);
+          @include border-radius(50px);
+          background-color: #42464B;
+          position: absolute;
+          left: toRem(-6.5px);
+          bottom: toRem(-6.5px);
+          z-index: 10;
+        }
+        &:after {
+          content: '';
+          width: toRem(13px);
+          height: toRem(13px);
+          @include border-radius(50px);
+          background-color: #42464B;
+          position: absolute;
+          right: toRem(-6.5px);
+          bottom: toRem(-6.5px);
+          z-index: 10;
+        }
+      }
+      .product.last {
+        &:before, &:after {
+          content: '';
+          width: 0;
+          height: 0;
+        }
+      }
+      .show-moreProduct {
+        padding: toRem(12px);
+        font-size: toRem(14px);
+        color: #DADCE0;
+        text-align: center;
+        background-color: #61656A;
+        &:after {
+          content: '';
+          width: toRem(17px);
+          height: toRem(17px);
+          display: inline-block;
+          background: url(/master-Q3/images/icon/down_grey_arrow@2x.png) no-repeat center;
+          background-size: cover;
+          vertical-align: top;
+          margin-top: toRem(-1px);
+          margin-left: toRem(5px);
+        }
+      }
+    }
+  }
+}
