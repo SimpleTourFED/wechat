@@ -38,7 +38,7 @@
                         </div>
                         <div class="content-wrap">
                             <div class="content">
-                                <div class="name">成都市成都市成都市成都市成都市成都市成都市</div>
+                                <div class="name">成都市都江堰成都市都江堰成都市都江堰成都市都江堰</div>
                                 <div class="desc">
                                     这里是文字说明描述，这里是文字说明描述，这里是文字说明描述。
                                 </div>
@@ -128,8 +128,8 @@
                                     <span class="old">原价：¥4000</span>
                                 </div>
                                 <div class="tags">
-                                    <span class="tag">app专享价</span>
-                                    <span class="tag">特价</span>
+                                    <span class="tag">专享专享价价</span>
+                                    <span class="tag">特价特价特价</span>
                                 </div>
                             </div>
                             <a class="right" href="#">预定</a>
@@ -297,19 +297,21 @@
         doc.addEventListener('DOMContentLoaded', recalc, false);
     })(document, window);
     $(document).ready(function () {
-        $('.show-moreNode').tap(function (e) {
+        $('.show-moreNode').click(function (e) {
             e.preventDefault();
             e.stopPropagation();
-            var $this = $(this),height;
+            var $this = $(this),height=0;
             var $secondNode = $this.parents('.outline').find('.node').eq(1);
             var $panel = $this.siblings('.moreNode');
-
+                $panel.find('.node').each(function(index,item){
+                    height += $(item).height();
+                });
             if ($panel.height()) {
                 $panel.css('height', 0);
                 $this.html('展示全部行程');
                 $secondNode.addClass('interrupt');
             } else {
-                $panel.css('height', '130px');
+                $panel.css('height', height+'px');
                 $this.html('收起行程');
                 $secondNode.removeClass('interrupt');
             }
@@ -317,20 +319,23 @@
         $('.tourism').click(function(e){
             e.preventDefault();
             e.stopPropagation();
-            $(this).find('.products').toggleClass('show');
+            var $this = $(this);
+            $this.toggleClass('show');
+            $this.find('.moreProduct').removeClass('show');
+            $this.find('.product').eq(2).addClass('last');
+            $this.find('.show-moreProduct').show();
         });
         $('.show-moreProduct').on('click',function(e){
             e.preventDefault();
             e.stopPropagation();
             var $this = $(this);
             var $products =  $this.parents('.products');
-            var $moreProduct = $products.find('.moreProduct').toggleClass('show');
-            if($moreProduct.hasClass('show')){
+            var $moreProduct = $products.find('.moreProduct');
+            if(!$moreProduct.hasClass('show')){
+                $moreProduct.addClass('show');
                 $products.find('.product').eq(2).removeClass('last');
-            }else{
-                $products.find('.product').eq(2).addClass('last');
             }
-            $this.remove();
+            $this.hide();
         });
     });
 </script>

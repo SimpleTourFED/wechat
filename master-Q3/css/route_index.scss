@@ -80,11 +80,11 @@ img {
       @include flexflowRow;
       .desc {
         @include flex;
-        width: toRem(57px);
         display: inline-block;
         font-size: toRem(14px);
         line-height: toRem(20px);
         padding-left: toRem(15px);
+        vertical-align: middle;
         .big {
           font-size: toRem(19px);
           line-height: toRem(26px);
@@ -102,6 +102,7 @@ img {
         margin-top: toRem(5.5px);
         background: url(/master-Q3/images/icon/china_icon@2x.png) no-repeat center;
         background-size: cover;
+        vertical-align: middle;
       }
     }
     .international {
@@ -113,6 +114,7 @@ img {
         margin-top: toRem(5.5px);
         background: url(/master-Q3/images/icon/international@2x.png) no-repeat center;
         background-size: cover;
+        vertical-align: middle;
       }
     }
   }
@@ -208,7 +210,7 @@ img {
             }
             .pinyin {
               font-size: toRem(13px);
-              line-height: toRem(14px);
+              line-height: toRem(17px);
               overflow: hidden;
               text-overflow: ellipsis;
               white-space: nowrap;
