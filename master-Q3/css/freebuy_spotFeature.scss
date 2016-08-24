@@ -1,0 +1,70 @@
+@import "/common/css/base";
+
+@mixin box-sizing($set:border-box) {
+  -webkit-box-sizing: $set;
+  -moz-box-sizing: $set;
+  -ms-box-sizing: $set;
+  -o-box-sizing: $set;
+  box-sizing: $set;
+}
+
+@mixin border-radius($radius:4px) {
+  -webkit-border-radius: rem($radius);
+  -moz-border-radius: rem($radius);
+  -ms-border-radius: rem($radius);
+  -o-border-radius: rem($radius);
+  border-radius: rem($radius);
+}
+
+html, body {
+  background-color: #E7E7E7;
+}
+
+* {
+  @include box-sizing();
+  outline: none;
+  color: #4F545B;
+}
+
+img {
+  width: 100%;
+  vertical-align: middle;
+  border: none;
+}
+.wrap{
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+  .busfooter{
+    width: rem(383px);
+    height: rem(87px);
+    margin: rem(30px) auto;
+    background: url(/master-Q3/images/icon/bus_bottom@2x.png) no-repeat center;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+  }
+  .content{
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    padding: rem(8px) rem(32px) rem(147px) rem(32px);
+    color: #83858C;
+    font-size: rem(28px);
+    line-height: rem(40px);
+    h3{
+      font-size: rem(30px);
+      color: #4F545B;
+      line-height: rem(30px);
+      margin-bottom: rem(10px);
+    }
+    img{
+      width: 100%;
+      margin: rem(12px) 0 rem(9px);
+      display: block;
+    }
+  }
+}
