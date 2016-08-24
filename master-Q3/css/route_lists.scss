@@ -59,9 +59,13 @@ img {
   vertical-align: middle;
   border: none;
 }
-
+.wrap{
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+}
 .routes {
-  padding: toRem(16px) toRem(13px) 0;
+  padding: toRem(16px) toRem(13px) toRem(55.5px);
 }
 
 .route {
@@ -261,8 +265,13 @@ img {
 }
 .footer-bus{
   width: toRem(191.5px);
-  height: toRem(22.5px);
+  height: toRem(43.5px);
   margin: toRem(1px) auto toRem(11px);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
   img{
     width: 100%;
     height: 100%;
