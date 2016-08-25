@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/master-Q3/css/freebuy_mapLocation.scss?__inline">
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&amp;ak=v7cmA7sPIOlhyVGISwFzQZqy"></script>
+</head>
+<body>
+<div class="page-group">
+    <div class="page page-current">
+        <header>
+            <div class="back"></div>
+            <div class="center">西岭雪山风景区</div>
+        </header>
+        <div class="page-content">
+            <div id="BMap"></div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    // 针对uc横竖屏rem html没有重绘的问题
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+    $(document).ready(function () {
+        function Geocoder(lng, lat) {
+            var map = new BMap.Map('BMap');
+            var geocoder = new BMap.Geocoder();
+            var point, marker, address, infoWindow, icon;
+            if (lng && lat) {
+                point = new BMap.Point(lng, lat);
+                map.centerAndZoom(point, 15);
+                icon = new BMap.Icon('/master-Q3/images/icon/map_location.png',
+                        new BMap.Size(28,30.5),{
+                            imageSize: new BMap.Size(28,30.5),
+                            anchor: new BMap.Size(8,30.5)
+                        });
+                marker = new BMap.Marker(point,{icon:icon});
+                map.addOverlay(marker);
+                geocoder.getLocation(point, function (rs) {
+                    address = rs.address;
+                    infoWindow = new BMap.InfoWindow(address,{
+                        width : 200,
+                        title: '地址:'
+                    });
+                    map.openInfoWindow(infoWindow, point);
+                });
+                marker.addEventListener("click", function(){
+                    map.openInfoWindow(infoWindow,point);
+                });
+            }
+        }
+        Geocoder(104.072343, 30.663538);
+//        Geocoder(104.075548, 30.542671);
+    });
+</script>
+</body>
+</html>
