@@ -220,13 +220,64 @@ header{
 }
 footer{
   position: absolute;
-  height:rem(40px);
+  height:rem(96px);
   width:100%;
-  line-height:rem(40px);
+  line-height:rem(96px);
   bottom: 0;
+  background-color: #fff;
+  @include displayflex();
+  @include flexflowRow();
+  @include shadow(0px,-3px,10px,#E7E7E7);
+  z-index: 5;
+  .collection {
+    position: relative;
+    display: inline-block;
+    width: rem(96px);
+    color: #83858C;
+    font-size: rem(24px);
+    line-height: 3.5rem;
+    text-align: center;
+    border-right: rem(2px) solid #D8D8D8;
+    &:before {
+      content: '';
+      position: absolute;
+      width: rem(34px);
+      height: rem(30px);
+      top:rem(19px);
+      left:rem(31px);
+      background: url("/master-Q3/images/icon/love_normal_icon@2x.png") no-repeat center;
+      background-size: contain;
+    }
+  }
+  .advisory {
+    position: relative;
+    display: inline-block;
+    width: rem(96px);
+    line-height: 3.5rem;
+    color: #83858C;
+    font-size: rem(24px);
+    text-align: center;
+    &:before {
+      content: '';
+      position: absolute;
+      width: rem(27px);
+      height: rem(36px);
+      top:rem(15px);
+      left:rem(37px);
+      background: url("/master-Q3/images/icon/phone_normal@2x.png") no-repeat center;
+      background-size: contain;
+    }
+  }
+  .buyNow {
+    @include flex(1);
+    background-color: #E61E4B;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: rem(34px);
+  }
 }
 footer ~ .page-content{
-  bottom:rem(88px);
+  bottom:rem(96px);
 }
 header ~ .page-content{
   top: rem(88px);
