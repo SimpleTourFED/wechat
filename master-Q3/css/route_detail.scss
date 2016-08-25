@@ -163,7 +163,8 @@ img {
           margin-bottom: 0;
         }
       }
-      &.last {
+
+      &:nth-last-child(1){
         border-bottom: 1px solid #EBEBF5;
         .content-wrap {
           border: none;
@@ -255,7 +256,7 @@ img {
   margin-bottom: toRem(14px);
   .tourism {
     background-color: #fff;
-    &.last{
+    &:nth-last-child(1){
       .contain{
         border: none;
       }

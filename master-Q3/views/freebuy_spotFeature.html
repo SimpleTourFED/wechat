@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/master-Q3/css/freebuy_spotFeature.scss?__inline">
+</head>
+<body>
+<div class="page-group">
+    <div class="page page-current">
+        <header>
+            <div class="back"></div>
+            <div class="center">景点特色</div>
+        </header>
+        <div class="page-content">
+            <div class="wrap">
+                <div class="content">
+                    <img src="/master-Q3/images/detail_001.png" alt=""/>
+                    <h3>西岭雪山风景区雪山风景区</h3>
+                    <div>
+                        西岭雪山，位于四川省成都市大邑县境内，距成都仅95公里，总面积375平方公里，属世界自然遗产、大熊猫栖息地、AAAA级旅游景区、国家重点风景名胜区。
+                    </div>
+                    <img src="/master-Q3/images/detail_001.png" alt=""/>
+                    <div>
+                        西岭雪山，位于四川省成都市大邑县境内，距成都仅95公里，总面积375平方公里，属世界自然遗产、大熊猫栖息地、AAAA级旅游景区、国家重点风景名胜区。
+                    </div>
+                    <img src="/master-Q3/images/detail_001.png" alt=""/>
+                    <div>
+                        西岭雪山，位于四川省成都市大邑县境内，距成都仅95公里，总面积375平方公里，属世界自然遗产、大熊猫栖息地、AAAA级旅游景区、国家重点风景名胜区。
+                    </div>
+                </div>
+                <div class="busfooter"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    // 针对uc横竖屏rem html没有重绘的问题
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+    $(document).ready(function () {
+
+    });
+</script>
+</body>
+</html>

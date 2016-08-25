@@ -74,7 +74,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="node last">
+                        <div class="node">
                             <div class="dot">
                                 <div class="circle"></div>
                                 <div class="line"></div>
@@ -210,7 +210,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="tourism last">
+                <div class="tourism">
                     <div class="contain">
                         <img src="/master-Q3/images/detail_001.png" alt=""/>
                         <div class="tourism-info">
@@ -297,26 +297,34 @@
         doc.addEventListener('DOMContentLoaded', recalc, false);
     })(document, window);
     $(document).ready(function () {
+        var noheight = $('.node').eq(1).height(),neheight,flag=true;
         $('.show-moreNode').click(function (e) {
             e.preventDefault();
             e.stopPropagation();
-            var $this = $(this),height=0;
+            var $this = $(this), height = 0,timer;
             var $secondNode = $this.parents('.outline').find('.node').eq(1);
             var $panel = $this.siblings('.moreNode');
-                $panel.find('.node').each(function(index,item){
-                    height += $(item).height();
-                });
+            $panel.find('.node').each(function (index, item) {
+                height += $(item).height();
+            });
             if ($panel.height()) {
                 $panel.css('height', 0);
                 $this.html('展示全部行程');
-                $secondNode.addClass('interrupt');
+                $secondNode.addClass('interrupt').height(noheight);
+                $secondNode.height(noheight);
             } else {
-                $panel.css('height', height+'px');
+                $panel.css('height', height + 'px');
                 $this.html('收起行程');
                 $secondNode.removeClass('interrupt');
+                if(!neheight){
+                    neheight = $secondNode.height();
+                }else{
+                    $secondNode.height(neheight);
+                }
+                console.log(neheight);
             }
         });
-        $('.tourism').click(function(e){
+        $('.tourism').click(function (e) {
             e.preventDefault();
             e.stopPropagation();
             var $this = $(this);
@@ -325,13 +333,13 @@
             $this.find('.product').eq(2).addClass('last');
             $this.find('.show-moreProduct').show();
         });
-        $('.show-moreProduct').on('click',function(e){
+        $('.show-moreProduct').on('click', function (e) {
             e.preventDefault();
             e.stopPropagation();
             var $this = $(this);
-            var $products =  $this.parents('.products');
+            var $products = $this.parents('.products');
             var $moreProduct = $products.find('.moreProduct');
-            if(!$moreProduct.hasClass('show')){
+            if (!$moreProduct.hasClass('show')) {
                 $moreProduct.addClass('show');
                 $products.find('.product').eq(2).removeClass('last');
             }
