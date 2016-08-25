@@ -52,7 +52,10 @@ img {
 .infoes {
   background-color: #fff;
   margin-bottom: rem(28px);
-  .address, .open-time, .spot-feature {
+  div:last-child{
+    border: none;
+  }
+  .address, .open-time,.spot-feature,.hotel-intro,.food-intro,.activity-feature,.product-feature,.product-intro {
     padding: rem(26px) 0;
     margin: 0 rem(26px);
     font-size: rem(28px);
@@ -67,7 +70,7 @@ img {
       line-height: rem(36px);
     }
   }
-  .address, .spot-feature {
+  .spot-feature,.hotel-intro,.food-intro,.activity-feature,.product-feature,.product-intro {
     &:after {
       content: '';
       display: inline-block;
@@ -80,6 +83,11 @@ img {
     }
   }
   .address {
+    &.international{
+      span{
+        width: rem(520px);
+      }
+    }
     &.domestic {
       height: rem(88px);
       span {
@@ -87,6 +95,16 @@ img {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+      }
+      &:after {
+        content: '';
+        display: inline-block;
+        width: rem(19px);
+        height: rem(36px);
+        background: url(/master-Q3/images/icon/right_grey_arrow@2x.png) no-repeat center;
+        background-size: contain;
+        vertical-align: middle;
+        margin-left: rem(30px);
       }
     }
     &:before {
@@ -119,9 +137,8 @@ img {
       margin-right: rem(12px);
     }
   }
-  .spot-feature {
+  .spot-feature,.hotel-intro,.food-intro,.activity-feature,.product-feature,.product-intro{
     height: rem(88px);
-    border-bottom: 0;
     span {
       height: rem(36px);
       overflow: hidden;
@@ -129,12 +146,74 @@ img {
       white-space: nowrap;
       line-height: rem(36px);
     }
+  }
+  .spot-feature {
     &:before {
       content: '';
       display: inline-block;
       width: rem(36px);
       height: rem(36px);
       background: url(/master-Q3/images/icon/freebuy_scenic@2x.png) no-repeat center;
+      background-size: contain;
+      vertical-align: middle;
+      margin-right: rem(12px);
+    }
+  }
+  .hotel-intro{
+    &:before {
+      content: '';
+      display: inline-block;
+      width: rem(36px);
+      height: rem(36px);
+      background: url(/master-Q3/images/icon/freebuy_hotel@2x.png) no-repeat center;
+      background-size: contain;
+      vertical-align: middle;
+      margin-right: rem(12px);
+    }
+  }
+  .food-intro{
+    &:before {
+      content: '';
+      display: inline-block;
+      width: rem(36px);
+      height: rem(36px);
+      background: url(/master-Q3/images/icon/freebuy_food@2x.png) no-repeat center;
+      background-size: contain;
+      vertical-align: middle;
+      margin-right: rem(12px);
+    }
+  }
+  .activity-feature{
+    &:before {
+      content: '';
+      display: inline-block;
+      width: rem(36px);
+      height: rem(36px);
+      background: url(/master-Q3/images/icon/freebuy_activity@2x.png) no-repeat center;
+      background-size: contain;
+      vertical-align: middle;
+      margin-right: rem(12px);
+    }
+  }
+  .product-feature{
+    &:before {
+      content: '';
+      display: inline-block;
+      width: rem(36px);
+      height: rem(36px);
+      background: url(/master-Q3/images/icon/freebuy_product_features@2x.png) no-repeat center;
+      background-size: contain;
+      vertical-align: middle;
+      margin-right: rem(12px);
+    }
+  }
+  .product-intro{
+    &:before {
+      content: '';
+      display: inline-block;
+      width: rem(36px);
+      height: rem(36px);
+      background: url(/master-Q3/images/icon/freebuy_product_introduction@2x.png) no-repeat center;
       background-size: contain;
       vertical-align: middle;
       margin-right: rem(12px);
