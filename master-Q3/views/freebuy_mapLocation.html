@@ -56,7 +56,8 @@
                 icon = new BMap.Icon('/master-Q3/images/icon/map_location.png',
                         new BMap.Size(28,30.5),{
                             imageSize: new BMap.Size(28,30.5),
-                            anchor: new BMap.Size(8,30.5)
+                            anchor: new BMap.Size(8,30.5),
+                            infoWindowAnchor: new BMap.Size(7, 6)
                         });
                 marker = new BMap.Marker(point,{icon:icon});
                 map.addOverlay(marker);
@@ -66,10 +67,10 @@
                         width : 200,
                         title: '地址:'
                     });
-                    map.openInfoWindow(infoWindow, point);
+                    marker.openInfoWindow(infoWindow, point);
                 });
                 marker.addEventListener("click", function(){
-                    map.openInfoWindow(infoWindow,point);
+                    marker.openInfoWindow(infoWindow,point);
                 });
             }
         }
