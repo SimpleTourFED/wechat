@@ -150,7 +150,7 @@ img {
       @include displayflex;
       @include flexflowRow;
       &:last-child{
-        border-bototm: 0;
+        border-bottom: 0;
       }
       .thumbnail{
         width: rem(140px);
