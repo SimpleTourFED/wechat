@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/master-Q3/css/freebuy_index.scss?__inline">
+</head>
+<body>
+<div class="page-group">
+    <div class="page page-current">
+        <header>
+            <div class="back"></div>
+            <div class="center">聚合页面</div>
+        </header>
+        <div class="page-content">
+            <div class="briefly">
+                <div class="banner">
+                    <img src="/master-Q3/images/route_detail_banner.png" alt=""/>
+                    <div class="overlay">
+                        <div class="content">
+                            <span class="current">10张</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sorts">
+                    <a href="#">
+                        <div>门票</div>
+                    </a>
+                    <a href="#">
+                        <div>美食</div>
+                    </a>
+                    <a href="#">
+                        <div>住宿</div>
+                    </a>
+                    <a href="#">
+                        <div>娱乐</div>
+                    </a>
+                    <a href="#">
+                        <div>伴手礼</div>
+                    </a>
+                    <a href="#">
+                        <div>接驳车</div>
+                    </a>
+                </div>
+            </div>
+            <div class="must-spots">
+                <div class="title">必玩景点</div>
+                <div class="spots">
+                    <div class="spot">
+                        <img src="/master-Q3/images/route_detail_banner.png" alt=""/>
+                        <div class="overlay">
+                            <div class="content">
+                                <div class="name"><span>九寨沟风景区</span></div>
+                                <div class="stars grade4">
+                                    <span class="star">1</span>
+                                    <span class="star">2</span>
+                                    <span class="star">3</span>
+                                    <span class="star">4</span>
+                                    <span class="star">5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="spot">
+                        <img src="/master-Q3/images/route_detail_banner.png" alt=""/>
+                        <div class="overlay">
+                            <div class="content">
+                                <div class="name"><span>九寨沟风景区</span></div>
+                                <div class="stars grade4">
+                                    <span class="star">1</span>
+                                    <span class="star">2</span>
+                                    <span class="star">3</span>
+                                    <span class="star">4</span>
+                                    <span class="star">5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="check-moreSpots">查看全部景点…</div>
+            </div>
+            <div class="must-foods">
+                <div class="title">必吃美食</div>
+                <div class="foods">
+                    <div class="food">
+                        <div class="showImg">
+                            <img src="/master-Q3/images/detail_001.png" alt=""/>
+                        </div>
+                        <div class="name">臧家晚餐优惠券一张券臧家晚餐优惠券一张券</div>
+                        <div class="price">¥29899.00</div>
+                    </div>
+                    <div class="food">
+                        <div class="showImg">
+                            <img src="/master-Q3/images/detail_001.png" alt=""/>
+                        </div>
+                        <div class="name">臧家晚餐优惠券一张券臧家晚餐优惠券一张券</div>
+                        <div class="price">¥29899.00</div>
+                    </div>
+                    <div class="food">
+                        <div class="showImg">
+                            <img src="/master-Q3/images/detail_001.png" alt=""/>
+                        </div>
+                        <div class="name">臧家晚餐优惠券一张券臧家晚餐优惠券一张券</div>
+                        <div class="price">¥29899.00</div>
+                    </div>
+                    <div class="food">
+                        <div class="showImg">
+                            <img src="/master-Q3/images/detail_001.png" alt=""/>
+                        </div>
+                        <div class="name">臧家晚餐优惠券一张券臧家晚餐优惠券一张券</div>
+                        <div class="price">¥29899.00</div>
+                    </div>
+                </div>
+                <div class="check-moreFoods">查看全部景点…</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    // 针对uc横竖屏rem html没有重绘的问题
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+    $(document).ready(function () {
+
+    });
+</script>
+</body>
+</html>

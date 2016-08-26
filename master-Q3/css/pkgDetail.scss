@@ -1,0 +1,505 @@
+@import "/common/css/base";
+.page-content {
+  background-color: #E7E7E7;
+}
+
+.tourism-info {
+  .head-img {
+    position: relative;
+    width: 100%;
+    height: rem(273px);
+    img{
+      width: 100%;
+      height: 100%;
+    }
+    .tips-wp {
+      position: absolute;
+      width: 100%;
+      height: rem(70px);
+      line-height: 1.8rem;
+      bottom: 0;
+      left: 0;
+      .tips-cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        opacity: .4;
+        z-index: 1;
+      }
+      i {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        width: rem(82px);
+        height: rem(70px);
+        background: url("/master-Q3/images/icon/tips_white_icon.png") no-repeat center;
+        background-size: rem(36px) rem(36px);
+        z-index: 2;
+      }
+      .tips {
+        text-indent: rem(82px);
+        display: inline-block;
+        font-size: rem(24px);
+        color: #ffffff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+      }
+    }
+  }
+  .infos {
+    background-color: #fff;
+    padding: rem(26px) rem(26px) 0;
+    h5 {
+      font-size: rem(32px);
+      color: #4F545B;
+    }
+    .price {
+      position: relative;
+      margin-top: rem(20px);
+      color: #E61E4B;
+      font-size: rem(32px);
+      padding-bottom: rem(20px);
+      border-bottom: 2px solid #EBEBF5;
+      .tags {
+        position: absolute;
+        top: 0;
+        right:0;
+        font-size: 0;
+        span {
+          margin: rem(10px);
+          font-size: rem(24px);
+          color: #F5B950;
+          border: 1px solid #F5B950;
+          border-radius: rem(6px);
+          padding: rem(2px) rem(16px);
+        }
+      }
+    }
+    .bottom-info {
+      height: rem(72px);
+      line-height: rem(72px);
+      @include displayflex();
+      @include flexflowRow();
+      .shuttle{
+        width: rem(170px);
+        color: #83858C;
+        font-size: rem(24px);
+        i {
+          display: inline-block;
+          width: rem(20px);
+          height: rem(20px);
+          background: url("/master-Q3/images/icon/transform_icon@2x.png") no-repeat center;
+          background-size: 100%;
+        }
+      }
+      .days {
+        @include flex(1);
+        text-align: center;
+        color: #83858C;
+        font-size: rem(24px);
+        i {
+          display: inline-block;
+          width: rem(20px);
+          height: rem(22px);
+          background: url("/master-Q3/images/icon/date_icon@2x.png") no-repeat center;
+          background-size: 100%;
+        }
+      }
+      .sold {
+        @include flex(1);
+        text-align: right;
+        color: #83858C;
+        font-size: rem(24px);
+        i {
+          display: inline-block;
+          width: rem(20px);
+          height: rem(22px);
+          background: url("/master-Q3/images/icon/choosen_icon@2x.png") no-repeat center;
+          background-size: 100%;
+        }
+      }
+    }
+  }
+}
+.hide {
+  display: none !important;
+}
+.func {
+  width: 100%;
+  height: rem(70px);
+  margin-top: rem(28px);
+  background-color: #fff;
+  ul {
+    width: 100%;
+    list-style: none;
+    li {
+      position: relative;
+      float: left;
+      display: inline-block;
+      text-align: center;
+      width: 25%;
+      line-height: rem(74px);
+      font-size: rem(24px);
+      color: #83858C;
+      text-indent: rem(46px);
+      i {
+        position: absolute;
+        top:rem(22px);
+        left:rem(14px);
+        display: inline-block;
+        width: rem(26px);
+        height: rem(26px);
+        background: url("/master-Q3/images/icon/right_yellow@2x.png") no-repeat center;
+        background-size: 100%;
+      }
+    }
+  }
+}
+.contains {
+  width: 100%;
+  margin-top: rem(28px);
+  background-color: #fff;
+  padding: 0 rem(26px);
+  .title {
+    font-size: rem(28px);
+    color: #83858C;
+    height: rem(72px);
+    line-height: rem(72px);
+    border-bottom: 2px solid #EBEBF5;
+  }
+  ul{
+    list-style: none;
+    li{
+      @include displayflex();
+      @include flexflowRow();
+      i {
+        width: rem(66px);
+        background: url('/master-Q3/images/icon/bus_icon@2x.png') no-repeat left;
+        background-size: rem(40px) rem(40px);
+        &.hotel {
+          background: url('/master-Q3/images/icon/hotel_icon@2x.png') no-repeat left;
+          background-size: rem(40px) rem(40px);
+        }
+      }
+      p {
+        @include flex(1);
+        color: #83858C;
+        font-size: rem(26px);
+        font-weight: 100;
+        padding: rem(16px) rem(50px) rem(16px) 0;
+      }
+    }
+  }
+}
+.tourism-detail {
+  margin-top: rem(20px);
+  padding: 0 rem(26px);
+  background-color: #fff;
+  .departureTime {
+    position: relative;
+    width: 100%;
+    height: rem(88px);
+    line-height: rem(88px);
+    font-size: rem(28px);
+    color: #83858C;
+    border-bottom: 2px solid #E9ECF4;
+    padding-right: rem(40px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    span {
+      color: #F8C462;
+    }
+    &:after{
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top:rem(26px);
+      right: 0;
+      width: rem(19px);
+      height: rem(32px);
+      background: url("/master-Q3/images/icon/right_grey_arrow@2x.png") no-repeat center;
+      background-size: contain;
+    }
+  }
+  .evaluation {
+    position: relative;
+    height: rem(88px);
+    line-height: rem(90px);
+    font-size: rem(28px);
+    color: #83858C;
+    font-weight: 100;
+    .stars {
+      ul {
+        list-style: none;
+        li {
+          float: left;
+          margin-right: rem(13px);
+          width: rem(29px);
+          height: rem(88px);
+          background: url("/master-Q3/images/icon/star_normal@2x.png") no-repeat center;
+          background-size: contain;
+          &.selected {
+            background: url("/master-Q3/images/icon/star_seleted@2x.png") no-repeat center;
+            background-size: rem(29px) rem(28px);
+          }
+        }
+      }
+    }
+    &:after{
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top:rem(26px);
+      right: 0;
+      width: rem(19px);
+      height: rem(32px);
+      background: url("/master-Q3/images/icon/right_grey_arrow@2x.png") no-repeat center;
+      background-size: contain;
+    }
+  }
+}
+.tabs {
+  margin-top: rem(28px);
+  width: 100%;
+  height: rem(88px);
+  line-height: rem(88px);
+  background-color: #fff;
+  font-size: rem(28px);
+  color: #83858C;
+  border-bottom: 2px solid #EBEBF5;
+  z-index: 10;
+  div {
+    float: left;
+    display: inline-block;
+    text-align: center;
+    width: 50%;
+  }
+  .selected {
+    position: relative;
+    color: #E61E4B;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left:50%;
+      width: rem(120px);
+      margin-left: rem(-60px);
+      height: rem(4px);
+      background-color: #E61E4B;
+    }
+  }
+  &.sticky {
+    position:-webkit-sticky;
+    position:sticky;
+    top:0;
+  }
+}
+.introductions {
+  background-color: #fff;
+  width: 100%;
+  padding: rem(44px) rem(26px) rem(40px) rem(32px);
+  .tourism-days {
+    padding-left: rem(16px);
+    .tourism-day {
+      padding-left: rem(42px);
+      border-left: 3px dotted #EBEBF5;
+      .day {
+        position: relative;
+        height: rem(40px);
+        line-height: rem(40px);
+        font-size: rem(28px);
+        color: #E61E4B;
+        margin-bottom: rem(28px);
+        &:before {
+          content: '';
+          position: absolute;
+          top:rem(-2px);
+          left: rem(-62px);
+          display: inline-block;
+          width: rem(36px);
+          height: rem(40px);
+          background: url("/master-Q3/images/icon/date_red_icon@2x.png") no-repeat center #fff;
+          background-size: rem(36px) rem(36px);
+        }
+      }
+      .destination {
+        position: relative;
+        height: rem(48px);
+        line-height: rem(48px);
+        color: #4F545B;
+        font-size: rem(34px);
+        margin-bottom: rem(6px);
+        &:before {
+          content: '';
+          position: absolute;
+          top:rem(10px);
+          left: rem(-60px);
+          display: inline-block;
+          width: rem(24px);
+          height: rem(24px);
+          border: rem(4px) solid #F5B950;
+          border-radius: rem(25px);
+          background-color: #fff;
+        }
+      }
+      .content {
+        padding-bottom: rem(34px);
+        p {
+          color: #83858C;
+          font-size: rem(28px);
+          font-weight: 100;
+          line-height: rem(38px);
+          word-break: break-all;
+        }
+        h5 {
+          color: #4F545B;
+          font-size: rem(30px);
+          margin-top: rem(16px);
+          margin-bottom: rem(10px);
+        }
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+.booking {
+  background-color: #fff;
+  padding: rem(44px) rem(26px) rem(40px) rem(32px);
+  p {
+    color: #83858C;
+    font-size: rem(28px);
+    font-weight: 100;
+    line-height: rem(38px);
+    word-break: break-all;
+  }
+  h5 {
+    color: #4F545B;
+    font-size: rem(30px);
+    margin-top: rem(16px);
+    margin-bottom: rem(10px);
+  }
+  img {
+    width: 100%;
+  }
+}
+.time-navBar {
+  @include displayflex();
+  @include flexflowRow();
+  height: rem(88px);
+  line-height: rem(88px);
+  border-bottom: 2px solid #EBEBF5;
+  background-color: #FFF;
+  .time{
+    @include flex(1);
+    text-align: center;
+    font-size: rem(30px);
+    color: #83858C;
+    &.selected {
+      position: relative;
+      color: #E61E4B;
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left:50%;
+        width: rem(80px);
+        margin-left: rem(-40px);
+        height: rem(4px);
+        background-color: #E61E4B;
+      }
+    }
+  }
+}
+.time-table {
+  background-color: #fff;
+  min-height: 100%;
+  padding:rem(36px) rem(26px) rem(40px) rem(130px);
+  .tourism-day {
+    padding-left: rem(42px);
+    border-left: 3px dotted #EBEBF5;
+    .day {
+      position: relative;
+      height: rem(40px);
+      line-height: rem(40px);
+      font-size: rem(28px);
+      color: #E61E4B;
+      margin-bottom: rem(28px);
+      &:before {
+        content: '';
+        position: absolute;
+        top:rem(-2px);
+        left: rem(-62px);
+        display: inline-block;
+        width: rem(36px);
+        height: rem(40px);
+        background: url("/master-Q3/images/icon/date_red_icon@2x.png") no-repeat center #fff;
+        background-size: rem(36px) rem(36px);
+      }
+    }
+    .destination {
+      position: relative;
+      height: rem(48px);
+      line-height: rem(48px);
+      color: #4F545B;
+      font-size: rem(30px);
+      margin-bottom: rem(6px);
+      &:before {
+        content: '';
+        position: absolute;
+        top:rem(10px);
+        left: rem(-60px);
+        display: inline-block;
+        width: rem(24px);
+        height: rem(24px);
+        border: rem(4px) solid #F5B950;
+        border-radius: rem(25px);
+        background-color: #fff;
+      }
+      .times {
+        position: absolute;
+        top:0;
+        left:rem(-160px);
+        width: rem(74px);
+        height: rem(40px);
+        font-size: rem(28px);
+        font-weight: 100;
+        color: #4F545B;
+        text-align: center;
+      }
+    }
+    .content {
+      padding-bottom: rem(34px);
+      p {
+        color: #83858C;
+        font-size: rem(28px);
+        font-weight: 100;
+        line-height: rem(38px);
+        word-break: break-all;
+        height: rem(40px);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      h5 {
+        color: #4F545B;
+        font-size: rem(30px);
+        margin-top: rem(16px);
+        margin-bottom: rem(10px);
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
