@@ -544,7 +544,7 @@
   background-color: #fff;
   .comment {
     border-bottom: 2px solid #E9ECF4;
-    padding: rem(20px) rem(39px) rem(40px) rem(32px);
+    padding: rem(20px) rem(26px) rem(40px);
     .title {
       @include displayflex();
       @include flexflowRow();
@@ -583,7 +583,7 @@
           font-size: 0;
           li {
             float: left;
-            margin-right: rem(15px);
+            margin-left: rem(15px);
             width: rem(26px);
             height: rem(80px);
             background: url("/master-Q3/images/icon/star_noseleted@2x.png") no-repeat center;
@@ -592,8 +592,8 @@
               background: url("/master-Q3/images/icon/star_seleted@2x.png") no-repeat center;
               background-size: rem(26px) rem(25px);
             }
-            &:last-child{
-              margin: 0;
+            &:first-child {
+              margin-left: .9rem;
             }
           }
         }
