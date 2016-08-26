@@ -476,7 +476,52 @@
         doc.addEventListener('DOMContentLoaded', recalc, false);
     })(document, window);
     $(document).ready(function () {
-
+        var prevIndex, cIndex, sX, eX, move, offset, clientWidth, flag = true;
+        var clientWidth = document.documentElement.clientWidth;
+        var offset = $('.tabs').width() - clientWidth;
+        $('.tabs').on('touchstart', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            sX = e.changedTouches[0].clientX;
+        });
+        $('.tabs').on('touchend', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            eX = e.changedTouches[0].clientX;
+            move = eX - sX;
+            console.log($(this).css('transform'));
+            console.log(move);
+            console.log(offset);
+            if (move >= 10) {
+                if (move >= offset) {
+                    $(this).css({
+                        'transform': 'translate(0,0)',
+                        '-webkit-transform': 'translate(0,0)'
+                    });
+                } else {
+                    $(this).css({
+                        'transform': 'translate(0,' + move + 'px,0)',
+                        '-webkit-transform': 'translate(' + move + 'px,0)'
+                    });
+                }
+            } else if (move <= -10) {
+                if (move <= -offset) {
+                    $(this).css({
+                        'transform': 'translate(0,' + offset + 'px,0)',
+                        '-webkit-transform': 'translate(' + offset + 'px,0)'
+                    });
+                } else {
+                    $(this).css({
+                        'transform': 'translate(0,' + move + 'px,0)',
+                        '-webkit-transform': 'translate(' + move + 'px,0)'
+                    });
+                }
+            }
+        });
+        $('.tabs div').on('click', function (e) {
+            prevIndex = index$(this).siblings('.current').removeClass('current').index();
+            $(this).addClass('current');
+        });
     });
 </script>
 </body>

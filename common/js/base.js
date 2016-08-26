@@ -2,40 +2,6 @@
  * Created by ashbringer on 16/5/18.
  */
 
-
-//sidebar.js
-(function($){
-    $.fn.sidebar = function(tel){
-        var $name = tel?tel:"用户";
-        if($('.sidebar').length == 0){
-            $('<div class="sidebar"><div class="sidebar-content"><div class="sidebar-title"><div class="left"></div><div class="right" style="font-size: 0.8rem">'+$name+'</div></div>'
-                +'<div data-href="/mobile/gateway/wechat/home/home" class="sidebar-item"><div class="left sidebar-index"></div><div class="right">首页</div></div>'
-                +'<div data-href="/mobile/gateway/wechat/order/order/list" class="sidebar-item"><div class="left sidebar-order"></div><div class="right">我的订单</div></div>'
-                +'<div data-href="/mobile/gateway/wechat/tourism/list"  class="sidebar-item"><div class="left sidebar-tourism"></div><div class="right">我的行程</div></div>'
-                +'<div data-href="/mobile/gateway/wechat/personal/profile" class="sidebar-item"><div class="left sidebar-admin"></div><div class="right">个人中心</div></div>'
-                +'</div></div>').appendTo('body');
-            $('.sidebar-content .sidebar-item').click(function(e){
-                e.preventDefault();
-                location.href = $(this).attr('data-href');
-            })
-        }
-        $(this).click(function(){
-            $('<div class="sidebar-backdrop"></div>').appendTo('body');
-            setTimeout(function(){
-                $('.sidebar-backdrop').addClass('in');
-                $('.sidebar').addClass('sidebar-in sidebar-transition');
-            },10);
-            $('.sidebar-backdrop').click(function(){
-                $('.sidebar-backdrop').removeClass("in");
-                $('.sidebar').removeClass('sidebar-in');
-                setTimeout(function(){
-                    $('.sidebar-backdrop').remove();
-                },150)
-            })
-        });
-    }
-})(Zepto);
-
 //alert.js
 (function($){
     function Modal(option,type){
@@ -52,16 +18,17 @@
         };
         var o = $.extend(defaultOption,option);
         if(type == 'alert'){
-            _.modalContent = '<div class="alert-msg"><div>'+o.msg+'</div></div>'
+            _.modalContent = '<div class="alert-msg">'+o.msg+'</div>'
         }else if(type == 'confirm'){
             _.detail = '';
             _.buttons='';
             _.bg = '<div class="confirm-bg"></div>';
             $.each(o.detail,function(i,item){
-                _.detail += '<div class="confirm-detail">'+item+'</div>'
+                _.detail += '<p>'+item+'</p>'
             });
-            _.buttons += o.cancel?'<span>'+o.yes+'</span><span>'+o.cancel+'</span>':'<span>'+o.yes+'</span>';
-            _.modalContent = '<div class="confirm-content"><div class="confirm-inner"><div class="confirm-title">'+o.title+'</div>'+_.detail+'</div><div class="confirm-buttons">'+_.buttons+'</div></div>';
+            _.buttons += o.cancel?'<div class="confirm-msg-btns"><span>'+o.yes+'</span><span>'+o.cancel+'</span></div>':'<div class="confirm-msg-close"></div>';
+            var $bts = o.cancel?'<div class="confirm-msg-content has-btn">'+_.detail+'</div>'+_.buttons+'</div>':'<div class="confirm-msg-content">'+_.detail+'</div>'+_.buttons+'</div>'
+            _.modalContent = '<div class="confirm-msg"><div class="confirm-msg-title">'+o.title+'</div>'+$bts;
         }
         _.alert = function(){
             if($('.alert-msg').length == 0){
@@ -70,15 +37,16 @@
                 $('.alert-msg').remove();
                 _.$modalContent = $(_.modalContent).appendTo('body');
             }
+            _.$modalContent.css({'marginTop':-_.$modalContent.height()/2,'marginLeft':-_.$modalContent.width()/2/1.185});
         };
         _.confirm = function(){
-            if($('.confirm-content').length == 0){
+            if($('.confirm-msg').length == 0){
                 _.$modalContent = $(_.modalContent).appendTo('body');
             }else{
-                $('.confirm-content').remove();
+                $('.confirm-msg').remove();
                 _.$modalContent = $(_.modalContent).appendTo('body');
             }
-            _.$modalContent.css('marginTop',-_.$modalContent.height()/2);
+            _.$modalContent.css('marginTop',-_.$modalContent.height()/2/1.185);
             $('.confirm-bg').length == 0?$(_.bg).appendTo('body'):false;
         };
         _.open = function(){
@@ -91,11 +59,15 @@
                     _.close();
                 },2000)
             }else{
-                _.$modalContent.find('.confirm-buttons span').eq(0).click(function(){
+                _.$modalContent.find('.confirm-msg-close').click(function () {
                     o.yesFun();
                     _.close();
                 });
-                _.$modalContent.find('.confirm-buttons span').eq(1).click(function(){
+                _.$modalContent.find('.confirm-msg-btns span').eq(0).click(function(){
+                    o.yesFun();
+                    _.close();
+                });
+                _.$modalContent.find('.confirm-msg-btns span').eq(1).click(function(){
                     o.cancelFun();
                     _.close();
                 })

@@ -20,10 +20,11 @@
                 <footer></footer>
                 <!--内容区域-->
                 <div class="page-content">
-
+                    <a href="#">11111</a>
                 </div>
             </div>
         </div>
+        <!--<div class="alert-msg in">这里是错误提示</div>-->
         <script>
             (function (doc, win) {
                 var docEl = doc.documentElement,
@@ -47,6 +48,18 @@
                 win.addEventListener(resizeEvt, recalc, false);
                 doc.addEventListener('DOMContentLoaded', recalc, false);
             })(document, window);
+        </script>
+        <script src="/common/js/zepto.min.js"></script>
+        <script src="/common/js/base.js"></script>
+        <script>
+            $('a').click(function (e) {
+                e.preventDefault();
+                $.confirm({title:'这里是标题',
+                    detail : ['这里是描述'],
+                    yes : '确定',
+                    cancel: false})
+            })
+
         </script>
     </body>
 </html>

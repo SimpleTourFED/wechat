@@ -90,6 +90,11 @@ img {
   .tabs{
     width: rem(840px);
     font-size: 0;
+    transition: transform 500ms ease-in-out;
+    -moz-transition: -moz-transform 500ms ease-in-out;/* Firefox 4 */
+    -webkit-transition: -webkit-transform 500ms ease-in-out; /* Safari 和 Chrome */
+    -o-transition: -o-transform 500ms ease-in-out;/* Opera */
+    -ms-transition: -ms-transform 500ms ease-in-out;/* IE 9 */
     div{
       display: inline-block;
       width: rem(140px);
