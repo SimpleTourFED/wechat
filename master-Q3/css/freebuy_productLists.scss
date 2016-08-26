@@ -277,14 +277,14 @@ img {
             -webkit-align-items: center;
             align-items: center;
             .price {
-              display: inline-block;
+              display: block;
               font-size: rem(32px);
               line-height: rem(32px);
               color: #E61E4B;
               @include flex;
             }
             .tags {
-              display: inline-block;
+              display: block;
               span {
                 display: inline-block;
                 color: #83858C;
