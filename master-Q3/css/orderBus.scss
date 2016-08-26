@@ -26,8 +26,6 @@ ul {
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: #fff;
-      opacity: .6;
       z-index: 1;
     }
     label {
@@ -69,6 +67,7 @@ ul {
     .bc {
       border-top-left-radius: rem(6px);
       border-top-right-radius: rem(6px);
+      background: url("/master-Q3/images/frosted_glass_up.png") no-repeat center;
     }
   }
   .destination {
@@ -76,6 +75,7 @@ ul {
     .bc {
       border-bottom-right-radius: rem(6px);
       border-bottom-left-radius: rem(6px);
+      background: url("/master-Q3/images/frosted_glass_down.png") no-repeat center;
     }
   }
   .search-button {
