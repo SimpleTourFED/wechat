@@ -117,10 +117,10 @@
             window.setTimeout(callback, 1000 / 60);
         };
     /*var cRAF = window.cancelRequestAnimationFrame ||
-        window.webkitCancelRequestAnimationFrame ||
-        window.mozCancelRequestAnimationFrame ||
-        window.oCancelRequestAnimationFrame ||
-        window.msCancelRequestAnimationFrame;*/
+     window.webkitCancelRequestAnimationFrame ||
+     window.mozCancelRequestAnimationFrame ||
+     window.oCancelRequestAnimationFrame ||
+     window.msCancelRequestAnimationFrame;*/
 
     var utils = (function() {
         var me = {};
@@ -147,12 +147,12 @@
         }
 
         me.getTime = Date.now || function getTime() {
-            return new Date().getTime();
-        };
+                return new Date().getTime();
+            };
 
         me.extend = function(target, obj) {
             for (var i in obj) {  // jshint ignore:line
-                    target[i] = obj[i];
+                target[i] = obj[i];
             }
         };
 
@@ -166,7 +166,7 @@
 
         me.prefixPointerEvent = function(pointerEvent) {
             return window.MSPointerEvent ?
-                'MSPointer' + pointerEvent.charAt(9).toUpperCase() + pointerEvent.substr(10) :
+            'MSPointer' + pointerEvent.charAt(9).toUpperCase() + pointerEvent.substr(10) :
                 pointerEvent;
         };
 
@@ -425,7 +425,7 @@
         };
 
         for (var i in options) {
-                this.options[i] = options[i];
+            this.options[i] = options[i];
         }
 
         // Normalize options
@@ -750,10 +750,10 @@
                 var snap = this._nearestSnap(newX, newY);
                 this.currentPage = snap;
                 time = this.options.snapSpeed || Math.max(
-                    Math.max(
-                        Math.min(Math.abs(newX - snap.x), 1000),
-                        Math.min(Math.abs(newY - snap.y), 1000)
-                    ), 300);
+                        Math.max(
+                            Math.min(Math.abs(newX - snap.x), 1000),
+                            Math.min(Math.abs(newY - snap.y), 1000)
+                        ), 300);
                 newX = snap.x;
                 newY = snap.y;
 
@@ -1400,10 +1400,10 @@
 
             this.on('flick', function() {
                 var time = this.options.snapSpeed || Math.max(
-                    Math.max(
-                        Math.min(Math.abs(this.x - this.startX), 1000),
-                        Math.min(Math.abs(this.y - this.startY), 1000)
-                    ), 300);
+                        Math.max(
+                            Math.min(Math.abs(this.x - this.startX), 1000),
+                            Math.min(Math.abs(this.y - this.startY), 1000)
+                        ), 300);
 
                 this.goToPage(
                     this.currentPage.pageX + this.directionX,
@@ -1581,7 +1581,7 @@
             }
 
             for (i in keys) { // jshint ignore:line
-                    this.options.keyBindings[i] = this.options.keyBindings[i] || keys[i];
+                this.options.keyBindings[i] = this.options.keyBindings[i] || keys[i];
             }
 
             utils.addEvent(window, 'keydown', this);
@@ -1828,7 +1828,7 @@
         };
 
         for (var i in options) { // jshint ignore:line
-                this.options[i] = options[i];
+            this.options[i] = options[i];
 
         }
 
@@ -1991,10 +1991,10 @@
                 var snap = this.scroller._nearestSnap(this.scroller.x, this.scroller.y);
 
                 var time = this.options.snapSpeed || Math.max(
-                    Math.max(
-                        Math.min(Math.abs(this.scroller.x - snap.x), 1000),
-                        Math.min(Math.abs(this.scroller.y - snap.y), 1000)
-                    ), 300);
+                        Math.max(
+                            Math.min(Math.abs(this.scroller.x - snap.x), 1000),
+                            Math.min(Math.abs(this.scroller.y - snap.y), 1000)
+                        ), 300);
 
                 if (this.scroller.x !== snap.x || this.scroller.y !== snap.y) {
                     this.scroller.directionX = 0;
@@ -2422,7 +2422,7 @@
             if (typeof option === 'string' && typeof data[option] === 'function') {
                 internal_return = data[option].apply(data, args);
                 if (internal_return !== undefined)
-            return false;
+                    return false;
             }
 
         });
