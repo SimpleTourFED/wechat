@@ -181,6 +181,9 @@ img {
       padding: rem(94px) rem(26px) 0 rem(26px);
       margin-bottom: rem(40px);
       background-color: #fff;
+      .item:active{
+        background-color: #F1F1F1;
+      }
       .item {
         border-bottom: 1px solid #EBEBF5;
         padding: rem(26px) 0 rem(24px);
