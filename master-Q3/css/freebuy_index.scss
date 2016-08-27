@@ -199,7 +199,7 @@ img {
     }
   }
   .spots {
-    padding: 0 rem(20px) 0 rem(32px);
+    padding: 0 rem(26px) 0 rem(26px);
     .spot {
       height: rem(251px);
       position: relative;
@@ -303,19 +303,25 @@ img {
     }
   }
   .check-moreSpots{
+    display: block;
     height: rem(70px);
     border: 1px solid #C3C6D0;
     font-size: rem(26px);
     color: #83858C;
     text-align: center;
     line-height: rem(70px);
-    margin: rem(24px) rem(20px) 0 rem(32px);
+    margin: rem(24px) rem(26px) 0 rem(26px);
     @include border-radius(8px);
+    &:active{
+      background-color: #F1F1F1;
+      border: 1px solid #C3C6D0;
+    }
   }
 }
 .must-foods{
   background-color: #fff;
   padding-bottom: rem(30px);
+  margin-bottom: rem(28px);
   .title {
     font-size: rem(26px);
     color: #83858C;
@@ -382,6 +388,7 @@ img {
     }
   }
   .check-moreFoods{
+    display: block;
     height: rem(70px);
     border: 1px solid #C3C6D0;
     font-size: rem(26px);
