@@ -1,10 +1,12 @@
 @import "/common/css/base";
-$baseFont : 20px !default;
-$red : #D71345 !default;
+
+$baseFont: 20px !default;
+$red: #D71345 !default;
 $opacity: 1 !default;
 @function toRem($px) {
   @return $px / $baseFont * 1rem;
 }
+
 @mixin box-sizing($set:border-box) {
   -webkit-box-sizing: $set;
   -moz-box-sizing: $set;
@@ -59,11 +61,13 @@ img {
   vertical-align: middle;
   border: none;
 }
-.wrap{
+
+.wrap {
   width: 100%;
   min-height: 100%;
   position: relative;
 }
+
 .routes {
   padding: toRem(16px) toRem(13px) toRem(55.5px);
 }
@@ -75,6 +79,9 @@ img {
   position: relative;
   margin-bottom: toRem(14px);
   @include border-radius(1px);
+  &:active .down {
+    background-color: #CACACA;
+  }
   .up {
     height: toRem(125px);
     position: relative;
@@ -131,7 +138,7 @@ img {
             vertical-align: top;
           }
         }
-        .route-tag.shuaBus{
+        .route-tag.shuaBus {
           .tag {
             background-color: #4B91E1;
           }
@@ -154,7 +161,7 @@ img {
             vertical-align: top;
           }
         }
-        .route-tag.bbBus{
+        .route-tag.bbBus {
           .tag {
             background-color: #E61E4B;
           }
@@ -177,7 +184,7 @@ img {
             vertical-align: top;
           }
         }
-        .route-tag.taiBus{
+        .route-tag.taiBus {
           .tag {
             background-color: #0FC346;
           }
@@ -238,7 +245,7 @@ img {
       }
     }
   }
-  &:before{
+  &:before {
     content: '';
     width: toRem(8px);
     height: toRem(8px);
@@ -250,7 +257,7 @@ img {
     z-index: 20;
     @include border-radius(50px);
   }
-  &:after{
+  &:after {
     content: '';
     width: toRem(8px);
     height: toRem(8px);
@@ -263,7 +270,8 @@ img {
     @include border-radius(50px);
   }
 }
-.footer-bus{
+
+.footer-bus {
   width: toRem(191.5px);
   height: toRem(43.5px);
   margin: toRem(1px) auto toRem(11px);
@@ -272,7 +280,7 @@ img {
   left: 0;
   right: 0;
   z-index: 20;
-  img{
+  img {
     width: 100%;
     height: 100%;
   }

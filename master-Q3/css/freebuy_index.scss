@@ -201,6 +201,7 @@ img {
   .spots {
     padding: 0 rem(26px) 0 rem(26px);
     .spot {
+      display: block;
       height: rem(251px);
       position: relative;
       margin-bottom: rem(22px);
@@ -219,8 +220,11 @@ img {
         @include linear-gradient-black;
         @include border-radius(8px);
         overflow: hidden;
+        &:active {
+          background-color: rgba(0, 0, 0, 0.6);
+        }
         .content {
-            padding-top: rem(54px);
+          padding-top: rem(54px);
           &:before {
             display: block;
             content: '';
@@ -302,7 +306,7 @@ img {
       }
     }
   }
-  .check-moreSpots{
+  .check-moreSpots {
     display: block;
     height: rem(70px);
     border: 1px solid #C3C6D0;
@@ -312,13 +316,14 @@ img {
     line-height: rem(70px);
     margin: rem(24px) rem(26px) 0 rem(26px);
     @include border-radius(8px);
-    &:active{
+    &:active {
       background-color: #F1F1F1;
       border: 1px solid #C3C6D0;
     }
   }
 }
-.must-foods{
+
+.must-foods {
   background-color: #fff;
   padding-bottom: rem(30px);
   margin-bottom: rem(28px);
@@ -337,20 +342,20 @@ img {
       margin-right: rem(16px);
     }
   }
-  .foods{
+  .foods {
     padding: 0 rem(26px);
     font-size: 0;
     margin-left: rem(-20px);
     margin-top: rem(-24px);
-    .food{
+    .food {
       display: inline-block;
       padding-left: rem(20px);
       padding-top: rem(24px);
-      .showImg{
+      .showImg {
         width: rem(284px);
         height: rem(200px);
         position: relative;
-        &:before{
+        &:before {
           content: '';
           display: inline-block;
           width: rem(40px);
@@ -363,7 +368,7 @@ img {
           background-size: contain;
         }
       }
-      .name{
+      .name {
         color: #4F545B;
         font-size: rem(28px);
         line-height: rem(40px);
@@ -374,11 +379,11 @@ img {
         text-overflow: ellipsis;
         white-space: nowrap;
       }
-      .price{
+      .price {
         font-size: rem(32px);
         line-height: rem(32px);
         color: #E61E4B;
-        &:after{
+        &:after {
           content: '起';
           color: #C0C2C9;
           font-size: rem(24px);
@@ -387,7 +392,7 @@ img {
       }
     }
   }
-  .check-moreFoods{
+  .check-moreFoods {
     display: block;
     height: rem(70px);
     border: 1px solid #C3C6D0;
@@ -397,5 +402,9 @@ img {
     line-height: rem(70px);
     margin: rem(24px) rem(26px) 0;
     @include border-radius(8px);
+    &:active {
+      background-color: #F1F1F1;
+      border: 1px solid #C3C6D0;
+    }
   }
 }

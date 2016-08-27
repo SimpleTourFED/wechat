@@ -56,46 +56,43 @@ img {
     border: none;
   }
   .address, .open-time,.spot-feature,.hotel-intro,.food-intro,.activity-feature,.product-feature,.product-intro {
-    padding: rem(26px) 0;
-    margin: 0 rem(26px);
-    font-size: rem(28px);
-    color: #4F545B;
-    border-bottom: 1px solid #EBEBF5;
-    vertical-align: middle;
-    line-height: rem(36px);
-    span {
-      width: rem(484px);
-      display: inline-block;
+    display: block;
+    .border-bottom{
+      padding: rem(26px) 0;
+      margin: 0 rem(26px);
+      font-size: rem(28px);
+      color: #4F545B;
+      border-bottom: 1px solid #EBEBF5;
       vertical-align: middle;
       line-height: rem(36px);
+      @include displayflex;
+      @include flexflowRow;
+      -ms-justify-content: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -ms-justify: center;
+      -webkit-justify: center;
+      justify: center;
+      -ms-box-align: center;
+      -webkit-box-align: center;
+      box-align: center;
+      -ms-align-items: center;
+      -webkit-align-items: center;
+      align-items: center;
+      span {
+        @include flex;
+        width: rem(484px);
+        display: inline-block;
+        vertical-align: middle;
+        line-height: rem(36px);
+      }
     }
   }
   .spot-feature,.hotel-intro,.food-intro,.activity-feature,.product-feature,.product-intro {
-    &:after {
-      content: '';
-      display: inline-block;
-      width: rem(19px);
-      height: rem(36px);
-      background: url(/master-Q3/images/icon/right_grey_arrow@2x.png) no-repeat center;
-      background-size: contain;
-      vertical-align: middle;
-      margin-left: rem(30px);
+    &:active{
+      background-color: #F1F1F1;
     }
-  }
-  .address {
-    &.international{
-      span{
-        width: rem(520px);
-      }
-    }
-    &.domestic {
-      height: rem(88px);
-      span {
-        height: rem(36px);
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-      }
+    .border-bottom{
       &:after {
         content: '';
         display: inline-block;
@@ -107,59 +104,98 @@ img {
         margin-left: rem(30px);
       }
     }
-    &:before {
-      content: '';
-      display: inline-block;
-      width: rem(36px);
-      height: rem(36px);
-      background: url(/master-Q3/images/icon/freebuy_position@2x.png) no-repeat center;
-      background-size: contain;
-      vertical-align: middle;
-      margin-right: rem(12px);
+  }
+  .address {
+    .border-bottom{
+      &:before {
+        content: '';
+        display: inline-block;
+        width: rem(36px);
+        height: rem(36px);
+        background: url(/master-Q3/images/icon/freebuy_position@2x.png) no-repeat center;
+        background-size: contain;
+        vertical-align: middle;
+        margin-right: rem(12px);
+      }
+    }
+    &.international{
+      .border-bottom span{
+        width: rem(520px);
+      }
+    }
+    &.domestic {
+      height: rem(88px);
+      &:active{
+        background-color: #F1F1F1;
+      }
+      .border-bottom {
+        span {
+          height: rem(36px);
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        &:after {
+          content: '';
+          display: inline-block;
+          width: rem(19px);
+          height: rem(36px);
+          background: url(/master-Q3/images/icon/right_grey_arrow@2x.png) no-repeat center;
+          background-size: contain;
+          vertical-align: middle;
+          margin-left: rem(30px);
+        }
+      }
     }
   }
   .open-time {
     height: rem(88px);
-    span {
-      height: rem(36px);
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-    &:before {
-      content: '';
-      display: inline-block;
-      width: rem(36px);
-      height: rem(36px);
-      background: url(/master-Q3/images/icon/freebuy_time@2x.png) no-repeat center;
-      background-size: contain;
-      vertical-align: middle;
-      margin-right: rem(12px);
+    .border-bottom{
+      span {
+        height: rem(36px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      &:before {
+        content: '';
+        display: inline-block;
+        width: rem(36px);
+        height: rem(36px);
+        background: url(/master-Q3/images/icon/freebuy_time@2x.png) no-repeat center;
+        background-size: contain;
+        vertical-align: middle;
+        margin-right: rem(12px);
+      }
     }
   }
   .spot-feature,.hotel-intro,.food-intro,.activity-feature,.product-feature,.product-intro{
     height: rem(88px);
-    span {
-      height: rem(36px);
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      line-height: rem(36px);
+    .border-bottom{
+      span {
+        height: rem(36px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        line-height: rem(36px);
+      }
     }
   }
   .spot-feature {
-    &:before {
-      content: '';
-      display: inline-block;
-      width: rem(36px);
-      height: rem(36px);
-      background: url(/master-Q3/images/icon/freebuy_scenic@2x.png) no-repeat center;
-      background-size: contain;
-      vertical-align: middle;
-      margin-right: rem(12px);
+    .border-bottom{
+      &:before {
+        content: '';
+        display: inline-block;
+        width: rem(36px);
+        height: rem(36px);
+        background: url(/master-Q3/images/icon/freebuy_scenic@2x.png) no-repeat center;
+        background-size: contain;
+        vertical-align: middle;
+        margin-right: rem(12px);
+      }
     }
   }
-  .hotel-intro{
+  .hotel-intro .border-bottom{
     &:before {
       content: '';
       display: inline-block;
@@ -171,7 +207,7 @@ img {
       margin-right: rem(12px);
     }
   }
-  .food-intro{
+  .food-intro .border-bottom{
     &:before {
       content: '';
       display: inline-block;
@@ -183,7 +219,7 @@ img {
       margin-right: rem(12px);
     }
   }
-  .activity-feature{
+  .activity-feature .border-bottom{
     &:before {
       content: '';
       display: inline-block;
@@ -195,7 +231,7 @@ img {
       margin-right: rem(12px);
     }
   }
-  .product-feature{
+  .product-feature .border-bottom{
     &:before {
       content: '';
       display: inline-block;
@@ -207,7 +243,7 @@ img {
       margin-right: rem(12px);
     }
   }
-  .product-intro{
+  .product-intro .border-bottom{
     &:before {
       content: '';
       display: inline-block;
@@ -240,7 +276,9 @@ img {
   align-items: center;
   .left {
     @include flex;
-    padding: rem(21px) rem(26px);
+    margin: rem(20px) 0;
+    padding: 0 rem(26px);
+    border-right: 1px solid #EBEBF5;
     .up {
       font-size: rem(28px);
       line-height: rem(40px);
@@ -259,12 +297,13 @@ img {
   }
   .right {
     width: rem(132px);
-    height: rem(93px);
-    margin: rem(20px) 0;
-    padding: 0 rem(26px);
+    height: rem(130px);
+    padding: rem(20px) rem(26px);
     line-height: rem(106px);
     text-align: center;
-    border-left: 1px solid #EBEBF5;
+    &:active{
+      background-color: #F1F1F1;
+    }
     a {
       width: 33px;
       height: rem(44px);
@@ -276,13 +315,14 @@ img {
 }
 
 .tickets {
-  background: #fff;
   margin-bottom: rem(28px);
   .title {
     font-size: rem(26px);
     color: #83858C;
     line-height: rem(30px);
     padding: rem(24px) 0 rem(26px) 0;
+    background: #fff;
+    border-bottom: 1px solid #EBEBF5;
     &:before {
       content: '';
       width: rem(10px);
@@ -294,8 +334,8 @@ img {
     }
   }
   .ticket {
-    padding: rem(20px) rem(20px) rem(24px) rem(26px);
-    border-top: 1px solid #EBEBF5;
+    margin-bottom: 1px;
+    background: #fff;
     @include displayflex;
     @include flexflowRow;
     -ms-justify-content: center;
@@ -310,10 +350,14 @@ img {
     -ms-align-items: center;
     -webkit-align-items: center;
     align-items: center;
+    position: relative;
     .left {
       @include flex;
-      padding-right: rem(15px);
+      padding: rem(20px) rem(15px) rem(24px) rem(26px);
       border-right: 1px dashed #EBEBF5;
+      &:active{
+       background-color: #F1F1F1;
+      }
       .name {
         font-size: rem(28px);
         line-height: rem(40px);
@@ -368,6 +412,7 @@ img {
     }
     .right {
       padding-left: rem(20px);
+      padding-right: rem(20px);
       a {
         display: block;
         width: rem(180px);
@@ -379,6 +424,9 @@ img {
         line-height: rem(70px);
         margin-bottom: rem(12px);
         @include border-radius(8px);
+        &:active{
+          background-color: #BF0A33;
+        }
       }
       .end-time {
         display: block;
@@ -386,6 +434,30 @@ img {
         font-size: rem(24px);
         line-height: rem(30px);
         color: #83858C;
+      }
+    }
+    &:not(:last-child){
+      &:before {
+        content: '';
+        width: rem(26px);
+        height: rem(26px);
+        @include border-radius(50px);
+        background-color: #E7E7E7;
+        position: absolute;
+        left:  rem(-13px);
+        bottom:  rem(-13px);
+        z-index: 10;
+      }
+      &:after {
+        content: '';
+        width: rem(26px);
+        height: rem(26px);
+        @include border-radius(50px);
+        background-color: #E7E7E7;
+        position: absolute;
+        right:  rem(-13px);
+        bottom:  rem(-13px);
+        z-index: 10;
       }
     }
   }
@@ -397,7 +469,7 @@ img {
     @include displayflex;
     @include flexflowRow;
     padding: rem(24px) rem(26px) rem(26px) 0;
-    border-bottom: 1px solid #E9ECF4;
+    border-bottom: 1px solid #EBEBF5;
     .title{
       font-size: rem(26px);
       color: #83858C;
@@ -536,6 +608,9 @@ img {
     font-size: rem(28px);
     color: #4F545B;
     border-top: 1px solid #E9ECF4;
+    &:active{
+      background-color: #F1F1F1;
+    }
     span {
       width: rem(484px);
       display: inline-block;

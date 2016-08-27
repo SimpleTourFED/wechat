@@ -118,7 +118,7 @@
                                     <span class="tag">特价</span>
                                 </div>
                             </div>
-                            <a class="right" href="#">预定</a>
+                            <a class="right">预定</a>
                         </div>
                         <div class="product">
                             <div class="left">
@@ -149,20 +149,22 @@
                             <a class="right" href="#">预定</a>
                         </div>
                         <div class="moreProduct">
-                            <div class="product">
-                                <div class="left">
-                                    <div class="name">去程票+回程票</div>
-                                    <div class="prices">
-                                        <span class="now">¥12982.89</span>
-                                        <span class="old">原价：¥4000</span>
+                            <a>
+                                <div class="product">
+                                    <div class="left">
+                                        <div class="name">去程票+回程票</div>
+                                        <div class="prices">
+                                            <span class="now">¥12982.89</span>
+                                            <span class="old">原价：¥4000</span>
+                                        </div>
+                                        <div class="tags">
+                                            <span class="tag">app专享价</span>
+                                            <span class="tag">特价</span>
+                                        </div>
                                     </div>
-                                    <div class="tags">
-                                        <span class="tag">app专享价</span>
-                                        <span class="tag">特价</span>
-                                    </div>
+                                    <a class="right" href="#">预定</a>
                                 </div>
-                                <a class="right" href="#">预定</a>
-                            </div>
+                            </a>
                             <div class="product">
                                 <div class="left">
                                     <div class="name">去程票+回程票＋套餐套餐套餐套餐套餐套餐套餐套餐</div>
@@ -297,11 +299,11 @@
         doc.addEventListener('DOMContentLoaded', recalc, false);
     })(document, window);
     $(document).ready(function () {
-        var noheight = $('.node').eq(1).height(),neheight,flag=true;
+        var noheight = $('.node').eq(1).height(), neheight, flag = true;
         $('.show-moreNode').click(function (e) {
             e.preventDefault();
             e.stopPropagation();
-            var $this = $(this), height = 0,timer;
+            var $this = $(this), height = 0, timer;
             var $secondNode = $this.parents('.outline').find('.node').eq(1);
             var $panel = $this.siblings('.moreNode');
             $panel.find('.node').each(function (index, item) {
@@ -316,9 +318,9 @@
                 $panel.css('height', height + 'px');
                 $this.html('收起行程');
                 $secondNode.removeClass('interrupt');
-                if(!neheight){
+                if (!neheight) {
                     neheight = $secondNode.height();
-                }else{
+                } else {
                     $secondNode.height(neheight);
                 }
                 console.log(neheight);
@@ -328,10 +330,12 @@
             e.preventDefault();
             e.stopPropagation();
             var $this = $(this);
-            $this.toggleClass('show');
-            $this.find('.moreProduct').removeClass('show');
-            $this.find('.product').eq(2).addClass('last');
-            $this.find('.show-moreProduct').show();
+            if ($(e.target).parents('.products').length == 0) {
+                $this.toggleClass('show');
+                $this.find('.moreProduct').removeClass('show');
+                $this.find('.product').eq(2).addClass('last');
+                $this.find('.show-moreProduct').show();
+            }
         });
         $('.show-moreProduct').on('click', function (e) {
             e.preventDefault();
