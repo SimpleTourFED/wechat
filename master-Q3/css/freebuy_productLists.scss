@@ -90,7 +90,7 @@ img {
   z-index: 103;
   box-shadow: 0 rem(7px) rem(10px) rgba(0, 0, 0, 0.1);
   .tabs {
-    width: rem(840px);
+    width: rem(940px);
     font-size: 0;
     div {
       display: inline-block;
@@ -106,6 +106,9 @@ img {
       &.current span {
         color: #E61E4B;
         border-bottom: 2px solid #E61E4B;
+      }
+      &:last-child{
+        margin-right: rem(100px);
       }
     }
   }
@@ -183,6 +186,18 @@ img {
         padding: rem(26px) 0 rem(24px);
         @include displayflex;
         @include flexflowRow;
+        -ms-justify-content: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -ms-justify: center;
+        -webkit-justify: center;
+        justify: center;
+        -ms-box-align: center;
+        -webkit-box-align: center;
+        box-align: center;
+        -ms-align-items: center;
+        -webkit-align-items: center;
+        align-items: center;
         &:last-child {
           border-bottom: 0;
         }
@@ -201,16 +216,16 @@ img {
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
-            padding-bottom: rem(12px);
+            padding-bottom: rem(6px);
           }
           .about-comment {
             line-height: rem(32px);
             font-size: 0;
-            padding-bottom: rem(28px);
             .stars {
               font-size: 0;
               display: inline-block;
               vertical-align: middle;
+              line-height: rem(24px);
               .star {
                 width: rem(21px);
                 height: rem(20px);
@@ -219,7 +234,6 @@ img {
                 background-size: contain;
                 margin-right: rem(15px);
                 text-indent: -99999px;
-                margin-top: rem(3px);
               }
               &.grade1 {
                 .star:nth-child(2), .star:nth-child(3), .star:nth-child(4), .star:nth-child(5) {
@@ -249,18 +263,31 @@ img {
             .score {
               display: inline-block;
               font-size: rem(24px);
+              line-height: rem(24px);
               color: #F5B751;
               vertical-align: middle;
             }
-            .numbers {
+          }
+          .tags {
+            display: block;
+            font-size: 0;
+            padding-top: rem(6px);
+            padding-bottom: rem(10px);
+            span {
               display: inline-block;
-              font-size: rem(24px);
               color: #83858C;
-              vertical-align: middle;
-              margin-left: rem(30px);
+              font-size: rem(24px);
+              line-height: rem(24px);
+              border: 1px solid #C0C2C9;
+              padding: rem(4px) rem(8px);
+              margin-right: rem(12px);
+              @include border-radius(4px);
+              &:last-child {
+                margin-right: 0;
+              }
             }
           }
-          .price-tags {
+          .price-num {
             font-size: 0;
             @include displayflex;
             @include flexflowRow;
@@ -283,20 +310,12 @@ img {
               color: #E61E4B;
               @include flex;
             }
-            .tags {
-              display: block;
-              span {
-                display: inline-block;
-                color: #83858C;
-                font-size: rem(24px);
-                border: 1px solid #C0C2C9;
-                padding: rem(4px) rem(8px);
-                margin-right: rem(12px);
-                @include border-radius(4px);
-                &:last-child {
-                  margin-right: 0;
-                }
-              }
+            .numbers {
+              display: inline-block;
+              font-size: rem(24px);
+              color: #83858C;
+              vertical-align: middle;
+              margin-left: rem(30px);
             }
           }
         }
