@@ -1,4 +1,7 @@
 @import "/common/css/base";
+.page-content {
+  background-color: #E7E7E7;
+}
 @mixin box-sizing($set:border-box) {
   -webkit-box-sizing: $set;
   -moz-box-sizing: $set;
@@ -15,14 +18,33 @@
   border-radius: rem($radius);
 }
 .list-items {
-  padding: rem(94px) rem(26px) 0 rem(26px);
+  padding: 0 rem(26px) 0 rem(26px);
   margin-bottom: rem(40px);
   background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  .item:active {
+    background-color: #F1F1F1;
+  }
   .item {
     border-bottom: 1px solid #EBEBF5;
     padding: rem(26px) 0 rem(24px);
     @include displayflex;
     @include flexflowRow;
+    -ms-justify-content: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -ms-justify: center;
+    -webkit-justify: center;
+    justify: center;
+    -ms-box-align: center;
+    -webkit-box-align: center;
+    box-align: center;
+    -ms-align-items: center;
+    -webkit-align-items: center;
+    align-items: center;
     &:last-child {
       border-bottom: 0;
     }
@@ -41,16 +63,16 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        padding-bottom: rem(12px);
+        padding-bottom: rem(6px);
       }
       .about-comment {
         line-height: rem(32px);
         font-size: 0;
-        padding-bottom: rem(28px);
         .stars {
           font-size: 0;
           display: inline-block;
           vertical-align: middle;
+          line-height: rem(24px);
           .star {
             width: rem(21px);
             height: rem(20px);
@@ -59,7 +81,6 @@
             background-size: contain;
             margin-right: rem(15px);
             text-indent: -99999px;
-            margin-top: rem(3px);
           }
           &.grade1 {
             .star:nth-child(2), .star:nth-child(3), .star:nth-child(4), .star:nth-child(5) {
@@ -89,18 +110,31 @@
         .score {
           display: inline-block;
           font-size: rem(24px);
+          line-height: rem(24px);
           color: #F5B751;
           vertical-align: middle;
         }
-        .numbers {
+      }
+      .tags {
+        display: block;
+        font-size: 0;
+        padding-top: rem(6px);
+        padding-bottom: rem(10px);
+        span {
           display: inline-block;
-          font-size: rem(24px);
           color: #83858C;
-          vertical-align: middle;
-          margin-left: rem(30px);
+          font-size: rem(24px);
+          line-height: rem(24px);
+          border: 1px solid #C0C2C9;
+          padding: rem(4px) rem(8px);
+          margin-right: rem(12px);
+          @include border-radius(4px);
+          &:last-child {
+            margin-right: 0;
+          }
         }
       }
-      .price-tags {
+      .price-num {
         font-size: 0;
         @include displayflex;
         @include flexflowRow;
@@ -123,20 +157,12 @@
           color: #E61E4B;
           @include flex;
         }
-        .tags {
-          display: block;
-          span {
-            display: inline-block;
-            color: #83858C;
-            font-size: rem(24px);
-            border: 1px solid #C0C2C9;
-            padding: rem(4px) rem(8px);
-            margin-right: rem(12px);
-            @include border-radius(4px);
-            &:last-child {
-              margin-right: 0;
-            }
-          }
+        .numbers {
+          display: inline-block;
+          font-size: rem(24px);
+          color: #83858C;
+          vertical-align: middle;
+          margin-left: rem(30px);
         }
       }
     }
