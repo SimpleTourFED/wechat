@@ -151,13 +151,12 @@
                                 <div class="date">2016-03-04</div>
                             </div>
                         </div>
-                        <!--grade1|grade2|grade3|grade4|grade5-->
-                        <div class="stars grade4">
+                        <div class="stars">
                             <span class="star">1</span>
                             <span class="star">2</span>
                             <span class="star">3</span>
-                            <span class="star">4</span>
-                            <span class="star">5</span>
+                            <span class="star half">4</span>
+                            <span class="star hollow">5</span>
                         </div>
                     </div>
                     <div class="comment-content">
@@ -167,7 +166,12 @@
                         <img src="/master-Q3/images/detail_001.png" alt=""/>
                         <img src="/master-Q3/images/detail_001.png" alt=""/>
                         <img src="/master-Q3/images/detail_001.png" alt=""/>
-                        <img src="/master-Q3/images/detail_001.png" alt=""/>
+                        <div class="last-wrap">
+                            <div class="overlay">
+                                <span>共7张</span>
+                            </div>
+                            <img src="/master-Q3/images/detail_001.png" alt=""/>
+                        </div>
                     </div>
                 </div>
                 <div class="check-moreComment"><span>查看全部评价</span></div>
@@ -197,6 +201,10 @@
         if (!doc.addEventListener) return;
         win.addEventListener(resizeEvt, recalc, false);
         doc.addEventListener('DOMContentLoaded', recalc, false);
+        var a = document.getElementsByTagName('a');
+        for(var i = 0; i < a.length; i++){
+            a[i].addEventListener('touchstart',function(){},false);
+        }
     })(document, window);
     $(document).ready(function () {
         // 点击返回按钮
