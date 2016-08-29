@@ -425,6 +425,25 @@
   background-color: #fff;
   min-height: 100%;
   padding:rem(36px) rem(26px) rem(40px) rem(130px);
+  .tourism-days {
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    -webkit-transition:-webkit-transform 0.2s ease-out;
+    transition:transform 0.2s ease-out;
+    &.current {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+    &.next {
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+    }
+    &.prev {
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
   .tourism-day {
     padding-left: rem(42px);
     border-left: 3px dotted #EBEBF5;
@@ -478,7 +497,7 @@
         text-align: center;
       }
     }
-    .content {
+    .tourism-content {
       padding-bottom: rem(34px);
       p {
         color: #83858C;
@@ -659,4 +678,126 @@
       height: 100%;
     }
   }
+}
+.pay-info {
+  position: absolute;
+  left : 0;
+  bottom: rem(-767px);
+  background-color: #fff;
+  max-height: rem(767px);
+  z-index: 6;
+  -webkit-transition:bottom 0.2s ease-out;
+  transition:bottom 0.2s ease-out;
+  .tourism-pay-info {
+    width: 100%;
+    height: rem(188px);
+    @include displayflex();
+    @include flexflowRow();
+    padding: rem(24px) rem(26px);
+    border-bottom: 2px solid #EBEBF5;
+    .left {
+      width: rem(140px);
+      height: rem(140px);
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .right {
+      @include flex(1);
+      position: relative;
+      margin-left: rem(20px);
+      .tourism-name {
+        width: rem(345px);
+        height: rem(48px);
+        font-size: rem(34px);
+        color: #4F545B;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .close-icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        text-align: right;
+        width: rem(88px);
+        height: rem(88px);
+        img {
+          width: rem(24px);
+          height: rem(24px);
+        }
+      }
+      .now-price {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        color: #E61E4B;
+        font-size: rem(32px);
+      }
+      .old-price {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        color: #83858C;
+        font-size: rem(24px);
+      }
+    }
+  }
+  .select-times {
+    padding: rem(24px) rem(26px) rem(45px);
+    max-height: rem(450px);
+    overflow-y: auto;
+    h5 {
+      font-size: rem(28px);
+      color: #83858C;
+    }
+    ul {
+      list-style: none;
+      font-size: 0;
+      padding-top: rem(2px);
+      li {
+        display: inline-block;
+        width: rem(130px);
+        height: rem(70px);
+        line-height: rem(70px);
+        margin-top: rem(20px);
+        margin-right: rem(22px);
+        text-align: center;
+        border: 1px solid #C0C2C9;
+        border-radius: rem(6px);
+        font-size: rem(28px);
+        color: #83858C;
+        &.selected {
+          border: 1px solid #E61E4B;
+          background-color: #E61E4B;
+          color: #ffffff;
+        }
+        &.last {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  .buy-btn {
+    width: 100%;
+    height: rem(88px);
+    line-height: rem(88px);
+    background-color: #E61E4B;
+    text-align: center;
+    font-size: rem(34px);
+    color: #ffffff;
+  }
+  &.show {
+    bottom: 0;
+  }
+}
+.cover {
+  position: absolute;
+  display: none;
+  background-color: #000;
+  opacity: .4;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
 }

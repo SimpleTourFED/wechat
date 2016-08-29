@@ -20,6 +20,52 @@
             <a href="tel:18628245639" class="advisory">咨询</a>
             <a href="" class="buyNow">去购买</a>
         </footer>
+        <div class="cover"></div>
+        <div class="pay-info">
+            <div class="tourism-pay-info">
+                <div class="left">
+                    <img src="/master-Q3/images/icon/freebuy_scenic@2x.png" alt="">
+                </div>
+                <div class="right">
+                    <div class="tourism-name">
+                        西岭雪山风景风景西岭雪山风景风景
+                    </div>
+                    <div class="close-icon">
+                        <img src="/master-Q3/images/icon/combined_normal@2x.png" alt="">
+                    </div>
+                    <div class="now-price">¥23009.99</div>
+                    <div class="old-price">原价：¥300</div>
+                </div>
+            </div>
+            <div class="select-times">
+                <h5>选择发车时间</h5>
+                <ul>
+                    <li>07:00</li>
+                    <li>07:00</li>
+                    <li>07:00</li>
+                    <li class="last ">08:00</li>
+                    <li>07:00</li>
+                    <li>07:00</li>
+                    <li>07:00</li>
+                    <li class="last ">08:00</li>
+                    <li>07:00</li>
+                    <li>07:00</li>
+                    <li>07:00</li>
+                    <li class="last">08:00</li>
+                    <li>07:00</li>
+                    <li>07:00</li>
+                    <li>07:00</li>
+                    <li class="last ">08:00</li>
+                    <li>07:00</li>
+                    <li>07:00</li>
+                    <li>07:00</li>
+                    <li class="last ">08:00</li>
+                </ul>
+            </div>
+            <div class="buy-btn">
+                去购买
+            </div>
+        </div>
         <div class="page-content ">
             <div class="tourism-info">
                 <div class="head-img">
@@ -148,7 +194,7 @@
                 <div class="time" data-times="12:00">12:00</div>
             </div>
             <div class="time-table">
-                <div data-times="7:00" class="busTime tourism-days">
+                <div data-times="7:00" class="busTime tourism-days current">
                     <div class="tourism-day">
                         <div class="day">DAY 1</div>
                         <div class="destination">成都
@@ -175,7 +221,7 @@
                         <div class="day">THE END</div>
                     </div>
                 </div>
-                <div data-times="8:00" class="busTime tourism-days hide">
+                <div data-times="8:00" class="busTime tourism-days next ">
                     <div class="tourism-day">
                         <div class="day">DAY 1</div>
                         <div class="destination">成都
@@ -202,7 +248,7 @@
                         <div class="day">THE END</div>
                     </div>
                 </div>
-                <div data-times="12:00" class="busTime tourism-days hide">
+                <div data-times="12:00" class="busTime tourism-days next ">
                     <div class="tourism-day">
                         <div class="day">DAY 1</div>
                         <div class="destination">成都
@@ -395,9 +441,11 @@
             router : '.turnTo' ,//router的className
             routerFun : function(){}
         });
-        $('.turnTo').click(function() {
-            $(".content.infinite-scroll").scroller('refresh');
-            $.initPage();
+        $('.evaluation.turnTo').click(function() {
+            setTimeout(function() {
+                $(".content.infinite-scroll").scroller('refresh');
+                $.initPage();
+            },400)
         });
         // 点击返回按钮
         $('header .back').click(function() {
@@ -436,16 +484,44 @@
             if(!$this.hasClass('selected')) {
                 $('.time').removeClass('selected');
                 $this.addClass('selected');
-                $('.busTime').removeClass('hide')
+                $('.busTime').removeClass('current next prev')
                         .forEach(function(item) {
-                            if($(item).attr('data-times') != $this.attr('data-times')) {
-                                $(item).addClass('hide');
+                            if($(item).attr('data-times') == $this.attr('data-times')) {
+                                $(item).removeClass('current next prev').addClass('current');
+                                if($(item).next().length) {
+                                    $(item).nextAll().addClass('next');
+                                }
+                                if($(item).prev().length) {
+                                    $(item).prevAll().addClass('prev');
+                                }
                             }
                         })
             }
         });
         /* ============================================
          发车时刻表操作
+         ============================================== */
+
+        /* ============================================
+         点击去购买按钮
+         ============================================== */
+        $('.buyNow').click(function(e) {
+            e.preventDefault();
+            $('.cover').show();
+            $('.pay-info').addClass('show');
+        });
+        $('.close-icon').click(function() {
+            setTimeout(function() {
+                $('.cover').hide();
+            },200);
+            $('.pay-info').removeClass('show');
+        })
+        $('.select-times li').click(function () {
+            $('.select-times li').removeClass('selected');
+            $(this).addClass('selected');
+        });
+        /* ============================================
+         点击去购买按钮
          ============================================== */
 
         /* ============================================
