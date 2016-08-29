@@ -50,7 +50,7 @@
             <div class="must-spots">
                 <div class="title">必玩景点</div>
                 <div class="spots">
-                    <div class="spot">
+                    <a href="/master-Q3/views/freebuy_spotDetail.html" class="spot">
                         <img src="/master-Q3/images/route_detail_banner.png" alt=""/>
                         <div class="overlay">
                             <div class="content">
@@ -64,8 +64,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="spot">
+                    </a>
+                    <a href="/master-Q3/views/freebuy_spotDetail.html" class="spot">
                         <img src="/master-Q3/images/route_detail_banner.png" alt=""/>
                         <div class="overlay">
                             <div class="content">
@@ -79,7 +79,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <a href="/master-Q3/views/freebuy_productLists.html" class="check-moreSpots">查看全部景点…</a>
             </div>
@@ -144,7 +144,10 @@
         doc.addEventListener('DOMContentLoaded', recalc, false);
     })(document, window);
     $(document).ready(function () {
-
+        // 点击返回按钮
+        $('header .back').click(function(e) {
+            history.go(-1);
+        });
     });
 </script>
 </body>

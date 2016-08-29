@@ -256,6 +256,9 @@ img {
   margin-bottom: toRem(14px);
   .tourism {
     background-color: #fff;
+    &:active{
+      background-color: #F1F1F1;
+    }
     &:nth-last-child(1){
       .contain{
         border: none;
@@ -404,8 +407,11 @@ img {
           font-size: toRem(14px);
           color: #fff;
           background-color: #E61E4B;
-          display: inline-block;
+          display: block;
           @include border-radius(4px);
+          &:active{
+            background-color: #BF0A33;
+          }
         }
         &:before {
           content: '';

@@ -73,11 +73,16 @@ img {
   }
   .tabs {
     height: toRem(90px);
-    padding: toRem(15.5px) 0;
     @include displayflex;
     @include flexflowRow;
-    .domestic, .international {
+    a{
       @include flex;
+      padding: toRem(15.5px) 0;
+      &:active{
+        background-color: #F1F1F1;
+      }
+    }
+    .domestic, .international {
       padding: toRem(6.5px) toRem(26px);
       color: #4F545B;
       font-size: 0;
@@ -192,16 +197,21 @@ img {
           background-color: transparent;
         }
         .overlay {
-          height: toRem(55px);
           position: absolute;
           left: 0;
           right: 0;
           bottom: 0;
+          top: 0;
           color: #fff;
-          @include linear-gradient-grey;
           @include border-radius(2px);
+          &:active{
+            background-color: rgba(0,0,0,0.6);
+          }
           .text-layer {
+            height: toRem(55px);
             padding: toRem(12px) toRem(13px);
+            margin-top: toRem(45px);
+            @include linear-gradient-grey;
             span {
               display: block;
             }

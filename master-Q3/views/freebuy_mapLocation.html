@@ -76,6 +76,10 @@
         }
         Geocoder(104.072343, 30.663538);
 //        Geocoder(104.075548, 30.542671);
+        // 点击返回按钮
+        $('header .back').click(function(e) {
+            history.go(-1);
+        });
     });
 </script>
 </body>
