@@ -77,6 +77,7 @@ img {
     @include flexflowRow;
     a{
       @include flex;
+      display: block;
       padding: toRem(15.5px) 0;
       &:active{
         background-color: #F1F1F1;
@@ -238,27 +239,18 @@ img {
   }
 }
 footer{
+  @include displayflex;
+  @include flexflowRow;
   a{
-    display: inline-block;
+    display: block;
+    @include flex;
     width: 25%;
     height: 100%;
-    line-height: toRem(14px);
+    line-height: toRem(20px);
     text-align: center;
     font-size: toRem(12px);
     color: #83858C;
-  }
-  a.home{
-    &.selected:before{
-      content: '';
-      display: block;
-      width: toRem(24px);
-      height: toRem(24px);
-      background: url(/master-Q3/images/icon/home_touch@2x.png) no-repeat center;
-      background-size: contain;
-      margin: toRem(3px) auto;
-      background: url(/master-Q3/images/icon/home_touch@2x.png) no-repeat center;
-      background-size: contain;
-    }
+    padding-top: toRem(4px);
     &:before{
       content: '';
       display: block;
@@ -266,28 +258,41 @@ footer{
       height: toRem(24px);
       background: url(/master-Q3/images/icon/home_normal@2x.png) no-repeat center;
       background-size: contain;
-      margin: toRem(3px) auto;
+      margin: 0 auto;
+    }
+    &.selected:before{
+      background: url(/master-Q3/images/icon/home_touch@2x.png) no-repeat center;
+      background-size: contain;
     }
   }
   a.route{
-    &.selected{
+    &.selected:before{
       background: url(/master-Q3/images/icon/route_touch@2x.png) no-repeat center;
       background-size: contain;
     }
     &:before{
-      content: '';
-      display: block;
-      width: toRem(24px);
-      height: toRem(24px);
       background: url(/master-Q3/images/icon/route_normal@2x.png) no-repeat center;
       background-size: contain;
-      margin: toRem(3px) auto;
     }
   }
   a.tourism{
-
+    &.selected:before{
+      background: url(/master-Q3/images/icon/trip_touch@2x.png) no-repeat center;
+      background-size: contain;
+    }
+    &:before{
+      background: url(/master-Q3/images/icon/trip_normal@2x.png) no-repeat center;
+      background-size: contain;
+    }
   }
   a.profile{
-
+    &.selected:before{
+      background: url(/master-Q3/images/icon/me_touch@2x.png) no-repeat center;
+      background-size: contain;
+    }
+    &:before{
+      background: url(/master-Q3/images/icon/me_normal@2x.png) no-repeat center;
+      background-size: contain;
+    }
   }
 }
