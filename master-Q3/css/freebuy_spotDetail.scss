@@ -359,62 +359,66 @@ img {
     -webkit-align-items: center;
     align-items: center;
     position: relative;
-    .left {
+    .left-a {
       @include flex;
-      padding: rem(20px) rem(15px) rem(24px) rem(26px);
-      border-right: 1px dashed #EBEBF5;
       &:active {
         background-color: #F1F1F1;
       }
-      .name {
-        font-size: rem(28px);
-        line-height: rem(40px);
-        color: #4F545B;
-        padding-bottom: rem(10px);
-      }
-      .sale {
-        color: #83858C;
-        font-size: rem(24px);
-        line-height: rem(33px);
-        padding: rem(4px);
-      }
-      .info {
-        line-height: rem(45px);
-        font-size: 0;
-        .price {
-          display: inline-block;
-          color: #E61E4B;
-          font-size: rem(32px);
-          margin-right: rem(26px);
-          vertical-align: middle;
+      .left{
+        padding: 0 rem(15px) 0 rem(26px);
+        margin-top: rem(20px);
+        margin-bottom: rem(24px);
+        border-right: 1px dashed #EBEBF5;
+        .name {
+          font-size: rem(28px);
+          line-height: rem(40px);
+          color: #4F545B;
+          padding-bottom: rem(10px);
         }
-        .check-detail {
-          display: inline-block;
-          color: #E61E4B;
+        .sale {
+          color: #83858C;
           font-size: rem(24px);
-          vertical-align: middle;
-          &:after {
-            content: '';
+          line-height: rem(33px);
+          padding: rem(4px);
+        }
+        .info {
+          line-height: rem(45px);
+          font-size: 0;
+          .price {
             display: inline-block;
-            width: rem(24px);
-            height: rem(24px);
-            background: url(/master-Q3/images/icon/freebuy_right_arrow.png) no-repeat center;
-            background-size: contain;
-            vertical-align: top;
-            margin-top: rem(8px);
-            margin-left: rem(7px);
+            color: #E61E4B;
+            font-size: rem(32px);
+            margin-right: rem(26px);
+            vertical-align: middle;
+          }
+          .check-detail {
+            display: inline-block;
+            color: #E61E4B;
+            font-size: rem(24px);
+            vertical-align: middle;
+            &:after {
+              content: '';
+              display: inline-block;
+              width: rem(24px);
+              height: rem(24px);
+              background: url(/master-Q3/images/icon/freebuy_right_arrow.png) no-repeat center;
+              background-size: contain;
+              vertical-align: top;
+              margin-top: rem(8px);
+              margin-left: rem(7px);
+            }
           }
         }
-      }
-      .tags {
-        span {
-          display: inline-block;
-          color: #F5B950;
-          font-size: rem(24px);
-          border: 1px solid #F5B950;
-          padding: rem(4px) rem(8px);
-          margin-right: rem(15px);
-          @include border-radius(4px);
+        .tags {
+          span {
+            display: inline-block;
+            color: #F5B950;
+            font-size: rem(24px);
+            border: 1px solid #F5B950;
+            padding: rem(4px) rem(8px);
+            margin-right: rem(15px);
+            @include border-radius(4px);
+          }
         }
       }
     }

@@ -54,7 +54,7 @@
                     </div>
                     <div class="lines">
                         <div class="line">
-                            <img src="/master-Q3/images/route_line1.png" alt=""/>
+                            <img src="/master-Q3/images/route_line2.png" alt=""/>
                             <div class="overlay">
                                 <div class="text-layer">
                                     <span class="chinese">九寨沟</span>
@@ -72,7 +72,7 @@
                             </div>
                         </div>
                         <div class="line">
-                            <img src="/master-Q3/images/route_line1.png" alt=""/>
+                            <img src="/master-Q3/images/route_line2.png" alt=""/>
                             <div class="overlay">
                                 <div class="text-layer">
                                     <span class="chinese">九寨沟</span>
@@ -81,7 +81,7 @@
                             </div>
                         </div>
                         <div class="line">
-                            <img src="/master-Q3/images/route_line1.png" alt=""/>
+                            <img src="/master-Q3/images/route_line2.png" alt=""/>
                             <div class="overlay">
                                 <div class="text-layer">
                                     <span class="chinese">九寨沟</span>
@@ -163,6 +163,10 @@
         if (!doc.addEventListener) return;
         win.addEventListener(resizeEvt, recalc, false);
         doc.addEventListener('DOMContentLoaded', recalc, false);
+        var a = document.getElementsByTagName('a');
+        for(var i = 0; i < a.length; i++){
+            a[i].addEventListener('touchstart',function(){},false);
+        }
     })(document, window);
     $(document).ready(function () {
 
