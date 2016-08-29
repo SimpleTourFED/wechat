@@ -80,29 +80,13 @@
               margin-right: rem(15px);
               text-indent: -99999px;
             }
-            &.grade1 {
-              .star:nth-child(2), .star:nth-child(3), .star:nth-child(4), .star:nth-child(5) {
-                background: url(/master-Q3/images/icon/star_noseleted@2x.png) no-repeat center;
-                background-size: contain;
-              }
+            .star.half{
+              background: url(/master-Q3/images/icon/star_half@2x.png) no-repeat center;
+              background-size: contain;
             }
-            &.grade2 {
-              .star:nth-child(3), .star:nth-child(4), .star:nth-child(5) {
-                background: url(/master-Q3/images/icon/star_noseleted@2x.png) no-repeat center;
-                background-size: contain;
-              }
-            }
-            &.grade3 {
-              .star:nth-child(4), .star:nth-child(5) {
-                background: url(/master-Q3/images/icon/star_noseleted@2x.png) no-repeat center;
-                background-size: contain;
-              }
-            }
-            &.grade4 {
-              .star:nth-child(5) {
-                background: url(/master-Q3/images/icon/star_noseleted@2x.png) no-repeat center;
-                background-size: contain;
-              }
+            .star.hollow{
+              background: url(/master-Q3/images/icon/star_normal@2x.png) no-repeat center;
+              background-size: contain;
             }
           }
           .score {
