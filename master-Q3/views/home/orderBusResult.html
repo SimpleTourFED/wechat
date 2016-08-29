@@ -42,7 +42,7 @@
                                     <span class="tag">特价</span>
                                 </div>
                             </div>
-                            <a class="right" href="#">预定</a>
+                            <a class="right">预定</a>
                         </div>
                         <div class="product">
                             <div class="left">
@@ -52,8 +52,8 @@
                                     <span class="old">原价：¥4000</span>
                                 </div>
                                 <div class="tags">
-                                    <span class="tag">app专享价</span>
-                                    <span class="tag">特价</span>
+                                    <span class="tag">专享专享价价</span>
+                                    <span class="tag">特价特价特价</span>
                                 </div>
                             </div>
                             <a class="right" href="#">预定</a>
@@ -71,6 +71,52 @@
                                 </div>
                             </div>
                             <a class="right" href="#">预定</a>
+                        </div>
+                        <div class="moreProduct">
+                            <a>
+                                <div class="product">
+                                    <div class="left">
+                                        <div class="name">去程票+回程票</div>
+                                        <div class="prices">
+                                            <span class="now">¥12982.89</span>
+                                            <span class="old">原价：¥4000</span>
+                                        </div>
+                                        <div class="tags">
+                                            <span class="tag">app专享价</span>
+                                            <span class="tag">特价</span>
+                                        </div>
+                                    </div>
+                                    <a class="right" href="#">预定</a>
+                                </div>
+                            </a>
+                            <div class="product">
+                                <div class="left">
+                                    <div class="name">去程票+回程票＋套餐套餐套餐套餐套餐套餐套餐套餐</div>
+                                    <div class="prices">
+                                        <span class="now">¥12982.89</span>
+                                        <span class="old">原价：¥4000</span>
+                                    </div>
+                                    <div class="tags">
+                                        <span class="tag">app专享价</span>
+                                        <span class="tag">特价</span>
+                                    </div>
+                                </div>
+                                <a class="right" href="#">预定</a>
+                            </div>
+                            <div class="product last">
+                                <div class="left">
+                                    <div class="name">去程票+回程票</div>
+                                    <div class="prices">
+                                        <span class="now">¥12982.89</span>
+                                        <span class="old">原价：¥4000</span>
+                                    </div>
+                                    <div class="tags">
+                                        <span class="tag">app专享价</span>
+                                        <span class="tag">特价</span>
+                                    </div>
+                                </div>
+                                <a class="right" href="#">预定</a>
+                            </div>
                         </div>
                         <div class="show-moreProduct">
                             查看剩余两个套餐
@@ -150,6 +196,10 @@
                 };
         if (!doc.addEventListener) return;
         recalc();
+        var a = document.getElementsByTagName('a');
+        for(var i = 0; i < a.length; i++){
+            a[i].addEventListener('touchstart',function(){},false);
+        }
         document.body.style.visibility = 'visible';
         win.addEventListener(resizeEvt, recalc, false);
         doc.addEventListener('DOMContentLoaded', recalc, false);
@@ -162,39 +212,28 @@
         $('.search-bar .back').click(function() {
             history.go(-1);
         });
-        $('.show-moreNode').tap(function (e) {
+        $('.tourism').click(function (e) {
             e.preventDefault();
             e.stopPropagation();
             var $this = $(this);
-            var $secondNode = $this.parents('.outline').find('.node').eq(1);
-            var $panel = $this.siblings('.moreNode');
-            if ($panel.height()) {
-                $panel.css('height', 0);
-                $this.html('展示全部行程');
-                $secondNode.addClass('interrupt');
-            } else {
-                $panel.css('height', '130px');
-                $this.html('收起行程');
-                $secondNode.removeClass('interrupt');
+            if ($(e.target).parents('.products').length == 0) {
+                $this.toggleClass('show');
+                $this.find('.moreProduct').removeClass('show');
+                $this.find('.product').eq(2).addClass('last');
+                $this.find('.show-moreProduct').show();
             }
         });
-        $('.tourism').click(function(e){
-            e.preventDefault();
-            e.stopPropagation();
-            $(this).find('.products').addClass('show');
-        });
-        $('.show-moreProduct').on('tap',function(e){
+        $('.show-moreProduct').on('click', function (e) {
             e.preventDefault();
             e.stopPropagation();
             var $this = $(this);
-            var $products =  $this.parents('.products');
-            var $moreProduct = $products.find('.moreProduct').toggleClass('show');
-            if($moreProduct.hasClass('show')){
+            var $products = $this.parents('.products');
+            var $moreProduct = $products.find('.moreProduct');
+            if (!$moreProduct.hasClass('show')) {
+                $moreProduct.addClass('show');
                 $products.find('.product').eq(2).removeClass('last');
-            }else{
-                $products.find('.product').eq(2).addClass('last');
             }
-            $this.remove();
+            $this.hide();
         });
     })
 </script>

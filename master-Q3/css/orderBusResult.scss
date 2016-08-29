@@ -42,11 +42,30 @@ body {
 .tourisms {
   margin-bottom: toRem(14px);
   .tourism {
+    background-color: #fff;
+    &:active{
+      background-color: #F1F1F1;
+    }
+    &:nth-last-child(1){
+      .contain{
+        border: none;
+      }
+    }
+    &.show{
+      .contain .tourism-info .bottom-bar .arrowBtn{
+        background: url(/master-Q3/images/icon/up_red_arrow@2x.png) no-repeat center;
+        background-size: cover;
+      }
+      .products{
+        display: block;
+      }
+    }
     .contain {
       height: toRem(102px);
       overflow: hidden;
-      padding: toRem(16px) toRem(13px);
-      background-color: #fff;
+      padding: toRem(16px) 0;
+      margin: 0 toRem(13px);
+      border-bottom: 1px solid #EBEBF5;
       @include displayflex;
       @include flexflowRow;
       img {
@@ -106,12 +125,17 @@ body {
       background-color: #42464B;
       overflow: hidden;
       display: none;
-      &.show {
+      .moreProduct{
+        display: none;
+        -webkit-transition: 1s cubic-bezier(0, 1, 0.5, 1);
+        transition: .5s cubic-bezier(0, 1, 0.5, 1);
+      }
+      .moreProduct.show{
         display: block;
       }
       .product {
         background-color: #61656A;
-        margin-bottom: toRem(2px);
+        margin-bottom: 2px;
         position: relative;
         @include displayflex;
         @include flexflowRow;
@@ -170,7 +194,11 @@ body {
           font-size: toRem(14px);
           color: #fff;
           background-color: #E61E4B;
+          display: block;
           @include border-radius(4px);
+          &:active{
+            background-color: #BF0A33;
+          }
         }
         &:before {
           content: '';
@@ -196,6 +224,7 @@ body {
         }
       }
       .product.last {
+        margin-bottom: 0;
         &:before, &:after {
           content: '';
           width: 0;
@@ -204,10 +233,13 @@ body {
       }
       .show-moreProduct {
         padding: toRem(12px);
+        margin-top: 2px;
         font-size: toRem(14px);
+        line-height: toRem(14px);
         color: #DADCE0;
         text-align: center;
         background-color: #61656A;
+        vertical-align: top;
         &:after {
           content: '';
           width: toRem(17px);

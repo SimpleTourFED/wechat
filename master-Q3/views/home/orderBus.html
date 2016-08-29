@@ -283,6 +283,10 @@
                 };
         if (!doc.addEventListener) return;
         recalc();
+        var a = document.getElementsByTagName('a');
+        for(var i = 0; i < a.length; i++){
+            a[i].addEventListener('touchstart',function(){},false);
+        }
         document.body.style.visibility = 'visible';
         win.addEventListener(resizeEvt, recalc, false);
         doc.addEventListener('DOMContentLoaded', recalc, false);
