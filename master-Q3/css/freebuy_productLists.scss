@@ -144,11 +144,12 @@ img {
   overflow: hidden;
   position: relative;
   margin-top: rem(88px);
-  transition: 1000ms ease-in-out;
-  -moz-transition: 800ms ease-in-out; /* Firefox 4 */
-  -webkit-transition: 800ms ease-in-out; /* Safari 和 Chrome */
-  -o-transition: 800ms ease-in-out; /* Opera */
-  -ms-transition: 800ms ease-in-out; /* IE 9 */
+  margin-bottom: rem(40px);
+  //transition: 1000ms ease-in-out;
+  //-moz-transition: 800ms ease-in-out; /* Firefox 4 */
+  //-webkit-transition: 800ms ease-in-out; /* Safari 和 Chrome */
+  //-o-transition: 800ms ease-in-out; /* Opera */
+  //-ms-transition: 800ms ease-in-out; /* IE 9 */
   .list-items {
     margin-bottom: rem(40px);
     background-color: #fff;
@@ -243,29 +244,13 @@ img {
                 margin-right: rem(15px);
                 text-indent: -99999px;
               }
-              &.grade1 {
-                .star:nth-child(2), .star:nth-child(3), .star:nth-child(4), .star:nth-child(5) {
-                  background: url(/master-Q3/images/icon/star_noseleted@2x.png) no-repeat center;
-                  background-size: contain;
-                }
+              .star.half{
+                background: url(/master-Q3/images/icon/star_half@2x.png) no-repeat center;
+                background-size: contain;
               }
-              &.grade2 {
-                .star:nth-child(3), .star:nth-child(4), .star:nth-child(5) {
-                  background: url(/master-Q3/images/icon/star_noseleted@2x.png) no-repeat center;
-                  background-size: contain;
-                }
-              }
-              &.grade3 {
-                .star:nth-child(4), .star:nth-child(5) {
-                  background: url(/master-Q3/images/icon/star_noseleted@2x.png) no-repeat center;
-                  background-size: contain;
-                }
-              }
-              &.grade4 {
-                .star:nth-child(5) {
-                  background: url(/master-Q3/images/icon/star_noseleted@2x.png) no-repeat center;
-                  background-size: contain;
-                }
+              .star.hollow{
+                background: url(/master-Q3/images/icon/star_normal@2x.png) no-repeat center;
+                background-size: contain;
               }
             }
             .score {

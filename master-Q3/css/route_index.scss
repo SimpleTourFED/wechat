@@ -237,3 +237,57 @@ img {
     }
   }
 }
+footer{
+  a{
+    display: inline-block;
+    width: 25%;
+    height: 100%;
+    line-height: toRem(14px);
+    text-align: center;
+    font-size: toRem(12px);
+    color: #83858C;
+  }
+  a.home{
+    &.selected:before{
+      content: '';
+      display: block;
+      width: toRem(24px);
+      height: toRem(24px);
+      background: url(/master-Q3/images/icon/home_touch@2x.png) no-repeat center;
+      background-size: contain;
+      margin: toRem(3px) auto;
+      background: url(/master-Q3/images/icon/home_touch@2x.png) no-repeat center;
+      background-size: contain;
+    }
+    &:before{
+      content: '';
+      display: block;
+      width: toRem(24px);
+      height: toRem(24px);
+      background: url(/master-Q3/images/icon/home_normal@2x.png) no-repeat center;
+      background-size: contain;
+      margin: toRem(3px) auto;
+    }
+  }
+  a.route{
+    &.selected{
+      background: url(/master-Q3/images/icon/route_touch@2x.png) no-repeat center;
+      background-size: contain;
+    }
+    &:before{
+      content: '';
+      display: block;
+      width: toRem(24px);
+      height: toRem(24px);
+      background: url(/master-Q3/images/icon/route_normal@2x.png) no-repeat center;
+      background-size: contain;
+      margin: toRem(3px) auto;
+    }
+  }
+  a.tourism{
+
+  }
+  a.profile{
+
+  }
+}

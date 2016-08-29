@@ -297,6 +297,11 @@
         if (!doc.addEventListener) return;
         win.addEventListener(resizeEvt, recalc, false);
         doc.addEventListener('DOMContentLoaded', recalc, false);
+
+        var a = document.getElementsByTagName('a');
+        for(var i = 0; i < a.length; i++){
+            a[i].addEventListener('touchstart',function(){},false);
+        }
     })(document, window);
     $(document).ready(function () {
         var noheight = $('.node').eq(1).height(), neheight, flag = true;

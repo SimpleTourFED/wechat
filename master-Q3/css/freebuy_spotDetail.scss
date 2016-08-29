@@ -34,6 +34,8 @@ img {
 }
 
 .topModule {
+  width: 100%;
+  overflow: hidden;
   background-color: #fff;
   margin-bottom: rem(32px);
   .banner {
@@ -50,14 +52,16 @@ img {
 }
 
 .infoes {
+  width: 100%;
+  overflow: hidden;
   background-color: #fff;
   margin-bottom: rem(28px);
-  div:last-child{
+  div:last-child {
     border: none;
   }
-  .address, .open-time,.spot-feature,.hotel-intro,.food-intro,.activity-feature,.product-feature,.product-intro {
+  .address, .open-time, .spot-feature, .hotel-intro, .food-intro, .activity-feature, .product-feature, .product-intro {
     display: block;
-    .border-bottom{
+    .border-bottom {
       padding: rem(26px) 0;
       margin: 0 rem(26px);
       font-size: rem(28px);
@@ -88,11 +92,11 @@ img {
       }
     }
   }
-  .spot-feature,.hotel-intro,.food-intro,.activity-feature,.product-feature,.product-intro {
-    &:active{
+  .spot-feature, .hotel-intro, .food-intro, .activity-feature, .product-feature, .product-intro {
+    &:active {
       background-color: #F1F1F1;
     }
-    .border-bottom{
+    .border-bottom {
       &:after {
         content: '';
         display: inline-block;
@@ -106,7 +110,7 @@ img {
     }
   }
   .address {
-    .border-bottom{
+    .border-bottom {
       &:before {
         content: '';
         display: inline-block;
@@ -118,14 +122,14 @@ img {
         margin-right: rem(12px);
       }
     }
-    &.international{
-      .border-bottom span{
+    &.international {
+      .border-bottom span {
         width: rem(520px);
       }
     }
     &.domestic {
       height: rem(88px);
-      &:active{
+      &:active {
         background-color: #F1F1F1;
       }
       .border-bottom {
@@ -150,7 +154,7 @@ img {
   }
   .open-time {
     height: rem(88px);
-    .border-bottom{
+    .border-bottom {
       span {
         height: rem(36px);
         overflow: hidden;
@@ -169,9 +173,9 @@ img {
       }
     }
   }
-  .spot-feature,.hotel-intro,.food-intro,.activity-feature,.product-feature,.product-intro{
+  .spot-feature, .hotel-intro, .food-intro, .activity-feature, .product-feature, .product-intro {
     height: rem(88px);
-    .border-bottom{
+    .border-bottom {
       span {
         height: rem(36px);
         overflow: hidden;
@@ -182,7 +186,7 @@ img {
     }
   }
   .spot-feature {
-    .border-bottom{
+    .border-bottom {
       &:before {
         content: '';
         display: inline-block;
@@ -195,7 +199,7 @@ img {
       }
     }
   }
-  .hotel-intro .border-bottom{
+  .hotel-intro .border-bottom {
     &:before {
       content: '';
       display: inline-block;
@@ -207,7 +211,7 @@ img {
       margin-right: rem(12px);
     }
   }
-  .food-intro .border-bottom{
+  .food-intro .border-bottom {
     &:before {
       content: '';
       display: inline-block;
@@ -219,7 +223,7 @@ img {
       margin-right: rem(12px);
     }
   }
-  .activity-feature .border-bottom{
+  .activity-feature .border-bottom {
     &:before {
       content: '';
       display: inline-block;
@@ -231,7 +235,7 @@ img {
       margin-right: rem(12px);
     }
   }
-  .product-feature .border-bottom{
+  .product-feature .border-bottom {
     &:before {
       content: '';
       display: inline-block;
@@ -243,7 +247,7 @@ img {
       margin-right: rem(12px);
     }
   }
-  .product-intro .border-bottom{
+  .product-intro .border-bottom {
     &:before {
       content: '';
       display: inline-block;
@@ -258,6 +262,8 @@ img {
 }
 
 .contact-us {
+  width: 100%;
+  overflow: hidden;
   background-color: #fff;
   margin-bottom: rem(28px);
   @include displayflex;
@@ -301,7 +307,7 @@ img {
     padding: rem(20px) rem(26px);
     line-height: rem(106px);
     text-align: center;
-    &:active{
+    &:active {
       background-color: #F1F1F1;
     }
     a {
@@ -315,6 +321,8 @@ img {
 }
 
 .tickets {
+  width: 100%;
+  overflow: hidden;
   margin-bottom: rem(28px);
   .title {
     font-size: rem(26px);
@@ -355,8 +363,8 @@ img {
       @include flex;
       padding: rem(20px) rem(15px) rem(24px) rem(26px);
       border-right: 1px dashed #EBEBF5;
-      &:active{
-       background-color: #F1F1F1;
+      &:active {
+        background-color: #F1F1F1;
       }
       .name {
         font-size: rem(28px);
@@ -373,19 +381,19 @@ img {
       .info {
         line-height: rem(45px);
         font-size: 0;
-        .price{
+        .price {
           display: inline-block;
           color: #E61E4B;
           font-size: rem(32px);
           margin-right: rem(26px);
           vertical-align: middle;
         }
-        .check-detail{
+        .check-detail {
           display: inline-block;
           color: #E61E4B;
           font-size: rem(24px);
           vertical-align: middle;
-          &:after{
+          &:after {
             content: '';
             display: inline-block;
             width: rem(24px);
@@ -399,7 +407,7 @@ img {
         }
       }
       .tags {
-        span{
+        span {
           display: inline-block;
           color: #F5B950;
           font-size: rem(24px);
@@ -424,7 +432,7 @@ img {
         line-height: rem(70px);
         margin-bottom: rem(12px);
         @include border-radius(8px);
-        &:active{
+        &:active {
           background-color: #BF0A33;
         }
       }
@@ -436,7 +444,7 @@ img {
         color: #83858C;
       }
     }
-    &:not(:last-child){
+    &:not(:last-child) {
       &:before {
         content: '';
         width: rem(26px);
@@ -444,8 +452,8 @@ img {
         @include border-radius(50px);
         background-color: #E7E7E7;
         position: absolute;
-        left:  rem(-13px);
-        bottom:  rem(-13px);
+        left: rem(-13px);
+        bottom: rem(-13px);
         z-index: 10;
       }
       &:after {
@@ -455,22 +463,25 @@ img {
         @include border-radius(50px);
         background-color: #E7E7E7;
         position: absolute;
-        right:  rem(-13px);
-        bottom:  rem(-13px);
+        right: rem(-13px);
+        bottom: rem(-13px);
         z-index: 10;
       }
     }
   }
 }
-.comments{
+
+.comments {
+  width: 100%;
+  overflow: hidden;
   background-color: #fff;
   margin-bottom: rem(50px);
-  .title-bar{
+  .title-bar {
     @include displayflex;
     @include flexflowRow;
     padding: rem(24px) rem(26px) rem(26px) 0;
     border-bottom: 1px solid #EBEBF5;
-    .title{
+    .title {
       font-size: rem(26px);
       color: #83858C;
       line-height: rem(30px);
@@ -485,17 +496,17 @@ img {
         margin-right: rem(16px);
       }
     }
-    .number,.average{
+    .number, .average {
       font-size: rem(26px);
       color: #83858C;
       line-height: rem(30px);
     }
-    .number{
+    .number {
       margin-right: rem(40px);
     }
   }
-  .comment{
-    .comment-header{
+  .comment {
+    .comment-header {
       @include displayflex;
       @include flexflowRow;
       -ms-justify-content: center;
@@ -511,10 +522,10 @@ img {
       -webkit-align-items: center;
       align-items: center;
       padding: rem(20px) rem(32px) rem(23px) rem(32px);
-      .user{
+      .user {
         @include flex;
         font-size: 0;
-        img{
+        img {
           display: inline-block;
           width: rem(80px);
           height: rem(80px);
@@ -523,10 +534,10 @@ img {
           background-color: #E7E7E7;
           margin-right: rem(22px);
         }
-        .info{
+        .info {
           display: inline-block;
           vertical-align: middle;
-          .username{
+          .username {
             color: #5A6473;
             width: rem(240px);
             height: rem(43px);
@@ -537,78 +548,83 @@ img {
             overflow: hidden;
             white-space: nowrap;
           }
-          .date{
+          .date {
             color: #83858C;
             font-size: rem(24px);
             line-height: rem(33px);
           }
         }
       }
-      .stars{
+      .stars {
         font-size: 0;
-        .star{
+        .star {
           width: rem(26px);
           height: rem(25.54px);
           display: inline-block;
-          background:url(/master-Q3/images/icon/star_seleted@2x.png) no-repeat center;
+          background: url(/master-Q3/images/icon/star_seleted@2x.png) no-repeat center;
           background-size: contain;
           margin-left: rem(15px);
           text-indent: -99999px;
         }
-        &.grade1{
-          .star:nth-child(2),.star:nth-child(3),.star:nth-child(4),.star:nth-child(5){
-            background:url(/master-Q3/images/icon/star_noseleted@2x.png) no-repeat center;
-            background-size: contain;
-          }
+        .star.half{
+          background: url(/master-Q3/images/icon/star_normal@2x.png) no-repeat center;
+          background-size: contain;
         }
-        &.grade2{
-          .star:nth-child(3),.star:nth-child(4),.star:nth-child(5){
-            background:url(/master-Q3/images/icon/star_noseleted@2x.png) no-repeat center;
-            background-size: contain;
-          }
-        }
-        &.grade3{
-         .star:nth-child(4),.star:nth-child(5){
-            background:url(/master-Q3/images/icon/star_noseleted@2x.png) no-repeat center;
-            background-size: contain;
-          }
-        }
-        &.grade4{
-          .star:nth-child(5){
-            background:url(/master-Q3/images/icon/star_noseleted@2x.png) no-repeat center;
-            background-size: contain;
-          }
+        .star.hollow{
+          background: url(/master-Q3/images/icon/star_noseleted@2x.png) no-repeat center;
+          background-size: contain;
         }
       }
     }
-    .comment-content{
+    .comment-content {
       font-size: rem(28px);
       color: #83858C;
       line-height: rem(40px);
       padding: rem(20px) rem(26px) rem(20px) rem(32px);
     }
-    .albums{
+    .albums {
       padding: rem(20px) rem(32px) rem(40px);
       font-size: 0;
-      img{
+      img {
         display: inline-block;
         width: rem(130px);
         height: rem(130px);
         margin-right: rem(15px);
-        &:nth-last-child(1){
+        &:nth-last-child(1) {
           margin-right: 0;
+        }
+      }
+      .last-wrap {
+        position: relative;
+        display: inline-block;
+        width: rem(130px);
+        height: rem(130px);
+        .overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba(0, 0, 0, 0.4);
+          span {
+            display: block;
+            font-size: rem(24px);
+            line-height: rem(130px);
+            text-align: center;
+            color: #FFF;
+          }
         }
       }
     }
   }
-  .check-moreComment{
+  .check-moreComment {
     padding: rem(29px) rem(26px);
     height: rem(98px);
     line-height: rem(36px);
     font-size: rem(28px);
     color: #4F545B;
     border-top: 1px solid #E9ECF4;
-    &:active{
+    &:active {
       background-color: #F1F1F1;
     }
     span {

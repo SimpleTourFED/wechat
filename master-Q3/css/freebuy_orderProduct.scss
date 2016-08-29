@@ -75,20 +75,7 @@ img {
     }
   }
 }
-.footer{
-  width: 100%;
-  height: rem(96px);
-  @include displayflex;
-  @include flexflowRow;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  font-size: 0;
-  box-shadow: rem(-10px) 0 rem(14px) rgba(0,0,0,0.1);
-  -webkit-box-shadow: rem(-10px) 0 rem(14px) rgba(0,0,0,0.1);
-  -moz-box-shadow: rem(-10px) 0 rem(14px) rgba(0,0,0,0.1);
-  z-index: 1000;
+footer{
   .tel{
     width: rem(140px);
     display: inline-block;
