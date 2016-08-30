@@ -337,6 +337,15 @@ img {
     font-size: 0;
     margin-left: rem(-20px);
     margin-top: rem(-24px);
+    &:after{
+      content: '';
+      display: block;
+      clear: both;
+    }
+    .food-a{
+      display: inline-block;
+      float: left;
+    }
     .food {
       display: inline-block;
       padding-left: rem(20px);
