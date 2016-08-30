@@ -432,11 +432,11 @@
             $('.tabs').addClass('sticky');
         }else{
             $('.page-content').scroll(function() {
-                var origOffsetY = document.querySelector('.tabs').offsetTop;
+                var origOffsetY = document.querySelector('.introductions').offsetTop - $('.tabs').height();
                 if(document.querySelector('.page-content').scrollTop >= origOffsetY ) {
                     $('.tabs').css({'position':'fixed',top:'2rem','margin-top':'4px'})
                 } else {
-                    $('.tabs').css({'position':'relative',top:'0'})
+                    $('.tabs').css({'position':'relative',top:'0','margin-top':'.7rem'})
                 }
             });
         }
