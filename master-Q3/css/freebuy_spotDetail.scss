@@ -56,7 +56,7 @@ img {
   overflow: hidden;
   background-color: #fff;
   margin-bottom: rem(28px);
-  div:last-child {
+  a:last-child .border-bottom {
     border: none;
   }
   .address, .open-time, .spot-feature, .hotel-intro, .food-intro, .activity-feature, .product-feature, .product-intro {
@@ -537,7 +537,7 @@ img {
           left: 0;
           right: 0;
           bottom: 0;
-          background-color: rgba(0, 0, 0, 0.4);
+          background-color: rgba(0, 0, 0, 0.25);
           span {
             display: block;
             font-size: rem(24px);
