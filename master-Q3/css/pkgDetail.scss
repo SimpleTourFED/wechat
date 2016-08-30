@@ -1,8 +1,9 @@
 @import "/common/css/base";
 .page-content {
   background-color: #E7E7E7;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
-
 .tourism-info {
   .head-img {
     position: relative;

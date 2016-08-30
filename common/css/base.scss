@@ -249,6 +249,10 @@ footer{
       background: url("/master-Q3/images/icon/love_normal_icon@2x.png") no-repeat center;
       background-size: contain;
     }
+    &:active {
+      background-color: #000;
+      opacity: .2;
+    }
   }
   .advisory {
     position: relative;
@@ -268,6 +272,10 @@ footer{
       background: url("/master-Q3/images/icon/phone_normal@2x.png") no-repeat center;
       background-size: contain;
     }
+    &:active {
+      background-color: #000;
+      opacity: .2;
+    }
   }
   .buyNow {
     @include flex(1);
@@ -275,6 +283,9 @@ footer{
     text-align: center;
     color: #FFFFFF;
     font-size: rem(34px);
+    &:active {
+      background-color: #BF0A33;
+    }
   }
   .recommend {
     @include flex(1);
