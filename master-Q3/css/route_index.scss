@@ -211,7 +211,7 @@ img {
           color: #fff;
           @include border-radius(4px);
           &:active{
-            background-color: rgba(0,0,0,0.6);
+            background-color: rgba(0,0,0,0.4);
           }
           .text-layer {
             height: toRem(55px);

@@ -227,7 +227,7 @@ img {
         @include border-radius(8px);
         overflow: hidden;
         &:active {
-          background-color: rgba(0, 0, 0, 0.6);
+          background-color: rgba(0, 0, 0, 0.4);
         }
         .content {
           padding-top: rem(54px);
