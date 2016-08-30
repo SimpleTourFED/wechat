@@ -1,0 +1,237 @@
+@import "/common/css/base";
+
+@mixin box-sizing($set:border-box) {
+  -webkit-box-sizing: $set;
+  -moz-box-sizing: $set;
+  -ms-box-sizing: $set;
+  -o-box-sizing: $set;
+  box-sizing: $set;
+}
+
+@mixin border-radius($radius:4px) {
+  -webkit-border-radius: rem($radius);
+  -moz-border-radius: rem($radius);
+  -ms-border-radius: rem($radius);
+  -o-border-radius: rem($radius);
+  border-radius: rem($radius);
+}
+
+html, body {
+  background-color: #E7E7E7;
+}
+
+* {
+  @include box-sizing();
+  outline: none;
+  color: #4F545B;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  border: none;
+}
+footer{
+  @include displayflex;
+  @include flexflowRow;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.15);
+  -webkit-box-shadow: 0 -2px 6px rgba(0,0,0,0.15);
+  a{
+    display: block;
+    @include flex;
+    width: 25%;
+    height: 100%;
+    line-height: rem(40px);
+    text-align: center;
+    font-size: rem(24px);
+    color: #83858C;
+    padding-top: rem(12px);
+    &:before{
+      content: '';
+      display: block;
+      width: rem(40px);
+      height: rem(40px);
+      background: url(/master-Q3/images/icon/home_normal@2x.png) no-repeat center;
+      background-size: contain;
+      margin: 0 auto;
+    }
+    &.selected:before{
+      background: url(/master-Q3/images/icon/home_touch@2x.png) no-repeat center;
+      background-size: contain;
+    }
+  }
+  a.route{
+    &.selected:before{
+      background: url(/master-Q3/images/icon/route_touch@2x.png) no-repeat center;
+      background-size: contain;
+    }
+    &:before{
+      background: url(/master-Q3/images/icon/route_normal@2x.png) no-repeat center;
+      background-size: contain;
+    }
+  }
+  a.tourism{
+    &.selected:before{
+      background: url(/master-Q3/images/icon/trip_touch@2x.png) no-repeat center;
+      background-size: contain;
+    }
+    &:before{
+      background: url(/master-Q3/images/icon/trip_normal@2x.png) no-repeat center;
+      background-size: contain;
+    }
+  }
+  a.profile{
+    &.selected:before{
+      background: url(/master-Q3/images/icon/me_touch@2x.png) no-repeat center;
+      background-size: contain;
+    }
+    &:before{
+      background: url(/master-Q3/images/icon/me_normal@2x.png) no-repeat center;
+      background-size: contain;
+    }
+  }
+}
+.topBanner{
+  width: 100%;
+  height: rem(270px);
+  position: relative;
+  .user-wrap{
+    width: 100%;
+    height: rem(120px);
+    position: absolute;
+    top: rem(100px);
+    padding: 0 rem(26px);
+    @include displayflex;
+    @include flexflowRow;
+    img{
+      width: rem(120px);
+      height: rem(120px);
+      display: block;
+      @include border-radius(200px);
+    }
+    .userInfo{
+      @include flex;
+      padding-left: rem(20px);
+      .nickname{
+        font-size: rem(34px);
+        line-height: rem(36px);
+        padding-top: rem(24px);
+        padding-bottom: rem(13px);
+        color: #fff;
+      }
+      .mobile{
+        font-size: rem(26px);
+        line-height: rem(28px);
+        color: #fff;
+      }
+    }
+    &:after{
+      content: '';
+      width: rem(19px);
+      height:rem(32px);
+      display: block;
+      background: url(/master-Q3/images/icon/right_white_arrow@2x.png) no-repeat center;
+      background-size: contain;
+      margin-top: rem(24px);
+    }
+  }
+}
+.upModule,.downModule{
+  width: 100%;
+  overflow: hidden;
+  background-color: #fff;
+  margin-bottom: rem(28px);
+  a:active{
+    background-color: #F1F1F1;
+  }
+  a:last-child .border-bottom{
+    border: none;
+  }
+  a{
+    display: block;
+    .border-bottom {
+      padding: rem(26px) 0;
+      margin: 0 rem(26px);
+      font-size: rem(28px);
+      color: #4F545B;
+      border-bottom: 1px solid #EBEBF5;
+      vertical-align: middle;
+      line-height: rem(30px);
+      @include displayflex;
+      @include flexflowRow;
+      -ms-justify-content: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -ms-justify: center;
+      -webkit-justify: center;
+      justify: center;
+      -ms-box-align: center;
+      -webkit-box-align: center;
+      box-align: center;
+      -ms-align-items: center;
+      -webkit-align-items: center;
+      align-items: center;
+      span {
+        @include flex;
+        width: rem(484px);
+        display: inline-block;
+        vertical-align: middle;
+        line-height: rem(30px);
+      }
+      &:before {
+        content: '';
+        display: inline-block;
+        width: rem(30px);
+        height: rem(30px);
+        background: url(/master-Q3/images/icon/profile_index_orders.png) no-repeat center;
+        background-size: contain;
+        vertical-align: middle;
+        margin-right: rem(16px);
+      }
+      &:after {
+        content: '';
+        display: inline-block;
+        width: rem(16px);
+        height: rem(30px);
+        background: url(/master-Q3/images/icon/right_grey_arrow@2x.png) no-repeat center;
+        background-size: contain;
+        vertical-align: middle;
+        margin-left: rem(30px);
+      }
+    }
+    &.orders .border-bottom:before{
+      background: url(/master-Q3/images/icon/profile_index_orders.png) no-repeat center;
+      background-size: contain;
+    }
+    &.cards .border-bottom:before{
+      background: url(/master-Q3/images/icon/profile_index_cards.png) no-repeat center;
+      background-size: contain;
+    }
+    &.coupons .border-bottom:before{
+      background: url(/master-Q3/images/icon/profile_index_coupons.png) no-repeat center;
+      background-size: contain;
+    }
+    &.spokesmen .border-bottom:before{
+      background: url(/master-Q3/images/icon/profile_index_spokesmen.png) no-repeat center;
+      background-size: contain;
+    }
+    &.collections .border-bottom:before{
+      background: url(/master-Q3/images/icon/profile_index_collections.png) no-repeat center;
+      background-size: contain;
+    }
+    &.customers .border-bottom:before{
+      background: url(/master-Q3/images/icon/profile_index_customers.png) no-repeat center;
+      background-size: contain;
+    }
+    &.messages .border-bottom:before{
+      background: url(/master-Q3/images/icon/profile_index_messages.png) no-repeat center;
+      background-size: contain;
+    }
+    &.feedback .border-bottom:before{
+      background: url(/master-Q3/images/icon/profile_index_feedback.png) no-repeat center;
+      background-size: contain;
+    }
+  }
+
+}
