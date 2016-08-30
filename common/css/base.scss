@@ -204,48 +204,6 @@ footer{
       background-color: #BF0A33;
     }
   }
-  .recommend {
-    @include flex(1);
-    position: relative;
-    font-size: rem(28px);
-    color: #83858C;
-    text-indent: rem(130px);
-    &:before {
-      content: '';
-      position: absolute;
-      width: rem(36px);
-      height: rem(36px);
-      top:rem(30px);
-      left:rem(75px);
-      background: url("/master-Q3/images/icon/order_gray_icon@2x.png") no-repeat center;
-      background-size: contain;
-    }
-  }
-  .cutline {
-    position: absolute;
-    top: rem(13px);
-    left: rem(319px);
-    width: 2px;
-    height: rem(70px);
-    background-color: #D8D8D8;
-  }
-  .filter {
-    @include flex(1);
-    position: relative;
-    font-size: rem(28px);
-    color: #83858C;
-    text-indent: rem(158px);
-    &:before {
-      content: '';
-      position: absolute;
-      width: rem(36px);
-      height: rem(36px);
-      top:rem(30px);
-      left:rem(105px);
-      background: url("/master-Q3/images/icon/filter_grey_icon@2x.png") no-repeat center;
-      background-size: contain;
-    }
-  }
 }
 footer ~ .page-content{
   bottom:rem(96px);
