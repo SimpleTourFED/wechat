@@ -517,6 +517,11 @@ img {
     margin-top: toRem(-10px);
     margin-bottom: toRem(24px);
     font-size: 0;
+    overflow: hidden;
+    a{
+      display: inline-block;
+      float: left;
+    }
     .line {
       width: toRem(142px);
       height: toRem(100px);
