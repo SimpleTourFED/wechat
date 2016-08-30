@@ -434,7 +434,7 @@
             $('.page-content').scroll(function() {
                 var origOffsetY = document.querySelector('.tabs').offsetTop;
                 if(document.querySelector('.page-content').scrollTop >= origOffsetY ) {
-                    $('.tabs').css({'position':'fixed',top:'2.2rem'})
+                    $('.tabs').css({'position':'fixed',top:'2rem','margin-top':'4px'})
                 } else {
                     $('.tabs').css({'position':'relative',top:'0'})
                 }

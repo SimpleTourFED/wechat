@@ -153,13 +153,13 @@
       text-indent: rem(46px);
       i {
         position: absolute;
-        top:rem(22px);
+        top:rem(20px);
         left:rem(14px);
         display: inline-block;
-        width: rem(26px);
-        height: rem(26px);
+        width: rem(27px);
+        height: rem(28px);
         background: url("/master-Q3/images/icon/right_yellow@2x.png") no-repeat center;
-        background-size: 100%;
+        background-size: contain;
       }
     }
   }
@@ -328,9 +328,9 @@
           content: '';
           position: absolute;
           top:rem(-2px);
-          left: rem(-62px);
+          left: rem(-64px);
           display: inline-block;
-          width: rem(36px);
+          width: rem(40px);
           height: rem(40px);
           background: url("/master-Q3/images/icon/date_red_icon@2x.png") no-repeat center #fff;
           background-size: rem(36px) rem(36px);
@@ -698,7 +698,7 @@
   bottom: rem(-767px);
   background-color: #fff;
   max-height: rem(767px);
-  z-index: 6;
+  z-index: 16;
   -webkit-transition:bottom 0.2s ease-out;
   transition:bottom 0.2s ease-out;
   .tourism-pay-info {
@@ -812,5 +812,5 @@
   opacity: .4;
   width: 100%;
   height: 100%;
-  z-index: 5;
+  z-index: 15;
 }
