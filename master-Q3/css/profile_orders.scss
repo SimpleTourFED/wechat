@@ -36,7 +36,6 @@ img {
 .orders {
   width: 100%;
   overflow: hidden;
-  display: none;
   .order {
     background-color: #fff;
     margin-bottom: rem(28px);
@@ -145,7 +144,10 @@ img {
     }
     .center-content {
       padding: rem(12px) rem(26px) rem(20px);
-      border-bottom: 1px dashed #EBEBF5;
+      display: block;
+      &:active{
+        background-color: #F1F1F1;
+      }
       .name {
         font-size: rem(34px);
         color: #4F545B;
@@ -187,6 +189,10 @@ img {
       padding: rem(20px) rem(26px) 0;
       font-size: 0;
       text-align: right;
+      border-top: 1px dashed #EBEBF5;
+      a:active{
+        background-color: #BF0A33;
+      }
       a {
         display: inline-block;
         width: rem(200px);
@@ -209,16 +215,14 @@ img {
     width: rem(207px);
     height: rem(122px);
     display: block;
-    margin: 0 auto;
-    margin-top: rem(100px);
+    margin: rem(100px) auto 0;
   }
   div{
     font-size: rem(28px);
     color: #83858C;
     line-height: rem(40px);
     text-align: center;
-    margin: 0 auto;
-    margin-top: rem(30px);
+    margin: rem(30px) auto 0;
   }
   a{
     width: rem(263px);
