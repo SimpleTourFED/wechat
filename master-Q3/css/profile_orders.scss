@@ -1,0 +1,200 @@
+@import "/common/css/base";
+
+@mixin box-sizing($set:border-box) {
+  -webkit-box-sizing: $set;
+  -moz-box-sizing: $set;
+  -ms-box-sizing: $set;
+  -o-box-sizing: $set;
+  box-sizing: $set;
+}
+
+@mixin border-radius($radius:4px) {
+  -webkit-border-radius: rem($radius);
+  -moz-border-radius: rem($radius);
+  -ms-border-radius: rem($radius);
+  -o-border-radius: rem($radius);
+  border-radius: rem($radius);
+}
+
+html, body {
+  background-color: #E7E7E7;
+}
+
+* {
+  @include box-sizing();
+  outline: none;
+  color: #4F545B;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  border: none;
+}
+
+.order {
+  background-color: #fff;
+  margin-bottom: rem(28px);
+  .top-content {
+    width: 100%;
+    height: rem(88px);
+    padding: rem(19px) rem(26px);
+    border-bottom: 1px solid #EBEBF5;
+    @include displayflex;
+    @include flexflowRow;
+    span {
+      display: block;
+    }
+    .type {
+      width: rem(50px);
+      height: rem(50px);
+      background: url(/master-Q3/images/icon/profile_orders_red_ticket.png) no-repeat center;
+      background-size: contain;
+      &.ticket {
+        background: url(/master-Q3/images/icon/profile_orders_red_ticket.png) no-repeat center;
+        background-size: contain;
+      }
+      &.food {
+        background: url(/master-Q3/images/icon/profile_orders_red_food.png) no-repeat center;
+        background-size: contain;
+      }
+      &.hotel {
+        background: url(/master-Q3/images/icon/profile_orders_red_hotel.png) no-repeat center;
+        background-size: contain;
+      }
+      &.entertainment {
+        background: url(/master-Q3/images/icon/profile_orders_red_entertainment.png) no-repeat center;
+        background-size: contain;
+      }
+      &.card {
+        background: url(/master-Q3/images/icon/profile_orders_red_card.png) no-repeat center;
+        background-size: contain;
+      }
+      &.gift {
+        background: url(/master-Q3/images/icon/profile_orders_red_gift.png) no-repeat center;
+        background-size: contain;
+      }
+      &.busTicket {
+        background: url(/master-Q3/images/icon/profile_orders_red_busTicket.png) no-repeat center;
+        background-size: contain;
+      }
+      &.presell {
+        background: url(/master-Q3/images/icon/profile_orders_red_presell.png) no-repeat center;
+        background-size: contain;
+      }
+      &.pinwan {
+        background: url(/master-Q3/images/icon/profile_orders_red_pinwan.png) no-repeat center;
+        background-size: contain;
+      }
+    }
+    .status {
+      @include flex;
+      font-size: rem(28px);
+      line-height: rem(50px);
+      color: #E61E4B;
+      text-align: right;
+    }
+    &.closed {
+      .type {
+        &.ticket {
+          background: url(/master-Q3/images/icon/profile_orders_grey_ticket.png) no-repeat center;
+          background-size: contain;
+        }
+        &.food {
+          background: url(/master-Q3/images/icon/profile_orders_grey_food.png) no-repeat center;
+          background-size: contain;
+        }
+        &.hotel {
+          background: url(/master-Q3/images/icon/profile_orders_grey_hotel.png) no-repeat center;
+          background-size: contain;
+        }
+        &.entertainment {
+          background: url(/master-Q3/images/icon/profile_orders_grey_entertainment.png) no-repeat center;
+          background-size: contain;
+        }
+        &.card {
+          background: url(/master-Q3/images/icon/profile_orders_grey_card.png) no-repeat center;
+          background-size: contain;
+        }
+        &.gift {
+          background: url(/master-Q3/images/icon/profile_orders_grey_gift.png) no-repeat center;
+          background-size: contain;
+        }
+        &.busTicket {
+          background: url(/master-Q3/images/icon/profile_orders_grey_busTicket.png) no-repeat center;
+          background-size: contain;
+        }
+        &.presell {
+          background: url(/master-Q3/images/icon/profile_orders_grey_presell.png) no-repeat center;
+          background-size: contain;
+        }
+        &.pinwan {
+          background: url(/master-Q3/images/icon/profile_orders_grey_pinwan.png) no-repeat center;
+          background-size: contain;
+        }
+      }
+      .status {
+        color: #83858C;
+      }
+    }
+  }
+  .center-content {
+    padding: rem(12px) rem(26px) rem(20px);
+    border-bottom: 1px dashed #EBEBF5;
+    .name {
+      font-size: rem(34px);
+      color: #4F545B;
+      line-height: rem(48px);
+    }
+    .number {
+      font-size: rem(24px);
+      color: #4F545B;
+      padding-top: rem(20px);
+    }
+    .date-price {
+      height: rem(40px);
+      @include displayflex;
+      @include flexflowRow;
+      .date, .price {
+        font-size: rem(24px);
+        color: #4F545B;
+        display: block;
+      }
+      .date {
+        line-height: rem(28px);
+        padding-top: rem(12px);
+      }
+      .price {
+        height: rem(40px);
+        line-height: rem(40px);
+        text-align: right;
+        @include flex;
+        span {
+          font-size: rem(34px);
+          line-height: rem(40px);
+          color: #E61E4B;
+        }
+      }
+    }
+  }
+  .bottom-content {
+    overflow: hidden;
+    padding: rem(20px) rem(26px) 0;
+    font-size: 0;
+    text-align: right;
+    a {
+      display: inline-block;
+      width: rem(200px);
+      height: rem(70px);
+      line-height: rem(70px);
+      text-align: center;
+      color: #fff;
+      font-size: rem(28px);
+      @include border-radius(8px);
+      background-color: #E61E4B;
+      margin-bottom: rem(20px);
+      margin-left: rem(20px);
+    }
+  }
+}
