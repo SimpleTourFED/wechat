@@ -211,10 +211,11 @@ img {
         align-items: center;
         .content {
           @include flex;
+          margin-top: toRem(-2px);
           .name {
-            height: toRem(14px);
+            height: toRem(16px);
             font-size: toRem(14px);
-            line-height: toRem(14px);
+            line-height: toRem(16px);
             width: toRem(252px);
             color: #4F545B;
             margin-bottom: toRem(5px);

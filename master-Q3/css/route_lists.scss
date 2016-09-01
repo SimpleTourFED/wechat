@@ -138,73 +138,30 @@ img {
             vertical-align: top;
           }
         }
+        //.route-tag.
         .route-tag.shuaBus {
           .tag {
             background-color: #4B91E1;
           }
-          &:before {
-            content: '';
-            width: toRem(7px);
-            display: inline-block;
+          &:before, &:after {
             border-top: 2px solid #4B91E1;
-            margin-top: toRem(10px);
-            margin-right: toRem(6px);
-            vertical-align: top;
-          }
-          &:after {
-            content: '';
-            width: toRem(7px);
-            display: inline-block;
-            border-top: 2px solid #4B91E1;
-            margin-top: toRem(10px);
-            margin-left: toRem(6px);
-            vertical-align: top;
           }
         }
         .route-tag.bbBus {
           .tag {
             background-color: #E61E4B;
           }
-          &:before {
-            content: '';
-            width: toRem(7px);
-            display: inline-block;
+          &:before, &:after {
             border-top: 2px solid #E61E4B;
-            margin-top: toRem(10px);
-            margin-right: toRem(6px);
-            vertical-align: top;
-          }
-          &:after {
-            content: '';
-            width: toRem(7px);
-            display: inline-block;
-            border-top: 2px solid #E61E4B;
-            margin-top: toRem(10px);
-            margin-left: toRem(6px);
-            vertical-align: top;
           }
         }
         .route-tag.taiBus {
           .tag {
             background-color: #0FC346;
+            color: #0FC346;
           }
-          &:before {
-            content: '';
-            width: toRem(7px);
-            display: inline-block;
+          &:before, &:after {
             border-top: 2px solid #0FC346;
-            margin-top: toRem(10px);
-            margin-right: toRem(6px);
-            vertical-align: top;
-          }
-          &:after {
-            content: '';
-            width: toRem(7px);
-            display: inline-block;
-            border-top: 2px solid #0FC346;
-            margin-top: toRem(10px);
-            margin-left: toRem(6px);
-            vertical-align: top;
           }
         }
       }
