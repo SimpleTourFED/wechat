@@ -1,0 +1,370 @@
+@import "/common/css/base";
+
+@mixin box-sizing($set:border-box) {
+  -webkit-box-sizing: $set;
+  -moz-box-sizing: $set;
+  -ms-box-sizing: $set;
+  -o-box-sizing: $set;
+  box-sizing: $set;
+}
+
+@mixin border-radius($radius:4px) {
+  -webkit-border-radius: rem($radius);
+  -moz-border-radius: rem($radius);
+  -ms-border-radius: rem($radius);
+  -o-border-radius: rem($radius);
+  border-radius: rem($radius);
+}
+
+html, body {
+  background-color: #E7E7E7;
+}
+
+* {
+  @include box-sizing();
+  outline: none;
+  color: #4F545B;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  border: none;
+}
+
+.tip {
+  width: 100%;
+  height: rem(70px);
+  background-color: #F5B950;
+  color: #fff;
+  font-size: rem(28px);
+  line-height: rem(36px);
+  padding: rem(17px) rem(26px);
+  vertical-align: top;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  &:before {
+    content: '';
+    display: inline-block;
+    width: rem(36px);
+    height: rem(36px);
+    background: url(/master-Q3/images/icon/tips_white_icon.png) no-repeat center;
+    background-size: contain;
+    vertical-align: top;
+    margin-right: rem(20px);
+  }
+}
+
+.orderBar {
+  width: 100%;
+  height: rem(88px);
+  padding: rem(30px) rem(26px);
+  background-color: #fff;
+  margin-bottom: rem(32px);
+  @include displayflex;
+  @include flexflowRow;
+  span {
+    display: block;
+    font-size: rem(28px);
+    line-height: rem(28px);
+    color: #4F545B;
+  }
+  .orderNo {
+    @include flex;
+  }
+  .orderStatus {
+    color: #83858C;
+  }
+  .orderStatus.red {
+    color: #E61E4B;
+  }
+}
+
+.orderInfo {
+  background-color: #fff;
+  margin-bottom: rem(28px);
+  .product-info {
+    padding: rem(20px) rem(26px);
+    @include displayflex;
+    @include flexflowRow;
+    -ms-justify-content: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -ms-justify: center;
+    -webkit-justify: center;
+    justify: center;
+    -ms-box-align: center;
+    -webkit-box-align: center;
+    box-align: center;
+    -ms-align-items: center;
+    -webkit-align-items: center;
+    align-items: center;
+    &:active {
+      background-color: #F1F1F1;
+    }
+    .left {
+      @include flex;
+      .name {
+        font-size: rem(32px);
+        line-height: rem(42px);
+        color: #4F545B;
+        padding-bottom: rem(16px);
+      }
+      .bottom-bar {
+        height: rem(28px);
+        margin-bottom: rem(2px);
+        overflow: hidden;
+        span {
+          display: inline-block;
+          float: left;
+          font-size: rem(24px);
+          line-height: rem(28px);
+          margin-right: rem(30px);
+          padding-left: rem(30px);
+          position: relative;
+          color: #83858C;
+          &:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: '';
+            display: inline-block;
+            width: rem(20px);
+            height: rem(24px);
+            margin-right: rem(10px);
+            background: url(/master-Q3/images/icon/date_icon@2x.png) no-repeat center;
+            background-size: contain;
+          }
+        }
+        .round {
+          &:before {
+            top: rem(2px);
+            height: rem(20px);
+            background: url(/master-Q3/images/icon/transform_icon@2x.png) no-repeat center;
+            background-size: contain;
+          }
+        }
+        .trip {
+          &:before {
+            top: rem(1px);
+            height: rem(22px);
+            background: url(/master-Q3/images/icon/date_icon@2x.png) no-repeat center;
+            background-size: contain;
+          }
+        }
+        .time {
+          &:before {
+            background: url(/master-Q3/images/icon/time_icon@2x.png) no-repeat center;
+            background-size: contain;
+          }
+        }
+      }
+    }
+    &:after {
+      content: '';
+      width: rem(19px);
+      height: rem(32px);
+      background: url(/master-Q3/images/icon/right_grey_arrow@2x.png) no-repeat center;
+      background-size: contain;
+      margin-left: rem(40px);
+    }
+  }
+  .products {
+    margin: 0 rem(26px);
+    border-top: 1px solid #EBEBF5;
+    .product {
+      padding: rem(16px) 0;
+      @include displayflex;
+      @include flexflowRow;
+      -ms-justify-content: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -ms-justify: center;
+      -webkit-justify: center;
+      justify: center;
+      -ms-box-align: center;
+      -webkit-box-align: center;
+      box-align: center;
+      -ms-align-items: center;
+      -webkit-align-items: center;
+      align-items: center;
+      span {
+        @include flex;
+        color: #83858C;
+        font-size: rem(26px);
+        line-height: rem(40px);
+      }
+      &:before {
+        content: '';
+        display: block;
+        width: rem(40px);
+        height: rem(40px);
+        background: url(/master-Q3/images/icon/bus_icon@2x.png) no-repeat center;
+        background-size: contain;
+        margin-right: rem(20px);
+      }
+    }
+  }
+  .order-detail {
+    margin: 0 rem(26px);
+    padding: rem(24px) 0;
+    border-top: 1px solid #EBEBF5;
+    .item {
+      font-size: 0;
+      padding-bottom: rem(18px);
+      @include displayflex;
+      @include flexflowRow;
+      span {
+        display: inline-block;
+        font-size: rem(26px);
+        line-height: rem(37px);
+        color: #83858C;
+      }
+      .label {
+        margin-right: rem(20px);
+      }
+      .value {
+        @include flex;
+        color: #4F545B;
+        line-height: rem(37px);
+      }
+      &:last-child{
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+.contact{
+  height: rem(88px);
+  background-color: #fff;
+  padding: rem(30px) rem(26px);
+  margin-bottom: rem(28px);
+  font-size: 0;
+  span{
+    display: inline-block;
+    color: #4F545B;
+    font-size: rem(28px);
+    vertical-align: middle;
+  }
+  .label{
+    color: #83858C;
+    margin-right: rem(20px);
+  }
+  .name{
+    margin-right: rem(20px);
+  }
+}
+.customers{
+  background-color: #fff;
+  padding: 0 rem(26px);
+  margin-bottom: rem(28px);
+}
+.customer,.check{
+  height: rem(88px);
+  padding: rem(14px) 0;
+  border-bottom: 1px solid #EBEBF5;
+  @include displayflex;
+  @include flexflowRow;
+  &:last-child{
+    border-bottom: none;
+  }
+  span{
+    display: inline-block;
+    color: #4F545B;
+    font-size: rem(28px);
+    line-height: rem(60px);
+    vertical-align: middle;
+  }
+  .label{
+    color: #83858C;
+    margin-right: rem(20px);
+  }
+  .name{
+    @include flex;
+    margin-right: rem(20px);
+  }
+  .view{
+    color: #F5B950;
+    padding-left: rem(26px);
+    border-left: 1px solid #EBEBF5;
+  }
+  .total{
+    font-size: rem(34px);
+    color: #E61E4B;
+    @include flex;
+  }
+}
+.check{
+  background-color: #fff;
+  padding: rem(14px) rem(26px);
+  margin-bottom: rem(28px);
+}
+.backRule{
+  background-color: #fff;
+  margin-bottom: rem(28px);
+  .title {
+    font-size: rem(26px);
+    color: #83858C;
+    line-height: rem(30px);
+    padding: rem(24px) 0 rem(24px) 0;
+    border-bottom: 1px solid #EBEBF5;
+    &:before {
+      content: '';
+      width: rem(10px);
+      height: rem(30px);
+      background-color: #E61E4B;
+      display: inline-block;
+      vertical-align: top;
+      margin-right: rem(16px);
+    }
+  }
+  .content{
+    padding: rem(26px);
+    font-size: rem(28px);
+    color: #83858C;
+    line-height: rem(42px);
+  }
+}
+footer{
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.15);
+  -webkit-box-shadow: 0 -2px 6px rgba(0,0,0,0.15);
+  .tel{
+    width: rem(140px);
+    display: inline-block;
+    &:active{
+      background-color: #F1F1F1;
+    }
+    &:before{
+      display: block;
+      content: '';
+      width: rem(27px);
+      height: rem(36px);
+      background: url(/master-Q3/images/icon/phone_normal@2x.png) no-repeat center;
+      background-size: contain;
+      margin: rem(12px) auto 0;
+    }
+    span{
+      display: block;
+      font-size: rem(24px);
+      line-height: rem(33px);
+      color: #83858C;
+      text-align: center;
+      margin-top: rem(5px);
+    }
+  }
+  .buy{
+    width: rem(500px);
+    @include flex;
+    display: inline-block;
+    line-height: rem(96px);
+    text-align: center;
+    background-color: #E61E4B;
+    font-size: rem(34px);
+    color: #fff;
+    &:active{
+      background-color: #BF0A33;
+    }
+  }
+}

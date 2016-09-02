@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/master-Q3/css/profile_orderDetail.scss?__inline">
+</head>
+<body>
+<div class="page-group">
+    <div class="page page-current">
+        <header>
+            <div class="back"></div>
+            <div class="center">我的订单</div>
+        </header>
+        <footer>
+            <a class="tel" href="tel:">
+                <span>联系客服</span>
+            </a>
+            <a class="buy" href="#">立即评价</a>
+        </footer>
+        <div class="page-content">
+            <div class="tip">请在09分30秒内完成支付请在09分30秒内完成支付</div>
+            <div class="orderBar">
+                <span class="orderNo">订单号：20034094932</span>
+                <span class="orderStatus red">待支付</span>
+            </div>
+            <div class="orderInfo">
+                <a class="product-info">
+                    <div class="left">
+                        <div class="name">往返票 成都都江堰青城山单程巴士江堰青城山单程巴士</div>
+                        <div class="bottom-bar">
+                            <span class="round">往返车票</span>
+                            <span class="trip">1日行程</span>
+                            <span class="time">07:00发车</span>
+                        </div>
+                    </div>
+                </a>
+                <div class="products">
+                    <div class="product busTicket">
+                        <span>车票：07:00（成都）－17:30（九寨沟）</span>
+                    </div>
+                    <div class="product hotel">
+                        <span>住宿：九寨沟民族风情客栈九寨沟民族风情客栈风情客栈九寨沟民族风情客栈</span>
+                    </div>
+                    <div class="product ticket">
+                        <span>住宿：九寨沟民族风情客栈九寨沟民族风情客栈风情客栈九寨沟民族风情客栈</span>
+                    </div>
+                </div>
+                <div class="order-detail">
+                    <div class="item">
+                        <span class="label">下单时间</span>
+                        <span class="value">2016.06.12  13:30</span>
+                    </div>
+                    <div class="item">
+                        <span class="label">预定数量</span>
+                        <span class="value">2</span>
+                    </div>
+                    <div class="item">
+                        <span class="label">乘车日期</span>
+                        <span class="value">2016.03.23  07:40</span>
+                    </div>
+                    <div class="item">
+                        <span class="label">乘车地点</span>
+                        <span class="value">成都市宽窄巷子34号老妈兔头门口窄巷子34号老妈兔头门口</span>
+                    </div>
+                </div>
+            </div>
+            <div class="contact">
+                <span class="label">联系人</span>
+                <span class="name">呵呵呵</span>
+                <span class="mobile">18499830026</span>
+            </div>
+            <div class="customers">
+                <div class="customer">
+                    <span class="label">旅客1</span>
+                    <span class="name">呵呵呵</span>
+                    <span class="view">查看旅客详情</span>
+                </div>
+                <div class="customer">
+                    <span class="label">旅客2</span>
+                    <span class="name">呵呵呵</span>
+                    <span class="view">查看旅客详情</span>
+                </div>
+            </div>
+            <div class="check">
+                <span class="label">实付款</span>
+                <span class="total">¥12999.99</span>
+                <span class="view">查看支付明细</span>
+            </div>
+            <div class="backRule">
+                <div class="title">退改规则</div>
+                <div class="content">
+                    成都，简称“蓉”，四川省省会，副省级市，特大城市。1993年被国务院确定为西南地区的科技、商贸、金融中心和交通、通讯枢纽。2015年11月26日，经国务院批复，被定位为国家重要的高新成都，简称“蓉”，四川省省会，副省级市，特大城市。1993年被国务院确定为西南地区的科技、商贸、金融中心和交通、通讯枢纽。2015年11月26。
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    // 针对uc横竖屏rem html没有重绘的问题
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+        var a = document.getElementsByTagName('a');
+        for (var i = 0; i < a.length; i++) {
+            a[i].addEventListener('touchstart', function () {
+            }, false);
+        }
+    })(document, window);
+    $(document).ready(function () {
+        // 点击返回按钮
+        $('header .back').click(function (e) {
+            history.go(-1);
+        });
+    });
+</script>
+</body>
+</html>

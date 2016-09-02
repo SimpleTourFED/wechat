@@ -138,73 +138,60 @@ img {
             vertical-align: top;
           }
         }
-        .route-tag.shuaBus {
+        .route-tag.yellowTag {
+          .tag {
+            background-color: #F5B950;
+          }
+          &:before, &:after {
+            border-top: 2px solid #F5B950;
+          }
+        }
+        .route-tag.blueTag {
           .tag {
             background-color: #4B91E1;
           }
-          &:before {
-            content: '';
-            width: toRem(7px);
-            display: inline-block;
+          &:before, &:after {
             border-top: 2px solid #4B91E1;
-            margin-top: toRem(10px);
-            margin-right: toRem(6px);
-            vertical-align: top;
-          }
-          &:after {
-            content: '';
-            width: toRem(7px);
-            display: inline-block;
-            border-top: 2px solid #4B91E1;
-            margin-top: toRem(10px);
-            margin-left: toRem(6px);
-            vertical-align: top;
           }
         }
-        .route-tag.bbBus {
+        .route-tag.redTag {
           .tag {
             background-color: #E61E4B;
           }
-          &:before {
-            content: '';
-            width: toRem(7px);
-            display: inline-block;
+          &:before, &:after {
             border-top: 2px solid #E61E4B;
-            margin-top: toRem(10px);
-            margin-right: toRem(6px);
-            vertical-align: top;
-          }
-          &:after {
-            content: '';
-            width: toRem(7px);
-            display: inline-block;
-            border-top: 2px solid #E61E4B;
-            margin-top: toRem(10px);
-            margin-left: toRem(6px);
-            vertical-align: top;
           }
         }
-        .route-tag.taiBus {
+        .route-tag.greenTag {
           .tag {
             background-color: #0FC346;
           }
-          &:before {
-            content: '';
-            width: toRem(7px);
-            display: inline-block;
+          &:before, &:after {
             border-top: 2px solid #0FC346;
-            margin-top: toRem(10px);
-            margin-right: toRem(6px);
-            vertical-align: top;
           }
-          &:after {
-            content: '';
-            width: toRem(7px);
-            display: inline-block;
-            border-top: 2px solid #0FC346;
-            margin-top: toRem(10px);
-            margin-left: toRem(6px);
-            vertical-align: top;
+        }
+        .route-tag.orangeTag {
+          .tag {
+            background-color: #FF7018;
+          }
+          &:before, &:after {
+            border-top: 2px solid #FF7018;
+          }
+        }
+        .route-tag.purpleTag {
+          .tag {
+            background-color: #531296;
+          }
+          &:before, &:after {
+            border-top: 2px solid #531296;
+          }
+        }
+        .route-tag.wathetTag {
+          .tag {
+            background-color: #1EDBEA;
+          }
+          &:before, &:after {
+            border-top: 2px solid #1EDBEA;
           }
         }
       }

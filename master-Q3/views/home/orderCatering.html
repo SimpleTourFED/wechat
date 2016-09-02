@@ -114,13 +114,35 @@
     })(document, window);
 </script>
 <script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script type="text/javascript" src="/common/js/preloader.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         // 点击返回按钮
         $('.search-bar .back').click(function() {
             history.go(-1);
         });
-
+        /* ============================================
+         **********   点击筛选按钮和推荐顺序按钮  **********
+         ============================================== */
+        $('.cover').click(function() {
+            $('.cover').hide();
+            $('.filter-content').removeClass('show');
+            $('.recommend-content').removeClass('show');
+            $('footer .filter').removeClass('selected');
+        });
+        $('footer .filter').click(function() {
+            $('.cover').show();
+            $(this).addClass('selected');
+            $('.filter-content').addClass('show');
+        });
+        $('footer .recommend').click(function() {
+            $('.cover').show();
+            $(this).addClass('selected');
+            $('.recommend-content').addClass('show');
+        });
+        /* ============================================
+         **********   end  **********
+         ============================================== */
     })
 </script>
 </body>
