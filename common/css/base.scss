@@ -62,6 +62,14 @@ html,body{
 html {
   font-size: 20px;
 }
+body{
+  position: absolute;
+  left: 0;
+  top:0;
+  right: 0;
+  bottom:0;
+  overflow: hidden;
+}
 //@media only screen and (min-width: 400px) {
 //  html {
 //    font-size: 21.33333333px !important;
@@ -465,6 +473,7 @@ header ~ .page-content{
   position: absolute;
   z-index: 10000;
   top: 40%;
+  margin-left: -6.75rem;
   text-align: center;
   font-weight: 100;
   opacity: 0;
@@ -480,6 +489,7 @@ header ~ .page-content{
   transform: translate3d(0, 0, 0) scale(1.185);
   -webkit-transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
+  box-sizing: border-box;
 }
 .alert-msg.in {
   opacity: 1;
