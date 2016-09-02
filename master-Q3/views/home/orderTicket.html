@@ -17,10 +17,46 @@
             <div class="search"></div>
         </header>
         <footer>
-            <div class="filter selected">筛选</div>
+            <div class="filter">筛选</div>
             <div class="cutline"></div>
             <div class="recommend">推荐顺序</div>
         </footer>
+        <div class="cover"></div>
+        <div class="filter-content">
+            <div class="arrive">
+                <ul>
+                    <li>
+                        <div class="title">全部</div>
+                        <div class="destinations hide">
+                            <div class="selected">全部</div>
+                            <div>九寨沟好耍九寨沟好耍九寨沟好耍</div>
+                            <div>九寨沟好耍</div>
+                            <div>九寨沟好耍</div>
+                            <div>九寨沟好耍</div>
+                            <div>九寨沟好耍</div>
+                            <div>九寨沟好耍</div>
+                            <div>九寨沟好耍</div>
+                        </div>
+                    </li>
+                    <li class="selected">
+                        <div class="title">四川</div>
+                        <div class="destinations">
+                            <div class="selected">全部</div>
+                            <div>九寨沟好耍九寨沟好耍九寨沟好耍</div>
+                            <div>九寨沟好耍</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="recommend-content">
+            <ul>
+                <li class="selected">推荐排序</li>
+                <li>价格从高到低</li>
+                <li>价格从低到高</li>
+            </ul>
+        </div>
         <div class="page-content">
             <div class="list-items">
                 <div class="item">
@@ -120,6 +156,28 @@
         $('.search-bar .back').click(function() {
             history.go(-1);
         });
+        /* ============================================
+         **********   点击筛选按钮和推荐顺序按钮  **********
+         ============================================== */
+        $('.cover').click(function() {
+            $('.cover').hide();
+            $('.filter-content').removeClass('show');
+            $('.recommend-content').removeClass('show');
+            $('footer .filter').removeClass('selected');
+        });
+        $('footer .filter').click(function() {
+            $('.cover').show();
+            $(this).addClass('selected');
+            $('.filter-content').addClass('show');
+        });
+        $('footer .recommend').click(function() {
+            $('.cover').show();
+            $(this).addClass('selected');
+            $('.recommend-content').addClass('show');
+        });
+        /* ============================================
+         **********   end  **********
+         ============================================== */
 
     })
 </script>

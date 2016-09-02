@@ -2,6 +2,9 @@
 .page-content {
   background-color: #E7E7E7;
 }
+.hide {
+  display: none !important;
+}
 @mixin box-sizing($set:border-box) {
   -webkit-box-sizing: $set;
   -moz-box-sizing: $set;
@@ -224,5 +227,117 @@ footer {
     font-size: rem(28px);
     color: #83858C;
     text-align: center;
+  }
+}
+.filter-content {
+  width: 100%;
+  height: rem(439px);
+  position: absolute;
+  left : 0;
+  bottom: rem(-439px);
+  z-index: 16;
+  -webkit-transition:bottom 0.2s ease-out;
+  transition:bottom 0.2s ease-out;
+  .arrive {
+    @include flex(1);
+    height: 100%;
+    background-color: #e7e7e7;
+    position: relative;
+    ul {
+      list-style: none;
+      li{
+        @include displayflex();
+        @include flexflowRow();
+        overflow-y: auto;
+        .title {
+          width: rem(160px);
+          height: rem(96px);
+          line-height: rem(96px);
+          text-align: center;
+          color: #4F545B;
+          font-size: rem(28px);
+        }
+        .destinations {
+          position: absolute;
+          height: rem(439px);
+          top: 0;
+          left: rem(160px);
+          width: rem(480px);
+          overflow-y: auto;
+          background-color: #fff;
+          div {
+            height: rem(88px);
+            line-height: rem(88px);
+            color: #4F545B;
+            font-size: rem(28px);
+            padding: 0 rem(62px);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            &.selected {
+              color: #E61E4B;
+            }
+            &:active{
+              background-color: #F1F1F1;
+            }
+          }
+        }
+        &.selected {
+          .title {
+            background-color: #fff;
+            color: #E61E4B;
+          }
+        }
+      }
+    }
+  }
+
+  &.show {
+    bottom:0;
+  }
+}
+.cover {
+  position: absolute;
+  display: none;
+  background-color: #000;
+  opacity: .4;
+  width: 100%;
+  height: 100%;
+  z-index: 15;
+}
+.recommend-content {
+  width: 100%;
+  height: rem(304px);
+  position: absolute;
+  left : 0;
+  bottom: rem(-304px);
+  z-index: 16;
+  background-color: #fff;
+  -webkit-transition:bottom 0.2s ease-out;
+  transition:bottom 0.2s ease-out;
+  ul{
+    list-style: none;
+    li {
+      width: 100%;
+      padding-right: rem(32px);
+      height: rem(88px);
+      line-height: rem(88px);
+      text-indent: rem(32px);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #4F545B;
+      font-size: rem(28px);
+      &.selected {
+        background-color: #fff;
+        color: #E61E4B;
+      }
+      &:active{
+        background-color: #F1F1F1;
+      }
+    }
+  }
+  &.show {
+    bottom:0;
   }
 }
