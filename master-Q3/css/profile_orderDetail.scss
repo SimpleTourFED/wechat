@@ -201,9 +201,37 @@ img {
         display: block;
         width: rem(40px);
         height: rem(40px);
-        background: url(/master-Q3/images/icon/bus_icon@2x.png) no-repeat center;
+        background: url(/master-Q3/images/icon/yellow_busTicket@2x.png) no-repeat center;
         background-size: contain;
         margin-right: rem(20px);
+      }
+      &.busTicket:before{
+        background: url(/master-Q3/images/icon/yellow_busTicket@2x.png) no-repeat center;
+        background-size: contain;
+      }
+      &.entertainment:before{
+        background: url(/master-Q3/images/icon/yellow_entertainment@2x.png) no-repeat center;
+        background-size: contain;
+      }
+      &.gift:before{
+        background: url(/master-Q3/images/icon/yellow_gift@2x.png) no-repeat center;
+        background-size: contain;
+      }
+      &.hotel:before{
+        background: url(/master-Q3/images/icon/yellow_hotel@2x.png) no-repeat center;
+        background-size: contain;
+      }
+      &.shuttlebus:before{
+        background: url(/master-Q3/images/icon/yellow_shuttlebus@2x.png) no-repeat center;
+        background-size: contain;
+      }
+      &.ticket:before{
+        background: url(/master-Q3/images/icon/yellow_ticket@2x.png) no-repeat center;
+        background-size: contain;
+      }
+      &.food:before{
+        background: url(/master-Q3/images/icon/yellow_food@2x.png) no-repeat center;
+        background-size: contain;
       }
     }
   }
