@@ -284,6 +284,7 @@
     </div>
 </div>
 <script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script type="text/javascript" src="/common/js/viewImg.js"></script>
 <script>
     (function (doc, win) {
         var docEl = doc.documentElement,
@@ -363,6 +364,14 @@
             }
             $this.hide();
         });
+        $('.banner').click(function () {
+            $.viewImg([
+                'http://img05.tooopen.com/images/20150202/sy_80219211654.jpg',
+                'http://img04.tooopen.com/images/20130701/tooopen_10055061.jpg',
+                'http://img04.tooopen.com/images/20121109/tooopen_201211091418005900.jpg',
+                'http://img04.tooopen.com/images/20121108/tooopen_201211081404152520.jpg'
+            ],2)
+        })
     });
 </script>
 </body>

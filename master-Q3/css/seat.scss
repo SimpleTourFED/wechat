@@ -1,0 +1,239 @@
+@import "/common/css/base.scss";
+footer{
+  height: rem(144px);
+  box-shadow: none;
+  -webkit-box-shadow:none;
+  background-color: #61656A;
+  box-sizing: border-box;
+  padding: rem(24px) rem(26px) rem(30px);
+  @include displayflex;
+  @include flexflowRow(row,horizontal);
+  div{
+    @include flex(1);
+    background-color:#E61E4B;
+    border-radius: rem(6px);
+    font-size: rem(34px);
+    color:white;
+    text-align: center;
+    height: rem(88px);
+    line-height: rem(88px);
+  }
+  div+div{
+    margin-left: rem(20px);
+  }
+}
+header{
+  border-bottom-width: 1px;
+}
+footer ~ .page-content{
+  bottom: rem(144px);
+  background-color: #61656A;
+}
+.page-header{
+  @include displayflex;
+  @include flexflowRow(row,horizontal);
+  background-color: white;
+  height: rem(88px);
+  line-height: rem(88px);
+  span{
+    display: block;
+    box-sizing: border-box;
+  }
+  span:last-child{
+    width: rem(106px);
+    padding-right: rem(26px);
+    text-align: right;
+    font-size: rem(28px);
+    color:#83858C;
+  }
+  span:first-child{
+    @include flex(1);
+    font-size: rem(28px);
+    color:#4F545B;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-left: rem(26px);
+  }
+}
+.page-content{
+  box-sizing: border-box;
+  overflow: hidden;
+  .seats{
+    width: 100%;
+    overflow: auto;
+    box-sizing: border-box;
+    margin: 0 auto;
+    -webkit-overflow-scrolling:touch;
+    @include flex(1);
+  }
+  .seat-header{
+    padding:rem(20px) 0;
+    color: #AEAEAE;
+    font-size: rem(24px);
+    text-align: center;
+    margin: 0 rem(59px);
+    border-bottom: 1px dashed #AEAEAE;
+  }
+}
+.seat-content{
+  margin: 0 auto;
+  padding-top: rem(20px);
+}
+.seat-row:after{
+  display: block;
+  content: '';
+  visibility: hidden;
+  clear: both;
+}
+.placeholder{
+  width: 1rem;
+  height: rem(80px);
+  color: #AEAEAE;
+  font-size: rem(28px);
+  line-height: rem(80px);
+  text-align: center;
+  float: left;
+  &:last-child{
+    margin-left: rem(6px);
+  }
+}
+.seat-row{
+  margin-bottom: rem(20px);
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
+.seat{
+  margin-left: rem(6px);
+  float: left;
+  height: rem(80px);
+  width: rem(100px);
+  position: relative;
+  border-radius: rem(6px);
+  background-color: white;
+  .seat-no {
+    height: rem(56px);
+    background-color: #E6E6E6;
+    line-height: rem(56px);
+    text-align: center;
+    font-size: rem(28px);
+    border-top-left-radius: rem(6px);
+    border-top-right-radius: rem(6px);
+    color: #4F545B;
+  }
+}
+.seat .armrestLeft,.seat .armrestRight{
+  position: absolute;
+  width: rem(16px);
+  height: rem(56px);
+  border-radius: rem(6px);
+  background-color: #E6E6E6;
+  top: 0;
+  display: none;
+}
+.seat{
+  &.left{
+    .armrestLeft{
+      display: block;
+    }
+  }
+  &.right{
+    .armrestRight{
+      display: block;
+    }
+  }
+  &.both{
+    .armrestLeft,.armrestRight{
+      display: block;
+    }
+  }
+}
+.seat .armrestLeft{
+  left:rem(-22px);
+}
+.seat .armrestRight{
+  right: rem(-22px);
+}
+.seat.none{
+  background-color: transparent !important;
+  text-indent:-10000000px;
+  .seat-no{
+    background-color: transparent !important;
+  }
+}
+.seat.selected{
+  background-color: #F85479;
+  .seat-no{
+    background-color: #E61E4B;
+    color: white;
+  }
+  .armrestRight,.armrestLeft{
+    background-color: #E61E4B;
+  }
+}
+.seat.disabled{
+  background-color: #AEAEAE;
+  .seat-no{
+    background-color: #959595;
+  }
+  .armrestRight,.armrestLeft{
+    background-color: #959595;
+  }
+}
+.seat-footer{
+  margin-top: rem(20px);
+  font-size: 0;
+  text-align: center;
+  .item{
+    display: inline-block;
+    margin-right: rem(20px);
+  }
+  .status{
+    margin: 0 auto;
+    width: rem(30px);
+    height: rem(30px);
+    background-color: #E6E6E6;
+    &.disabled{
+      background-color: #959595;
+    }
+    &.selected{
+      background-color: #E61E4B;
+    }
+  }
+  .text{
+    font-size: rem(22px);
+    color: #E6E6E6;
+    margin-top: rem(8px);
+  }
+  .status.disabled{
+    background-color: #959595;
+  }
+  .status.selected{
+    background-color: #E61E4B;
+  }
+}
+.seat-items{
+  position: absolute;
+  background-color: #61656A;
+  left: 0;
+  top:0;
+  right: 0;
+  bottom: 0;
+  @include displayflex;
+  @include flexflowCol();
+}
+.seat-page{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.seat-page.current{
+  z-index:101;
+  display: block;
+}

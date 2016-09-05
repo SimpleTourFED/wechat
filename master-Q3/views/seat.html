@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/master-Q3/css/seat.scss" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+<div class="page-group">
+    <div class="page page-current">
+        <header>
+            <div class="back"></div>
+            <div class="center">选座位</div>
+        </header>
+        <footer>
+
+        </footer>
+        <div class="page-content">
+        </div>
+    </div>
+</div>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                var style;
+                if (style = document.getElementById("forhtml")) {
+                    style.parentNode.removeChild(style);
+                }
+                style = document.createElement("style");
+                style.id = "forhtml";
+                document.head.appendChild(style);
+                style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+            };
+        if (!doc.addEventListener) return;
+        recalc();
+        document.body.style.visibility = 'visible';
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script>
+<script src="/common/js/zepto.min.js"></script>
+<script src="/common/js/base.js"></script>
+<script>
+    +function ($) {
+        function Seat() {
+            var _ = this;
+            _.now = 0;
+            _.init = function (el,option) {
+                _.el = el;
+                _.option = option;
+                $.each(_.option.seats,function (i,seatItem) {
+                    var contentStr = '';
+                    contentStr += _.renderHeader(seatItem);
+                    contentStr += _.renderContent(seatItem);
+                    $(contentStr).appendTo('.page-content');
+                });
+                _.el.find('.seat-page').eq(_.now).addClass('current');
+                _.click();
+                if(_.option.seats.length === 1){
+                    _.renderPageFooter('submit')
+                }else if(_.option.seats.length >= 2 ){
+                    _.renderPageFooter('next')
+                }
+                _.switchClick();
+            };
+            _.status = function () {
+                if(_.now === 0){
+                    return 'next'
+                }else if(_.now === (_.option.seats.length-1) && _.now != 0){
+                    return 'prevAndSubmit'
+                }else if(0<_.now<(_.option.seats.length-1)){
+                    return 'prevAndNext'
+                }
+            };
+            _.renderPageFooter = function (flag) {
+                switch (flag){
+                    case 'next':
+                        $('footer').html('<div class="next">下一段</div>');
+                        break;
+                    case 'prevAndNext':
+                        $('footer').html('<div class="prev">上一段</div><div class="next">下一段</div>');
+                        break;
+                    case 'prevAndSubmit':
+                        $('footer').html('<div class="prev">上一段</div><div class="submit">提交</div>');
+                        break;
+                    case 'submit':
+                        $('footer').html('<div class="submit">提交</div>');
+                        break;
+                }
+            };
+            _.switchClick = function () {
+                $('footer').on('click','.prev',function () {
+                    var $current = $(_.el).find('.seat-page').eq(_.now);
+                    var $prev = $(_.el).find('.seat-page').eq(_.now-1)
+                    $current.removeClass('current').addClass('center-to-right');
+                    $prev.addClass('current');
+                    $prev[0].clientLeft;
+                    $prev.addClass('left-to-center');
+                    _.now -= 1;
+                    setTimeout(function(){
+                        $current.removeClass('center-to-right');
+                        $prev.removeClass('left-to-center');
+                    },400);
+                    _.renderPageFooter(_.status());
+                });
+                $('footer').on('click','.next',function () {
+                    if($('.seat-items').eq(_.now).find('.seat.selected').length < _.option.max){
+                        $.alert({
+                            msg:'请为所有同行旅客选座'
+                        })
+                    }else{
+                        var $current = $(_.el).find('.seat-page').eq(_.now);
+                        var $next = $(_.el).find('.seat-page').eq(_.now+1);
+                        $current.removeClass('current').addClass('center-to-left');
+                        $next.addClass('current');
+                        $next[0].clientLeft;
+                        $next.addClass('right-to-center');
+                        _.now += 1;
+                        setTimeout(function(){
+                            $current.removeClass('center-to-left');
+                            $next.removeClass('right-to-center');
+                        },400);
+                        _.renderPageFooter(_.status());
+                    }
+                });
+                $('footer').on('click','.submit',function () {
+                    if($('.seat-items').eq(_.now).find('.seat.selected').length < _.option.max) {
+                        $.alert({
+                            msg:'请为所有同行旅客选座'
+                        })
+                    }else{
+                        console.log('submit');
+                    }
+                })
+            };
+            _.renderContent = function (v) {
+                var seatContent = '<div class="seats"><div class="seat-header">车窗前</div><div class="seat-content" style="width: '+(2.5*v.colTotal+.15*(v.colTotal+1)+2)+'rem">';
+                var result = [];
+                for(var i = 0;i<v.seats.length;i+=v.colTotal){
+                    result.push(v.seats.slice(i,i+v.colTotal))
+                }
+                $.each(result,function (row,val) {
+                    seatContent+='<div class="seat-row"><div class="placeholder">'+(row+1)+'</div>';
+                    $.each(val,function (col,value) {
+                        var type = value.type === 0?'none ':' ';
+                        var armrest = value.armrest === 'empty'?' ':value.armrest+' ';
+                        var status = value.status === 2 ? 'disabled ' : ' ';
+                        seatContent+='<div class="seat '+type+armrest+status+'"><div class="armrestLeft"></div><div class="seat-no">'+(value.rowNo+value.colNo)+'</div><div class="armrestRight"></div></div>'
+                    });
+                    seatContent += '<div class="placeholder">'+(row+1)+'</div></div>';
+                });
+                return seatContent+'</div>'+_.renderFooter(v)+'</div></div>'
+            };
+            _.renderHeader = function (v) {
+                return '<div class="seat-page"><div class="seat-items"><div class="page-header"><span>'+v.name+'</span><span>0/'+_.option.max+'</span></div>'
+            };
+            _.renderFooter = function () {
+                return '<div class="seat-footer"><div class="item"><div class="status disabled"></div><div class="text">不可选</div></div><div class="item"><div class="status"></div><div class="text">可选</div></div><div class="item"><div class="status selected"></div><div class="text">选中</div></div></div>';
+            };
+            _.click = function () {
+                _.el.find('.seat').not('.none').not('.disabled').click(function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    if($(this).hasClass('selected')){
+                        $(this).removeClass('selected');
+                    }else{
+                        if($('.seat-items').eq(_.now).find('.seat.selected').length < _.option.max){
+                            $(this).addClass('selected');
+                        }else{
+                            $.alert({
+                                msg:'您选择的座位数已满足所有同行旅客'
+                            })
+                        }
+                    }
+                    $('.seat-items').eq(_.now).find('.page-header span:last-child').html($('.seat-items').eq(_.now).find('.seat.selected').length+'/'+_.option.max);
+                })
+            }
+        }
+        $.fn.seat = function(option){
+            var defaultOption = {
+                seats : [],
+                max: 1
+            };
+            var o = $.extend(defaultOption,option);
+            (new Seat).init($(this),o);
+        }
+    }(Zepto)
+</script>
+<script>
+    $('.page-content').seat({
+        seats:[
+            {"colTotal":6,"ids":[207938,207931,207938,207931],"name":"九寨沟-川主寺","ownedList":["B5","A5","B5","A5"],"rowTotal":10,seats:[
+            {
+                "colNo": "A",
+                "rowNo": 1,
+                "type": 1,
+                "armrest": "empty",
+                "status": 0
+            },
+            {
+                "colNo": "B",
+                "rowNo": 1,
+                "type": 1,
+                "armrest": "right",
+                "status": 2
+            },
+            {
+                "colNo": "C",
+                "rowNo": 1,
+                "type": 0,
+                "armrest": "empty",
+                "status": 2
+            },
+            {
+                "colNo": "D",
+                "rowNo": 1,
+                "type": 1,
+                "armrest": "left",
+                "status": 2
+            },
+            {
+                "colNo": "E",
+                "rowNo": 1,
+                "type": 1,
+                "armrest": "empty",
+                "status": 2
+            },
+            {
+                "colNo": "F",
+                "rowNo": 1,
+                "type": 1,
+                "armrest": "empty",
+                "status": 2
+            },
+            {
+                "colNo": "A",
+                "rowNo": 2,
+                "type": 1,
+                "armrest": "empty",
+                "status": 2
+            },
+            {
+                "colNo": "B",
+                "rowNo": 2,
+                "type": 1,
+                "armrest": "right",
+                "status": 2
+            },
+            {
+                "colNo": "C",
+                "rowNo": 2,
+                "type": 0,
+                "armrest": "empty",
+                "status": 2
+            },
+            {
+                "colNo": "D",
+                "rowNo": 2,
+                "type": 1,
+                "armrest": "left",
+                "status": 2
+            },
+            {
+                "colNo": "E",
+                "rowNo": 2,
+                "type": 1,
+                "armrest": "empty",
+                "status": 0
+            },
+                {
+                    "colNo": "F",
+                    "rowNo": 2,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 2
+                },
+            {
+                "colNo": "A",
+                "rowNo": 3,
+                "type": 1,
+                "armrest": "empty",
+                "status": 0
+            },
+            {
+                "colNo": "B",
+                "rowNo": 3,
+                "type": 1,
+                "armrest": "right",
+                "status": 2
+            },
+            {
+                "colNo": "C",
+                "rowNo": 3,
+                "type": 0,
+                "armrest": "empty",
+                "status": 0
+            },
+            {
+                "colNo": "D",
+                "rowNo": 3,
+                "type": 1,
+                "armrest": "left",
+                "status": 0
+            },
+            {
+                "colNo": "E",
+                "rowNo": 3,
+                "type": 1,
+                "armrest": "empty",
+                "status": 0
+            },
+                {
+                    "colNo": "F",
+                    "rowNo": 3,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 2
+                },
+            {
+                "colNo": "A",
+                "rowNo": 4,
+                "type": 1,
+                "armrest": "empty",
+                "status": 0
+            },
+            {
+                "colNo": "B",
+                "rowNo": 4,
+                "type": 1,
+                "armrest": "right",
+                "status": 2
+            },
+            {
+                "colNo": "C",
+                "rowNo": 4,
+                "type": 0,
+                "armrest": "empty",
+                "status": 0
+            },
+            {
+                "colNo": "D",
+                "rowNo": 4,
+                "type": 1,
+                "armrest": "left",
+                "status": 2
+            },
+            {
+                "colNo": "E",
+                "rowNo": 4,
+                "type": 1,
+                "armrest": "empty",
+                "status": 0
+            },
+                {
+                    "colNo": "F",
+                    "rowNo": 4,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 2
+                },
+            {
+                "colNo": "A",
+                "rowNo": 5,
+                "type": 1,
+                "armrest": "empty",
+                "status": 2
+            },
+            {
+                "colNo": "B",
+                "rowNo": 5,
+                "type": 1,
+                "armrest": "right",
+                "status": 0
+            },
+            {
+                "colNo": "C",
+                "rowNo": 5,
+                "type": 0,
+                "armrest": "empty",
+                "status": 2
+            },
+            {
+                "colNo": "D",
+                "rowNo": 5,
+                "type": 1,
+                "armrest": "left",
+                "status": 0
+            },
+            {
+                "colNo": "E",
+                "rowNo": 5,
+                "type": 1,
+                "armrest": "empty",
+                "status": 2
+            },
+                {
+                    "colNo": "F",
+                    "rowNo": 5,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 2
+                },
+            {
+                "colNo": "A",
+                "rowNo": 6,
+                "type": 1,
+                "armrest": "empty",
+                "status": 2
+            },
+            {
+                "colNo": "B",
+                "rowNo": 6,
+                "type": 1,
+                "armrest": "right",
+                "status": 2
+            },
+            {
+                "colNo": "C",
+                "rowNo": 6,
+                "type": 0,
+                "armrest": "empty",
+                "status": 2
+            },
+            {
+                "colNo": "D",
+                "rowNo": 6,
+                "type": 1,
+                "armrest": "left",
+                "status": 2
+            },
+            {
+                "colNo": "E",
+                "rowNo": 6,
+                "type": 1,
+                "armrest": "empty",
+                "status": 0
+            },
+                {
+                    "colNo": "F",
+                    "rowNo": 6,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 2
+                },
+            {
+                "colNo": "A",
+                "rowNo": 7,
+                "type": 1,
+                "armrest": "empty",
+                "status": 2
+            },
+            {
+                "colNo": "B",
+                "rowNo": 7,
+                "type": 1,
+                "armrest": "right",
+                "status": 0
+            },
+            {
+                "colNo": "C",
+                "rowNo": 7,
+                "type": 0,
+                "armrest": "empty",
+                "status": 0
+            },
+            {
+                "colNo": "D",
+                "rowNo": 7,
+                "type": 1,
+                "armrest": "left",
+                "status": 0
+            },
+            {
+                "colNo": "E",
+                "rowNo": 7,
+                "type": 1,
+                "armrest": "empty",
+                "status": 2
+            },
+                {
+                    "colNo": "F",
+                    "rowNo": 7,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 2
+                },
+            {
+                "colNo": "A",
+                "rowNo": 8,
+                "type": 1,
+                "armrest": "empty",
+                "status": 0
+            },
+            {
+                "colNo": "B",
+                "rowNo": 8,
+                "type": 1,
+                "armrest": "right",
+                "status": 2
+            },
+            {
+                "colNo": "C",
+                "rowNo": 8,
+                "type": 0,
+                "armrest": "empty",
+                "status": 2
+            },
+            {
+                "colNo": "D",
+                "rowNo": 8,
+                "type": 1,
+                "armrest": "left",
+                "status": 0
+            },
+            {
+                "colNo": "E",
+                "rowNo": 8,
+                "type": 1,
+                "armrest": "empty",
+                "status": 2
+            },
+                {
+                    "colNo": "F",
+                    "rowNo": 8,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 2
+                },
+            {
+                "colNo": "A",
+                "rowNo": 9,
+                "type": 1,
+                "armrest": "empty",
+                "status": 0
+            },
+            {
+                "colNo": "B",
+                "rowNo": 9,
+                "type": 1,
+                "armrest": "right",
+                "status": 0
+            },
+            {
+                "colNo": "C",
+                "rowNo": 9,
+                "type": 0,
+                "armrest": "empty",
+                "status": 2
+            },
+            {
+                "colNo": "D",
+                "rowNo": 9,
+                "type": 1,
+                "armrest": "left",
+                "status": 2
+            },
+            {
+                "colNo": "E",
+                "rowNo": 9,
+                "type": 1,
+                "armrest": "empty",
+                "status": 2
+            },
+                {
+                    "colNo": "F",
+                    "rowNo": 9,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 2
+                },
+            {
+                "colNo": "A",
+                "rowNo": 10,
+                "type": 1,
+                "armrest": "empty",
+                "status": 2
+            },
+            {
+                "colNo": "B",
+                "rowNo": 10,
+                "type": 1,
+                "armrest": "right",
+                "status": 2
+            },
+            {
+                "colNo": "C",
+                "rowNo": 10,
+                "type": 0,
+                "armrest": "empty",
+                "status": 2
+            },
+            {
+                "colNo": "D",
+                "rowNo": 10,
+                "type": 1,
+                "armrest": "left",
+                "status": 2
+            },
+            {
+                "colNo": "E",
+                "rowNo": 10,
+                "type": 1,
+                "armrest": "empty",
+                "status": 2
+            },
+                {
+                    "colNo": "F",
+                    "rowNo": 10,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 2
+                }
+        ]},
+            {"colTotal":5,"ids":[207938,207931,207938,207931],"name":"川主寺-九寨沟","ownedList":["B5","A5","B5","A5"],"rowTotal":10,seats:[
+                {
+                    "colNo": "A",
+                    "rowNo": 1,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 0
+                },
+                {
+                    "colNo": "B",
+                    "rowNo": 1,
+                    "type": 1,
+                    "armrest": "right",
+                    "status": 2
+                },
+                {
+                    "colNo": "C",
+                    "rowNo": 1,
+                    "type": 0,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "D",
+                    "rowNo": 1,
+                    "type": 1,
+                    "armrest": "left",
+                    "status": 2
+                },
+                {
+                    "colNo": "E",
+                    "rowNo": 1,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "A",
+                    "rowNo": 2,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "B",
+                    "rowNo": 2,
+                    "type": 1,
+                    "armrest": "right",
+                    "status": 2
+                },
+                {
+                    "colNo": "C",
+                    "rowNo": 2,
+                    "type": 0,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "D",
+                    "rowNo": 2,
+                    "type": 1,
+                    "armrest": "left",
+                    "status": 2
+                },
+                {
+                    "colNo": "E",
+                    "rowNo": 2,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 0
+                },
+                {
+                    "colNo": "A",
+                    "rowNo": 3,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 0
+                },
+                {
+                    "colNo": "B",
+                    "rowNo": 3,
+                    "type": 1,
+                    "armrest": "right",
+                    "status": 2
+                },
+                {
+                    "colNo": "C",
+                    "rowNo": 3,
+                    "type": 0,
+                    "armrest": "empty",
+                    "status": 0
+                },
+                {
+                    "colNo": "D",
+                    "rowNo": 3,
+                    "type": 1,
+                    "armrest": "left",
+                    "status": 0
+                },
+                {
+                    "colNo": "E",
+                    "rowNo": 3,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 0
+                },
+                {
+                    "colNo": "A",
+                    "rowNo": 4,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 0
+                },
+                {
+                    "colNo": "B",
+                    "rowNo": 4,
+                    "type": 1,
+                    "armrest": "right",
+                    "status": 2
+                },
+                {
+                    "colNo": "C",
+                    "rowNo": 4,
+                    "type": 0,
+                    "armrest": "empty",
+                    "status": 0
+                },
+                {
+                    "colNo": "D",
+                    "rowNo": 4,
+                    "type": 1,
+                    "armrest": "left",
+                    "status": 2
+                },
+                {
+                    "colNo": "E",
+                    "rowNo": 4,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 0
+                },
+                {
+                    "colNo": "A",
+                    "rowNo": 5,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "B",
+                    "rowNo": 5,
+                    "type": 1,
+                    "armrest": "right",
+                    "status": 0
+                },
+                {
+                    "colNo": "C",
+                    "rowNo": 5,
+                    "type": 0,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "D",
+                    "rowNo": 5,
+                    "type": 1,
+                    "armrest": "left",
+                    "status": 0
+                },
+                {
+                    "colNo": "E",
+                    "rowNo": 5,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "A",
+                    "rowNo": 6,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "B",
+                    "rowNo": 6,
+                    "type": 1,
+                    "armrest": "right",
+                    "status": 2
+                },
+                {
+                    "colNo": "C",
+                    "rowNo": 6,
+                    "type": 0,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "D",
+                    "rowNo": 6,
+                    "type": 1,
+                    "armrest": "left",
+                    "status": 2
+                },
+                {
+                    "colNo": "E",
+                    "rowNo": 6,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 0
+                },
+                {
+                    "colNo": "A",
+                    "rowNo": 7,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "B",
+                    "rowNo": 7,
+                    "type": 1,
+                    "armrest": "right",
+                    "status": 0
+                },
+                {
+                    "colNo": "C",
+                    "rowNo": 7,
+                    "type": 0,
+                    "armrest": "empty",
+                    "status": 0
+                },
+                {
+                    "colNo": "D",
+                    "rowNo": 7,
+                    "type": 1,
+                    "armrest": "left",
+                    "status": 0
+                },
+                {
+                    "colNo": "E",
+                    "rowNo": 7,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "A",
+                    "rowNo": 8,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 0
+                },
+                {
+                    "colNo": "B",
+                    "rowNo": 8,
+                    "type": 1,
+                    "armrest": "right",
+                    "status": 2
+                },
+                {
+                    "colNo": "C",
+                    "rowNo": 8,
+                    "type": 0,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "D",
+                    "rowNo": 8,
+                    "type": 1,
+                    "armrest": "left",
+                    "status": 0
+                },
+                {
+                    "colNo": "E",
+                    "rowNo": 8,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "A",
+                    "rowNo": 9,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 0
+                },
+                {
+                    "colNo": "B",
+                    "rowNo": 9,
+                    "type": 1,
+                    "armrest": "right",
+                    "status": 0
+                },
+                {
+                    "colNo": "C",
+                    "rowNo": 9,
+                    "type": 0,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "D",
+                    "rowNo": 9,
+                    "type": 1,
+                    "armrest": "left",
+                    "status": 2
+                },
+                {
+                    "colNo": "E",
+                    "rowNo": 9,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "A",
+                    "rowNo": 10,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "B",
+                    "rowNo": 10,
+                    "type": 1,
+                    "armrest": "right",
+                    "status": 2
+                },
+                {
+                    "colNo": "C",
+                    "rowNo": 10,
+                    "type": 0,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "D",
+                    "rowNo": 10,
+                    "type": 1,
+                    "armrest": "left",
+                    "status": 2
+                },
+                {
+                    "colNo": "E",
+                    "rowNo": 10,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 2
+                }
+            ]},
+            {"colTotal":5,"ids":[207938,207931,207938,207931],"name":"川主寺-九寨沟","ownedList":["B5","A5","B5","A5"],"rowTotal":10,seats:[
+                {
+                    "colNo": "A",
+                    "rowNo": 1,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 0
+                },
+                {
+                    "colNo": "B",
+                    "rowNo": 1,
+                    "type": 1,
+                    "armrest": "right",
+                    "status": 2
+                },
+                {
+                    "colNo": "C",
+                    "rowNo": 1,
+                    "type": 0,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "D",
+                    "rowNo": 1,
+                    "type": 1,
+                    "armrest": "left",
+                    "status": 2
+                },
+                {
+                    "colNo": "E",
+                    "rowNo": 1,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "A",
+                    "rowNo": 2,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "B",
+                    "rowNo": 2,
+                    "type": 1,
+                    "armrest": "right",
+                    "status": 2
+                },
+                {
+                    "colNo": "C",
+                    "rowNo": 2,
+                    "type": 0,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "D",
+                    "rowNo": 2,
+                    "type": 1,
+                    "armrest": "left",
+                    "status": 2
+                },
+                {
+                    "colNo": "E",
+                    "rowNo": 2,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 0
+                },
+                {
+                    "colNo": "A",
+                    "rowNo": 3,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 0
+                },
+                {
+                    "colNo": "B",
+                    "rowNo": 3,
+                    "type": 1,
+                    "armrest": "right",
+                    "status": 2
+                },
+                {
+                    "colNo": "C",
+                    "rowNo": 3,
+                    "type": 0,
+                    "armrest": "empty",
+                    "status": 0
+                },
+                {
+                    "colNo": "D",
+                    "rowNo": 3,
+                    "type": 1,
+                    "armrest": "left",
+                    "status": 0
+                },
+                {
+                    "colNo": "E",
+                    "rowNo": 3,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 0
+                },
+                {
+                    "colNo": "A",
+                    "rowNo": 4,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 0
+                },
+                {
+                    "colNo": "B",
+                    "rowNo": 4,
+                    "type": 1,
+                    "armrest": "right",
+                    "status": 2
+                },
+                {
+                    "colNo": "C",
+                    "rowNo": 4,
+                    "type": 0,
+                    "armrest": "empty",
+                    "status": 0
+                },
+                {
+                    "colNo": "D",
+                    "rowNo": 4,
+                    "type": 1,
+                    "armrest": "left",
+                    "status": 2
+                },
+                {
+                    "colNo": "E",
+                    "rowNo": 4,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 0
+                },
+                {
+                    "colNo": "A",
+                    "rowNo": 5,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "B",
+                    "rowNo": 5,
+                    "type": 1,
+                    "armrest": "right",
+                    "status": 0
+                },
+                {
+                    "colNo": "C",
+                    "rowNo": 5,
+                    "type": 0,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "D",
+                    "rowNo": 5,
+                    "type": 1,
+                    "armrest": "left",
+                    "status": 0
+                },
+                {
+                    "colNo": "E",
+                    "rowNo": 5,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "A",
+                    "rowNo": 6,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "B",
+                    "rowNo": 6,
+                    "type": 1,
+                    "armrest": "right",
+                    "status": 2
+                },
+                {
+                    "colNo": "C",
+                    "rowNo": 6,
+                    "type": 0,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "D",
+                    "rowNo": 6,
+                    "type": 1,
+                    "armrest": "left",
+                    "status": 2
+                },
+                {
+                    "colNo": "E",
+                    "rowNo": 6,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 0
+                },
+                {
+                    "colNo": "A",
+                    "rowNo": 7,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "B",
+                    "rowNo": 7,
+                    "type": 1,
+                    "armrest": "right",
+                    "status": 0
+                },
+                {
+                    "colNo": "C",
+                    "rowNo": 7,
+                    "type": 0,
+                    "armrest": "empty",
+                    "status": 0
+                },
+                {
+                    "colNo": "D",
+                    "rowNo": 7,
+                    "type": 1,
+                    "armrest": "left",
+                    "status": 0
+                },
+                {
+                    "colNo": "E",
+                    "rowNo": 7,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "A",
+                    "rowNo": 8,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 0
+                },
+                {
+                    "colNo": "B",
+                    "rowNo": 8,
+                    "type": 1,
+                    "armrest": "right",
+                    "status": 2
+                },
+                {
+                    "colNo": "C",
+                    "rowNo": 8,
+                    "type": 0,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "D",
+                    "rowNo": 8,
+                    "type": 1,
+                    "armrest": "left",
+                    "status": 0
+                },
+                {
+                    "colNo": "E",
+                    "rowNo": 8,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "A",
+                    "rowNo": 9,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 0
+                },
+                {
+                    "colNo": "B",
+                    "rowNo": 9,
+                    "type": 1,
+                    "armrest": "right",
+                    "status": 0
+                },
+                {
+                    "colNo": "C",
+                    "rowNo": 9,
+                    "type": 0,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "D",
+                    "rowNo": 9,
+                    "type": 1,
+                    "armrest": "left",
+                    "status": 2
+                },
+                {
+                    "colNo": "E",
+                    "rowNo": 9,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "A",
+                    "rowNo": 10,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "B",
+                    "rowNo": 10,
+                    "type": 1,
+                    "armrest": "right",
+                    "status": 2
+                },
+                {
+                    "colNo": "C",
+                    "rowNo": 10,
+                    "type": 0,
+                    "armrest": "empty",
+                    "status": 2
+                },
+                {
+                    "colNo": "D",
+                    "rowNo": 10,
+                    "type": 1,
+                    "armrest": "left",
+                    "status": 2
+                },
+                {
+                    "colNo": "E",
+                    "rowNo": 10,
+                    "type": 1,
+                    "armrest": "empty",
+                    "status": 2
+                }
+            ]}
+        ],
+        max:1
+    })
+</script>
+</body>
+</html>
