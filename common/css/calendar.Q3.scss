@@ -1,0 +1,85 @@
+@mixin displayflex{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+@mixin flex($size:1){
+  -webkit-box-flex:$size;
+  -moz-box-flex:$size;
+  -webkit-flex:$size;
+  -ms-flex:$size;
+  flex:$size;
+}
+@mixin flexflowRow($direction:row,$dir:horizontal) {
+  -webkit-box-orient:$dir;
+  -ms-box-orient: $dir;
+  -moz-box-orient: $dir;
+  -webkit-flex-flow:$direction nowrap;
+  -ms-flex-flow:$direction nowrap;
+  -moz-flex-flow:$direction nowrap;
+  flex-flow:$direction nowrap;
+}
+.calendar-wrapper {
+  width: 100%;
+  .calendar-title {
+    width: 100%;
+    height: rem(70px);
+    line-height: rem(70px);
+    background-color: #F5F5F5;
+    text-align: center;
+    font-size: rem(28px);
+    color: #4F545B;
+  }
+
+  .calendar-weeks {
+    width: 100%;
+    height: rem(60px);
+    line-height: rem(60px);
+    background-color: #F5F5F5;
+    ul {
+      @include displayflex();
+      @include flexflowRow();
+      list-style: none;
+      li {
+        @include flex(1);
+        display: block;
+        color: #83858C;
+        font-size: rem(26px);
+        text-align: center;
+      }
+    }
+  }
+  .calendar-row {
+    width: 100%;
+    height: rem(110px);
+    @include displayflex();
+    @include flexflowRow();
+    .calendar-col {
+      display: block;
+      width: rem(91px);
+      padding-top: rem(26px);
+      text-align: center;
+      @include flex(1);
+      font-size: rem(28px);
+      color: #4F545B;
+      .price {
+        margin-top: rem(9px);
+        color: #A2A4A9;
+        font-size: rem(24px);
+      }
+
+      &.disabled {
+        color: #C0C2C9;
+      }
+      &.selected {
+        background-color: #E61E4B;
+        color: #ffffff;
+        .price {
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
