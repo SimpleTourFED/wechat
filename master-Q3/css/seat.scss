@@ -60,6 +60,7 @@ footer ~ .page-content{
   box-sizing: border-box;
   overflow: hidden;
   .seats{
+    width: 100%;
     overflow: auto;
     box-sizing: border-box;
     margin: 0 auto;
@@ -213,7 +214,26 @@ footer ~ .page-content{
   }
 }
 .seat-items{
-  height: 100%;
+  position: absolute;
+  background-color: #61656A;
+  left: 0;
+  top:0;
+  right: 0;
+  bottom: 0;
   @include displayflex;
   @include flexflowCol();
+}
+.seat-page{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.seat-page.current{
+  z-index:101;
+  display: block;
 }

@@ -244,24 +244,24 @@ header ~ .page-content{
 }
 //page切换动画效果
 .center-to-left{
-  display: block;
+  display: block !important;
   -webkit-animation: pageFromCenterToLeft 400ms forwards;
   animation: pageFromCenterToLeft 400ms forwards;
 }
 .center-to-right{
-  display: block;
+  display: block !important;
   -webkit-animation: pageFromCenterToRight 400ms forwards;
   animation: pageFromCenterToRight 400ms forwards;
 }
 .left-to-center{
   z-index: 102;
-  display: block ;
+  display: block !important;
   -webkit-animation: pageFromLeftToCenter 400ms forwards;
   animation: pageFromLeftToCenter 400ms forwards;
 }
 .right-to-center{
   //z-index: 102;
-  display: block ;
+  display: block !important;
   -webkit-animation: pageFromRightToCenter 400ms forwards;
   animation: pageFromRightToCenter 400ms forwards;
 }
