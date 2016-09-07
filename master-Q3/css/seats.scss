@@ -1,0 +1,126 @@
+@import "/common/css/base";
+body{
+  background-color: #F1F1F1;
+}
+.tips{
+  background-color: white;
+  padding: rem(30px) rem(26px);
+  margin-bottom: rem(32px);
+  .title{
+    font-size: rem(30px);
+    color:#4F545B;
+    font-weight: 400;
+    margin-bottom: rem(25px);
+  }
+  p{
+    margin: rem(15px) 0;
+    color: #5A6473;
+    font-size: rem(28px);
+    line-height: rem(36px);
+    .red{
+      color:#EE385D;
+    }
+  }
+}
+.item.unique{
+  height: 2.075rem !important;
+}
+.item{
+  &:first-child{
+    height: rem(96px);
+    .seat{
+      padding-top: rem(21px);
+    }
+    .day .day-text{
+      margin-top: rem(16px);
+    }
+  }
+  &:last-child{
+    height: rem(70px);
+    .seat{
+      margin-bottom: 0;
+      border-bottom: 0;
+    }
+    .line{
+      display: none !important;
+    }
+  }
+  background-color: white;
+  @include displayflex;
+  @include flexflowRow();
+  height: rem(83px);
+  .seat{
+    @include flex(1);
+    padding-top: rem(10px);
+    margin-left: rem(50px);
+    margin-bottom: rem(13px);
+    @include displayflex;
+    @include flexflowRow();
+    border-bottom: 1px solid #E9ECF4;
+    .date{
+      @include flex(1);
+      color: #4F545B;
+      font-size: rem(28px);
+    }
+    .status{
+      width: rem(226px);
+      padding-right: rem(26px);
+      box-sizing: border-box;
+      text-align: center;
+      font-size: rem(28px);
+      color: #4F545B;
+      position: relative;
+    }
+    .check{
+      width: rem(200px);
+      height:rem(66px);
+      line-height: rem(66px);
+      text-align: center;
+      color:#E61E4B;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      position: absolute;
+      top:rem(-14px);
+      border-radius: rem(9px);
+      left: 0;
+      border:1px solid #E61E4B;
+    }
+    .pick{
+      width: rem(200px);
+      height:rem(64px);
+      line-height: rem(64px);
+      text-align: center;
+      color:white;
+      display: inline-block;
+      position: absolute;
+      top:rem(-14px);
+      border-radius: rem(9px);
+      left: 0;
+      background-color: #E61E4B;
+    }
+  }
+  .day{
+    @include displayflex;
+    @include flexflowCol();
+    box-sizing: border-box;
+    padding-left: rem(35px);
+    .day-text{
+      width: rem(45px);
+      height: rem(45px);
+      border-radius: rem(90px);
+      box-sizing: border-box;
+      border:1px solid #F5B950;
+      color: #F5B950;
+      font-size: rem(22px);
+      text-align: center;
+      line-height: rem(43px);
+      margin:rem(7px) 0 rem(7px);
+    }
+    .line{
+      border-left:1px dashed #C0C5D1;
+      @include flex(1);
+      margin-left: rem(20px);
+    }
+  }
+}
