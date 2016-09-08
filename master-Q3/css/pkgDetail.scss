@@ -100,6 +100,12 @@
           background: url("/master-Q3/images/icon/transform_icon@2x.png") no-repeat center;
           background-size: 100%;
         }
+        &.single {
+          i {
+            background: url("/master-Q3/images/icon/transform_single_icon@2x.png") no-repeat center;
+            background-size: 100%;
+          }
+        }
       }
       .days {
         @include flex(1);
@@ -188,6 +194,26 @@
         &.hotel {
           background: url('/master-Q3/images/icon/hotel_icon@2x.png') no-repeat left;
           background-size: rem(40px) rem(40px);
+        }
+        &.catering {
+          background: url(/master-Q3/images/icon/catering_icon@2x.png) no-repeat left;
+          background-size: 1rem 1rem;
+        }
+        &.ticket {
+          background: url(/master-Q3/images/icon/ticket_icon@2x.png) no-repeat left;
+          background-size: 1rem 1rem;
+        }
+        &.activity {
+          background: url(/master-Q3/images/icon/activity_icon@2x.png) no-repeat left;
+          background-size: 1rem 1rem;
+        }
+        &.gift {
+          background: url(/master-Q3/images/icon/gift_icon@2x.png) no-repeat left;
+          background-size: 1rem 1rem;
+        }
+        &.shuttleBus {
+          background: url(/master-Q3/images/icon/shuttleBus_icon@2x.png) no-repeat left;
+          background-size: 1rem 1rem;
         }
       }
       p {
