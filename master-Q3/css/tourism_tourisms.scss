@@ -100,6 +100,9 @@ footer {
   &:first-child {
     margin-top: rem(32px);
   }
+  &:last-child .footer{
+    margin-bottom: 0;
+  }
   .title {
     @include displayflex;
     @include flexflowRow;
@@ -314,4 +317,12 @@ footer {
     background-color: #fff;
     @include border-radius(8px);
   }
+}
+#pullDown{
+  height: rem(80px);
+  padding: rem(20px) rem(26px);
+  line-height: rem(40px);
+  font-size: rem(24px);
+  color: #83858C;
+  text-align: center;
 }
