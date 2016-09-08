@@ -7,25 +7,27 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="wap-font-scale" content="no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="/common/css/base.scss" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/master-Q3/css/coupon.scss" media="screen" title="no title" charset="utf-8">
 </head>
 <body>
 <div class="page-group">
-    <!--一个页面,如果有多个就是多个page,要首先显示的需要加上page-current类-->
     <div class="page page-current">
-        <!--每个page的页头-->
         <header>
+            <div class="back"></div>
             <div class="center">我的行程</div>
         </header>
-        <!--每个page的页脚-->
-        <footer></footer>
-        <!--内容区域-->
         <div class="page-content">
-            <a href="#">11111</a>
+            <div class="content-header">
+                <div><span class="selected">可用优惠劵</span></div>
+                <div><span>不可用优惠劵</span></div>
+            </div>
+            <div class="cutline"></div>
+            <div class="available">
+
+            </div>
         </div>
     </div>
 </div>
-<!--<div class="alert-msg in">这里是错误提示</div>-->
 <script>
     (function (doc, win) {
         var docEl = doc.documentElement,
@@ -52,15 +54,5 @@
 </script>
 <script src="/common/js/zepto.min.js"></script>
 <script src="/common/js/base.js"></script>
-<script>
-    $('a').click(function (e) {
-        e.preventDefault();
-        $.confirm({title:'这里是标题',
-            detail : ['这里是描述'],
-            yes : '确定',
-            cancel: false})
-    })
-
-</script>
 </body>
 </html>
