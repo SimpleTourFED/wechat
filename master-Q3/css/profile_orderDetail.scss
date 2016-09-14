@@ -17,7 +17,7 @@
 }
 
 html, body {
-  background-color: #E7E7E7;
+  background-color: #F5F5F5;
 }
 
 * {
@@ -59,6 +59,7 @@ img {
 
 .orderBar {
   width: 100%;
+  overflow: hidden;
   height: rem(88px);
   padding: rem(30px) rem(26px);
   background-color: #fff;
@@ -83,6 +84,8 @@ img {
 }
 
 .orderInfo {
+  width: 100%;
+  overflow: hidden;
   background-color: #fff;
   margin-bottom: rem(16px);
   .product-info {
@@ -102,10 +105,11 @@ img {
     -webkit-align-items: center;
     align-items: center;
     &:active {
-      background-color: #F1F1F1;
+      background-color: #DEDEDE;
     }
     .left {
       @include flex;
+      display: block;
       .name {
         font-size: rem(32px);
         line-height: rem(42px);
@@ -168,6 +172,7 @@ img {
       height: rem(32px);
       background: url(/master-Q3/images/icon/right_grey_arrow@2x.png) no-repeat center;
       background-size: contain;
+      display: inline-block;
       margin-left: rem(40px);
     }
   }
@@ -175,6 +180,7 @@ img {
     margin: 0 rem(26px);
     border-top: 1px solid #EBEBF5;
     .product {
+      width: rem(588px);
       padding: rem(16px) 0;
       @include displayflex;
       @include flexflowRow;
@@ -192,7 +198,9 @@ img {
       align-items: center;
       span {
         @include flex;
+        display: inline-block;
         color: #83858C;
+        width: rem(538px);
         font-size: rem(26px);
         line-height: rem(40px);
       }
@@ -252,9 +260,11 @@ img {
       }
       .label {
         margin-right: rem(20px);
+        display: block;
       }
       .value {
         @include flex;
+        display: block;
         color: #4F545B;
         line-height: rem(37px);
       }
@@ -287,7 +297,7 @@ img {
 .customers{
   background-color: #fff;
   padding: 0 rem(26px);
-  margin-bottom: rem(28px);
+  margin-bottom: rem(16px);
 }
 .customer,.check{
   height: rem(88px);
@@ -312,6 +322,7 @@ img {
   .name{
     @include flex;
     margin-right: rem(20px);
+    display: block;
   }
   .view{
     color: #F5B950;
@@ -322,16 +333,17 @@ img {
     font-size: rem(34px);
     color: #E61E4B;
     @include flex;
+    display: block;
   }
 }
 .check{
   background-color: #fff;
   padding: rem(14px) rem(26px);
-  margin-bottom: rem(28px);
+  margin-bottom: rem(16px);
 }
 .backRule{
   background-color: #fff;
-  margin-bottom: rem(28px);
+  margin-bottom: rem(16px);
   .title {
     font-size: rem(26px);
     color: #83858C;
@@ -358,11 +370,13 @@ img {
 footer{
   box-shadow: 0 -2px 6px rgba(0,0,0,0.15);
   -webkit-box-shadow: 0 -2px 6px rgba(0,0,0,0.15);
+  font-size: 0;
   .tel{
     width: rem(140px);
     display: inline-block;
+    vertical-align: top;
     &:active{
-      background-color: #F1F1F1;
+      background-color: #DEDEDE;
     }
     &:before{
       display: block;
@@ -384,8 +398,9 @@ footer{
   }
   .buy{
     width: rem(499px);
+    vertical-align: top;
     @include flex;
-    display: inline-block;
+    display: block;
     line-height: rem(96px);
     text-align: center;
     background-color: #E61E4B;
