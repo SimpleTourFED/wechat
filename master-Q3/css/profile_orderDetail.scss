@@ -62,7 +62,7 @@ img {
   height: rem(88px);
   padding: rem(30px) rem(26px);
   background-color: #fff;
-  margin-bottom: rem(32px);
+  margin-bottom: rem(16px);
   @include displayflex;
   @include flexflowRow;
   span {
@@ -84,7 +84,7 @@ img {
 
 .orderInfo {
   background-color: #fff;
-  margin-bottom: rem(28px);
+  margin-bottom: rem(16px);
   .product-info {
     padding: rem(20px) rem(26px);
     @include displayflex;
@@ -268,7 +268,7 @@ img {
   height: rem(88px);
   background-color: #fff;
   padding: rem(30px) rem(26px);
-  margin-bottom: rem(28px);
+  margin-bottom: rem(16px);
   font-size: 0;
   span{
     display: inline-block;
