@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/master-Q3/css/distributor_index.scss?__inline">
+</head>
+<body>
+<div class="page-group">
+    <div class="page page-current">
+        <header>
+            <div class="back"></div>
+            <div class="center">简途代言人</div>
+        </header>
+        <footer>
+            <div class="upRow">
+                <div class="label">现金收益：<span class="total-price">3441.00</span></div>
+                <a class="checkDetail" href="">查看明细</a>
+            </div>
+            <div class="downRow">
+                <div class="invite-num">邀请人数：193</div>
+                <div class="order-num">订单数：20</div>
+            </div>
+        </footer>
+        <div class="page-content">
+            <div class="top-module">
+                <div class="avatar">
+                    <img src="/master-Q3/images/spokesman_avatar.png" alt=""/>
+                </div>
+                <a class="rule">奖励规则</a>
+                <div class="name">简途代言人</div>
+            </div>
+            <div class="center-module">
+                <a class="checkQRcode" href="">查看邀请二维码</a>
+                <a class="checkRange" href="">查看排行榜</a>
+            </div>
+            <div class="bottom-module">
+                <div class="title"><span>分享好友，立即领取现金返现</span></div>
+                <div class="content">
+                    简途是一种极致自由，随上随下，只需动动手指，就能一站解决所有出行问题的新兴旅游方式！
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    // 针对uc横竖屏rem html没有重绘的问题
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+        var a = document.getElementsByTagName('a');
+        for (var i = 0; i < a.length; i++) {
+            a[i].addEventListener('touchstart', function () {
+            }, false);
+        }
+    })(document, window);
+    $(document).ready(function () {
+        // 点击返回按钮
+        $('header .back').click(function (e) {
+            history.go(-1);
+        });
+    });
+</script>
+</body>
+</html>
