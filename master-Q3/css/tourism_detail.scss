@@ -17,7 +17,8 @@
 }
 
 html, body {
-  background-color: #F5F5F5;
+  //background-color:  #E7E7E7;
+  background-color:  #F5F5F5;
 }
 
 * {
@@ -71,7 +72,7 @@ img {
     .line {
       width: rem(55px);
       display: block;
-      border-right: 2px solid #D9D5D5;
+      border-right: 1px solid #D9D5D5;
     }
     .stops {
       @include flex;
@@ -79,7 +80,7 @@ img {
       padding-bottom: rem(48px);
       .stop {
         margin-left: rem(-47px);
-        margin-top: rem(40px);
+        padding-top: rem(40px);
         width: rem(633px);
         padding-right: rem(26px);
         .stop-title {
@@ -107,7 +108,7 @@ img {
           margin-left: rem(108px);
         }
         .introes {
-          padding-left: rem(22px);
+          padding-left: rem(26px);
           padding-top: rem(10px);
           .intro {
             @include displayflex;
@@ -118,7 +119,7 @@ img {
               display: block;
               width: rem(40px);
               height: rem(40px);
-              background: url(/master-Q3/images/icon/spot_icon@2x.png) no-repeat center;
+              background: url(/master-Q3/images/icon/yellow_ticket@2x.png) no-repeat center;
               background-size: contain;
               vertical-align: top;
               margin-right: rem(48px);
@@ -139,7 +140,7 @@ img {
                 border-left-color: transparent;
                 border-top-color: transparent;
                 position: absolute;
-                left: rem(-28px);
+                left: rem(-26px);
                 top: rem(28px);
               }
               .article-title {
@@ -149,21 +150,14 @@ img {
                 line-height: rem(37px);
               }
               .article-content {
-                padding: 0 rem(26px);
-                height: rem(111px);
+                padding: 0 rem(26px) rem(24px);
                 color: #83858C;
                 font-size: rem(26px);
                 line-height: rem(37px);
                 margin-top: rem(20px);
-                overflow: hidden;
-                text-overflow: ellipsis;
-                -o-text-overflow: ellipsis;
-                display: -webkit-box;
-                -webkit-line-clamp: 3;
-                -webkit-box-orient: vertical;
               }
               .products{
-                margin-top: rem(20px);
+                padding-bottom: rem(20px);
                 .product{
                   @include displayflex;
                   @include flexflowRow;
@@ -220,6 +214,26 @@ img {
                 }
               }
             }
+          }
+          .intro.ticket:before{
+            background: url(/master-Q3/images/icon/yellow_ticket@2x.png) no-repeat center;
+            background-size: contain;
+          }
+          .intro.food:before{
+            background: url(/master-Q3/images/icon/yellow_food@2x.png) no-repeat center;
+            background-size: contain;
+          }
+          .intro.hotel:before{
+            background: url(/master-Q3/images/icon/yellow_hotel@2x.png) no-repeat center;
+            background-size: contain;
+          }
+          .intro.entertainment:before{
+            background: url(/master-Q3/images/icon/yellow_entertainment@2x.png) no-repeat center;
+            background-size: contain;
+          }
+          .intro.marshalPoint:before{
+            background: url(/master-Q3/images/icon/yellow_marshalpoint@2x.png) no-repeat center;
+            background-size: contain;
           }
         }
       }
