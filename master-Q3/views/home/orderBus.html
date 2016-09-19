@@ -7,6 +7,23 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="/master-Q3/css/orderBus.scss?__inline" media="screen" title="no title" charset="utf-8">
+    <script type="text/javascript">
+        function filterResult (e){
+            var value = event.target.value;
+            if(!value) {
+                $('.search-bar').removeClass('input-change');
+            } else {
+                $('.search-bar').addClass('input-change');
+            }
+            $('.search-result .result').each(function(key, item) {
+                if($(item).text().indexOf(value) >= 0) {
+                    $(item).show();
+                } else {
+                    $(item).hide();
+                }
+            });
+        }
+    </script>
 </head>
 <body>
 <div class="page-group">
@@ -361,6 +378,21 @@
             $('.navBar li.'+destination).addClass('selected');
             $(this).parents('.page-group').find('.destination-content.current').removeClass('current');
             $(this).parents('.page-group').find('.destination-content.'+destination).addClass('current');
+        });
+
+        $('.search-input input').focusin(function (e) {
+            $('.search-bar').addClass('click-search');
+            $('.search-result').addClass('show');
+        });
+        $('.search-bar .cancel').click(function (e) {
+            $('.search-bar').removeClass('click-search').removeClass('input-change');
+            $('.search-result').removeClass('show');
+            $('.search-input input').val('');
+        });
+        // 这里用一个稍微大一点的div来触发清空按钮的点击事件
+        $('.click-zone').click(function() {
+            $('.search-input input').val('');
+            $('.search-bar').removeClass('input-change');
         });
     })
 </script>
