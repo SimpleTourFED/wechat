@@ -45,7 +45,7 @@ $opacity: 1 !default;
 }
 
 html, body {
-  background-color: #E7E7E7;
+  background-color: #F5F5F5;
 }
 
 * {
@@ -62,7 +62,7 @@ img {
 
 .topModule {
   background-color: #fff;
-  margin-bottom: toRem(16px);
+  margin-bottom: toRem(8px);
   .banner {
     width: 100%;
     height: toRem(140px);
@@ -80,7 +80,7 @@ img {
       display: block;
       padding: toRem(15.5px) 0;
       &:active{
-        background-color: #F1F1F1;
+        background-color: #DEDEDE;
       }
     }
     .domestic, .international {
@@ -134,6 +134,7 @@ img {
 .contentModule {
   .lines_group {
     background-color: #fff;
+    margin-bottom: toRem(8px);
     .title-bar {
       @include displayflex;
       @include flexflowRow;
@@ -179,7 +180,6 @@ img {
       padding: toRem(15px) toRem(13px);
       margin-left: toRem(-10px);
       margin-top: toRem(-10px);
-      margin-bottom: toRem(14px);
       font-size: 0;
       overflow: hidden;
       a{
@@ -301,5 +301,8 @@ footer{
       background: url(/master-Q3/images/icon/me_normal@2x.png) no-repeat center;
       background-size: contain;
     }
+  }
+  a.selected{
+    color: #E61E4B;
   }
 }

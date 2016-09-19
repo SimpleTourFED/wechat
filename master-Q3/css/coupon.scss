@@ -1,1 +1,60 @@
 @import "/common/css/base";
+@mixin linear-gradient-black {
+  background-image: -webkit-linear-gradient(top,
+          rgba(0, 0, 0, .1) 0%,
+          rgba(0, 0, 0, 0) 100%
+  );
+  background-image: -moz-linear-gradient(top,
+          rgba(0, 0, 0, .1) 0%,
+          rgba(0, 0, 0, 0) 100%
+  );
+  background-image: -o-linear-gradient(top,
+          rgba(0, 0, 0, .1) 0%,
+          rgba(0, 0, 0, 0) 100%
+  );
+  background-image: -ms-linear-gradient(top,
+          rgba(0, 0, 0, .1) 0%,
+          rgba(0, 0, 0, 0) 100%
+  ); /* IE10+ */
+  background-image: linear-gradient(top,
+          rgba(0, 0, 0, .1) 0%,
+          rgba(0, 0, 0, 0) 100%
+  ); /* W3C */
+}
+.content-header{
+  @include displayflex;
+  @include flexflowRow();
+  div{
+    @include flex(1);
+    text-align: center;
+    span{
+      display: inline-block;
+      height: rem(88px);
+      line-height: rem(88px);
+      width: auto;
+      box-sizing: border-box;
+      color: #83858C;
+      font-size: rem(28px);
+      &.selected{
+        color: #E61E4B;
+        border-bottom: 2px solid #E61E4B;
+      }
+    }
+  }
+}
+.cutline{
+  @include linear-gradient-black;
+  height: rem(10px);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:rem(88px);
+}
+.available{
+  padding: rem(7px) rem(26px) 0;
+}
+.coupon{
+  height: rem(180px);
+  @include displayflex;
+  @include flexflowRow();
+}

@@ -17,7 +17,7 @@
 }
 
 html, body {
-  background-color: #E7E7E7;
+  background-color: #F5F5F5;
 }
 
 * {
@@ -92,13 +92,19 @@ footer {
       background-size: contain;
     }
   }
+  a.selected{
+    color: #E61E4B;
+  }
 }
 
 .trip {
   background-color: #fff;
-  margin-top: rem(28px);
+  margin-top: rem(16px);
   &:first-child {
-    margin-top: rem(32px);
+    margin-top: rem(16px);
+  }
+  &:last-child .footer{
+    margin-bottom: 0;
   }
   .title {
     @include displayflex;
@@ -106,7 +112,7 @@ footer {
     padding: rem(24px) rem(26px) rem(24px) 0;
     border-bottom: 1px solid #EBEBF5;
     &:active {
-      background-color: #F1F1F1;
+      background-color: #DEDEDE;
     }
     span {
       @include flex;
@@ -186,7 +192,7 @@ footer {
         }
       }
       a:active {
-        background-color: #F1F1F1;
+        background-color: #DEDEDE;
       }
       a:last-child {
         border-bottom: none;
@@ -221,7 +227,6 @@ footer {
   height: rem(110px);
   background-color: #fff;
   padding: rem(20px) 0;
-  margin-bottom: rem(30px);
   a {
     display: block;
     width: rem(588px);
@@ -314,4 +319,12 @@ footer {
     background-color: #fff;
     @include border-radius(8px);
   }
+}
+#pullDown{
+  height: rem(80px);
+  padding: rem(20px) rem(26px);
+  line-height: rem(40px);
+  font-size: rem(24px);
+  color: #83858C;
+  text-align: center;
 }
