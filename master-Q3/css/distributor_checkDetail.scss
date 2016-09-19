@@ -36,7 +36,9 @@ img {
 ul, li {
   list-style: none;
 }
-
+header~.page-content{
+  top: rem(176px);
+}
 .tabs {
   @include displayflex;
   @include flexflowRow;
@@ -44,6 +46,12 @@ ul, li {
   line-height: rem(88px);
   background-color: #fff;
   @include shadow(0, 1px, 4px, rgba(0, 0, 0, 0.2));
+  position: absolute;
+  width: 100%;
+  z-index: 5;
+  top: rem(88px);
+  left: 0;
+  right: 0;
   li {
     display: block;
     @include flex;
