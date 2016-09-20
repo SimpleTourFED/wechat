@@ -79,7 +79,7 @@
                             <div class="label">已入账收入合计</div>
                             <div class="price">34567.00</div>
                         </div>
-                        <a class="cancelOrder" href="">查看已取消订单</a>
+                        <a class="cancelOrder" href="/master-Q3/views/distributor/distributor_cancelOrder.html">查看已取消订单</a>
                     </div>
                     <div class="records">
                         <div class="record">
@@ -204,24 +204,28 @@
             history.go(-1);
         });
         var timer;
+        roll();
         $('ul.tabs li').on('tap', function (e) {
             var $this = $(this);
             $this.siblings().removeClass('selected');
             $this.addClass('selected');
             $('ul.panels li').removeClass('selected').eq($this.index()).addClass('selected');
             clearInterval(timer);
-            if($this.index()==2){
-                var $marquee = $('.marquee-wrap .marquee'),$tip = $marquee.find('span.tip');
-                var $clone = $tip.clone(),$first,width = $tip.width();
-                $marquee.width(width*2).append($clone);
-                $first = $('.marquee-wrap .marquee span.tip').eq(0).css('margin-left', -width + 'px');
-                timer = setInterval(function(){
-                    $first.css('margin-left', 0);
-                    $marquee.append($first);
-                    $first = $('.marquee-wrap .marquee span.tip').eq(0).css('margin-left', -width + 'px');
-                }, 3500);
+            if ($this.index() == 2) {
+                roll();
             }
         });
+        function roll() {
+            var $marquee = $('.marquee-wrap .marquee'),$tip = $marquee.find('span.tip');
+            var $clone = $tip.clone(),$first,width = $tip.width();
+            $marquee.width(width*2).append($clone);
+            $first = $('.marquee-wrap .marquee span.tip').eq(0).css('margin-left', -width + 'px');
+            timer = setInterval(function(){
+                $first.css('margin-left', 0);
+                $marquee.append($first);
+                $first = $('.marquee-wrap .marquee span.tip').eq(0).css('margin-left', -width + 'px');
+            }, 3500);
+        }
     });
 </script>
 </body>
