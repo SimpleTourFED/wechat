@@ -32,26 +32,44 @@ img {
   vertical-align: middle;
   border: none;
 }
-.marquee{
+.marquee-wrap{
+  width: 100%;
+  height: rem(70px);
+  overflow: hidden;
   background-color: #F5B950;
-  .tip {
-    width: 100%;
+  .marquee{
+    min-width: 100%;
     height: rem(70px);
-    color: #fff;
-    font-size: rem(28px);
-    line-height: rem(36px);
-    padding: rem(17px) rem(26px);
-    display: inline-block;
-    vertical-align: top;
-    &:before {
+    &:after{
       content: '';
+      display: block;
+      clear: both;
+    }
+    .tip {
+      float: left;
+      height: rem(70px);
+      white-space: nowrap;
+      color: #fff;
+      font-size: rem(28px);
+      line-height: rem(36px);
+      padding: rem(17px) rem(26px);
       display: inline-block;
-      width: rem(36px);
-      height: rem(36px);
-      background: url(/master-Q3/images/icon/tips_white_icon.png) no-repeat center;
-      background-size: contain;
       vertical-align: top;
-      margin-right: rem(20px);
+      transition: margin-left 3500ms linear;
+      -moz-transition: margin-left 3500ms linear; /* Firefox 4 */
+      -webkit-transition: margin-left 3500ms linear; /* Safari 和 Chrome */
+      -o-transition: margin-left 3500ms linear; /* Opera */
+      -ms-transition: margin-left 3500ms linear; /* IE 9 */
+      &:before {
+        content: '';
+        display: inline-block;
+        width: rem(36px);
+        height: rem(36px);
+        background: url(/master-Q3/images/icon/tips_white_icon.png) no-repeat center;
+        background-size: contain;
+        vertical-align: top;
+        margin-right: rem(20px);
+      }
     }
   }
 }

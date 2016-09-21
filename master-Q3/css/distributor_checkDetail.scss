@@ -36,7 +36,9 @@ img {
 ul, li {
   list-style: none;
 }
-
+header~.page-content{
+  top: rem(176px);
+}
 .tabs {
   @include displayflex;
   @include flexflowRow;
@@ -44,6 +46,12 @@ ul, li {
   line-height: rem(88px);
   background-color: #fff;
   @include shadow(0, 1px, 4px, rgba(0, 0, 0, 0.2));
+  position: absolute;
+  width: 100%;
+  z-index: 5;
+  top: rem(88px);
+  left: 0;
+  right: 0;
   li {
     display: block;
     @include flex;
@@ -125,26 +133,44 @@ ul, li {
         text-align: center;
       }
     }
-    .marquee{
+    .marquee-wrap{
+      width: 100%;
+      height: rem(70px);
+      overflow: hidden;
       background-color: #F5B950;
-      .tip {
-        width: 100%;
+      .marquee{
+        width: auto;
         height: rem(70px);
-        color: #fff;
-        font-size: rem(28px);
-        line-height: rem(36px);
-        padding: rem(17px) rem(26px);
-        display: inline-block;
-        vertical-align: top;
-        &:before {
+        &:after{
           content: '';
+          display: block;
+          clear: both;
+        }
+        .tip {
+          float: left;
+          height: rem(70px);
+          white-space: nowrap;
+          color: #fff;
+          font-size: rem(28px);
+          line-height: rem(36px);
+          padding: rem(17px) rem(26px);
           display: inline-block;
-          width: rem(36px);
-          height: rem(36px);
-          background: url(/master-Q3/images/icon/tips_white_icon.png) no-repeat center;
-          background-size: contain;
           vertical-align: top;
-          margin-right: rem(20px);
+          transition: margin-left 3500ms linear;
+          -moz-transition: margin-left 3500ms linear; /* Firefox 4 */
+          -webkit-transition: margin-left 3500ms linear; /* Safari 和 Chrome */
+          -o-transition: margin-left 3500ms linear; /* Opera */
+          -ms-transition: margin-left 3500ms linear; /* IE 9 */
+          &:before {
+            content: '';
+            display: inline-block;
+            width: rem(36px);
+            height: rem(36px);
+            background: url(/master-Q3/images/icon/tips_white_icon.png) no-repeat center;
+            background-size: contain;
+            vertical-align: top;
+            margin-right: rem(20px);
+          }
         }
       }
     }

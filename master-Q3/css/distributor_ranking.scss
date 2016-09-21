@@ -1,0 +1,188 @@
+@import "/common/css/base";
+
+@mixin box-sizing($set:border-box) {
+  -webkit-box-sizing: $set;
+  -moz-box-sizing: $set;
+  -ms-box-sizing: $set;
+  -o-box-sizing: $set;
+  box-sizing: $set;
+}
+
+@mixin border-radius($radius:4px) {
+  -webkit-border-radius: rem($radius);
+  -moz-border-radius: rem($radius);
+  -ms-border-radius: rem($radius);
+  -o-border-radius: rem($radius);
+  border-radius: rem($radius);
+}
+
+html, body {
+  background-color: #F5F5F5;
+}
+
+* {
+  @include box-sizing();
+  outline: none;
+  color: #4F545B;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  border: none;
+}
+
+ul, li {
+  list-style: none;
+}
+header~.page-content{
+  top: rem(176px);
+}
+
+.tabs {
+  @include displayflex;
+  @include flexflowRow;
+  height: rem(88px);
+  line-height: rem(88px);
+  background-color: #fff;
+  @include shadow(0, 1px, 4px, rgba(0, 0, 0, 0.2));
+  position: absolute;
+  width: 100%;
+  z-index: 5;
+  top: rem(88px);
+  left: 0;
+  right: 0;
+  li {
+    display: block;
+    @include flex;
+    text-align: center;
+    font-size: rem(28px);
+    color: #83858C;
+    span {
+      display: inline-block;
+      font-size: rem(28px);
+      color: #83858C;
+      height: rem(88px);
+    }
+  }
+  li.selected span {
+    color: $red;
+    border-bottom: 2px solid $red;
+  }
+}
+
+.panels {
+  width: 100%;
+  .panel {
+    display: none;
+    padding: rem(20px) rem(26px);
+    .total {
+      background-color: #fff;
+      padding: rem(16px) rem(30px);
+      @include displayflex;
+      @include flexflowRow;
+      @include border-radius(8px);
+      @include shadow(0, 0, 4px, rgba(0, 0, 0, 0.2));
+      .number, .amount {
+        @include flex;
+        padding: rem(16px) 0;
+        .label {
+          font-size: rem(28px);
+          color: #83858C;
+          padding-bottom: rem(26px);
+          text-align: center;
+        }
+        .value {
+          font-size: rem(46px);
+          color: $red;
+          text-align: center;
+        }
+      }
+      .number {
+        border-right: 1px solid #D8D8D8;
+      }
+    }
+    .ranking {
+      margin: rem(20px) auto;
+      @include shadow(0, 0, 4px, rgba(0, 0, 0, 0.2));
+      @include border-radius(8px);
+      overflow: hidden;
+      .item {
+        padding: rem(26px) rem(30px);
+        background-color: #fff;
+        border-bottom: 1px solid #D8D8D8;
+        @include displayflex;
+        @include flexflowRow;
+        span {
+          display: block;
+          color: #83858C;
+          height: rem(38px);
+          font-size: rem(28px);
+          line-height: rem(38px);
+          vertical-align: top;
+        }
+        .mobile {
+          width: rem(172px);
+          text-align: center;
+        }
+        .number, .money {
+          @include flex;
+        }
+        .number {
+          text-align: left;
+        }
+        .money {
+          text-align: right;
+        }
+        &:before {
+          content: '';
+          width: rem(37px);
+          height: rem(38px);
+          display: block;
+          background: url(/master-Q3/images/icon/ranking_004.png) no-repeat center;
+          background-size: contain;
+          margin-right: rem(30px);
+        }
+        &:nth-child(1), &:nth-child(2), &:nth-child(3) {
+          span {
+            color: #F5B950;
+          }
+        }
+        &:first-child {
+          -webkit-border-radius: rem(8px) rem(8px) 0 0;
+          -moz-border-radius: rem(8px) rem(8px) 0 0;
+          -ms-border-radius: rem(8px) rem(8px) 0 0;
+          -o-border-radius: rem(8px) rem(8px) 0 0;
+          border-radius: rem(8px) rem(8px) 0 0;
+          span {
+            color: #F5B950;
+          }
+        }
+
+        &:last-child {
+          -webkit-border-radius: 0 0 rem(8px) rem(8px);
+          -moz-border-radius: 0 0 rem(8px) rem(8px);
+          -ms-border-radius: 0 0 rem(8px) rem(8px);
+          -o-border-radius: 0 0 rem(8px) rem(8px);
+          border-radius: 0 0 rem(8px) rem(8px);
+        }
+        &:nth-child(1):before{
+          background: url(/master-Q3/images/icon/ranking_001.png) no-repeat center;
+          background-size: contain;
+        }
+        &:nth-child(2):before{
+          background: url(/master-Q3/images/icon/ranking_002.png) no-repeat center;
+          background-size: contain;
+        }
+        &:nth-child(3):before{
+          background: url(/master-Q3/images/icon/ranking_003.png) no-repeat center;
+          background-size: contain;
+        }
+      }
+    }
+  }
+  .panel.selected {
+    display: block;
+  }
+}
