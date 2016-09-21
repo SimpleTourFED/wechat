@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/master-Q3/css/broker.scss?__inline">
+</head>
+<body>
+<div class="page-group">
+    <div class="page page-current">
+        <header>
+            <div class="back"></div>
+            <div class="center">申请提现</div>
+        </header>
+        <div class="page-content">
+            <div class="rule">提现规则</div>
+            <div class="form">
+                <div class="people">
+                    <div class="icon"></div>
+                    <div class="text">注册人数：18人</div>
+                </div>
+                <div class="order">
+                    <div class="icon"></div>
+                    <div class="text">有效订单：123单</div>
+                    <div class="cutline"></div>
+                    <a href="#">
+                        下单详情
+                    </a>
+                </div>
+                <div class="balance">
+                    <div class="icon"></div>
+                    <div class="text">累计收益：99.99元</div>
+                </div>
+                <div class="earnings">
+                    <div class="icon"></div>
+                    <div class="text">现金余额：99.99元</div>
+                    <div class="cutline"></div>
+                    <a href="#">
+                        申请提现
+                    </a>
+                </div>
+            </div>
+            <button>扫码订购</button>
+            <a class="button" href="#">邀请朋友加入</a>
+            <a class="button" href="#">查看排行榜</a>
+        </div>
+    </div>
+</div>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                    docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                };
+        if (!doc.addEventListener) return;
+        recalc();
+        document.body.style.visibility = 'visible';
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script>
+<script src="/common/js/zepto.min.js"></script>
+</body>
+</html>

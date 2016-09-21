@@ -89,6 +89,7 @@ img {
     color: $red;
     border: 1px solid $red;
     margin-top: rem(20px);
+    background-color: #fff;
   }
 }
 .bottom-module{
@@ -157,6 +158,7 @@ footer{
       }
     }
     a.checkDetail{
+      display: block;
       width: rem(238px);
       text-align: center;
       color: #F5B950;
