@@ -7,7 +7,7 @@
     <meta name="format-detection" content="telephone=no"/>
     <meta name="wap-font-scale" content="no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="/master-Q3/css/distributor_cancleOrder.scss?__inline">
+    <link rel="stylesheet" href="/master-Q3/css/distributor_orderList.scss?__inline">
 </head>
 <body>
 <div class="page-group">
@@ -17,35 +17,37 @@
             <div class="center">已取消的订单</div>
         </header>
         <div class="page-content">
-            <div class="marquee-wrap"><div class="marquee"><span class="tip">已取消，表示客人订购产品后，取消的订单</span></div></div>
+            <div class="marquee-wrap"><div class="marquee"><span class="tip">提现进度若有疑问，请联系客服系统：400-800-3351</span></div></div>
             <div class="records">
                 <div class="record">
-                    <div class="mobile">184****4345</div>
-                    <div class="detail">于2016.01.24&nbsp;&nbsp;&nbsp;&nbsp;3:58取消订单</div>
+                    <div class="title">
+                        <div class="status pending">待入账</div>
+                        <div class="date">2016.01.24  15:56</div>
+                    </div>
+                    <div class="row">下单账户：186****0393</div>
+                    <div class="row">购买商品：成都－九寨沟三日王芳＋门票观光车…</div>
+                    <div class="row">实付金额：3400元</div>
+                    <div class="row">现金奖励：3.00元</div>
                 </div>
                 <div class="record">
-                    <div class="mobile">184****4345</div>
-                    <div class="detail">于2016.01.24&nbsp;&nbsp;&nbsp;&nbsp;3:58取消订单</div>
+                    <div class="title">
+                        <div class="status refund">已退款</div>
+                        <div class="date">2016.01.24  15:56</div>
+                    </div>
+                    <div class="row">下单账户：186****0393</div>
+                    <div class="row">购买商品：成都－九寨沟三日王芳＋门票观光车…</div>
+                    <div class="row">实付金额：3400元</div>
+                    <div class="row">现金奖励：3.00元</div>
                 </div>
                 <div class="record">
-                    <div class="mobile">184****4345</div>
-                    <div class="detail">于2016.01.24&nbsp;&nbsp;&nbsp;&nbsp;3:58取消订单</div>
-                </div>
-                <div class="record">
-                    <div class="mobile">184****4345</div>
-                    <div class="detail">于2016.01.24&nbsp;&nbsp;&nbsp;&nbsp;3:58取消订单</div>
-                </div>
-                <div class="record">
-                    <div class="mobile">184****4345</div>
-                    <div class="detail">于2016.01.24&nbsp;&nbsp;&nbsp;&nbsp;3:58取消订单</div>
-                </div>
-                <div class="record">
-                    <div class="mobile">184****4345</div>
-                    <div class="detail">于2016.01.24&nbsp;&nbsp;&nbsp;&nbsp;3:58取消订单</div>
-                </div>
-                <div class="record">
-                    <div class="mobile">184****4345</div>
-                    <div class="detail">于2016.01.24&nbsp;&nbsp;&nbsp;&nbsp;3:58取消订单</div>
+                    <div class="title">
+                        <div class="status already">已入账</div>
+                        <div class="date">2016.01.24  15:56</div>
+                    </div>
+                    <div class="row">下单账户：186****0393</div>
+                    <div class="row">购买商品：成都－九寨沟三日王芳＋门票观光车…</div>
+                    <div class="row">实付金额：3400元</div>
+                    <div class="row">现金奖励：3.00元</div>
                 </div>
             </div>
         </div>
@@ -89,7 +91,7 @@
         if(width>document.documentElement.clientWidth){
             $marquee.width(width*2).append($clone);
             $first = $('.marquee-wrap .marquee span.tip').eq(0).css('margin-left', -width + 'px');
-            timer = setInterval(function(){
+            setInterval(function(){
                 $first.css('margin-left', 0);
                 $marquee.append($first);
                 $first = $('.marquee-wrap .marquee span.tip').eq(0).css('margin-left', -width + 'px');

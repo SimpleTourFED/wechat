@@ -1,0 +1,133 @@
+@import "/common/css/base";
+
+@mixin box-sizing($set:border-box) {
+  -webkit-box-sizing: $set;
+  -moz-box-sizing: $set;
+  -ms-box-sizing: $set;
+  -o-box-sizing: $set;
+  box-sizing: $set;
+}
+
+@mixin border-radius($radius:4px) {
+  -webkit-border-radius: rem($radius);
+  -moz-border-radius: rem($radius);
+  -ms-border-radius: rem($radius);
+  -o-border-radius: rem($radius);
+  border-radius: rem($radius);
+}
+
+html, body {
+  background-color: #F5F5F5;
+}
+
+* {
+  @include box-sizing();
+  outline: none;
+  color: #4F545B;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  border: none;
+}
+
+ul, li {
+  list-style: none;
+}
+
+.marquee-wrap{
+  width: 100%;
+  height: rem(70px);
+  overflow: hidden;
+  background-color: #F5B950;
+  .marquee{
+    width: auto;
+    height: rem(70px);
+    &:after{
+      content: '';
+      display: block;
+      clear: both;
+    }
+    .tip {
+      float: left;
+      height: rem(70px);
+      white-space: nowrap;
+      color: #fff;
+      font-size: rem(28px);
+      line-height: rem(36px);
+      padding: rem(17px) rem(26px);
+      display: inline-block;
+      vertical-align: top;
+      transition: margin-left 3500ms linear;
+      -moz-transition: margin-left 3500ms linear; /* Firefox 4 */
+      -webkit-transition: margin-left 3500ms linear; /* Safari 和 Chrome */
+      -o-transition: margin-left 3500ms linear; /* Opera */
+      -ms-transition: margin-left 3500ms linear; /* IE 9 */
+      &:before {
+        content: '';
+        display: inline-block;
+        width: rem(36px);
+        height: rem(36px);
+        background: url(/master-Q3/images/icon/tips_white_icon.png) no-repeat center;
+        background-size: contain;
+        vertical-align: top;
+        margin-right: rem(20px);
+      }
+    }
+  }
+}
+.records{
+  width: rem(588px);
+  margin: rem(20px) auto;
+  color: #83858C;
+  font-size: rem(28px);
+  @include border-radius(8px);
+  @include shadow(0, 0, 4px, rgba(0, 0, 0, 0.2));
+  overflow: hidden;
+  .record{
+    padding: rem(24px) rem(30px);
+    background-color: #fff;
+    border-bottom: 1px solid #E5E5E5;
+    &:last-child {
+      border-bottom: none;
+    }
+    .title {
+      @include displayflex;
+      @include flexflowRow;
+      margin-bottom: rem(22px);
+      .date {
+        line-height: rem(34px);
+        font-size: rem(28px);
+        vertical-align: top;
+        color: #83858C;
+        text-align: right;
+        @include flex;
+      }
+      .status {
+        color: #0FC346;
+        line-height: rem(34px);
+        font-size: rem(32px);
+        &.refund{
+          color: $red;
+        }
+        &.pending{
+          color: #F5B950;
+        }
+        &.already{
+          color: #0FC346;
+        }
+      }
+    }
+    .row{
+      height: rem(42px);
+      line-height: rem(42px);
+      font-size: rem(28px);
+      color: #83858C;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
