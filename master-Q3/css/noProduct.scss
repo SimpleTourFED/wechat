@@ -1,0 +1,67 @@
+@import "/common/css/base";
+
+@mixin box-sizing($set:border-box) {
+  -webkit-box-sizing: $set;
+  -moz-box-sizing: $set;
+  -ms-box-sizing: $set;
+  -o-box-sizing: $set;
+  box-sizing: $set;
+}
+
+@mixin border-radius($radius:4px) {
+  -webkit-border-radius: rem($radius);
+  -moz-border-radius: rem($radius);
+  -ms-border-radius: rem($radius);
+  -o-border-radius: rem($radius);
+  border-radius: rem($radius);
+}
+
+html, body {
+  background-color: #F5F5F5;
+}
+
+* {
+  @include box-sizing();
+  outline: none;
+  color: #4F545B;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  border: none;
+}
+
+.wrap {
+  img.icon {
+    display: block;
+    margin: rem(100px) auto rem(40px);
+    width: rem(288px);
+    height: rem(184px);
+  }
+  .copy {
+    width: rem(544px);
+    font-size: rem(32px);
+    color: #83858C;
+    line-height: rem(45px);
+    text-align: center;
+    display: block;
+    margin: 0 auto rem(60px);
+  }
+  img.QRcode{
+    width: rem(300px);
+    height: rem(300px);
+    display: block;
+    margin: 0 auto rem(20px);
+  }
+  .name{
+    width: rem(300px);
+    font-size: rem(32px);
+    color: #83858C;
+    line-height: rem(40px);
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+  }
+}
