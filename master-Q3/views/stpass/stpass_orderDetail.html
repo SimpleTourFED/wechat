@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/master-Q3/css/stpass_orderDetail.scss?__inline">
+</head>
+<body>
+<div class="page-group">
+    <div class="page page-current">
+        <header>
+            <div class="back"></div>
+            <div class="center">我的简途通</div>
+        </header>
+        <div class="page-content">
+            <div class="banner">
+                <img src="/master-Q3/images/stpass_detail_banner.png" alt=""/>
+            </div>
+            <div class="stpassDetail converted">
+                <div class="row">面额:&nbsp;&nbsp;10天</div>
+                <div class="row">剩余:&nbsp;&nbsp;07天</div>
+                <div class="row">使用范围:&nbsp;&nbsp;全国</div>
+                <div class="row">绑定姓名:&nbsp;&nbsp;张三</div>
+                <div class="row">绑定身份证号:&nbsp;&nbsp;51012919880203948</div>
+                <div class="row">绑定日期:&nbsp;&nbsp;2015.12.31  23:13</div>
+                <div class="row">使用截止日期:&nbsp;&nbsp;2015.12.31  23:13</div>
+            </div>
+            <div class="instruction">
+                <div class="title">产品说明</div>
+                <div class="content">
+                    1、简途之能预订简途用车服务产品，不可预订包括住、门票等套餐产品。<br/>
+                    2、简途之能预订简途用车服务产品，不可预订包括住、门票等套餐产品。
+                </div>
+            </div>
+            <div class="instruction">
+                <div class="title">使用说明</div>
+                <div class="content">
+                    1、简途之能预订简途用车服务产品，不可预订包括住、门票等套餐产品。<br/>
+                    2、简途之能预订简途用车服务产品，不可预订包括住、门票等套餐产品。<br/>
+                    3、简途之能预订简途用车服务产品，不可预订包括住、门票等套餐产品包括住、门票等套餐产包括住、门票等套餐产。
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    // 针对uc横竖屏rem html没有重绘的问题
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+        var a = document.getElementsByTagName('a');
+        for (var i = 0; i < a.length; i++) {
+            a[i].addEventListener('touchstart', function () {
+            }, false);
+        }
+    })(document, window);
+    $(document).ready(function () {
+        // 点击返回按钮
+        $('header .back').click(function (e) {
+            history.go(-1);
+        });
+    });
+</script>
+</body>
+</html>
