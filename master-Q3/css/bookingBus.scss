@@ -298,21 +298,21 @@ footer {
   background-color: #fff;
   margin-top: rem(16px);
   margin-bottom: rem(112px);
-  padding: 0 rem(26px) rem(112px);
+  padding: 0 rem(26px) 0;
   .customer {
     @include displayflex();
     @include flexflowRow();
     height:rem(138px);
     border-bottom: rem(2px) solid #EBEBF5;
     .checkbox {
-      width:rem(40px);
+      width:rem(66px);
       height:rem(138px);
-      margin-right: rem(26px);
+      margin-right: rem(14px);
       background: url(/master-Q3/images/icon/checkbox_normal_icon@2x.png) no-repeat center;
-      background-size: contain;
+      background-size: rem(40px);
       &.selected {
         background: url(/master-Q3/images/icon/checkbox_selected_icon@2x.png) no-repeat center;
-        background-size: contain;
+        background-size: rem(40px);
       }
     }
     .information {
@@ -356,6 +356,7 @@ footer {
   background-color: #E61E4B;
   border-radius: rem(5px);
   text-align: center;
+  font-size:rem(34px);
   color: #fff;
   z-index: 5;
 }
