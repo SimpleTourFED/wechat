@@ -1,0 +1,106 @@
+@import "/common/css/base";
+.page-content{
+  padding: 0 rem(26px);
+  background-color: #F5F5F5;
+}
+.rule{
+  color:#E61E4B;
+  font-size: rem(24px);
+  margin: rem(20px) 0;
+  text-align: right;
+  padding-right: rem(26px);
+  background: url("/master-Q3/images/icon/right_red_arrow@2x.png") no-repeat right center;
+  background-size: rem(16px);
+}
+button{
+  display: block;
+  border: none;
+  border-radius: rem(6px);
+  width: rem(588px);
+  height: rem(107px);
+  line-height: rem(107px);
+  text-align: center;
+  font-size: rem(32px);
+  background-color:#E61E4B;
+  outline: none;
+  color: white;
+  &:active{
+    background-color: #BF0A33;
+  }
+}
+a.button{
+  margin-top: rem(20px);
+  display: block;
+  border-radius: rem(6px);
+  font-size: rem(32px);
+  width: rem(588px);
+  height: rem(107px);
+  line-height: rem(107px);
+  text-align: center;
+  color:#E61E4B;
+  border:1px solid #E61E4B;
+  background-color: white;
+  &:active{
+    background-color: #FFD3D3;
+  }
+}
+.form{
+  border:1px solid #E5E5E5;
+  border-radius: rem(6px);
+  background-color: white;
+  margin-bottom: rem(60px);
+  > div{
+    height: rem(88px);
+    box-sizing: content-box;
+    border-bottom: 1px solid #E5E5E5;
+    line-height: rem(88px);
+    @include displayflex;
+    @include flexflowRow();
+    .icon{
+      display: block;
+      width: rem(36px);
+      margin: 0 rem(12px) 0 rem(20px);
+    }
+    .text{
+      @include flex(1);
+      font-size: rem(28px);
+      color:#83858C;
+    }
+    .cutline{
+      height: rem(60px);
+      border-left:1px solid #E5E5E5;
+      margin-top:rem(14px);
+    }
+    a{
+      display: block;
+      width: rem(172px);
+      text-align: center;
+      font-size: rem(28px);
+      color:#F5B950;
+    }
+  }
+  .people{
+    .icon{
+      background: url("/master-Q3/images/broker_people.png") no-repeat center;
+      background-size: rem(36px);
+    }
+  }
+  .order{
+    .icon{
+      background: url("/master-Q3/images/broker_order.png") no-repeat center;
+      background-size: rem(36px);
+    }
+  }
+  .balance{
+    .icon{
+      background: url("/master-Q3/images/broker_balance.png") no-repeat center;
+      background-size: rem(36px);
+    }
+  }
+  .earnings{
+    .icon{
+      background: url("/master-Q3/images/broker_earnings.png") no-repeat center;
+      background-size: rem(36px);
+    }
+  }
+}
