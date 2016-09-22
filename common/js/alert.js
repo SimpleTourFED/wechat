@@ -31,6 +31,7 @@
                 $('.alert-msg').remove();
                 _.$modalContent = $(_.modalContent).appendTo('body');
             }
+            _.$modalContent.css({'marginTop':-_.$modalContent.height()/2,'marginLeft':-_.$modalContent.width()/2/1.185});
         }
         _.confirm = function(){
             if($('.confirm-content').length == 0){
