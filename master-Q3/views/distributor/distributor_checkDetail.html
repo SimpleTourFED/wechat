@@ -204,7 +204,6 @@
             history.go(-1);
         });
         var timer;
-        roll();
         $('ul.tabs li').on('tap', function (e) {
             var $this = $(this);
             $this.siblings().removeClass('selected');
@@ -212,20 +211,17 @@
             $('ul.panels li').removeClass('selected').eq($this.index()).addClass('selected');
             clearInterval(timer);
             if ($this.index() == 2) {
-                roll();
+                var $marquee = $('.marquee-wrap .marquee'),$tip = $marquee.find('span.tip');
+                var $clone = $tip.clone(),$first,width = $tip.width();
+                $marquee.width(width*2).append($clone);
+                $first = $('.marquee-wrap .marquee span.tip').eq(0).css('margin-left', -width + 'px');
+                timer = setInterval(function(){
+                    $first.css('margin-left', 0);
+                    $marquee.append($first);
+                    $first = $('.marquee-wrap .marquee span.tip').eq(0).css('margin-left', -width + 'px');
+                }, 3500);
             }
         });
-        function roll() {
-            var $marquee = $('.marquee-wrap .marquee'),$tip = $marquee.find('span.tip');
-            var $clone = $tip.clone(),$first,width = $tip.width();
-            $marquee.width(width*2).append($clone);
-            $first = $('.marquee-wrap .marquee span.tip').eq(0).css('margin-left', -width + 'px');
-            timer = setInterval(function(){
-                $first.css('margin-left', 0);
-                $marquee.append($first);
-                $first = $('.marquee-wrap .marquee span.tip').eq(0).css('margin-left', -width + 'px');
-            }, 3500);
-        }
     });
 </script>
 </body>

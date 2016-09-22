@@ -1,0 +1,218 @@
+@import "/common/css/base";
+.page-group {
+  background-color: #fff;
+}
+.head-img {
+  width: 100%;
+  height: rem(375px);
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+.brief {
+  color: #83858C;
+  font-size: rem(28px);
+  margin: rem(30px) 0 rem(20px);
+  padding: 0 rem(32px);
+  word-break: break-all;
+  line-height: rem(40px);
+}
+.img-wp {
+  width: rem(686px);
+  margin: rem(20px) auto;
+  img{
+    width: 100%;
+  }
+}
+p {
+  margin: rem(20px) 0 rem(30px);
+  color: #83858C;
+  font-size: rem(28px);
+  padding: 0 rem(32px);
+  line-height: rem(40px);
+  word-break: break-all;
+}
+h5 {
+  padding: 0 rem(32px);
+  margin: rem(30px) 0 rem(20px);
+  font-size: rem(30px);
+  color: #4F545B;
+}
+.product-group {
+  @include displayflex();
+  @include flexflowRow();
+  padding: rem(32px);
+  border-bottom: rem(6px) solid #f5f5f5;
+  &:last-child{
+    border-bottom: 0;
+  }
+  .img-wp {
+    margin: 0;
+    width:rem(146px);
+    height:rem(146px);
+    margin-right: rem(20px);
+    img{
+      width:100%;
+      height:100%;
+    }
+  }
+  .infos {
+    @include flex(1);
+    position: relative;
+    h5{
+      margin: 0;
+      width:rem(520px);
+      padding: 0;
+      font-size: rem(28px);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .evaluate {
+      margin-top: rem(12px);
+      ul{
+        list-style: none;
+        li{
+          float: left;
+          width: rem(20px);
+          height:rem(20px);
+          margin-right: rem(10px);
+          background: url("/master-Q3/images/icon/star_normal@2x.png") no-repeat center;
+          background-size: contain;
+          &.selected {
+            background: url("/master-Q3/images/icon/star_seleted@2x.png") no-repeat center;
+            background-size: contain;
+          }
+          &.half {
+            background: url("/master-Q3/images/icon/star_half@2x.png") no-repeat center;
+            background-size: contain;
+          }
+        }
+      }
+      span {
+        font-size: rem(24px);
+        color: #83858C;
+      }
+    }
+    .price {
+      position:absolute;
+      bottom:0;
+      left: 0;
+      color: #E61E4B;
+      font-size: rem(32px);
+      span {
+        color: #C0C2C9;
+        font-size: rem(24px);
+      }
+    }
+    .buyNow {
+      position:absolute;
+      bottom:0;
+      right: 0;
+      color: #E61E4B;
+      font-size: rem(28px);
+      &:after{
+        content: '';
+        display: inline-block;
+        margin-left: rem(20px);
+        width: rem(19px);
+        height:rem(32px);
+        background: url(/master-Q3/images/icon/right_red_arrow@2x.png) no-repeat center;
+        background-size: contain;
+        vertical-align: bottom;
+      }
+    }
+
+  }
+}
+.lines {
+  background-color: #f5f5f5;
+  padding-top: rem(12px);
+  padding-bottom: rem(12px);
+  .line-wrapper {
+    margin: 0 auto;
+    width: rem(686px);
+    background-color: #fff;
+    .img-wp {
+      position: relative;
+      width: 100%;
+      margin: 0;
+      height:rem(290px);
+      img{
+        width:100%;
+        height:100%;
+      }
+      .line-name {
+        width:100%;
+        text-align: center;
+        font-size: rem(40px);
+        color: #ffffff;
+        position: absolute;
+        top: rem(88px);
+      }
+      .tag {
+        width: 100%;
+        position: absolute;
+        top: rem(160px);
+        text-align: center;
+        color: #F5B950;
+        font-size: rem(24px);
+        span {
+          background-color: #F5B950;
+          color: #ffffff;
+          padding: rem(6px) rem(18px);
+        }
+      }
+      .left-dot {
+        position: absolute;
+        bottom: rem(-16px);
+        left: rem(-16px);
+        width: rem(32px);
+        height:rem(32px);
+        border-radius: rem(32px);
+        background-color: #f5f5f5;
+      }
+      .right-dot {
+        position: absolute;
+        bottom: rem(-16px);
+        right: rem(-16px);
+        width: rem(32px);
+        height:rem(32px);
+        border-radius: rem(32px);
+        background-color: #f5f5f5;
+      }
+    }
+    .line-content {
+      padding: rem(18px) rem(32px);
+      @include displayflex();
+      @include flexflowRow();
+      align-items: center;
+      .route {
+        @include flex(1);
+        color: #4F545B;
+        font-size: rem(28px);
+        line-height: rem(40px);
+      }
+      .price {
+        width: rem(200px);
+        color: #E61E4B;
+        font-size: rem(32px);
+        text-align: center;
+        span {
+          font-size: rem(24px);
+          color: #C0C2C9;
+        }
+      }
+    }
+  }
+}
+.bottom-logo {
+  width: 100%;
+  text-align: center;
+  padding: rem(20px) 0 rem(40px);
+  background-color: #f5f5f5;
+  img{
+    width: rem(384px);
+  }
+}
