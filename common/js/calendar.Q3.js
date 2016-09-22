@@ -41,10 +41,12 @@
                     var count = data[i].count;
                     var cardExchangeDays = data[i].cardExchangeDays;
                 }
+                var date = data[i].day.split("-")[0] + '-' + data[i].day.split("-")[1] + '-' + day;
             }
             return {
                 price : price || 0,
                 count : count || 0,
+                date : date,
                 cardExchangeDays : cardExchangeDays || 0
             }
         };
@@ -80,9 +82,11 @@
                                 var priceStr = item.price? '￥' + item.price : '-';
                                 priceStr = day_td ? priceStr : '';
 
-                                html += '<div class="calendar-col ' + (item.count ? '' : 'disabled') + '"' +
+                                html += '<div class="calendar-col ' + 
+                                    (item.count ? '' : 'disabled') + 
+                                    (_self.params.type == 'normal' && item.count && _self.params.date.split('-')[0] + '-' + _self.params.date.split('-')[1] + '-' + (+_self.params.date.split('-')[2] + 1) == _self.dateArray[0] + '-' + _self.dateArray[1] + '-' + day_td ? 'selected' : '') + '"' +
                                     'data-stock="'+ item.count +'" ' +
-                                    'data-date="'+item.day+'">' +
+                                    'data-date="'+item.date+'">' +
                                     '<div class="date">' + day_td + '</div>' +
                                     '<div class="price">' + priceStr + '</div>' +
                                     '</div>'
@@ -149,13 +153,22 @@
         _self.dom_control = function() {
             // 非酒店价格日历绑定方法
             if(_self.params.type == 'normal') {
+                // 初始选中第二天,没有库存则不选中
+                var $selectedDate = $('.calendar-col.selected');
+                if($selectedDate) {
+                    _self.params.selectedFun($selectedDate);
+                }
                 $('.calendar-col').tap(function() {
                     var $this = $(this);
                     if(!$this.hasClass('disabled')) {
                         $('.calendar-col').removeClass('selected');
                         $this.addClass('selected');
-                        _self.params.selectedFun();
+                        _self.params.selectedFun($this);
                     }
+                })
+            } else if(_self.params.type == 'hotel') {
+                $.alert({
+                    msg: '请选择入住时间',
                 })
             }
 

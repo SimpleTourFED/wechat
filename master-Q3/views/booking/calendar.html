@@ -17,8 +17,8 @@
         </header>
         <div class="pay-detail">
             <div class="total">
-                <div class="price">$123</div>
-                <div class="count">剩余6</div>
+                <div class="price"></div>
+                <div class="count"></div>
             </div>
             <div class="next">下一步</div>
         </div>
@@ -57,6 +57,7 @@
     })(document, window);
 </script>
 <script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script type="text/javascript" src="/common/js/alert.js"></script>
 <script type="text/javascript" src="/common/js/calendar.Q3.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
@@ -67,10 +68,22 @@
         $.calendar({
             weekNames: ['日', '一', '二', '三', '四', '五', '六'],
             $container:$('.calendar-wrapper'),
-            date : '2015-12-30',
+            date : '2015-12-28',
             month : '3',
-            id : '1'
+            id : '1',
+            type : 'hotel',
+            selectedFun : function($selectedDate) {
+                normalContrl($selectedDate);
+            }
         });
+        // 普通订购选择价格日历后的操作
+        var normalContrl = function($selectedDate) {
+
+            var stock = $selectedDate.attr('data-stock');
+            var priceStr = $selectedDate.find('.price').text();
+            $('.pay-detail .total').find('.price').text(priceStr);
+            $('.pay-detail .total').find('.count').text('剩余'+stock);
+        }
     })
 </script>
 </body>
