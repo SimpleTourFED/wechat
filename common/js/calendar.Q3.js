@@ -83,7 +83,7 @@
                                 priceStr = day_td ? priceStr : '';
 
                                 html += '<div class="calendar-col ' + 
-                                    (item.count ? '' : 'disabled') + 
+                                    (item.count ? 'available' : 'disabled') +
                                     (_self.params.type == 'normal' && item.count && _self.params.date.split('-')[0] + '-' + _self.params.date.split('-')[1] + '-' + (+_self.params.date.split('-')[2] + 1) == _self.dateArray[0] + '-' + _self.dateArray[1] + '-' + day_td ? 'selected' : '') + '"' +
                                     'data-stock="'+ item.count +'" ' +
                                     'data-date="'+item.date+'">' +
@@ -151,6 +151,15 @@
             return days_array;
         };
         _self.dom_control = function() {
+            // 字符串转date
+            var toDate = function(string) {
+                var date;
+                if(string) {
+                    var stringArray = string.split('-');
+                    date = new Date(+stringArray[0],+stringArray[1]-1,+stringArray[2],0,0,0);
+                }
+                return date;
+            };
             // 非酒店价格日历绑定方法
             if(_self.params.type == 'normal') {
                 // 初始选中第二天,没有库存则不选中
@@ -158,18 +167,77 @@
                 if($selectedDate) {
                     _self.params.selectedFun($selectedDate);
                 }
-                $('.calendar-col').tap(function() {
+                $('.calendar-col.available').tap(function() {
                     var $this = $(this);
-                    if(!$this.hasClass('disabled')) {
-                        $('.calendar-col').removeClass('selected');
-                        $this.addClass('selected');
-                        _self.params.selectedFun($this);
-                    }
+                    $('.calendar-col').removeClass('selected');
+                    $this.addClass('selected');
+                    _self.params.selectedFun($this);
                 })
             } else if(_self.params.type == 'hotel') {
                 $.alert({
-                    msg: '请选择入住时间',
-                })
+                    msg: '请选择入住时间'
+                });
+                var clickIndex = 1; // 记录点击次数
+                var $start,$end;
+
+                $('.calendar-col.available').tap(function() {
+                    if(clickIndex == 1) {
+                        $start = $(this);
+                        $start.addClass('start selected hotelSelected');
+                        $.alert({
+                            msg: '请选择离店时间'
+                        });
+                        clickIndex++;
+                    } else if(clickIndex == 2) {
+                        $end = $(this);
+                        var startDate = $start.attr('data-date');
+                        var endDate = $end.attr('data-date');
+                        if(toDate(startDate) >= toDate(endDate)) {
+                            $start.removeClass('start selected hotelSelected');
+                            $start = $end;
+                            $start.addClass('start selected hotelSelected');
+                        } else {
+                            var dayArray = [];
+                            $('.calendar-col').forEach(function (days) {
+                                var date = $(days).attr('data-date');
+                                if(date.split('-')[2]) {
+                                    if(toDate(date) >= toDate(startDate) && toDate(date) <= toDate(endDate)) {
+                                        dayArray.push(days);
+                                    }
+                                }
+                            });
+
+                            var noStock = false;
+                            dayArray.forEach(function(item) {
+                                if ($(item).hasClass('disabled')) {
+                                    noStock = true;
+                                }
+                            });
+
+                            if(noStock) {
+                                $.alert({
+                                    msg: '您所选日期范围库存不足'
+                                });
+                            } else {
+                                $end.addClass('end selected hotelSelected');
+                                dayArray.forEach(function(item) {
+                                    $(item).addClass('hotelSelected');
+                                });
+                                dayArray.pop();
+                                clickIndex++;
+                                _self.params.selectedFun(dayArray);
+                            }
+                        }
+                    } else if(clickIndex == 3) {
+                        $start.removeClass('start selected hotelSelected');
+                        $end.removeClass('end selected hotelSelected');
+                        $('.hotelSelected').removeClass('selected hotelSelected');
+                        clickIndex = 2;
+                        $start = $(this);
+                        $start.addClass('start selected hotelSelected');
+                    }
+
+                });
             }
 
         };
