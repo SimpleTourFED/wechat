@@ -39,6 +39,9 @@ img {
   .order {
     background-color: #fff;
     margin-bottom: rem(16px);
+    &:last-child{
+      margin-bottom: 0;
+    }
     .top-content {
       width: 100%;
       height: rem(88px);
