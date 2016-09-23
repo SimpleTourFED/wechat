@@ -62,39 +62,44 @@
             var start = _self.dateArray[0] + '-' + _self.dateArray[1] + '-' + '1';
             var end = _self.dateArray[0] + '-' + _self.dateArray[1] + '-' + days;
             $.ajax({
-                type:'GET',
-                url:'http://127.0.0.1:8080/common/js/data.json',
+                type:'POST',
+                url:_self.params.url,
                 beforeSend : function(){
 
                 },
                 data:{
                     id:_self.params.id,
                     start:start,
-                    end:end
+                    end:end,
+                    agreementProductId:_self.params.agreementProductId,
+                    type:_self.params.type
                 },
                 success: function(data) {
-                    if(data.length) {
-                        days_array.forEach(function(day_tr) {
-                            html += '<div class="calendar-row">';
-                            day_tr.forEach(function(day_td) {
+                    var jsonData = JSON.parse(data);
+                    if(jsonData.code == 0) {
+                        if(data.length) {
+                            days_array.forEach(function(day_tr) {
+                                html += '<div class="calendar-row">';
+                                day_tr.forEach(function(day_td) {
 
-                                var item = _self.getDayData(data,day_td);
-                                var priceStr = item.price? '￥' + item.price : '-';
-                                priceStr = day_td ? priceStr : '';
+                                    var item = _self.getDayData(data,day_td);
+                                    var priceStr = item.price? '￥' + item.price : '-';
+                                    priceStr = day_td ? priceStr : '';
 
-                                html += '<div class="calendar-col ' + 
-                                    (item.count ? 'available' : 'disabled') +
-                                    (_self.params.type == 'normal' && item.count && _self.params.date.split('-')[0] + '-' + _self.params.date.split('-')[1] + '-' + (+_self.params.date.split('-')[2] + 1) == _self.dateArray[0] + '-' + _self.dateArray[1] + '-' + day_td ? 'selected' : '') + '"' +
-                                    'data-stock="'+ item.count +'" ' +
-                                    'data-date="'+item.date+'">' +
-                                    '<div class="date">' + day_td + '</div>' +
-                                    '<div class="price">' + priceStr + '</div>' +
-                                    '</div>'
+                                    html += '<div class="calendar-col ' +
+                                        (item.count ? 'available' : 'disabled') +
+                                        (_self.params.type == 'normal' && item.count && _self.params.date.split('-')[0] + '-' + _self.params.date.split('-')[1] + '-' + (+_self.params.date.split('-')[2] + 1) == _self.dateArray[0] + '-' + _self.dateArray[1] + '-' + day_td ? 'selected' : '') + '"' +
+                                        'data-stock="'+ item.count +'" ' +
+                                        'data-date="'+item.date+'">' +
+                                        '<div class="date">' + day_td + '</div>' +
+                                        '<div class="price">' + priceStr + '</div>' +
+                                        '</div>'
+                                });
+                                html +=  '</div>';
                             });
-                            html +=  '</div>';
-                        });
-                        _self.params.$container.append(_self.get_title_html(_self.calendarTitle) + _self.get_weeks_html() + html);
-                        _self.dom_control();
+                            _self.params.$container.append(_self.get_title_html(_self.calendarTitle) + _self.get_weeks_html() + html);
+                            _self.dom_control();
+                        }
                     }
                 },
                 error: function() {
@@ -161,7 +166,7 @@
                 return date;
             };
             // 非酒店价格日历绑定方法
-            if(_self.params.type == 'normal') {
+            if(_self.params.stockType == 'normal') {
                 // 初始选中第二天,没有库存则不选中
                 var $selectedDate = $('.calendar-col.selected');
                 if($selectedDate) {
@@ -173,7 +178,7 @@
                     $this.addClass('selected');
                     _self.params.selectedFun($this);
                 })
-            } else if(_self.params.type == 'hotel') {
+            } else if(_self.params.stockType == 'hotel') {
                 $.alert({
                     msg: '请选择入住时间'
                 });
