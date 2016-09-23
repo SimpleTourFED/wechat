@@ -36,9 +36,13 @@
                 <div class="nums">
                     订购数量
                     <div class="contrl-wp">
-                        <div class="reduce disabled">－</div>
+                        <div class="reduce disabled">
+                            <span>－</span>
+                        </div>
                         <div class="count">1</div>
-                        <div class="add">＋</div>
+                        <div class="add">
+                            <span>＋</span>
+                        </div>
                     </div>
                 </div>
                 <div class="tips">
@@ -80,7 +84,6 @@
         }, false);
     })(document, window);
     $(document).ready(function() {
-        $('header .home').sidebar('');
         $('footer .pay-info').tap(function() {
             var $this = $(this);
             if(!$this.hasClass('selected')) {
