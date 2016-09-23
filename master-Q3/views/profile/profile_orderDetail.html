@@ -23,7 +23,7 @@
             <a class="buy" href="#">立即评价</a>
         </footer>
         <div class="page-content">
-            <div class="tip">请在09分30秒内完成支付请在09分30秒内完成支付</div>
+            <div class="tip">请在09分30秒内完成支付</div>
             <div class="orderBar">
                 <span class="orderNo">订单号：20034094932</span>
                 <span class="orderStatus red">待支付</span>
@@ -100,34 +100,130 @@
         </div>
     </div>
 </div>
-<div class="popup-wrap billDetail" style="display:none;">
+<div class="popup-wrap customerDetail" style="display:none;">
     <div class="content-wrap">
         <div class="content">
             <div class="title">支付明细</div>
-            <div class="detail">
-                <div class="row">
-                    <span class="label">商品单价</span>
-                    <span class="value">高傻逼</span>
+            <div class="items">
+                <div class="item">
+                    <div class="detail">
+                        <div class="row">
+                            <span class="label">姓名</span>
+                            <span class="value">高傻逼</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">手机号</span>
+                            <span class="value">13839892231</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">身份证</span>
+                            <span class="value">839405830384502000</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="row">
-                    <span class="label">商品数量</span>
-                    <span class="value">13839892231</span>
+            </div>
+        </div>
+        <div class="close"></div>
+    </div>
+    <div class="mask"></div>
+</div>
+<div class="popup-wrap billDetail universal" style="display:none;">
+    <div class="content-wrap">
+        <div class="content">
+            <div class="title">支付明细</div>
+            <div class="items">
+                <div class="item">
+                    <div class="detail up">
+                        <div class="row">
+                            <span class="label">商品单价</span>
+                            <span class="value">高傻逼</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">商品数量</span>
+                            <span class="value">13839892231</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">商品总额</span>
+                            <span class="value">839405830384502000839405830384502000</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">优惠金额</span>
+                            <span class="value">839405830384502000</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">支付方式</span>
+                            <span class="value">——</span>
+                        </div>
+                    </div>
+                    <div class="detail down">
+                        <div class="row">
+                            <span class="label">实付金额</span>
+                            <span class="value red">¥80930</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="row">
-                    <span class="label">商品总额</span>
-                    <span class="value">839405830384502000</span>
+            </div>
+        </div>
+        <div class="close"></div>
+    </div>
+    <div class="mask"></div>
+</div>
+<div class="popup-wrap billDetail card" style="display:none;">
+    <div class="content-wrap">
+        <div class="content">
+            <div class="title">支付明细</div>
+            <div class="items">
+                <div class="item">
+                    <div class="detail up">
+                        <div class="row">
+                            <span class="label">卡名</span>
+                            <span class="value">简途通10天（四川、云南）</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">剩余</span>
+                            <span class="value">5天</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">使用截止日期</span>
+                            <span class="value">2016.7.12  23:47</span>
+                        </div>
+                    </div>
+                    <div class="detail down">
+                        <div class="row">
+                            <span class="label">本次兑换扣除</span>
+                            <span class="value red">1天</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">兑换后剩余</span>
+                            <span class="value red">4天</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="row">
-                    <span class="label">优惠金额</span>
-                    <span class="value">839405830384502000</span>
-                </div>
-                <div class="row">
-                    <span class="label">支付方式</span>
-                    <span class="value">839405830384502000</span>
-                </div>
-                <div class="row">
-                    <span class="label">实付金额</span>
-                    <span class="value red">¥80930</span>
+                <div class="item">
+                    <div class="detail up">
+                        <div class="row">
+                            <span class="label">卡名</span>
+                            <span class="value">简途通10天（四川、云南）</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">剩余</span>
+                            <span class="value">5天</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">使用截止日期</span>
+                            <span class="value">2016.7.12  23:47</span>
+                        </div>
+                    </div>
+                    <div class="detail down">
+                        <div class="row">
+                            <span class="label">本次兑换扣除</span>
+                            <span class="value red">1天</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">兑换后剩余</span>
+                            <span class="value red">4天</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -168,37 +264,77 @@
         $('header .back').click(function (e) {
             history.go(-1);
         });
-        var  $alertModal;
+        //弹出窗口
+        var $alertModal,$close,clientH = document.documentElement.clientHeight;
         function alertModal(title, data, type) {
             var html = '<div class="popup-wrap customerDetail"><div class="content-wrap"><div class="content">'
-                    + '<div class="title">' + title + '</div><div class="detail">';
+                    + '<div class="title">' + title + '</div><div class="items"><div class="item"><div class="detail">';
             var customerDetail = '<div class="row"><span class="label">姓名</span><span class="value">' + data.name + '</span></div>'
                     + '<div class="row"><span class="label">手机号</span><span class="value">' + data.mobile + '</span></div>'
                     + '<div class="row"><span class="label">身份证</span><span class="value">' + data.idNo + '</span></div>';
-            var billDetail = '<div class="row"><span class="label">商品单价</span><span class="value">' + data.price + '</span></div>'
-                    + '<div class="row"><span class="label">商品数量</span><span class="value">' + data.goodsNum + '</span></div>'
-                    + '<div class="row"><span class="label">商品总额</span><span class="value">' + data.totalPrice  + '</span></div>'
-                    + '<div class="row"><span class="label">优惠金额</span><span class="value">' + data.discount + '</span></div>'
-                    + '<div class="row"><span class="label">支付方式</span><span class="value">' + data.payType + '</span></div>'
-                    + '<div class="row"><span class="label">实付金额</span><span class="value">' + (data.totalPrice-data.discount) + '</span></div>';
-            var end = '</div></div><div class="close"></div></div><div class="mask"></div> </div>';
-            if(type=='customer'){
+//            var billDetail = '<div class="row"><span class="label">商品单价</span><span class="value">' + data.price + '</span></div>'
+//                    + '<div class="row"><span class="label">商品数量</span><span class="value">' + data.goodsNum + '</span></div>'
+//                    + '<div class="row"><span class="label">商品总额</span><span class="value">' + data.totalPrice + '</span></div>'
+//                    + '<div class="row"><span class="label">优惠金额</span><span class="value">' + data.discount + '</span></div>'
+//                    + '<div class="row"><span class="label">支付方式</span><span class="value">' + data.payType + '</span></div>'
+//                    + '<div class="row"><span class="label">实付金额</span><span class="value">' + (data.totalPrice - data.discount) + '</span></div>';
+            var end = '</div></div></div></div><div class="close"></div></div><div class="mask"></div> </div>';
+            if (type == 'customer') {
                 html = html + customerDetail + end;
-            }else if(type=='bill'){
+            } else if (type == 'bill') {
                 html = html + billDetail + end;
             }
             $alertModal = $(html);
             $(document.body).append($alertModal);
-            $('.popup-wrap .close').on('click',function(e){
+            $('.popup-wrap .close').on('click', function (e) {
                 $alertModal.remove();
             });
         }
-        $('.customer .view').on('click',function(e){
-            alertModal('旅客',{name:'高傻逼',mobile:'13839892231',idNo:839405830384502000},'customer');
+
+        $('.customer .view').on('click', function (e) {
+            alertModal('旅客', {name: '高傻逼', mobile: '13839892231', idNo: 839405830384502000}, 'customer');
         });
-        $('.check .view').on('click',function(e){
-            alertModal('旅客',{name:'高傻逼',mobile:'13839892231',idNo:839405830384502000},'customer');
+        $('.check .view').on('click', function (e) {
+            if($alertModal){
+                $alertModal.remove();
+            }
+            var $popupWrap =  $('.popup-wrap.billDetail.card').show();
+            var $contentWrap = $popupWrap.find('.content-wrap');
+            var height = $contentWrap.height();
+            $close = $contentWrap.find('.close');
+            $close.click(function(e){
+                $popupWrap.hide();
+            });
+            if(clientH>height){
+                $contentWrap.css('top',(clientH-height)/2+'px');
+            }
         });
+        // 支付倒计时
+//        var time = ${orderView.overTime};
+        var time = 1200;
+        var interval;
+        if (time < 1201) {
+            time--;
+            interval = setInterval(function () {
+                if (time > 0) {
+                    var deadline = '';
+                    var m = parseInt(time / 60);
+                    var s = time % 60;
+                    if (m == 0) {
+                        deadline = s < 10 ? '请在0' + s + '秒之内完成支付' : '请在' + s + '秒之内完成支付'
+                    } else {
+                        deadline = s < 10 ? '请在' + m + '分0' + s + '秒之内完成支付' : '请在' + m + '分' + s + '秒之内完成支付'
+                    }
+                    $('.tip').html(deadline);
+                    time--;
+                } else {
+                    $('.tip').html('请重新购买');
+                    $('.orderBar .orderStatus').removeClass('waiting').html('已关闭');
+                    $('footer').remove();
+                    clearInterval(interval);
+                }
+            }, 1000);
+        }
     });
 </script>
 </body>

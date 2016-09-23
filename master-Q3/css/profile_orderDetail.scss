@@ -213,31 +213,31 @@ img {
         background-size: contain;
         margin-right: rem(20px);
       }
-      &.busTicket:before{
+      &.busTicket:before {
         background: url(/master-Q3/images/icon/yellow_busTicket@2x.png) no-repeat center;
         background-size: contain;
       }
-      &.entertainment:before{
+      &.entertainment:before {
         background: url(/master-Q3/images/icon/yellow_entertainment@2x.png) no-repeat center;
         background-size: contain;
       }
-      &.gift:before{
+      &.gift:before {
         background: url(/master-Q3/images/icon/yellow_gift@2x.png) no-repeat center;
         background-size: contain;
       }
-      &.hotel:before{
+      &.hotel:before {
         background: url(/master-Q3/images/icon/yellow_hotel@2x.png) no-repeat center;
         background-size: contain;
       }
-      &.shuttlebus:before{
+      &.shuttlebus:before {
         background: url(/master-Q3/images/icon/yellow_shuttlebus@2x.png) no-repeat center;
         background-size: contain;
       }
-      &.ticket:before{
+      &.ticket:before {
         background: url(/master-Q3/images/icon/yellow_ticket@2x.png) no-repeat center;
         background-size: contain;
       }
-      &.food:before{
+      &.food:before {
         background: url(/master-Q3/images/icon/yellow_food@2x.png) no-repeat center;
         background-size: contain;
       }
@@ -268,80 +268,85 @@ img {
         color: #4F545B;
         line-height: rem(37px);
       }
-      &:last-child{
+      &:last-child {
         padding-bottom: 0;
       }
     }
   }
 }
-.contact{
+
+.contact {
   height: rem(88px);
   background-color: #fff;
   padding: rem(30px) rem(26px);
   margin-bottom: rem(16px);
   font-size: 0;
-  span{
+  span {
     display: inline-block;
     color: #4F545B;
     font-size: rem(28px);
     vertical-align: middle;
   }
-  .label{
+  .label {
     color: #83858C;
     margin-right: rem(20px);
   }
-  .name{
+  .name {
     margin-right: rem(20px);
   }
 }
-.customers{
+
+.customers {
   background-color: #fff;
   padding: 0 rem(26px);
   margin-bottom: rem(16px);
 }
-.customer,.check{
+
+.customer, .check {
   height: rem(88px);
   padding: rem(14px) 0;
   border-bottom: 1px solid #EBEBF5;
   @include displayflex;
   @include flexflowRow;
-  &:last-child{
+  &:last-child {
     border-bottom: none;
   }
-  span{
+  span {
     display: inline-block;
     color: #4F545B;
     font-size: rem(28px);
     line-height: rem(60px);
     vertical-align: middle;
   }
-  .label{
+  .label {
     color: #83858C;
     margin-right: rem(20px);
   }
-  .name{
+  .name {
     @include flex;
     margin-right: rem(20px);
     display: block;
   }
-  .view{
+  .view {
     color: #F5B950;
     padding-left: rem(26px);
     border-left: 1px solid #EBEBF5;
   }
-  .total{
+  .total {
     font-size: rem(34px);
     color: #E61E4B;
     @include flex;
     display: block;
   }
 }
-.check{
+
+.check {
   background-color: #fff;
   padding: rem(14px) rem(26px);
   margin-bottom: rem(16px);
 }
-.backRule{
+
+.backRule {
   background-color: #fff;
   margin-bottom: rem(16px);
   .title {
@@ -360,25 +365,26 @@ img {
       margin-right: rem(16px);
     }
   }
-  .content{
+  .content {
     padding: rem(26px);
     font-size: rem(28px);
     color: #83858C;
     line-height: rem(42px);
   }
 }
-footer{
-  box-shadow: 0 -2px 6px rgba(0,0,0,0.15);
-  -webkit-box-shadow: 0 -2px 6px rgba(0,0,0,0.15);
+
+footer {
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.15);
   font-size: 0;
-  .tel{
+  .tel {
     width: rem(140px);
     display: inline-block;
     vertical-align: top;
-    &:active{
+    &:active {
       background-color: #DEDEDE;
     }
-    &:before{
+    &:before {
       display: block;
       content: '';
       width: rem(27px);
@@ -387,7 +393,7 @@ footer{
       background-size: contain;
       margin: rem(12px) auto 0;
     }
-    span{
+    span {
       display: block;
       font-size: rem(24px);
       line-height: rem(33px);
@@ -396,7 +402,7 @@ footer{
       margin-top: rem(5px);
     }
   }
-  .buy{
+  .buy {
     width: rem(499px);
     vertical-align: top;
     @include flex;
@@ -406,45 +412,46 @@ footer{
     background-color: #E61E4B;
     font-size: rem(34px);
     color: #fff;
-    &:active{
+    &:active {
       background-color: #BF0A33;
     }
   }
 }
-.popup-wrap{
+
+.popup-wrap {
   width: 100%;
   height: 100%;
   position: relative;
-  .mask{
+  .mask {
     position: fixed;
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
     z-index: 100;
-    background-color: rgba(0,0,0,0.65);
+    background-color: rgba(0, 0, 0, 0.65);
   }
-  .content-wrap{
+  .content-wrap {
     width: rem(500px);
     position: fixed;
-    top: rem(170px);
+    top: rem(100px);
     left: 50%;
     margin-left: rem(-250px);
     z-index: 1000;
-    &:before{
+    &:before {
       content: '';
       display: block;
       width: rem(480px);
       margin: 0 rem(10px);
       height: rem(189px);
-      background:url(/master-Q3/images/icon/alertTop_panda.png) no-repeat center;
+      background: url(/master-Q3/images/icon/alertTop_panda.png) no-repeat center;
       background-size: contain;
     }
-    .content{
+    .content {
       background-color: #fff;
       @include border-radius(8px);
       overflow: hidden;
-      .title{
+      .title {
         width: 100%;
         height: rem(70px);
         padding: rem(11px) rem(20px);
@@ -455,52 +462,89 @@ footer{
         text-align: center;
         border-bottom: 1px solid #EBEBF5;
       }
-      .detail{
+      .items {
+        width: 100%;
+        max-height: rem(500px);
         font-size: rem(28px);
         line-height: rem(40px);
-        padding: rem(24px) rem(32px);
+        padding: rem(4px) 0;
         border-bottom: rem(10px) solid #E61E4B;
-        .row{
+        overflow: auto;
+        .detail {
+          padding: rem(20px) rem(32px) 0;
+          border-bottom: 1px solid #EBEBF5;
+          &:last-child{
+            border-bottom: none;
+          }
+        }
+        .item{
+          border-bottom: 1px solid #EBEBF5;
+          .detail {
+            &:last-child{
+              border-bottom: none;
+            }
+          }
+          &:last-child{
+            border-bottom: none;
+          }
+        }
+        .row {
           padding-bottom: rem(20px);
           @include displayflex;
           @include flexflowRow;
-          span.red{
+          -ms-justify-content: flex-start;
+          -webkit-justify-content: flex-start;
+          justify-content: flex-start;
+          -ms-justify: flex-start;
+          -webkit-justify: flex-start;
+          justify: flex-start;
+          -ms-box-align: flex-start;
+          -webkit-box-align: start;
+          box-align: flex-start;
+          -ms-align-items: flex-start;
+          -webkit-align-items: flex-start;
+          align-items: flex-start;
+          span.red {
             color: #E61E4B;
           }
-          span{
+          span {
             display: inline-block;
+            word-break: break-all;
           }
-          .label{
+          .label {
             margin-right: rem(20px);
             color: #83858C;
           }
-          .value{
+          .value {
             @include flex;
             color: #4F545B;
           }
         }
       }
     }
-    .close{
+    .close {
       display: block;
       width: rem(58px);
       height: rem(58px);
-      background:url(/master-Q3/images/icon/close.png) no-repeat center;
+      background: url(/master-Q3/images/icon/close.png) no-repeat center;
       background-size: contain;
       position: relative;
       margin: rem(50px) 0 0 rem(-29px);
       left: 50%;
     }
   }
-  &.customerDetail{
-    .content-wrap:before{
-      background:url(/master-Q3/images/icon/alertTop_panda.png) no-repeat center;
+  &.customerDetail {
+    .content-wrap:before {
+      background: url(/master-Q3/images/icon/alertTop_panda.png) no-repeat center;
       background-size: contain;
     }
+    .content-wrap{
+      top: rem(170px);
+    }
   }
-  &.billDetail{
-    .content-wrap:before{
-      background:url(/master-Q3/images/icon/alertTop_calculator.png) no-repeat center;
+  &.billDetail {
+    .content-wrap:before {
+      background: url(/master-Q3/images/icon/alertTop_calculator.png) no-repeat center;
       background-size: contain;
     }
   }

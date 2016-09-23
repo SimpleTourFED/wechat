@@ -1,53 +1,139 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>简途旅行</title>
+    <title>订单详情</title>
     <meta name="format-detection" content="telephone=no"/>
-    <meta name="wap-font-scale" content="no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="/master-Q3/css/stpass_orderDetail.scss?__inline">
+    <link rel="stylesheet" href="/master-Q3/css/stpass_orderDetail.scss?__inline" media="screen" title="no title"
+          charset="utf-8">
 </head>
 <body>
 <div class="page-group">
     <div class="page page-current">
         <header>
-            <div class="back"></div>
-            <div class="center">我的简途通</div>
+            <div class="back">后退</div>
+            <div class="center">订单详情</div>
         </header>
+        //支付或者绑定按钮
+        <footer>
+            <a class="tel" href="tel:">
+                <span>联系客服</span>
+            </a>
+            <a class="buy" href="#">立即评价</a>
+        </footer>
+        <footer>
+            <a class="contact" href="tel:">联系客服</a>
+        </footer>
         <div class="page-content">
-            <div class="banner">
-                <img src="/master-Q3/images/stpass_detail_banner.png" alt=""/>
+            <div class="order-title">
+                <div class="orderNum">订单编号：20034094932</div>
+                <!--status waiting 待支付-->
+                <!--status binding 待绑定-->
+                <!--status bound 已绑定-->
+                <!--status 其他所有状态-->
+                <div class="status">已绑定</div>
             </div>
-            <div class="stpassDetail converted">
-                <div class="row">面额:&nbsp;&nbsp;10天</div>
-                <div class="row">剩余:&nbsp;&nbsp;07天</div>
-                <div class="row">使用范围:&nbsp;&nbsp;全国</div>
-                <div class="row">绑定姓名:&nbsp;&nbsp;张三</div>
-                <div class="row">绑定身份证号:&nbsp;&nbsp;51012919880203948</div>
-                <div class="row">绑定日期:&nbsp;&nbsp;2015.12.31  23:13</div>
-                <div class="row">使用截止日期:&nbsp;&nbsp;2015.12.31  23:13</div>
-            </div>
-            <div class="instruction">
-                <div class="title">产品说明</div>
-                <div class="content">
-                    1、简途之能预订简途用车服务产品，不可预订包括住、门票等套餐产品。<br/>
-                    2、简途之能预订简途用车服务产品，不可预订包括住、门票等套餐产品。
+            <div class="card-wrap">
+                <div class="card-title"><span>简途通卡</span></div>
+                <div class="cards">
+                    <div class="card">
+                        <div class="row">
+                            <span class="label">面额</span>
+                            <span class="value">10天</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">有效期</span>
+                            <span class="value">365天</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">卡号</span>
+                            <span class="value">2134534</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">使用范围</span>
+                            <span class="value">四川、云南</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">绑定出行人</span>
+                            <span class="value">黄胖子</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">绑定出行人身份证号</span>
+                            <span class="value">51012919＊＊＊9483</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">绑定出行人手机号</span>
+                            <span class="value">1389998203</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">绑定日期</span>
+                            <span class="value">2016.03.20</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">绑定截止日期</span>
+                            <span class="value">2016.07.30</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">状态</span>
+                            <span class="value">已绑定</span>
+                        </div>
+
+                    </div>
+                    <div class="card">
+                        <div class="row">
+                            <span class="label">面额</span>
+                            <span class="value">10天</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">有效期</span>
+                            <span class="value">365天</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">卡号</span>
+                            <span class="value">2134534</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">使用范围</span>
+                            <span class="value">四川、云南</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">绑定出行人</span>
+                            <span class="value">黄胖子</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">绑定出行人身份证号</span>
+                            <span class="value">51012919＊＊＊9483</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">绑定出行人手机号</span>
+                            <span class="value">1389998203</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">绑定日期</span>
+                            <span class="value">2016.03.20</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">绑定截止日期</span>
+                            <span class="value">2016.07.30</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">状态</span>
+                            <span class="value">已绑定</span>
+                        </div>
+
+                    </div>
                 </div>
             </div>
-            <div class="instruction">
-                <div class="title">使用说明</div>
-                <div class="content">
-                    1、简途之能预订简途用车服务产品，不可预订包括住、门票等套餐产品。<br/>
-                    2、简途之能预订简途用车服务产品，不可预订包括住、门票等套餐产品。<br/>
-                    3、简途之能预订简途用车服务产品，不可预订包括住、门票等套餐产品包括住、门票等套餐产包括住、门票等套餐产。
-                </div>
+            <div class="check">
+                <span class="label">实付款</span>
+                <span class="total">¥12999.99</span>
+                <span class="view">查看支付明细</span>
             </div>
         </div>
     </div>
 </div>
-<script type="text/javascript" src="/common/js/zepto.min.js"></script>
 <script>
     (function (doc, win) {
         var docEl = doc.documentElement,
@@ -55,7 +141,6 @@
                 recalc = function () {
                     var clientWidth = docEl.clientWidth;
                     if (!clientWidth) return;
-                    // 针对uc横竖屏rem html没有重绘的问题
                     var style;
                     if (style = document.getElementById("forhtml")) {
                         style.parentNode.removeChild(style);
@@ -64,23 +149,14 @@
                     style.id = "forhtml";
                     document.head.appendChild(style);
                     style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                    docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
                 };
-        recalc();
         if (!doc.addEventListener) return;
+        recalc();
+        document.body.style.visibility = 'visible';
         win.addEventListener(resizeEvt, recalc, false);
         doc.addEventListener('DOMContentLoaded', recalc, false);
-        var a = document.getElementsByTagName('a');
-        for (var i = 0; i < a.length; i++) {
-            a[i].addEventListener('touchstart', function () {
-            }, false);
-        }
     })(document, window);
-    $(document).ready(function () {
-        // 点击返回按钮
-        $('header .back').click(function (e) {
-            history.go(-1);
-        });
-    });
 </script>
 </body>
 </html>
