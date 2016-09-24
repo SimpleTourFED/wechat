@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/master-Q3/css/stpass_cardList.scss?__inline">
+</head>
+<body>
+<div class="page-group">
+    <div class="page page-current">
+        <header>
+            <div class="back"></div>
+            <div class="center">我的简途通</div>
+        </header>
+        <div class="page-content">
+            <div class="exist-cards">
+                <div class="marquee-wrap">
+                    <div class="marquee">
+                        <span class="tip">您的帐户中含有未绑定的简途通卡</span>
+                    </div>
+                    <a class="goBind" href=""><span>去绑定</span></a>
+                </div>
+                <div class="cards">
+                    <!--正常状态下-->
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="title">简途通10天券（全国＋美国＋美国＋美国＋美国＋美国</div>
+                            <div class="number">
+                                <span class="num">NO.123456</span>
+                                <a class="instruction" href=""><span>使用说明</span></a>
+                            </div>
+                            <div class="rows">
+                                <div class="row">高输出&nbsp;&nbsp;510129198701200035</div>
+                                <div class="row">绑定手机&nbsp;&nbsp;13810384571</div>
+                                <div class="row">使用截止时间&nbsp;&nbsp;13810384571</div>
+                                <div class="row">使用范围&nbsp;&nbsp;四川、云南</div>
+                            </div>
+                        </div>
+                        <div class="card-bottom">
+                            <a class="check" href=""><span>查看详情</span></a>
+                        </div>
+                    </div>
+                    <!--convert|overdue-->
+                    <div class="card convert">
+                        <div class="card-content">
+                            <div class="title">简途通10天券（全国＋美国＋美国＋美国＋美国＋美国</div>
+                            <div class="number">
+                                <span class="num">NO.123456</span>
+                                <a class="instruction" href=""><span>使用说明</span></a>
+                            </div>
+                            <div class="rows">
+                                <div class="row">高输出&nbsp;&nbsp;510129198701200035</div>
+                                <div class="row">绑定手机&nbsp;&nbsp;13810384571</div>
+                                <div class="row">使用截止时间&nbsp;&nbsp;13810384571</div>
+                                <div class="row">使用范围&nbsp;&nbsp;四川、云南</div>
+                            </div>
+                        </div>
+                        <div class="card-bottom">
+                            <a class="check" href=""><span>查看详情</span></a>
+                        </div>
+                    </div>
+                    <div class="card overdue">
+                        <div class="card-content">
+                            <div class="title">简途通10天券（全国＋美国＋美国＋美国＋美国＋美国</div>
+                            <div class="number">
+                                <span class="num">NO.123456</span>
+                                <a class="instruction" href=""><span>使用说明</span></a>
+                            </div>
+                            <div class="rows">
+                                <div class="row">高输出&nbsp;&nbsp;510129198701200035</div>
+                                <div class="row">绑定手机&nbsp;&nbsp;13810384571</div>
+                                <div class="row">使用截止时间&nbsp;&nbsp;13810384571</div>
+                                <div class="row">使用范围&nbsp;&nbsp;四川、云南</div>
+                            </div>
+                        </div>
+                        <div class="card-bottom">
+                            <a class="check" href=""><span>查看详情</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="no-cards">
+                <img src="/master-Q3/images/icon/no_coupon_icon@2x.png" alt=""/>
+                <div>您还没有简途通卡</div>
+                <div class="operates">
+                    <a>去购买</a>
+                    <a>去绑定</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    // 针对uc横竖屏rem html没有重绘的问题
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+        var a = document.getElementsByTagName('a');
+        for (var i = 0; i < a.length; i++) {
+            a[i].addEventListener('touchstart', function () {
+            }, false);
+        }
+    })(document, window);
+    $(document).ready(function () {
+        // 点击返回按钮
+        $('header .back').click(function (e) {
+            history.go(-1);
+        });
+        var $marquee = $('.marquee-wrap .marquee'),$tip = $marquee.find('span.tip'),$goBind = $('.marquee-wrap .goBind');
+        var $clone = $tip.clone(),$first,width = $tip.width();
+        if((width+$goBind.width()) > document.documentElement.clientWidth){
+            $marquee.width(width*2).append($clone);
+            $first = $('.marquee-wrap .marquee span.tip').eq(0).css('margin-left', -width + 'px');
+            setInterval(function(){
+                $first.css('margin-left', 0);
+                $marquee.append($first);
+                $first = $('.marquee-wrap .marquee span.tip').eq(0).css('margin-left', -width + 'px');
+            }, 3500);
+        }
+    });
+</script>
+</body>
+</html>
