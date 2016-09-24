@@ -185,6 +185,16 @@ footer {
   @include shadow(0 -1px 3px rgba(0, 0, 0, 0.1));
   @include displayflex;
   @include flexflowRow;
+  background-color: #fff;
+  position: absolute;
+  height: rem(96px);
+  width: 100%;
+  line-height: rem(96px);
+  bottom: 0;
+  background-color: #fff;
+  z-index: 5;
+  //@include displayflex();
+  //@include flexflowRow();
   font-size: 0;
   .tel {
     width: rem(140px);
