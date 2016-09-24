@@ -29,15 +29,16 @@
         <div class="page-content">
             <div class="order-title">
                 <div class="orderNum">订单编号：20034094932</div>
-                <!--status waiting 待支付-->
-                <!--status binding 待绑定-->
-                <!--status bound 已绑定-->
+                <!--status pending 待支付-->
+                <!--status cancel 已取消-->
+                <!--status already 已完成-->
                 <!--status 其他所有状态-->
-                <div class="status">已绑定</div>
+                <div class="status">已完成</div>
             </div>
             <div class="card-wrap">
                 <div class="card-title"><span>简途通卡</span></div>
                 <div class="cards">
+                    <!--已绑定-->
                     <div class="card">
                         <div class="row">
                             <span class="label">面额</span>
@@ -77,10 +78,43 @@
                         </div>
                         <div class="row">
                             <span class="label">状态</span>
-                            <span class="value">已绑定</span>
+                            <span class="value bound">已绑定</span>
                         </div>
 
                     </div>
+                    <!--待绑定-->
+                    <div class="card">
+                        <a class="goBind"><span>立即绑定</span></a>
+                        <div class="row">
+                            <span class="label">面额</span>
+                            <span class="value">10天</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">有效期</span>
+                            <span class="value">365天</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">卡号</span>
+                            <span class="value">2134534</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">绑定码</span>
+                            <span class="value">GFAZ6572</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">使用范围</span>
+                            <span class="value">四川、云南</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">绑定截止日期</span>
+                            <span class="value">2016.07.30</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">状态</span>
+                            <span class="value binding">未绑定</span>
+                        </div>
+                    </div>
+                    <!--已过期-->
                     <div class="card">
                         <div class="row">
                             <span class="label">面额</span>
@@ -95,24 +129,12 @@
                             <span class="value">2134534</span>
                         </div>
                         <div class="row">
+                            <span class="label">绑定码</span>
+                            <span class="value">GFAZ6572</span>
+                        </div>
+                        <div class="row">
                             <span class="label">使用范围</span>
                             <span class="value">四川、云南</span>
-                        </div>
-                        <div class="row">
-                            <span class="label">绑定出行人</span>
-                            <span class="value">黄胖子</span>
-                        </div>
-                        <div class="row">
-                            <span class="label">绑定出行人身份证号</span>
-                            <span class="value">51012919＊＊＊9483</span>
-                        </div>
-                        <div class="row">
-                            <span class="label">绑定出行人手机号</span>
-                            <span class="value">1389998203</span>
-                        </div>
-                        <div class="row">
-                            <span class="label">绑定日期</span>
-                            <span class="value">2016.03.20</span>
                         </div>
                         <div class="row">
                             <span class="label">绑定截止日期</span>
@@ -120,9 +142,8 @@
                         </div>
                         <div class="row">
                             <span class="label">状态</span>
-                            <span class="value">已绑定</span>
+                            <span class="value overdue">已过期</span>
                         </div>
-
                     </div>
                 </div>
             </div>

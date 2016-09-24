@@ -16,13 +16,13 @@
   }
   .status {
     color: #83858C;
-    &.waiting {
+    &.pending {
       color: #F5B950;
     }
-    &.binding {
-      color: $red;
+    &.cancel {
+      color: #E61E4B;
     }
-    &.bound {
+    &.already {
       color: #83858C;
     }
   }
@@ -57,6 +57,7 @@
     .card {
       padding: rem(28px) 0;
       border-bottom: 1px solid #EBEBF5;
+      position: relative;
       .row {
         padding-bottom: rem(20px);
         font-size: rem(26px);
@@ -91,6 +92,51 @@
         .value {
           @include flex;
           color: #4F545B;
+          &.binding{
+            color: #E61E4B;
+          }
+          &.bound{
+            color: #F5B950;
+          }
+          &.overdue{
+            color: #4F545B;
+          }
+        }
+      }
+      .goBind{
+        width: rem(144px);
+        color: #E61E4B;
+        font-size: rem(26px);
+        display: block;
+        position: absolute;
+        right: rem(32px);
+        bottom: rem(28px);
+        @include displayflex;
+        @include flexflowRow;
+        -ms-justify-content: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -ms-justify: center;
+        -webkit-justify: center;
+        justify: center;
+        -ms-box-align: center;
+        -webkit-box-align: center;
+        box-align: center;
+        -ms-align-items: center;
+        -webkit-align-items: center;
+        align-items: center;
+        span{
+          display: block;
+          @include flex;
+        }
+        &:after{
+          content: '';
+          display: inline-block;
+          width: rem(24px);
+          height: rem(24px);
+          background: url(/master-Q3/images/icon/freebuy_right_arrow.png) no-repeat center;
+          background-size: cover;
+          margin-left: rem(15px);
         }
       }
     }
