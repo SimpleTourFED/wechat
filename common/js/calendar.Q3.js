@@ -63,7 +63,7 @@
             var end = _self.dateArray[0] + '-' + _self.dateArray[1] + '-' + days;
             $.ajax({
                 type:'POST',
-                url:_self.params.url,
+                url:'/js/data.json',
                 beforeSend : function(){
 
                 },
@@ -103,7 +103,8 @@
                     }
                 },
                 error: function() {
-
+                    var dayHtml = '<div class="no_content">加载价格日历失败，<span class="refresh">点击重试！</span></div>';
+                    _self.params.$container.append(_self.get_weeks_html() + dayHtml);
                 },
                 complete : function() {
                     _self.index++;

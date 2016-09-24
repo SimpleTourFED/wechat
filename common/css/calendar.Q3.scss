@@ -23,6 +23,7 @@
 }
 .calendar-wrapper {
   width: 100%;
+  padding-bottom: 3rem;
   .calendar-title {
     width: 100%;
     height: rem(70px);
@@ -87,6 +88,18 @@
           color: #ffffff;
         }
       }
+    }
+  }
+  .no_content {
+    width: 100%;
+    height: rem(550px);
+    line-height: rem(500px);
+    text-align: center;
+    color: #4F545B;
+    font-size: rem(34px);
+    span {
+      color: #E61E4B;
+      text-decoration: underline;
     }
   }
 }
