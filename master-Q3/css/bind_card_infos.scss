@@ -39,9 +39,7 @@
 }
 .card-wrapper {
   width: 100%;
-  height: rem(112px);
   padding: rem(20px) rem(26px);
-  background-color: #fff;
   h5 {
     font-size: rem(32px);
     color: #4F545B;
@@ -49,7 +47,23 @@
   p {
     margin-top: rem(14px);
     color: #83858C;
+    font-size: rem(28px);
+  }
+}
+.tip {
+  width: 100%;
+  margin-top: rem(40px);
+  padding: 0 rem(26px) rem(40px);
+  p {
+    color: #83858C;
     font-size: rem(26px);
+  }
+  a {
+    display: inline-block;
+    font-size: rem(26px);
+    height: rem(50px);
+    padding-top: rem(10px);
+    color: #E61E4B;
   }
 }
 

@@ -6,7 +6,7 @@
     <meta name="format-detection" content="telephone=no, email=no"/>
     <title>简途旅行</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="/master-Q3/css/bind_card_no_infos.scss?__inline" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/master-Q3/css/bind_card_infos.scss?__inline" media="screen" title="no title" charset="utf-8">
 </head>
 <body style="visibility: hidden">
 <div class="page-group">
@@ -32,8 +32,14 @@
         </footer>
         <div class="page-content">
             <div class="card-wrapper">
-                <h5>简途通十天劵</h5>
-                <p>NO.123345</p>
+                <h5>请输入绑定码和出行旅客</h5>
+                <p>简途通为实名制，需激活绑定出行人信息，简途通一旦绑定只能绑定的出行人出行。</p>
+            </div>
+            <div class="code">
+                <div class="input-group">
+                    <i class="card"></i>
+                    <input name="contactName" type="text" placeholder="输入绑定码"/>
+                </div>
             </div>
             <div class="contact-infos">
                 <div class="title">
@@ -63,18 +69,16 @@
             </div>
             <div class="code">
                 <div class="input-group">
-                    <i class="card"></i>
-                    <input name="contactName" type="text" placeholder="输入绑定码"/>
-                </div>
-            </div>
-            <div class="code">
-                <div class="input-group">
                     <i class="vCode"></i>
                     <input name="contactName" type="text" placeholder="输入验证码"/>
                 </div>
                 <div class="verification">
                     <img src="" alt="验证码">
                 </div>
+            </div>
+            <div class="tip">
+                <p>检测到您的订单中有已购买未绑定的简途通卡</p>
+                <a>去我的订单绑定它</a>
             </div>
         </div>
     </div>
