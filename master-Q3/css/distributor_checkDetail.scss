@@ -139,8 +139,11 @@ header~.page-content{
       overflow: hidden;
       background-color: #F5B950;
       .marquee{
-        width: auto;
+        min-width: 100%;
         height: rem(70px);
+        position: absolute;
+        left: 0;
+        top: 0;
         &:after{
           content: '';
           display: block;

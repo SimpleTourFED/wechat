@@ -37,10 +37,12 @@ img {
   height: rem(70px);
   overflow: hidden;
   background-color: #F5B950;
-  position: relative;
   .marquee{
-    width: auto;
+    min-width: 100%;
     height: rem(70px);
+    position: absolute;
+    left: 0;
+    top: 0;
     &:after{
       content: '';
       display: block;
@@ -71,46 +73,6 @@ img {
         vertical-align: top;
         margin-right: rem(20px);
       }
-    }
-  }
-  a.goBind{
-    display: block;
-    height: rem(70px);
-    padding: rem(19px);
-    line-height: rem(32px);
-    background-color: #F5B950;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 2;
-    @include displayflex;
-    @include flexflowRow();
-    -ms-justify-content: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -ms-justify: center;
-    -webkit-justify: center;
-    justify: center;
-    -ms-box-align: center;
-    -webkit-box-align: center;
-    box-align: center;
-    -ms-align-items: center;
-    -webkit-align-items: center;
-    align-items: center;
-    span{
-      font-size: rem(28px);
-      line-height: rem(32px);
-      color: #fff;
-      @include flex;
-    }
-    &:after{
-      display: block;
-      content: '';
-      width: rem(24px);
-      height: rem(24px);
-      background: url(/master-Q3/images/icon/right_grey_circle_arrow@2x.png) no-repeat center;
-      background-size: contain;
-      margin-left: rem(12px);
     }
   }
 }
