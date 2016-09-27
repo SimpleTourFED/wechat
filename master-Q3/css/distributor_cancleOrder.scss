@@ -40,18 +40,26 @@ img {
   position: relative;
   background-color: #F5B950;
   .marquee {
+    width: auto;
     min-width: 100%;
     height: rem(70px);
+    white-space: nowrap;
     position: absolute;
     left: 0;
     top: 0;
+    transform: translate3d(0,0,0);
+    transition: 28000ms linear;
+    -moz-transition: 28000ms linear; /* Firefox 4 */
+    -webkit-transition: 28000ms linear; /* Safari 和 Chrome */
+    -o-transition: 28000ms linear; /* Opera */
+    -ms-transition: 28000ms linear; /* IE 9 */
     &:after {
       content: '';
       display: block;
       clear: both;
     }
     .tip {
-      float: left;
+      //float: left;
       height: rem(70px);
       white-space: nowrap;
       color: #fff;
@@ -60,11 +68,11 @@ img {
       padding: rem(17px) rem(26px);
       display: inline-block;
       vertical-align: top;
-      transition: margin-left 3500ms linear;
-      -moz-transition: margin-left 3500ms linear; /* Firefox 4 */
-      -webkit-transition: margin-left 3500ms linear; /* Safari 和 Chrome */
-      -o-transition: margin-left 3500ms linear; /* Opera */
-      -ms-transition: margin-left 3500ms linear; /* IE 9 */
+      //transition: margin-left 3500ms linear;
+      //-moz-transition: margin-left 3500ms linear; /* Firefox 4 */
+      //-webkit-transition: margin-left 3500ms linear; /* Safari 和 Chrome */
+      //-o-transition: margin-left 3500ms linear; /* Opera */
+      //-ms-transition: margin-left 3500ms linear; /* IE 9 */
       &:before {
         content: '';
         display: inline-block;
