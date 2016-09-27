@@ -92,9 +92,7 @@
         </div>
         <div class="page-content">
             <div class="add-customer turnTo" href="#addCustomer">
-                <i>
-                    <img src="/master-Q3/images/icon/add_red_icon@2x.png" alt="">
-                </i>
+                <i></i>
                 新增常用旅客
             </div>
 
@@ -206,11 +204,11 @@
             $('.idType-cover').show();
             $('.idType-wrapper').addClass('show');
         });
-        $('#main .cancel-btn').tap(function() {
+        $('#main .cancel-btn').click(function() {
             $('.idType-cover').hide();
             $('.idType-wrapper').removeClass('show');
         });
-        $('#main .idType-wrapper li').tap(function() {
+        $('#main .idType-wrapper li').click(function() {
             var $this = $(this);
             $('.idType-wrapper li').removeClass('selected');
             $this.addClass('selected');
@@ -228,11 +226,11 @@
             $('.idType-cover').show();
             $('.idType-wrapper').addClass('show');
         });
-        $('#addCustomer .cancel-btn').tap(function() {
+        $('#addCustomer .cancel-btn').click(function() {
             $('.idType-cover').hide();
             $('.idType-wrapper').removeClass('show');
         });
-        $('#addCustomer .idType-wrapper li').tap(function() {
+        $('#addCustomer .idType-wrapper li').click(function() {
             var $this = $(this);
             $('.idType-wrapper li').removeClass('selected');
             $this.addClass('selected');

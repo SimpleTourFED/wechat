@@ -25,7 +25,7 @@
         //如果开启路由,则创建history数组
         if(_.option.router){
             var historyArray = [];
-            $(document).on('tap',_.option.router,function(e) {
+            $('.page-content').on('click',_.option.router,function(e) {
                 e.preventDefault();
                 e.stopPropagation();
                 _.to($(this).attr('href'));

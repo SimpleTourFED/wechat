@@ -1,0 +1,182 @@
+@import "/common/css/base";
+body {
+  background-color: #f5f5f5;
+}
+.page-content {
+  @include displayflex();
+  @include flexflowCol();
+}
+.page, .page-group {
+  background-color: #f5f5f5;
+}
+.infos {
+  background-color: #fff;
+  padding: rem(26px) rem(26px) 0;
+  h5 {
+    font-size: rem(32px);
+    color: #4F545B;
+  }
+  .bottom-info {
+    height: rem(72px);
+    line-height: rem(72px);
+    padding-right: 2.2rem;
+    @include displayflex();
+    @include flexflowRow();
+    .shuttle{
+      width: rem(170px);
+      color: #83858C;
+      font-size: rem(24px);
+      i {
+        display: inline-block;
+        width: rem(20px);
+        height: rem(20px);
+        background: url("/master-Q3/images/icon/transform_icon@2x.png") no-repeat center;
+        background-size: 100%;
+      }
+      &.single {
+        i {
+          background: url("/master-Q3/images/icon/transform_single_icon@2x.png") no-repeat center;
+          background-size: 100%;
+        }
+      }
+    }
+    .days {
+      @include flex(1);
+      color: #83858C;
+      font-size: rem(24px);
+      i {
+        display: inline-block;
+        width: rem(20px);
+        height: rem(22px);
+        background: url("/master-Q3/images/icon/date_icon@2x.png") no-repeat center;
+        background-size: 100%;
+      }
+    }
+    .times {
+      @include flex(1);
+      color: #83858C;
+      font-size: rem(24px);
+      i {
+        display: inline-block;
+        width: rem(20px);
+        height: rem(24px);
+        background: url("/master-Q3/images/icon/time_icon@2x.png") no-repeat center;
+        background-size: contain;
+        vertical-align: text-top;
+      }
+    }
+  }
+  .cutline {
+    width: rem(588px);
+    height: rem(2px);
+    margin: 0 auto;
+    background-color: #EBEBF5;
+  }
+  p {
+    padding: rem(30px) 0;
+    color: #83858C;
+    font-size: rem(26px);
+    span {
+      color: #4F545B;
+    }
+  }
+}
+.card-passengers {
+  background-color: #fff;
+  margin-top: rem(16px);
+  .title {
+    position: relative;
+    width: 100%;
+    height: rem(88px);
+    line-height: rem(88px);
+    font-size: rem(28px);
+    color: #83858C;
+    border-bottom: rem(2px) solid #EBEBF5;
+    text-indent: rem(26px);
+    &:before {
+      content: '';
+      position: absolute;
+      display: inline-block;
+      width: rem(10px);
+      height: rem(30px);
+      top: rem(29px);
+      left: 0;
+      background-color: #E61E4B;
+    }
+  }
+  .card-passenger {
+    padding-left: rem(26px);
+    font-size: rem(28px);
+    .passenger {
+      padding: rem(28px) rem(26px) rem(28px) 0;
+      border-bottom: rem(2px) dashed #EBEBF5;
+      p {
+        margin-bottom: rem(20px);
+        span {
+          color: #83858C;
+          &:first-child {
+            display: inline-block;
+            width: rem(88px);
+            margin-right: rem(15px);
+          }
+          &:last-child {
+            color: #4F545B;
+          }
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .cards {
+      border-bottom: rem(2px) solid #EBEBF5;
+      .card {
+        padding: rem(28px) rem(26px) rem(28px) 0;
+        border-bottom: rem(2px) dashed #EBEBF5;
+        p {
+          margin-bottom: rem(20px);
+          span {
+            color: #83858C;
+            &:first-child {
+              display: inline-block;
+              width: rem(88px);
+              margin-right: rem(15px);
+            }
+            &:last-child {
+              color: #4F545B;
+            }
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+        div {
+          margin-bottom: rem(20px);
+          span {
+            color: #83858C;
+            &:first-child {
+              display: inline-block;
+              width: rem(170px);
+              margin-right: rem(15px);
+            }
+            &:last-child {
+              color: #4F545B;
+            }
+          }
+          &.red {
+            span {
+              color: #E61E4B;
+            }
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+}
