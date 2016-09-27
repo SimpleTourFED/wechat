@@ -41,10 +41,12 @@
                     var count = data[i].count;
                     var cardExchangeDays = data[i].cardExchangeDays;
                 }
+                var date = data[i].day.split("-")[0] + '-' + data[i].day.split("-")[1] + '-' + day;
             }
             return {
                 price : price || 0,
                 count : count || 0,
+                date : date,
                 cardExchangeDays : cardExchangeDays || 0
             }
         };
@@ -60,41 +62,49 @@
             var start = _self.dateArray[0] + '-' + _self.dateArray[1] + '-' + '1';
             var end = _self.dateArray[0] + '-' + _self.dateArray[1] + '-' + days;
             $.ajax({
-                type:'GET',
-                url:'http://127.0.0.1:8080/common/js/data.json',
+                type:'POST',
+                url:'/js/data.json',
                 beforeSend : function(){
 
                 },
                 data:{
                     id:_self.params.id,
                     start:start,
-                    end:end
+                    end:end,
+                    agreementProductId:_self.params.agreementProductId,
+                    type:_self.params.type
                 },
                 success: function(data) {
-                    if(data.length) {
-                        days_array.forEach(function(day_tr) {
-                            html += '<div class="calendar-row">';
-                            day_tr.forEach(function(day_td) {
+                    var jsonData = JSON.parse(data);
+                    if(jsonData.code == 0) {
+                        if(data.length) {
+                            days_array.forEach(function(day_tr) {
+                                html += '<div class="calendar-row">';
+                                day_tr.forEach(function(day_td) {
 
-                                var item = _self.getDayData(data,day_td);
-                                var priceStr = item.price? '￥' + item.price : '-';
-                                priceStr = day_td ? priceStr : '';
+                                    var item = _self.getDayData(data,day_td);
+                                    var priceStr = item.price? '￥' + item.price : '-';
+                                    priceStr = day_td ? priceStr : '';
 
-                                html += '<div class="calendar-col ' + (item.count ? '' : 'disabled') + '"' +
-                                    'data-stock="'+ item.count +'" ' +
-                                    'data-date="'+item.day+'">' +
-                                    '<div class="date">' + day_td + '</div>' +
-                                    '<div class="price">' + priceStr + '</div>' +
-                                    '</div>'
+                                    html += '<div class="calendar-col ' +
+                                        (item.count ? 'available' : 'disabled') +
+                                        (_self.params.type == 'normal' && item.count && _self.params.date.split('-')[0] + '-' + _self.params.date.split('-')[1] + '-' + (+_self.params.date.split('-')[2] + 1) == _self.dateArray[0] + '-' + _self.dateArray[1] + '-' + day_td ? 'selected' : '') + '"' +
+                                        'data-stock="'+ item.count +'" ' +
+                                        'data-date="'+item.date+'">' +
+                                        '<div class="date">' + day_td + '</div>' +
+                                        '<div class="price">' + priceStr + '</div>' +
+                                        '</div>'
+                                });
+                                html +=  '</div>';
                             });
-                            html +=  '</div>';
-                        });
-                        _self.params.$container.append(_self.get_title_html(_self.calendarTitle) + _self.get_weeks_html() + html);
-                        _self.dom_control();
+                            _self.params.$container.append(_self.get_title_html(_self.calendarTitle) + _self.get_weeks_html() + html);
+                            _self.dom_control();
+                        }
                     }
                 },
                 error: function() {
-
+                    var dayHtml = '<div class="no_content">加载价格日历失败，<span class="refresh">点击重试！</span></div>';
+                    _self.params.$container.append(_self.get_weeks_html() + dayHtml);
                 },
                 complete : function() {
                     _self.index++;
@@ -147,16 +157,92 @@
             return days_array;
         };
         _self.dom_control = function() {
+            // 字符串转date
+            var toDate = function(string) {
+                var date;
+                if(string) {
+                    var stringArray = string.split('-');
+                    date = new Date(+stringArray[0],+stringArray[1]-1,+stringArray[2],0,0,0);
+                }
+                return date;
+            };
             // 非酒店价格日历绑定方法
-            if(_self.params.type == 'normal') {
+            if(_self.params.stockType == 'normal') {
+                // 初始选中第二天,没有库存则不选中
+                var $selectedDate = $('.calendar-col.selected');
+                if($selectedDate) {
+                    _self.params.selectedFun($selectedDate);
+                }
+                $('.calendar-col.available').tap(function() {
+                    var $this = $(this);
+                    $('.calendar-col').removeClass('selected');
+                    $this.addClass('selected');
+                    _self.params.selectedFun($this);
+                })
+            } else if(_self.params.stockType == 'hotel') {
+                var clickIndex = 1; // 记录点击次数
+                var $start,$end;
+
                 $('.calendar-col').tap(function() {
                     var $this = $(this);
-                    if(!$this.hasClass('disabled')) {
-                        $('.calendar-col').removeClass('selected');
-                        $this.addClass('selected');
-                        _self.params.selectedFun();
+                    if(clickIndex == 1 && $this.hasClass('available')) {
+                        $start = $(this);
+                        $start.addClass('start selected hotelSelected');
+                        $.alert({
+                            msg: '请选择离店时间'
+                        });
+                        clickIndex++;
+                    } else if(clickIndex == 2) {
+                        $end = $(this);
+                        var startDate = $start.attr('data-date');
+                        var endDate = $end.attr('data-date');
+                        if(toDate(startDate) >= toDate(endDate) && $end.hasClass('available')) {
+                            $start.removeClass('start selected hotelSelected');
+                            $start = $end;
+                            $start.addClass('start selected hotelSelected');
+                        } else if(toDate(startDate) < toDate(endDate)){
+                            var dayArray = [];
+                            $('.calendar-col').forEach(function (days) {
+                                var date = $(days).attr('data-date');
+                                if(date.split('-')[2]) {
+                                    if(toDate(date) >= toDate(startDate) && toDate(date) < toDate(endDate)) {
+                                        dayArray.push(days);
+                                    }
+                                }
+                            });
+
+                            var noStock = false;
+                            // 判断所选时间段中是否存在无库存产品
+                            dayArray.forEach(function(item) {
+                                if ($(item).hasClass('disabled')) {
+                                    noStock = true;
+                                }
+                            });
+
+                            if(noStock) {
+                                $.alert({
+                                    msg: '您所选日期范围库存不足'
+                                });
+                            } else {
+                                $end.addClass('end selected hotelSelected');
+                                dayArray.forEach(function(item) {
+                                    $(item).addClass('hotelSelected');
+                                });
+                                clickIndex++;
+                                _self.params.selectedFun(dayArray);
+                            }
+                        }
+                    } else if(clickIndex == 3 && $this.hasClass('available')) {
+                        // 第三次点击则置空之前所选，并作为start日期
+                        $start.removeClass('start selected hotelSelected');
+                        $end.removeClass('end selected');
+                        $('.hotelSelected').removeClass('selected hotelSelected');
+                        clickIndex = 2;
+                        $start = $(this);
+                        $start.addClass('start selected hotelSelected');
                     }
-                })
+
+                });
             }
 
         };

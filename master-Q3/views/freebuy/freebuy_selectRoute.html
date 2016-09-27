@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/master-Q3/css/freebuy_selectRoute.scss?__inline" media="screen" title="no title" charset="utf-8">
+    <script type="text/javascript">
+        function filterResult (e){
+            var value = event.target.value;
+            if(!value) {
+                $('.search-bar').removeClass('input-change');
+            } else {
+                $('.search-bar').addClass('input-change');
+            }
+            $('.search-result .result').each(function(key, item) {
+                if($(item).find('.names h4').text().indexOf(value) >= 0) {
+                    $(item).addClass('show');
+                } else {
+                    $(item).removeClass('show');
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<div class="page-group">
+    <div class="page page-current" id="coupon">
+        <div class="search-bar">
+            <div class="back"></div>
+            <div class="search-input">
+                <label></label>
+                <input oninput="filterResult(event)" type="text" name="search" placeholder="请输入目的地／景点／酒店" />
+                <div class="click-zone"></div>
+            </div>
+            <div class="cancel">
+                取消
+            </div>
+        </div>
+        <div class="search-result">
+            <div class="result item" data-id="">
+                <div class="route-img">
+                    <img src="" alt="">
+                </div>
+                <div class="names">
+                    <h4>九寨沟&黄龙线</h4>
+                    <p>jiuzhaigou</p>
+                </div>
+            </div>
+            <div class="result item" data-id="">
+                <div class="route-img">
+                    <img src="" alt="">
+                </div>
+                <div class="names">
+                    <h4>九寨沟&黄龙线</h4>
+                    <p>jiuzhaigou</p>
+                </div>
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="navbar">
+                <div class="domestic selected">
+                    国内
+                    <span></span>
+                </div>
+                <div class="abroad">
+                    国外
+                    <span></span>
+                </div>
+            </div>
+            <div class="route-content">
+                <div class="domestic-list current">
+                    <div class="hot-space">
+                        <h5>查询到您有订购以下线路的简途车票</h5>
+                        <ul>
+                            <li>九寨沟&黄龙线</li>
+                            <li class="selected">九寨沟&黄龙线</li>
+                        </ul>
+                        <h5>热门路线</h5>
+                        <ul>
+                            <li>九寨沟&黄龙线</li>
+                            <li>九寨沟&黄龙线</li>
+                            <li>九寨沟&黄龙线</li>
+                            <li>九寨沟&黄龙线</li>
+                            <li>九寨沟&黄龙线</li>
+                            <li class="selected">九寨沟&黄龙线</li>
+                        </ul>
+                    </div>
+                    <div class="item-wrap">
+                        <div class="letter">四川</div>
+                        <div class="items">
+                            <div class="item">
+                                <div class="route-img">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="names">
+                                    <h4>九寨沟&黄龙线</h4>
+                                    <p>jiuzhaigou</p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="route-img">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="names">
+                                    <h4>九寨沟&黄龙线</h4>
+                                    <p>jiuzhaigou</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-wrap">
+                        <div class="letter">重庆</div>
+                        <div class="items">
+                            <div class="item">
+                                <div class="route-img">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="names">
+                                    <h4>九寨沟&黄龙线</h4>
+                                    <p>jiuzhaigou</p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="route-img">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="names">
+                                    <h4>九寨沟&黄龙线</h4>
+                                    <p>jiuzhaigou</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="abroad-list">
+                    <div class="hot-space">
+                        <h5>查询到您有订购以下线路的简途车票</h5>
+                        <ul>
+                            <li>九寨沟&黄龙线</li>
+                            <li class="selected">九寨沟&黄龙线</li>
+                        </ul>
+                        <h5>热门路线</h5>
+                        <ul>
+                            <li>九寨沟&黄龙线</li>
+                            <li>九寨沟&黄龙线</li>
+                            <li>九寨沟&黄龙线</li>
+                            <li>九寨沟&黄龙线</li>
+                            <li>九寨沟&黄龙线</li>
+                            <li class="selected">九寨沟&黄龙线</li>
+                        </ul>
+                    </div>
+                    <div class="item-wrap">
+                        <div class="letter">四川</div>
+                        <div class="items">
+                            <div class="item">
+                                <div class="route-img">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="names">
+                                    <h4>九寨沟&黄龙线</h4>
+                                    <p>jiuzhaigou</p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="route-img">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="names">
+                                    <h4>九寨沟&黄龙线</h4>
+                                    <p>jiuzhaigou</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-wrap">
+                        <div class="letter">重庆</div>
+                        <div class="items">
+                            <div class="item">
+                                <div class="route-img">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="names">
+                                    <h4>九寨沟&黄龙线</h4>
+                                    <p>jiuzhaigou</p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="route-img">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="names">
+                                    <h4>九寨沟&黄龙线</h4>
+                                    <p>jiuzhaigou</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                    docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                };
+        if (!doc.addEventListener) return;
+        recalc();
+        var a = document.getElementsByTagName('a');
+        for(var i = 0; i < a.length; i++){
+            a[i].addEventListener('touchstart',function(){},false);
+        }
+        document.body.style.visibility = 'visible';
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script>
+<script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        // 顶部的搜索框操作 start
+        $('.search-input input').focusin(function (e) {
+            $('.search-bar').addClass('click-search');
+            $('.search-result').addClass('show');
+        });
+        $('.search-bar .cancel').click(function (e) {
+            $('.search-bar').removeClass('click-search').removeClass('input-change');
+            $('.search-result').removeClass('show');
+            $('.search-input input').val('');
+        });
+        // 这里用一个稍微大一点的div来触发清空按钮的点击事件
+        $('.click-zone').click(function() {
+            $('.search-input input').val('');
+            $('.search-bar').removeClass('input-change');
+        });
+        // end
+        $('.navbar div').click(function() {
+            var $this = $(this);
+            $('.navbar div').removeClass('selected');
+            $this.addClass('selected');
+            if($this.hasClass('domestic')) {
+                $('.abroad-list').removeClass('current');
+                $('.domestic-list').addClass('current');
+            } else {
+                $('.domestic-list').removeClass('current');
+                $('.abroad-list').addClass('current');
+            }
+        });
+    })
+</script>
+</body>
+</html>

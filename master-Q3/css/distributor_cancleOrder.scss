@@ -32,15 +32,20 @@ img {
   vertical-align: middle;
   border: none;
 }
-.marquee-wrap{
+
+.marquee-wrap {
   width: 100%;
   height: rem(70px);
   overflow: hidden;
+  position: relative;
   background-color: #F5B950;
-  .marquee{
+  .marquee {
     min-width: 100%;
     height: rem(70px);
-    &:after{
+    position: absolute;
+    left: 0;
+    top: 0;
+    &:after {
       content: '';
       display: block;
       clear: both;
@@ -73,27 +78,28 @@ img {
     }
   }
 }
-.records{
+
+.records {
   width: rem(588px);
   margin: rem(20px) auto rem(40px);
   color: #83858C;
   font-size: rem(28px);
   @include border-radius(8px);
-  @include shadow(0,0,4px,rgba(0,0,0,0.2));
+  @include shadow(0, 0, 4px, rgba(0, 0, 0, 0.2));
   overflow: hidden;
-  .record{
+  .record {
     padding: rem(26px) rem(30px);
     background-color: #fff;
     border-bottom: 1px solid #E5E5E5;
-    &:last-child{
+    &:last-child {
       border-bottom: none;
     }
-    .mobile{
+    .mobile {
       line-height: rem(36px);
       font-size: rem(32px);
       margin-bottom: rem(18px);
       vertical-align: top;
-      &:before{
+      &:before {
         content: '';
         display: inline-block;
         width: rem(25px);

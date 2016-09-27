@@ -1,0 +1,186 @@
+@import "/common/css/base";
+$red: #D71345;
+$borderColor: #E4E4E4;
+@mixin box-sizing($set:border-box) {
+  -webkit-box-sizing: $set;
+  -moz-box-sizing: $set;
+  -ms-box-sizing: $set;
+  -o-box-sizing: $set;
+  box-sizing: $set;
+}
+
+@mixin border-radius($radius:4px) {
+  -webkit-border-radius: rem($radius);
+  -moz-border-radius: rem($radius);
+  -ms-border-radius: rem($radius);
+  -o-border-radius: rem($radius);
+  border-radius: rem($radius);
+}
+
+html, body {
+  background-color: #F5F5F5;
+}
+
+* {
+  @include box-sizing();
+  outline: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  border: none;
+}
+
+.banner{
+  width: 100%;
+  height: rem(320px);
+}
+.stpassDetail{
+  color: #989898;
+  font-size: rem(28px);
+  line-height: rem(33px);
+  padding: rem(24px) rem(26px);
+  background-color: #fff;
+  margin-bottom: rem(20px);
+  position: relative;
+  .introduce{
+    width: rem(144px);
+    color: #E61E4B;
+    font-size: rem(26px);
+    display: block;
+    position: absolute;
+    top: rem(24px);
+    right: rem(26px);
+    @include displayflex;
+    @include flexflowRow;
+    -ms-justify-content: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -ms-justify: center;
+    -webkit-justify: center;
+    justify: center;
+    -ms-box-align: center;
+    -webkit-box-align: center;
+    box-align: center;
+    -ms-align-items: center;
+    -webkit-align-items: center;
+    align-items: center;
+    span{
+      display: block;
+      @include flex;
+    }
+    &:after{
+      content: '';
+      display: inline-block;
+      width: rem(24px);
+      height: rem(25px);
+      background: url(/master-Q3/images/icon/freebuy_right_arrow.png) no-repeat center;
+      background-size: contain;
+      margin-left: rem(15px);
+    }
+  }
+  .row{
+    margin-bottom: rem(12px);
+    .label{
+      color: #83858C;
+      margin-right: rem(20px);
+    }
+    .value{
+      color: #4F545B;
+    }
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+}
+.records{
+  background-color: #fff;
+  .title{
+    padding: rem(24px) 0;
+    font-size: rem(28px);
+    line-height: rem(32px);
+    color: #4F545B;
+    border-bottom: 1px solid #EBEBF5;
+    &:before {
+      content: '';
+      width: rem(10px);
+      height: rem(30px);
+      background-color: #E61E4B;
+      display: inline-block;
+      vertical-align: top;
+      margin-right: rem(16px);
+    }
+  }
+  .record{
+    padding: rem(20px) 0;
+    margin: 0 rem(24px) rem(20px);
+    border-bottom: 1px solid #EBEBF5;;
+    .top-bar{
+      font-size: rem(32px);
+      color: #4F545B;
+      margin-bottom:rem(20px);
+      @include displayflex;
+      @include flexflowRow;
+      .name{
+        font-size: rem(32px);
+        color: #4F545B;
+        line-height: rem(36px);
+        @include flex;
+      }
+      .status{
+        font-size: rem(26px);
+        line-height: rem(36px);
+        color:  #83858C;
+        &.pending{
+          color: #F5B950;
+        }
+        &.already{
+          color:  #83858C;
+        }
+      }
+    }
+    .record-content{
+      .row{
+        font-size: rem(26px);
+        line-height: rem(40px);
+        color: #83858C;
+      }
+      .checkDetail{
+        width: rem(144px);
+        color: #E61E4B;
+        font-size: rem(26px);
+        display: block;
+        padding-top: rem(4px);
+        @include displayflex;
+        @include flexflowRow;
+        -ms-justify-content: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -ms-justify: center;
+        -webkit-justify: center;
+        justify: center;
+        -ms-box-align: center;
+        -webkit-box-align: center;
+        box-align: center;
+        -ms-align-items: center;
+        -webkit-align-items: center;
+        align-items: center;
+        span{
+          display: block;
+          @include flex;
+        }
+        &:after{
+          content: '';
+          display: inline-block;
+          width: rem(24px);
+          height: rem(24px);
+          background: url(/master-Q3/images/icon/freebuy_right_arrow.png) no-repeat center;
+          background-size: contain;
+          margin-left: rem(15px);
+        }
+      }
+    }
+  }
+}

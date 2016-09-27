@@ -53,18 +53,16 @@
                     <div class="head-image">
                         <img data-src="http://images.simpletour.com/simpletour/images/wechat_home/cc25479b9e2f87ea81e8fb1eb76cacde.jpg!middle320" src="/master-Q3/images/defalut-img@588250.png" alt="">
                     </div>
-                    <div class="decorate">
-                        <div class="left-circle"></div>
-                        <div class="right-circle"></div>
-                    </div>
                     <p>套餐名称好吃好吃的九寨沟豪华十八人七天五夜巴士车套餐</p>
                     <div class="price">
                         <span class="left">¥1299.99</span>
                         <span class="right">原件:¥1299.99</span>
                     </div>
                     <div class="tags">
-                        <span>app专享价</span>
-                        <span>特价</span>
+                        <ul>
+                            <li><span>app专享价</span></li>
+                            <li><span>特价</span></li>
+                        </ul>
                     </div>
                 </div>
 
@@ -362,9 +360,9 @@
         $('.search-bar .back').click(function() {
             history.go(-1);
         });
-        $.lazyload({
-            visibleZone: '.page-content'
-        });
+//        $.lazyload({
+//            visibleZone: '.page-content'
+//        });
         $('#tab-arrive .navBar li').click(function (e) {
             $(this).parents('.page').find('.navBar li').removeClass('selected');
             $(this).addClass('selected');

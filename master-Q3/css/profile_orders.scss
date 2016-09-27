@@ -39,6 +39,9 @@ img {
   .order {
     background-color: #fff;
     margin-bottom: rem(16px);
+    &:last-child{
+      margin-bottom: 0;
+    }
     .top-content {
       width: 100%;
       height: rem(88px);
@@ -161,12 +164,12 @@ img {
         color: #4F545B;
         line-height: rem(48px);
       }
-      .number {
+      .date {
         font-size: rem(24px);
         color: #4F545B;
         padding-top: rem(20px);
       }
-      .date-price {
+      .number-price {
         padding-top: rem(12px);
         @include displayflex;
         @include flexflowRow;
@@ -182,12 +185,12 @@ img {
         -ms-align-items: center;
         -webkit-align-items: center;
         align-items: center;
-        .date, .price {
+        .number, .price {
           font-size: rem(24px);
           color: #4F545B;
           display: block;
         }
-        .date {
+        .number {
           line-height: rem(40px);
           width: rem(350px);
           height: auto;

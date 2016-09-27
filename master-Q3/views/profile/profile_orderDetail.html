@@ -16,22 +16,42 @@
             <div class="back"></div>
             <div class="center">我的订单</div>
         </header>
+        <!--&lt;!&ndash;待支付状态&ndash;&gt;-->
+        <!--<footer>-->
+            <!--<a class="tel" href="tel:">-->
+                <!--<span>联系客服</span>-->
+            <!--</a>-->
+            <!--<a class="buy" href="#">立即评价</a>-->
+        <!--</footer>-->
+        <!--&lt;!&ndash;待评价状态&ndash;&gt;-->
+        <!--<footer>-->
+            <!--<a class="tel" href="tel:">-->
+                <!--<span>联系客服</span>-->
+            <!--</a>-->
+            <!--<a class="buy" href="#">立即评价</a>-->
+        <!--</footer>-->
+        <!--已完成状态-->
         <footer>
-            <a class="tel" href="tel:">
-                <span>联系客服</span>
-            </a>
-            <a class="buy" href="#">立即评价</a>
+            <a class="contact" href="tel:">联系客服</a>
         </footer>
         <div class="page-content">
-            <div class="tip">请在09分30秒内完成支付请在09分30秒内完成支付</div>
+            <!--支付倒计时:待支付状态有-->
+            <div class="tip">请在09分30秒内完成支付</div>
+            <!--订单编号条:所有类型都有-->
             <div class="orderBar">
                 <span class="orderNo">订单号：20034094932</span>
-                <span class="orderStatus red">待支付</span>
+                <!--status pending 待支付-->
+                <!--status cancel 已取消-->
+                <!--status already 已完成-->
+                <!--status 其他所有状态-->
+                <span class="orderStatus pending">待支付</span>
             </div>
+            <!--商品快照(简途通没有,其他都有)-->
             <div class="orderInfo">
                 <a class="product-info">
                     <div class="left">
                         <div class="name">往返票 成都都江堰青城山单程巴士江堰青城山单程巴士</div>
+                        <!--带图标信息条:车票-->
                         <div class="bottom-bar">
                             <span class="round">往返车票</span>
                             <span class="trip">1日行程</span>
@@ -39,6 +59,7 @@
                         </div>
                     </div>
                 </a>
+                <!--套餐内产品列表:套餐-->
                 <div class="products">
                     <div class="product busTicket">
                         <span>车票：07:00（成都）－17:30（九寨沟）</span>
@@ -50,6 +71,7 @@
                         <span>住宿：九寨沟民族风情客栈九寨沟民族风情客栈风情客栈九寨沟民族风情客栈</span>
                     </div>
                 </div>
+                 <!--订单信息:车票-->
                 <div class="order-detail">
                     <div class="item">
                         <span class="label">下单时间</span>
@@ -68,12 +90,208 @@
                         <span class="value">成都市宽窄巷子34号老妈兔头门口窄巷子34号老妈兔头门口</span>
                     </div>
                 </div>
+                <!--订单信息:门票、美食、娱乐、接驳车-->
+                <div class="order-detail">
+                    <div class="item">
+                        <span class="label">下单时间</span>
+                        <span class="value">2016.06.12  13:30</span>
+                    </div>
+                    <div class="item">
+                        <span class="label">预定数量</span>
+                        <span class="value">2</span>
+                    </div>
+                    <div class="item">
+                        <span class="label">使用日期</span>
+                        <span class="value">2016.03.23  07:40</span>
+                    </div>
+                    <div class="item">
+                        <span class="label">使用方式</span>
+                        <span class="value">使用身份证去门口兑换</span>
+                    </div>
+                </div>
+                <!--订单信息:酒店-->
+                <div class="order-detail">
+                    <div class="item">
+                        <span class="label">下单时间</span>
+                        <span class="value">2016.06.12  13:30</span>
+                    </div>
+                    <div class="item">
+                        <span class="label">预定数量</span>
+                        <span class="value">2</span>
+                    </div>
+                    <div class="item">
+                        <span class="label">入离日期</span>
+                        <span class="value">2016.03.23  07:40</span>
+                    </div>
+                    <div class="item">
+                        <span class="label">酒店地址</span>
+                        <span class="value">使用身份证去门口兑换</span>
+                    </div>
+                </div>
+                <!--订单信息:伴手礼-->
+                <div class="order-detail">
+                    <div class="item">
+                        <span class="label">下单时间</span>
+                        <span class="value">2016.06.12  13:30</span>
+                    </div>
+                    <div class="item">
+                        <span class="label">预定数量</span>
+                        <span class="value">2</span>
+                    </div>
+                    <div class="item">
+                        <span class="label">收货地址</span>
+                        <span class="value">四川省成都市武侯区软件园C11座21楼</span>
+                    </div>
+                </div>
+                <!--订单信息:预售-->
+                <div class="order-detail">
+                    <div class="item">
+                        <span class="label">可兑换出行日期</span>
+                        <span class="value">2016.06.12 - 2016.06.18</span>
+                    </div>
+                    <div class="item">
+                        <span class="label">预定需知</span>
+                        <span class="value">四川省成都市武侯区软件园C11座21楼四川省成都市武侯区软件园C11座21楼四川省成都市武侯区软件园C11座21楼</span>
+                    </div>
+                </div>
+                <!--订单信息:拼玩-->
+                <div class="order-detail">
+                    <div class="item">
+                        <span class="label">出行日期</span>
+                        <span class="value">2016.06.12</span>
+                    </div>
+                    <div class="item">
+                        <span class="label">预定需知</span>
+                        <span class="value">四川省成都市武侯区软件园C11座21楼四川省成都市武侯区软件园C11座21楼四川省成都市武侯区软件园C11座21楼</span>
+                    </div>
+                </div>
+                <!--简途通快照-->
+                <div class="card-wrap">
+                    <div class="card-title"><span>简途通卡</span></div>
+                    <div class="cards">
+                        <!--已绑定-->
+                        <div class="card">
+                            <div class="row">
+                                <span class="label">面额</span>
+                                <span class="value">10天</span>
+                            </div>
+                            <div class="row">
+                                <span class="label">有效期</span>
+                                <span class="value">365天</span>
+                            </div>
+                            <div class="row">
+                                <span class="label">卡号</span>
+                                <span class="value">2134534</span>
+                            </div>
+                            <div class="row">
+                                <span class="label">使用范围</span>
+                                <span class="value">四川、云南</span>
+                            </div>
+                            <div class="row">
+                                <span class="label">绑定出行人</span>
+                                <span class="value">黄胖子</span>
+                            </div>
+                            <div class="row">
+                                <span class="label">绑定出行人身份证号</span>
+                                <span class="value">51012919＊＊＊9483</span>
+                            </div>
+                            <div class="row">
+                                <span class="label">绑定出行人手机号</span>
+                                <span class="value">1389998203</span>
+                            </div>
+                            <div class="row">
+                                <span class="label">绑定日期</span>
+                                <span class="value">2016.03.20</span>
+                            </div>
+                            <div class="row">
+                                <span class="label">绑定截止日期</span>
+                                <span class="value">2016.07.30</span>
+                            </div>
+                            <div class="row">
+                                <span class="label">状态</span>
+                                <span class="value bound">已绑定</span>
+                            </div>
+
+                        </div>
+                        <!--待绑定-->
+                        <div class="card">
+                            <a class="goBind"><span>立即绑定</span></a>
+                            <div class="row">
+                                <span class="label">面额</span>
+                                <span class="value">10天</span>
+                            </div>
+                            <div class="row">
+                                <span class="label">有效期</span>
+                                <span class="value">365天</span>
+                            </div>
+                            <div class="row">
+                                <span class="label">卡号</span>
+                                <span class="value">2134534</span>
+                            </div>
+                            <div class="row">
+                                <span class="label">绑定码</span>
+                                <span class="value">GFAZ6572</span>
+                            </div>
+                            <div class="row">
+                                <span class="label">使用范围</span>
+                                <span class="value">四川、云南</span>
+                            </div>
+                            <div class="row">
+                                <span class="label">绑定截止日期</span>
+                                <span class="value">2016.07.30</span>
+                            </div>
+                            <div class="row">
+                                <span class="label">状态</span>
+                                <span class="value binding">未绑定</span>
+                            </div>
+                        </div>
+                        <!--已过期-->
+                        <div class="card">
+                            <div class="row">
+                                <span class="label">面额</span>
+                                <span class="value">10天</span>
+                            </div>
+                            <div class="row">
+                                <span class="label">有效期</span>
+                                <span class="value">365天</span>
+                            </div>
+                            <div class="row">
+                                <span class="label">卡号</span>
+                                <span class="value">2134534</span>
+                            </div>
+                            <div class="row">
+                                <span class="label">绑定码</span>
+                                <span class="value">GFAZ6572</span>
+                            </div>
+                            <div class="row">
+                                <span class="label">使用范围</span>
+                                <span class="value">四川、云南</span>
+                            </div>
+                            <div class="row">
+                                <span class="label">绑定截止日期</span>
+                                <span class="value">2016.07.30</span>
+                            </div>
+                            <div class="row">
+                                <span class="label">状态</span>
+                                <span class="value overdue">已过期</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <!--预定人信息:门票、美食、娱乐、接驳车、酒店、伴手礼、预售、拼玩-->
+            <div class="booker">
+                <span class="label">预定人</span>
+                <span class="name">呵呵呵</span>
+                <span class="view">查看预定人详情</span>
+            </div>
+            <!--联系人信息:车票、套餐-->
             <div class="contact">
                 <span class="label">联系人</span>
                 <span class="name">呵呵呵</span>
                 <span class="mobile">18499830026</span>
             </div>
+            <!--旅客信息列表:车票、套餐--->
             <div class="customers">
                 <div class="customer">
                     <span class="label">旅客1</span>
@@ -86,11 +304,13 @@
                     <span class="view">查看旅客详情</span>
                 </div>
             </div>
+            <!--账单总额和明细:所有类型都有-->
             <div class="check">
                 <span class="label">实付款</span>
                 <span class="total">¥12999.99</span>
                 <span class="view">查看支付明细</span>
             </div>
+            <!--退改规则:所有类型完成状态有(我看产品上貌似是这个意思,具体什么意思各人体会)-->
             <div class="backRule">
                 <div class="title">退改规则</div>
                 <div class="content">
@@ -100,34 +320,130 @@
         </div>
     </div>
 </div>
-<div class="popup-wrap billDetail" style="display:none;">
+<div class="popup-wrap customerDetail" style="display:none;">
     <div class="content-wrap">
         <div class="content">
             <div class="title">支付明细</div>
-            <div class="detail">
-                <div class="row">
-                    <span class="label">商品单价</span>
-                    <span class="value">高傻逼</span>
+            <div class="items">
+                <div class="item">
+                    <div class="detail">
+                        <div class="row">
+                            <span class="label">姓名</span>
+                            <span class="value">高傻逼</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">手机号</span>
+                            <span class="value">13839892231</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">身份证</span>
+                            <span class="value">839405830384502000</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="row">
-                    <span class="label">商品数量</span>
-                    <span class="value">13839892231</span>
+            </div>
+        </div>
+        <div class="close"></div>
+    </div>
+    <div class="mask"></div>
+</div>
+<div class="popup-wrap billDetail universal" style="display:none;">
+    <div class="content-wrap">
+        <div class="content">
+            <div class="title">支付明细</div>
+            <div class="items">
+                <div class="item">
+                    <div class="detail up">
+                        <div class="row">
+                            <span class="label">商品单价</span>
+                            <span class="value">高傻逼</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">商品数量</span>
+                            <span class="value">13839892231</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">商品总额</span>
+                            <span class="value">839405830384502000839405830384502000</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">优惠金额</span>
+                            <span class="value">839405830384502000</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">支付方式</span>
+                            <span class="value">——</span>
+                        </div>
+                    </div>
+                    <div class="detail down">
+                        <div class="row">
+                            <span class="label">实付金额</span>
+                            <span class="value red">¥80930</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="row">
-                    <span class="label">商品总额</span>
-                    <span class="value">839405830384502000</span>
+            </div>
+        </div>
+        <div class="close"></div>
+    </div>
+    <div class="mask"></div>
+</div>
+<div class="popup-wrap billDetail card" style="display:none;">
+    <div class="content-wrap">
+        <div class="content">
+            <div class="title">支付明细</div>
+            <div class="items">
+                <div class="item">
+                    <div class="detail up">
+                        <div class="row">
+                            <span class="label">卡名</span>
+                            <span class="value">简途通10天（四川、云南）</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">剩余</span>
+                            <span class="value">5天</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">使用截止日期</span>
+                            <span class="value">2016.7.12  23:47</span>
+                        </div>
+                    </div>
+                    <div class="detail down">
+                        <div class="row">
+                            <span class="label">本次兑换扣除</span>
+                            <span class="value red">1天</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">兑换后剩余</span>
+                            <span class="value red">4天</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="row">
-                    <span class="label">优惠金额</span>
-                    <span class="value">839405830384502000</span>
-                </div>
-                <div class="row">
-                    <span class="label">支付方式</span>
-                    <span class="value">839405830384502000</span>
-                </div>
-                <div class="row">
-                    <span class="label">实付金额</span>
-                    <span class="value red">¥80930</span>
+                <div class="item">
+                    <div class="detail up">
+                        <div class="row">
+                            <span class="label">卡名</span>
+                            <span class="value">简途通10天（四川、云南）</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">剩余</span>
+                            <span class="value">5天</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">使用截止日期</span>
+                            <span class="value">2016.7.12  23:47</span>
+                        </div>
+                    </div>
+                    <div class="detail down">
+                        <div class="row">
+                            <span class="label">本次兑换扣除</span>
+                            <span class="value red">1天</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">兑换后剩余</span>
+                            <span class="value red">4天</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -168,37 +484,77 @@
         $('header .back').click(function (e) {
             history.go(-1);
         });
-        var  $alertModal;
+        //弹出窗口
+        var $alertModal,$close,clientH = document.documentElement.clientHeight;
         function alertModal(title, data, type) {
             var html = '<div class="popup-wrap customerDetail"><div class="content-wrap"><div class="content">'
-                    + '<div class="title">' + title + '</div><div class="detail">';
+                    + '<div class="title">' + title + '</div><div class="items"><div class="item"><div class="detail">';
             var customerDetail = '<div class="row"><span class="label">姓名</span><span class="value">' + data.name + '</span></div>'
                     + '<div class="row"><span class="label">手机号</span><span class="value">' + data.mobile + '</span></div>'
                     + '<div class="row"><span class="label">身份证</span><span class="value">' + data.idNo + '</span></div>';
-            var billDetail = '<div class="row"><span class="label">商品单价</span><span class="value">' + data.price + '</span></div>'
-                    + '<div class="row"><span class="label">商品数量</span><span class="value">' + data.goodsNum + '</span></div>'
-                    + '<div class="row"><span class="label">商品总额</span><span class="value">' + data.totalPrice  + '</span></div>'
-                    + '<div class="row"><span class="label">优惠金额</span><span class="value">' + data.discount + '</span></div>'
-                    + '<div class="row"><span class="label">支付方式</span><span class="value">' + data.payType + '</span></div>'
-                    + '<div class="row"><span class="label">实付金额</span><span class="value">' + (data.totalPrice-data.discount) + '</span></div>';
-            var end = '</div></div><div class="close"></div></div><div class="mask"></div> </div>';
-            if(type=='customer'){
+//            var billDetail = '<div class="row"><span class="label">商品单价</span><span class="value">' + data.price + '</span></div>'
+//                    + '<div class="row"><span class="label">商品数量</span><span class="value">' + data.goodsNum + '</span></div>'
+//                    + '<div class="row"><span class="label">商品总额</span><span class="value">' + data.totalPrice + '</span></div>'
+//                    + '<div class="row"><span class="label">优惠金额</span><span class="value">' + data.discount + '</span></div>'
+//                    + '<div class="row"><span class="label">支付方式</span><span class="value">' + data.payType + '</span></div>'
+//                    + '<div class="row"><span class="label">实付金额</span><span class="value">' + (data.totalPrice - data.discount) + '</span></div>';
+            var end = '</div></div></div></div><div class="close"></div></div><div class="mask"></div> </div>';
+            if (type == 'customer') {
                 html = html + customerDetail + end;
-            }else if(type=='bill'){
+            } else if (type == 'bill') {
                 html = html + billDetail + end;
             }
             $alertModal = $(html);
             $(document.body).append($alertModal);
-            $('.popup-wrap .close').on('click',function(e){
+            $('.popup-wrap .close').on('click', function (e) {
                 $alertModal.remove();
             });
         }
-        $('.customer .view').on('click',function(e){
-            alertModal('旅客',{name:'高傻逼',mobile:'13839892231',idNo:839405830384502000},'customer');
+
+        $('.customer .view').on('click', function (e) {
+            alertModal('旅客', {name: '高傻逼', mobile: '13839892231', idNo: 839405830384502000}, 'customer');
         });
-        $('.check .view').on('click',function(e){
-            alertModal('旅客',{name:'高傻逼',mobile:'13839892231',idNo:839405830384502000},'customer');
+        $('.check .view').on('click', function (e) {
+            if($alertModal){
+                $alertModal.remove();
+            }
+            var $popupWrap =  $('.popup-wrap.billDetail.card').show();
+            var $contentWrap = $popupWrap.find('.content-wrap');
+            var height = $contentWrap.height();
+            $close = $contentWrap.find('.close');
+            $close.click(function(e){
+                $popupWrap.hide();
+            });
+            if(clientH>height){
+                $contentWrap.css('top',(clientH-height)/2+'px');
+            }
         });
+        // 支付倒计时
+//        var time = ${orderView.overTime};
+        var time = 1200;
+        var interval;
+        if (time < 1201) {
+            time--;
+            interval = setInterval(function () {
+                if (time > 0) {
+                    var deadline = '';
+                    var m = parseInt(time / 60);
+                    var s = time % 60;
+                    if (m == 0) {
+                        deadline = s < 10 ? '请在0' + s + '秒之内完成支付' : '请在' + s + '秒之内完成支付'
+                    } else {
+                        deadline = s < 10 ? '请在' + m + '分0' + s + '秒之内完成支付' : '请在' + m + '分' + s + '秒之内完成支付'
+                    }
+                    $('.tip').html(deadline);
+                    time--;
+                } else {
+                    $('.tip').html('请重新购买');
+                    $('.orderBar .orderStatus').removeClass('waiting').html('已关闭');
+                    $('footer').remove();
+                    clearInterval(interval);
+                }
+            }, 1000);
+        }
     });
 </script>
 </body>

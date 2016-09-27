@@ -1,0 +1,172 @@
+@import "/common/css/base";
+
+$red: #D71345;
+$borderColor: #E4E4E4;
+
+@mixin box-sizing($set:border-box) {
+  -webkit-box-sizing: $set;
+  -moz-box-sizing: $set;
+  -ms-box-sizing: $set;
+  -o-box-sizing: $set;
+  box-sizing: $set;
+}
+
+@mixin border-radius($radius:4px) {
+  -webkit-border-radius: rem($radius);
+  -moz-border-radius: rem($radius);
+  -ms-border-radius: rem($radius);
+  -o-border-radius: rem($radius);
+  border-radius: rem($radius);
+}
+
+html, body {
+  background-color: #F6F6F6;
+}
+
+* {
+  @include box-sizing();
+  outline: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  border: none;
+}
+
+.banner {
+  width: 100%;
+  height: rem(320px);
+  position: relative;
+}
+
+.name-price {
+  color: #424242;
+  font-size: rem(28px);
+  line-height: rem(40px);
+  padding: rem(20px) rem(26px);
+  background-color: #fff;
+  margin-bottom: rem(20px);
+  @include displayflex;
+  @include flexflowRow();
+  -ms-justify-content: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -ms-justify: center;
+  -webkit-justify: center;
+  justify: center;
+  -ms-box-align: center;
+  -webkit-box-align: center;
+  box-align: center;
+  -ms-align-items: center;
+  -webkit-align-items: center;
+  align-items: center;
+  span{
+    display: block;
+  }
+  .name {
+    @include flex;
+    font-size: rem(32px);
+  }
+  .price {
+    color: $red;
+    font-size: rem(34px);
+    margin-left: rem(20px);
+  }
+}
+.instructions{
+  background-color: #fff;
+  margin-bottom: rem(20px);
+  padding-bottom: rem(20px);
+  .instruction {
+    padding: rem(28px) rem(26px) rem(2px) rem(26px);
+    .title {
+      font-size: rem(30px);
+      color: #4F545B;
+      line-height: rem(36px);
+      padding-bottom: rem(20px);
+    }
+    .content {
+      font-size: rem(28px);
+      color: #83858C;
+      line-height: rem(40px);
+    }
+  }
+}
+
+footer {
+  height: rem(80px);
+  background-color: transparent;
+  @include displayflex;
+  @include flexflowRow();
+  background-color: transparent;
+  height: rem(80px);
+  font-size: 0;
+  a {
+    vertical-align: middle;
+  }
+  .tel {
+    width: rem(140px);
+    display: inline-block;
+    background-color: #fff;
+    text-align: center;
+    &:active {
+      background-color: #F1F1F1;
+    }
+    &:before {
+      display: inline-block;
+      content: '';
+      width: rem(27px);
+      height: rem(36px);
+      background: url(/master-Q3/images/icon/phone_normal@2x.png) no-repeat center;
+      background-size: contain;
+      vertical-align: middle;
+    }
+    span {
+      display: inline-block;
+      font-size: rem(24px);
+      line-height: rem(33px);
+      color: #83858C;
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
+  .buy {
+    width: rem(499px);
+    @include flex;
+    display: inline-block;
+    line-height: rem(80px);
+    text-align: center;
+    background-color: #E61E4B;
+    font-size: rem(28px);
+    color: #fff;
+    &:active {
+      background-color: #BF0A33;
+    }
+  }
+  .buy.disabled {
+    background-color: #737373;
+  }
+}
+
+footer {
+  position: absolute;
+  height: 2rem;
+  width: 100%;
+  line-height: 2rem;
+  @include displayflex;
+  @include flexflowRow();
+  bottom: 0;
+  background-color: #fff;
+  z-index: 5;
+  box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.12) !important;
+  -webkit-box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.12) !important;
+  -moz-box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.12) !important;
+}
+header~.page-content {
+  top: 2.2rem;
+}
+footer~.page-content {
+  bottom: 2rem;
+}

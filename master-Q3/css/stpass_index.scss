@@ -1,0 +1,155 @@
+@import "/common/css/base";
+
+$red: #D71345;
+$borderColor: #E4E4E4;
+@mixin box-sizing($set:border-box) {
+  -webkit-box-sizing: $set;
+  -moz-box-sizing: $set;
+  -ms-box-sizing: $set;
+  -o-box-sizing: $set;
+  box-sizing: $set;
+}
+
+@mixin border-radius($radius:4px) {
+  -webkit-border-radius: rem($radius);
+  -moz-border-radius: rem($radius);
+  -ms-border-radius: rem($radius);
+  -o-border-radius: rem($radius);
+  border-radius: rem($radius);
+}
+@mixin linear-gradient-red() {
+  background-image: -webkit-linear-gradient(left,
+          #FFA6BB 0%,
+          #FFDAE1 100%
+  );
+  background-image: -moz-linear-gradient(left,
+          #FFA6BB 0%,
+          #FFDAE1 100%
+  );
+  background-image: -o-linear-gradient(left,
+          #FFA6BB 0%,
+          #FFDAE1 100%
+  );
+  background-image: -ms-linear-gradient(left,
+          #FFA6BB 0%,
+          #FFDAE1 100%
+  ); /* IE10+ */
+  background-image: linear-gradient(left,
+          #FFA6BB 0%,
+          #FFDAE1 100%
+  ); /* W3C */
+}
+
+html, body {
+  background-color: #D8094E;
+}
+
+* {
+  @include box-sizing();
+  outline: none;
+  color: #4F545B;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  border: none;
+}
+
+.banner {
+  width: 100%;
+  height: rem(568px);
+}
+
+.operates {
+  padding: rem(26px) rem(26px) rem(10px);
+  @include displayflex;
+  @include flexflowRow();
+  .left, .right {
+    @include flex;
+    text-align: left;
+    .title {
+      color: #fff;
+      font-size: rem(26px);
+      margin-bottom: rem(18px);
+      text-align: center;
+    }
+    a {
+      color: $red;
+      font-size: rem(28px);
+      display: inline-block;
+      width: rem(284px);
+      height: rem(88px);
+      line-height: rem(88px);
+      text-align: center;
+      background-color: #fff;
+      @include border-radius(8px);
+    }
+  }
+  .right {
+    text-align: right;
+  }
+}
+
+.cards {
+  padding: rem(30px) rem(26px);
+  .card {
+    background-color: #fff;
+    margin-bottom: rem(20px);
+    @include border-radius(8px);
+    &:last-child {
+      margin-bottom: rem(20px);
+    }
+    .card-content {
+      padding: rem(24px) rem(18px) rem(20px);
+      .name {
+        font-size: rem(34px);
+        color: #4F545B;
+        line-height: rem(40px);
+        margin-bottom: rem(14px);
+      }
+      .detail {
+        @include displayflex;
+        @include flexflowRow();
+        .range {
+          font-size: rem(26px);
+          color: #989898;
+          line-height: rem(36px);
+          @include flex;
+        }
+        .price {
+          font-size: rem(32px);
+          line-height: rem(36px);
+          color: #E61E4B;
+          margin-left: rem(30px);
+        }
+      }
+    }
+    .bottom{
+      padding: rem(15px) rem(26px);
+      @include linear-gradient-red();
+      text-align: right;
+      .buy {
+        @include displayflex;
+        @include flexflowRow();
+        span{
+          font-size: rem(28px);
+          line-height: rem(32px);
+          color: #E61E4B;
+          display: block;
+          @include flex;
+        }
+        &:after{
+          display: block;
+          content: '';
+          width: rem(19px);
+          height: rem(32px);
+          background: url(/master-Q3/images/icon/right_red_arrow@2x.png) no-repeat center;
+          background-size: contain;
+          margin-left: rem(20px);
+        }
+      }
+    }
+  }
+}

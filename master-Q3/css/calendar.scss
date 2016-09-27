@@ -17,6 +17,10 @@
     background-color: #E61E4B;
     color: #ffffff;
     text-align: center;
+    font-size: rem(32px);
+    &.disabled {
+      background-color: #bdbdbd;
+    }
   }
   .total {
     @include flex(1);

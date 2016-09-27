@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/master-Q3/css/stpass_detail.scss?__inline">
+</head>
+<body>
+<div class="page-group">
+    <div class="page page-current">
+        <header>
+            <div class="back"></div>
+            <div class="center">我的简途通</div>
+        </header>
+        <div class="page-content">
+            <div class="banner">
+                <img src="/master-Q3/images/stpass_detail_banner.png" alt=""/>
+            </div>
+            <div class="stpassDetail converted">
+                <a href="" class="introduce"><span>使用说明</span></a>
+                <div class="row">
+                    <span class="label">面额</span>
+                    <span class="value">10天</span>
+                </div>
+                <div class="row">
+                    <span class="label">剩余</span>
+                    <span class="value">07天</span>
+                </div>
+                <div class="row">
+                    <span class="label">使用范围</span>
+                    <span class="value">全国</span>
+                </div>
+                <div class="row">
+                    <span class="label">绑定姓名</span>
+                    <span class="value">张三</span>
+                </div>
+                <div class="row">
+                    <span class="label">绑定身份证号</span>
+                    <span class="value">51012919880203948</span>
+                </div>
+                <div class="row">
+                    <span class="label">绑定日期</span>
+                    <span class="value">2015.12.31  23:13</span>
+                </div>
+                <div class="row">
+                    <span class="label">使用截止日期</span>
+                    <span class="value">2015.12.31  23:13</span>
+                </div>
+            </div>
+            <div class="records">
+                <div class="title">兑换记录</div>
+                <div class="record">
+                    <div class="top-bar">
+                        <div class="name">成都－九寨沟3日往返车位</div>
+                        <div class="status pending">待出行</div>
+                    </div>
+                    <div class="record-content">
+                        <div class="row date">乘车时间&nbsp;&nbsp;2016.06.23</div>
+                        <div class="row days">抵扣简途通1天</div>
+                        <a class="checkDetail"><span>查看详情</span></a>
+                    </div>
+                </div>
+                <div class="record">
+                    <div class="top-bar">
+                        <div class="name">成都－九寨沟3日往返车位</div>
+                        <div class="status already">已出行</div>
+                    </div>
+                    <div class="record-content">
+                        <div class="row date">乘车时间&nbsp;&nbsp;2016.06.23</div>
+                        <div class="row days">抵扣简途通1天</div>
+                        <a class="checkDetail"><span>查看详情</span></a>
+                    </div>
+                </div>
+                <div class="record">
+                    <div class="top-bar">
+                        <div class="name">成都－九寨沟3日往返车位</div>
+                        <div class="status already">已出行</div>
+                    </div>
+                    <div class="record-content">
+                        <div class="row date">乘车时间&nbsp;&nbsp;2016.06.23</div>
+                        <div class="row days">抵扣简途通1天</div>
+                        <a class="checkDetail"><span>查看详情</span></a>
+                    </div>
+                </div>
+                <div class="record">
+                    <div class="top-bar">
+                        <div class="name">成都－九寨沟3日往返车位</div>
+                        <div class="status already">已出行</div>
+                    </div>
+                    <div class="record-content">
+                        <div class="row date">乘车时间&nbsp;&nbsp;2016.06.23</div>
+                        <div class="row days">抵扣简途通1天</div>
+                        <a class="checkDetail"><span>查看详情</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    // 针对uc横竖屏rem html没有重绘的问题
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+        var a = document.getElementsByTagName('a');
+        for (var i = 0; i < a.length; i++) {
+            a[i].addEventListener('touchstart', function () {
+            }, false);
+        }
+    })(document, window);
+    $(document).ready(function () {
+        // 点击返回按钮
+        $('header .back').click(function (e) {
+            history.go(-1);
+        });
+    });
+</script>
+</body>
+</html>

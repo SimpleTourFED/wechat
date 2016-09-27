@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <title>简途旅行</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/master-Q3/css/product_details.scss?__inline" media="screen" title="no title" charset="utf-8">
+</head>
+<body style="visibility: hidden">
+<div class="page-group">
+    <div class="page page-current" style="background-color: #F6F6F6;" id="main">
+        <!--每个page的页头-->
+        <header>
+            <div class="back">后退</div>
+            <div class="center">订购简途通</div>
+        </header>
+        <div class="detail-cover"></div>
+        <footer>
+            <div class="pay-info-detail">
+                单价  ¥58  ×5
+            </div>
+            <div class="pay-info">$123123</div>
+            <div class="pay-btn">去支付</div>
+        </footer>
+        <div class="page-content">
+            <div class="crad-wrapper">
+                <h5>简途通卡10天卡</h5>
+                <p>使用范围：四川、云南、重庆</p>
+                <p>可兑换出行天数：10天</p>
+                <p>截止绑定时间：2015年12月31日23:59</p>
+                <p>使用有效期：365天</p>
+            </div>
+            <div class="booking-wrapper">
+                <div class="nums">
+                    订购数量
+                    <div class="contrl-wp">
+                        <div class="reduce disabled">
+                            <span>－</span>
+                        </div>
+                        <div class="count">1</div>
+                        <div class="add">
+                            <span>＋</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tips">
+                    每个用户限购3张
+                </div>
+            </div>
+            <div class="goService">
+                点击去支付表示已阅读并同意<a href="">《简途订购协议》</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script type="text/javascript" src="/common/js/base.js"></script>
+<script type="text/javascript">
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                    docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                };
+        if (!doc.addEventListener) return;
+        recalc();
+        document.body.style.visibility = 'visible';
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+        document.addEventListener('touchmove', function (e) {
+            e.preventDefault();//阻止touchmove默认事件
+        }, false);
+    })(document, window);
+    $(document).ready(function() {
+        $('footer .pay-info').tap(function() {
+            var $this = $(this);
+            if(!$this.hasClass('selected')) {
+                $this.addClass('selected');
+                $('.detail-cover').show();
+                $('.pay-info-detail').addClass('show');
+            } else {
+                $this.removeClass('selected');
+                $('.pay-info-detail').removeClass('show');
+                setTimeout(function() {
+                    $('.detail-cover').hide();
+                },150)
+            }
+        });
+        var count = 1;
+        if(count) {
+            $('.reduce').addClass('disabled');
+            $('.add').addClass('disabled');
+        }
+        var judge = function(count) {
+            if(count == 1) {
+                $('.reduce').addClass('disabled');
+            } else if(count == 3) {
+                $('.add').addClass('disabled');
+            } else {
+                $('.add').removeClass('disabled');
+                $('.reduce').removeClass('disabled');
+            }
+        };
+        $('.add').tap(function() {
+            var $this = $(this);
+            if(!$this.hasClass('disabled')) {
+                count++;
+                $('.count').text(count);
+                judge(count);
+            }
+        });
+        $('.reduce').tap(function() {
+            var $this = $(this);
+            if(!$this.hasClass('disabled')) {
+                count--;
+                $('.count').text(count);
+                judge(count);
+            }
+        });
+
+    })
+</script>
+</body>
+</html>

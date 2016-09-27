@@ -23,6 +23,7 @@
 }
 .calendar-wrapper {
   width: 100%;
+  padding-bottom: 3rem;
   .calendar-title {
     width: 100%;
     height: rem(70px);
@@ -73,6 +74,13 @@
       &.disabled {
         color: #C0C2C9;
       }
+      &.hotelSelected {
+        background-color: #FA92A9;
+        color: #ffffff;
+        .price {
+          color: #ffffff;
+        }
+      }
       &.selected {
         background-color: #E61E4B;
         color: #ffffff;
@@ -80,6 +88,18 @@
           color: #ffffff;
         }
       }
+    }
+  }
+  .no_content {
+    width: 100%;
+    height: rem(550px);
+    line-height: rem(500px);
+    text-align: center;
+    color: #4F545B;
+    font-size: rem(34px);
+    span {
+      color: #E61E4B;
+      text-decoration: underline;
     }
   }
 }

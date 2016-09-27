@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/master-Q3/css/select_customer.scss?__inline" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+<div class="page-group">
+    <div class="page page-current">
+        <header>
+            <div class="back"></div>
+            <div class="center">选择出行人</div>
+        </header>
+        <footer>
+            <div class="buyNow">下一步</div>
+        </footer>
+        <div class="page-content">
+            <div class="tips">
+                <h5>请选择兑换行程的出行人</h5>
+                <p>检测到您的简途通绑定了其他用户，请选择您要兑换行程的用户</p>
+            </div>
+            <div class="customers">
+                <div class="customer">
+                    <div class="name">羊羊羊</div>
+                    <div class="days">当前行程可使用天数:10天</div>
+                    <div class="checkbox"></div>
+                </div>
+                <div class="customer">
+                    <div class="name">羊羊羊</div>
+                    <div class="days">当前行程可使用天数:10天</div>
+                    <div class="checkbox"></div>
+                </div>
+                <div class="customer">
+                    <div class="name">羊羊羊</div>
+                    <div class="days">当前行程可使用天数:10天</div>
+                    <div class="checkbox"></div>
+                </div>
+                <div class="customer disabled">
+                    <div class="name">羊羊羊</div>
+                    <div class="days">当前行程可使用天数:10天</div>
+                    <div class="checkbox"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                    docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                };
+        if (!doc.addEventListener) return;
+        recalc();
+        var a = document.getElementsByTagName('a');
+        for(var i = 0; i < a.length; i++){
+            a[i].addEventListener('touchstart',function(){},false);
+        }
+        document.body.style.visibility = 'visible';
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script>
+<script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script type="text/javascript" src="/common/js/base.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.checkbox').tap(function() {
+            var $customer = $(this).parents('.customer');
+            if(!$customer.hasClass('disabled')) {
+
+                if($customer.hasClass('selected')) {
+                    $customer.removeClass('selected');
+                } else {
+                    $customer.addClass('selected');
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>
