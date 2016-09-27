@@ -47,19 +47,22 @@
         return /^0?(13|14|15|17|18)[0-9]{9}$/.test($.trim(tel))
     };
     var name = function (value) {
-        
+        return (/^\s*[a-zA-Z]+[\s]?[a-zA-Z]{1,}\s*$/.test(value) || /^\s*[\u4e00-\u9fa5]{1,}\s*$/.test(value))
     };
     var nameEn = function (value) {
-
+        return /^\s*[a-zA-Z]+[\s]?[a-zA-Z]{1,}\s*$/.test(value)
     };
     var code = function (value) {
         return /^[0-9]{5}$/.test($.trim(value))
+    };
+    var bindingCode = function (value) {
+        return /^[1-9A-HJKM-Za-hjkm-z]{4}$/.test($.trim(value))
     };
     $.validate = {
         id : validateId,
         isNotNull : isNotNull,
         name : name,
-        nameEn:nameEn
-
+        nameEn:nameEn,
+        bindingCode : bindingCode
     }
 }(Zepto);
