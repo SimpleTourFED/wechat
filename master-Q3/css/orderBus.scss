@@ -2,6 +2,9 @@
 body {
   background-color: #f5f5f5;
 }
+.page {
+  background-color: #f5f5f5;
+}
 ul {
   list-style: none;
 }
@@ -150,12 +153,12 @@ ul {
           display: inline-block;
           float: left;
           background-color: #0C0E16;
+          opacity: .8;
           border-radius: rem(6px);
-          span {
-            padding: rem(3px) rem(18px);
-            font-size: rem(24px);
-            color: #fff;
-          }
+          padding: rem(3px) rem(18px);
+          font-size: rem(24px);
+          color: #fff;
+          margin-right: rem(10px);
         }
       }
 
@@ -316,3 +319,70 @@ ul {
 }
 .destination-content{display: none}
 .destination-content.current{display: block}
+.page-content.tab-depart,.page-content.tab-arrive{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient:horizontal;
+  -ms-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -webkit-flex-flow:vertical nowrap;
+  -ms-flex-flow:vertical nowrap;
+  -moz-flex-flow:vertical nowrap;
+  flex-flow:vertical nowrap;
+}
+.page-content.tab-depart .destination-content,.page-content.tab-arrive .destination-content{
+  -webkit-box-flex:1;-moz-box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1;padding-top: 4.4rem;;
+}
+#tab-depart .hot-space ul li:active,#tab-arrive .hot-space ul li:active {
+  background-color: #DEDEDE;
+}
+#tab-depart .place-list .item-wrap ul li:active, #tab-arrive .place-list .item-wrap ul li:active {
+  background-color: #DEDEDE;
+}
+.search-wrapper .search-button.disabled {
+  background-color: #bdbdbd;
+}
+.search-result .result:active {
+  background-color: #DEDEDE;
+}
+#tab-depart .search-bar.click-search .cancel, #tab-arrive .search-bar.click-search .cancel
+{
+  display: block;
+}
+.search-bar .search-input .click-zone {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1.7rem;
+  height: 100%;
+  background-color: transparent;
+  z-index: 103;
+}
+.search-bar.click-search.input-change .click-zone {
+  background: url(/images/cancel-icon@2x.png) no-repeat center;
+  background-size: 50%;
+}
+.no_search_result {
+  display: none;
+  margin: 2.5rem auto 0;
+  width: 4rem;
+  height: 2.35rem;
+}
+.no_search_result img{
+  width: 100%;
+  margin-bottom: .5rem;
+}
+.no_search_result p{
+  color: #83858C;
+  font-size: .7rem;
+  text-align: center;
+}
+.search-result .result.show{
+  display: block;
+}
+.search-result{position:absolute;z-index:105;top:2.2rem;left:0;display:none;width:100%;height:100%;overflow:auto;background-color:#fff;-webkit-overflow-scrolling:touch}
+.search-result.show{display:block}
+.search-result .result{display:none;height:2rem;line-height:2rem;border-bottom:1px solid #F0F0F0;font-size:.7rem;color:#737373;padding-left: .75rem;}

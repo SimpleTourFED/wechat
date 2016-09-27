@@ -31,17 +31,17 @@
     <div class="page page-current">
         <div class="page-content content" data-toggle="scroller" data-type="js">
             <div class="search-wrapper">
-                <div class="start turnTo" href="#tab-depart">
+                <div class="start " >
                     <div class="bc"></div>
                     <label for="">出发地</label>
                     <div class="line"></div>
-                    <div class="name">成都</div>
+                    <div class="name turnTo" href="#tab-depart">成都</div>
                 </div>
-                <div class="destination turnTo" href="#tab-arrive">
+                <div class="destination turnTo" >
                     <div class="bc"></div>
                     <label for="">目的地</label>
                     <div class="line"></div>
-                    <div class="name">九寨</div>
+                    <div class="name turnTo" href="#tab-arrive">九寨</div>
                 </div>
                 <div class="search-button">
                     去搜索
@@ -60,8 +60,8 @@
                     </div>
                     <div class="tags">
                         <ul>
-                            <li><span>app专享价</span></li>
-                            <li><span>特价</span></li>
+                            <li>app专享价</li>
+                            <li>特价</li>
                         </ul>
                     </div>
                 </div>
@@ -80,8 +80,10 @@
                         <span class="right">原价:¥1299.99</span>
                     </div>
                     <div class="tags">
-                        <span>app专享价</span>
-                        <span>特价</span>
+                        <ul>
+                            <li>app专享价</li>
+                            <li>特价</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="pkg-item">
@@ -98,8 +100,10 @@
                         <span class="right">原价:¥1299.99</span>
                     </div>
                     <div class="tags">
-                        <span>app专享价</span>
-                        <span>特价</span>
+                        <ul>
+                            <li>app专享价</li>
+                            <li>特价</li>
+                        </ul>
                     </div>
                 </div>
 
@@ -117,8 +121,10 @@
                         <span class="right">原价:¥1299.99</span>
                     </div>
                     <div class="tags">
-                        <span>app专享价</span>
-                        <span>特价</span>
+                        <ul>
+                            <li>app专享价</li>
+                            <li>特价</li>
+                        </ul>
                     </div>
                 </div>
 
@@ -360,9 +366,9 @@
         $('.search-bar .back').click(function() {
             history.go(-1);
         });
-//        $.lazyload({
-//            visibleZone: '.page-content'
-//        });
+        $.lazyload({
+            visibleZone: '.page-content'
+        });
         $('#tab-arrive .navBar li').click(function (e) {
             $(this).parents('.page').find('.navBar li').removeClass('selected');
             $(this).addClass('selected');
