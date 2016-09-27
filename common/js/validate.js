@@ -56,7 +56,7 @@
         return /^[0-9]{5}$/.test($.trim(value))
     };
     var bindingCode = function (value) {
-        return /^[0-9A-Za-z]{4}$/.test($.trim(value))
+        return /^[1-9A-HJKM-Za-hjkm-z]{4}$/.test($.trim(value))
     };
     $.validate = {
         id : validateId,
