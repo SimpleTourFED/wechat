@@ -105,9 +105,11 @@ body {
     }
   }
   .card-passenger {
+    background-color: #fff;
     padding-left: rem(26px);
     font-size: rem(28px);
     .passenger {
+      background-color: #fff;
       padding: rem(28px) rem(26px) rem(28px) 0;
       border-bottom: rem(2px) dashed #EBEBF5;
       p {
@@ -131,6 +133,7 @@ body {
 
     .cards {
       border-bottom: rem(2px) solid #EBEBF5;
+      background-color: #fff;
       .card {
         padding: rem(28px) rem(26px) rem(28px) 0;
         border-bottom: rem(2px) dashed #EBEBF5;
@@ -157,7 +160,7 @@ body {
             color: #83858C;
             &:first-child {
               display: inline-block;
-              width: rem(170px);
+              width: rem(180px);
               margin-right: rem(15px);
             }
             &:last-child {

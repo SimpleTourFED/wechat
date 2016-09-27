@@ -9,6 +9,24 @@
     <link rel="stylesheet" href="/master-Q3/css/select_customer.scss?__inline" media="screen" title="no title" charset="utf-8">
 </head>
 <body>
+<div class="popup-wrap customerDetail" style="display: none">
+    <div class="content-wrap">
+        <div class="content">
+            <div class="title">简途通出行人</div>
+            <div class="items">
+                <div class="item">
+                    <div class="detail">
+                        <div class="row">
+                            <span class="label">简途通的使用必须事绑定者本人，这就是简途通出行人，出行人是简途通绑定的人，简途通绑定的人就是简途通出行人，不能换人。</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="close"></div>
+    </div>
+    <div class="mask"></div>
+</div>
 <div class="page-group">
     <div class="page page-current">
         <header>
@@ -91,6 +109,9 @@
                 }
             }
         });
+        $('.close').tap(function() {
+            $('.popup-wrap').hide();
+        })
     });
 </script>
 </body>
