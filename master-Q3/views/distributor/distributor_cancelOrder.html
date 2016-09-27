@@ -17,13 +17,8 @@
             <div class="center">已取消的订单</div>
         </header>
         <div class="page-content">
-            <div class="marquee-wrap">
-                <div class="marquee">
-                    <span class="tip">已取消，表示客人订购产品后，取消的订单已取消，表示客人订购产品后，取消的订单已取消，表示客人订购产品后，取消的订单已取消，表示客人订购产品后，取消的订单已取消，表示客人订购产品后，取消的订单已取消，表示客人订购产品后，取消的订单已取消，表示客人订购产品后，取消的订单已取消，表示客人订购产品后，取消的订单已取消，表示客人订购产品后，取消的订单已取消，表示客人订购产品后，取消的订单</span>
-                </div>
-                <!--<marquee class="marquee">-->
-                    <!--<span class="tip">已取消，表示客人订购产品后，取消的订单已取消，表示客人订购产品后，取消的订单</span>-->
-                <!--</marquee>-->
+            <div class="marquee">
+                <span class="tip">已取消，表示客人订购产品后，取消的订单取消的订单</span>
             </div>
             <div class="records">
                 <div class="record">
@@ -91,21 +86,6 @@
         $('header .back').click(function (e) {
             history.go(-1);
         });
-        var $marquee = $('.marquee-wrap .marquee'), $tip = $marquee.find('span.tip');
-        var width = $tip.width(), $timer = 1, timer;
-//        function transformLeft(){
-//            $tip.clone().appendTo($marquee);
-            $marquee.css({
-                left: -width * $timer + 'px'
-            });
-//            $timer++;
-//        }
-//        if (width > document.documentElement.clientWidth) {
-//            transformLeft();
-//            timer = setInterval(function(){
-//                transformLeft();
-//            }, 7000);
-//        }
     });
 </script>
 </body>

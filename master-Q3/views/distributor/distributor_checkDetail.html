@@ -127,7 +127,9 @@
                     </div>
                 </li>
                 <li class="panel">
-                    <div class="marquee-wrap"><div class="marquee"><span class="tip">提现进度若有疑问，请联系客服系统：400-800-3351</span></div></div>
+                    <div class="marquee">
+                        <span class="tip">提现进度若有疑问，请联系客服系统：400-800-3351</span>
+                    </div>
                     <div class="withdrawals">
                         <div class="withdrawal">
                             <div class="title">
@@ -209,18 +211,6 @@
             $this.siblings().removeClass('selected');
             $this.addClass('selected');
             $('ul.panels li').removeClass('selected').eq($this.index()).addClass('selected');
-            clearInterval(timer);
-            if ($this.index() == 2) {
-                var $marquee = $('.marquee-wrap .marquee'),$tip = $marquee.find('span.tip');
-                var $clone = $tip.clone(),$first,width = $tip.width();
-                $marquee.width(width*2).append($clone);
-                $first = $('.marquee-wrap .marquee span.tip').eq(0).css('margin-left', -width + 'px');
-                timer = setInterval(function(){
-                    $first.css('margin-left', 0);
-                    $marquee.append($first);
-                    $first = $('.marquee-wrap .marquee span.tip').eq(0).css('margin-left', -width + 'px');
-                }, 3500);
-            }
         });
     });
 </script>
