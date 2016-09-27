@@ -77,7 +77,7 @@ img {
       width: rem(24px);
       height: rem(25px);
       background: url(/master-Q3/images/icon/freebuy_right_arrow.png) no-repeat center;
-      background-size: cover;
+      background-size: contain;
       margin-left: rem(15px);
     }
   }
@@ -100,6 +100,7 @@ img {
   .title{
     padding: rem(24px) 0;
     font-size: rem(28px);
+    line-height: rem(32px);
     color: #4F545B;
     border-bottom: 1px solid #EBEBF5;
     &:before {
@@ -151,7 +152,7 @@ img {
         color: #E61E4B;
         font-size: rem(26px);
         display: block;
-        margin-top: rem(4px);
+        padding-top: rem(4px);
         @include displayflex;
         @include flexflowRow;
         -ms-justify-content: center;
@@ -176,7 +177,7 @@ img {
           width: rem(24px);
           height: rem(24px);
           background: url(/master-Q3/images/icon/freebuy_right_arrow.png) no-repeat center;
-          background-size: cover;
+          background-size: contain;
           margin-left: rem(15px);
         }
       }

@@ -282,19 +282,19 @@ img {
 }
 .card-wrap {
   background-color: #fff;
-  margin-bottom: rem(20px);
   .card-title {
-    height: rem(78px);
-    line-height: rem(32px);
+    height: rem(82px);
+    line-height: rem(36px);
     color: #737373;
     padding: rem(23px) rem(26px);
     border-bottom: 1px solid #E4E4E4;
     @include displayflex;
     @include flexflowRow();
     span {
-      display: block;
       color: #4F545B;
       font-size: rem(32px);
+      line-height: rem(36px);
+      display: block;
       @include flex;
     }
     &:after {
@@ -312,6 +312,9 @@ img {
       padding: rem(28px) 0;
       border-bottom: 1px solid #EBEBF5;
       position: relative;
+      &:last-child{
+        border-bottom: none;
+      }
       .row {
         padding-bottom: rem(20px);
         font-size: rem(26px);
@@ -358,9 +361,7 @@ img {
         }
       }
       .goBind{
-        width: rem(135px);
-        height: rem(30px);
-        line-height: rem(30px);
+        width: rem(144px);
         color: #E61E4B;
         font-size: rem(26px);
         display: block;
@@ -383,18 +384,16 @@ img {
         align-items: center;
         span{
           display: block;
-          color: #E61E4B;
-          font-size: rem(26px);
           @include flex;
         }
         &:after{
           content: '';
-          display: block;
+          display: inline-block;
           width: rem(24px);
           height: rem(24px);
           background: url(/master-Q3/images/icon/freebuy_right_arrow.png) no-repeat center;
-          background-size: cover;
-          margin-top: rem(3px);
+          background-size: contain;
+          margin-left: rem(15px);
         }
       }
     }

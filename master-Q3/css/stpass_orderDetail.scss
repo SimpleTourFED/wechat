@@ -32,7 +32,8 @@
   background-color: #fff;
   margin-bottom: rem(20px);
   .card-title {
-    font-size: rem(28px);
+    height: rem(82px);
+    line-height: rem(36px);
     color: #737373;
     padding: rem(23px) rem(26px);
     border-bottom: 1px solid #E4E4E4;
@@ -41,6 +42,8 @@
     span {
       color: #4F545B;
       font-size: rem(32px);
+      line-height: rem(36px);
+      display: block;
       @include flex;
     }
     &:after {
@@ -135,7 +138,7 @@
           width: rem(24px);
           height: rem(24px);
           background: url(/master-Q3/images/icon/freebuy_right_arrow.png) no-repeat center;
-          background-size: cover;
+          background-size: contain;
           margin-left: rem(15px);
         }
       }
@@ -191,10 +194,7 @@ footer {
   width: 100%;
   line-height: rem(96px);
   bottom: 0;
-  background-color: #fff;
   z-index: 5;
-  //@include displayflex();
-  //@include flexflowRow();
   font-size: 0;
   .tel {
     width: rem(140px);
@@ -239,7 +239,9 @@ footer {
     width: 100%;
     text-align: center;
     color: #83858C;
+    display: block;
     font-size: rem(34px);
+    @include flex;
     &:before{
       content: '';
       display: inline-block;

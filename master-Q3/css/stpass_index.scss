@@ -137,6 +137,7 @@ img {
           font-size: rem(28px);
           line-height: rem(32px);
           color: #E61E4B;
+          display: block;
           @include flex;
         }
         &:after{
