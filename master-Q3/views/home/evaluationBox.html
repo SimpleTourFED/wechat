@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/master-Q3/css/pkgDetail.scss?__inline" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+<div class="page-group">
+    <div class="page page-current" id="evaluationBox">
+        <header>
+            <div class="back"></div>
+            <div class="center">旅客评价</div>
+        </header>
+        <div data-toggle="scroller" data-type="js" class="page-content content infinite-scroll infinite-scroll-bottom" data-distance="30">
+            <div class="evaluations">
+                <div class="evaluation">
+                    <div class="stars">
+                        <ul>
+                            <li class="selected"></li>
+                            <li class="selected"></li>
+                            <li class="selected"></li>
+                            <li class="half"></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    4.5星
+                    <div class="evaluation-nums">
+                        22人评价
+                    </div>
+                </div>
+            </div>
+
+            <div class="comments">
+                <div class="comment">
+                    <div class="title">
+                        <div class="avatar">
+                            <img src="/master-Q3/images/icon/china_icon@2x.png" alt="">
+                        </div>
+                        <div class="infos">
+                            <div class="userName">杨明昆</div>
+                            <div class="date">2016-4-1</div>
+                        </div>
+                        <div class="stars">
+                            <ul>
+                                <li class="selected"></li>
+                                <li class="selected"></li>
+                                <li class="selected"></li>
+                                <li class="selected"></li>
+                                <li class="half"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="comment-content">
+                        <p>首先感谢🙏简途为我们这些爱完的人士专门打造的方案，非常满意的一次车程，而且直接到西岭雪山脚下，非常实惠又方便，似导游非导游的工作人员们辛苦了，物超所值，旅行首选😄😄期待更多的旅游。</p>
+                    </div>
+                    <div class="bottom-imgs">
+                        <div class="img-wp">
+                            <img src="/master-Q3/images/icon/freebuy_catering_icon@2x.png" alt="">
+                        </div>
+                        <div class="img-wp">
+                            <img src="/master-Q3/images/icon/freebuy_gift_icon@2x.png" alt="">
+                        </div>
+                        <div class="img-wp">
+                            <img src="/master-Q3/images/icon/freebuy_product_features@2x.png" alt="">
+                        </div>
+                        <div class="img-wp">
+                            <div class="more-cover"></div>
+                            <div class="more">共7张</div>
+                            <img src="/master-Q3/images/icon/freebuy_entertainment_icon@2x.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="comment">
+                    <div class="title">
+                        <div class="avatar">
+                            <img src="/master-Q3/images/icon/china_icon@2x.png" alt="">
+                        </div>
+                        <div class="infos">
+                            <div class="userName">我是一个名字很长的藏族人</div>
+                            <div class="date">2016-4-1</div>
+                        </div>
+                        <div class="stars">
+                            <ul>
+                                <li class="selected"></li>
+                                <li class="selected"></li>
+                                <li class="selected"></li>
+                                <li class="selected"></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="comment-content">
+                        <p>首先感谢🙏简途为我们这些爱完的人士专门打造的方案，非常满意的一次车程，而且直接到西岭雪山脚下，非常实惠又方便，似导游非导游的工作人员们辛苦了，物超所值，旅行首选😄😄期待更多的旅游。</p>
+                    </div>
+                    <div class="bottom-imgs">
+                        <div class="img-wp">
+                            <img src="/master-Q3/images/icon/freebuy_catering_icon@2x.png" alt="">
+                        </div>
+                        <div class="img-wp">
+                            <img src="/master-Q3/images/icon/freebuy_gift_icon@2x.png" alt="">
+                        </div>
+                        <div class="img-wp">
+                            <img src="/master-Q3/images/icon/freebuy_product_features@2x.png" alt="">
+                        </div>
+                        <div class="img-wp">
+                            <div class="more-cover"></div>
+                            <div class="more">共7张</div>
+                            <img src="/master-Q3/images/icon/freebuy_entertainment_icon@2x.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-logo">
+                <div class="img-wrapper">
+                    <img src="/master-Q3/images/icon/bus_bottom@2x.png" alt="">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                    docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                };
+        if (!doc.addEventListener) return;
+        recalc();
+        var a = document.getElementsByTagName('a');
+        for(var i = 0; i < a.length; i++){
+            a[i].addEventListener('touchstart',function(){},false);
+        }
+        document.body.style.visibility = 'visible';
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script>
+<script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script type="text/javascript" src="/common/js/pages.js"></script>
+<script type="text/javascript" src="/common/js/scroll.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        // 点击返回按钮
+        $('header .back').click(function() {
+            history.go(-1);
+        });
+        /* ============================================
+         **********   旅客评价下拉加载更多  **************
+         ============================================== */
+        var loading = false;
+
+        function addItems(data) {
+            var strPackage = '';
+            $.each(data, function (i, v) {
+                var strTips = '<li class="tourism">车</li>';
+                $.each(v.resourceMap, function (key, value) {
+                    if (key == 'hotel') {
+                        strTips += '<li>住</li>'
+                    } else if (key == 'catering') {
+                        strTips += '<li>餐</li>'
+                    } else if (key == 'entertainment') {
+                        strTips += '<li>娱</li>'
+                    } else if (key == 'scenic') {
+                        strTips += '<li>景</li>'
+                    }
+                });
+                strPackage += '<div class="pkg-gp" data-href="/mobile/gateway/wechat/home/tourism/'+ v.id +
+                        '"><div class="pkg-img">' +
+                        '<img src="' + v.imgUrl + '" alt="">'+
+                        '<div class="pkg-type"><ul>'+ strTips + '</ul></div><div class="triangle"></div>'+
+                        '</div><div class="pkg-title">'+
+                        '<div class="pkg-name">' + v.displayName + '</div>'+
+                        '<div class="pkg-price">'+ v.bidPrice +'元</div></div>'+
+                        '<div class="pkg-content">'+ v.packageDisplayName+ '</div></div>';
+            });
+            $('.recommend-pkg').append(strPackage);
+            $.refreshScroller();
+        }
+        // 上次加载的序号
+        var lastIndex = 1;
+        // 注册'infinite'事件处理函数
+        $(document).on('infinite', '.infinite-scroll-bottom',function() {
+            // 如果正在加载，则退出
+            if (loading) return;
+            // 设置flag
+            loading = true;
+            $.ajax({
+                type: 'POST',
+                url: '/mobile/gateway/wechat/home/recommendmore',
+                data: {
+                    pageIndex: lastIndex,
+                    pageSize: 10
+                },
+                success: function (data) {
+                    var dataJson = JSON.parse(data);
+                    if (dataJson.code == 0) {
+                        if (dataJson.data.length == 0) {
+                            $('#pullUp .pullUpLabel').text('没有更多了…');
+                        } else {
+                            loading = false;
+                            addItems(dataJson.data);
+                            $('#pullUp .pullUpLabel').text('下滑加载更多…');
+                            lastIndex++;
+                        }
+                    } else if (dataJson.code == 2) {
+                        // 加载完毕，则注销无限加载事件，以防不必要的加载
+                        $.detachInfiniteScroll($('.infinite-scroll'));
+                        // 删除加载提示符
+                        $('.infinite-scroll-preloader').remove();
+                    }
+                },
+                error: function () {
+                    loading = false;
+                }
+            });
+        });
+        /* ============================================
+         **********   旅客评价下拉加载更多  **************
+         ============================================== */
+    })
+</script>
+</body>
+</html>

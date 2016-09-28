@@ -238,56 +238,52 @@ footer {
   z-index: 16;
   -webkit-transition:bottom 0.2s ease-out;
   transition:bottom 0.2s ease-out;
+  @include displayflex();
+  @include flexflowRow();
+  .destination {
+    width: rem(160px);
+    height: 100%;
+    overflow-y: auto;
+    ul {
+      list-style: none;
+      li {
+        width: 100%;
+        height: rem(96px);
+        line-height: rem(96px);
+        color: #4F545B;
+        font-size: rem(28px);
+        text-align: center;
+        background-color: #e7e7e7;
+        &.selected {
+          color: #E61E4B;
+          background-color: #fff;
+        }
+      }
+    }
+  }
   .arrive {
     @include flex(1);
     height: 100%;
+    overflow-y: auto;
     background-color: #e7e7e7;
     position: relative;
     ul {
+      display: none;
       list-style: none;
-      li{
-        @include displayflex();
-        @include flexflowRow();
-        overflow-y: auto;
-        .title {
-          width: rem(160px);
-          height: rem(96px);
-          line-height: rem(96px);
-          text-align: center;
-          color: #4F545B;
-          font-size: rem(28px);
-        }
-        .destinations {
-          position: absolute;
-          height: rem(439px);
-          top: 0;
-          left: rem(160px);
-          width: rem(480px);
-          overflow-y: auto;
-          background-color: #fff;
-          div {
-            height: rem(88px);
-            line-height: rem(88px);
-            color: #4F545B;
-            font-size: rem(28px);
-            padding: 0 rem(62px);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            &.selected {
-              color: #E61E4B;
-            }
-            &:active{
-              background-color: #F1F1F1;
-            }
-          }
-        }
+      li {
+        width: 100%;
+        height: rem(88px);
+        line-height:rem(88px);
+        color: #4F545B;
+        font-size: rem(28px);
+        text-align: center;
+        background-color: #fff;
         &.selected {
-          .title {
-            background-color: #fff;
-            color: #E61E4B;
-          }
+          color: #E61E4B;
         }
+      }
+      &.show {
+        display: block;
       }
     }
   }

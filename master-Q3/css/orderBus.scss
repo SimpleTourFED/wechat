@@ -319,20 +319,6 @@ ul {
 }
 .destination-content{display: none}
 .destination-content.current{display: block}
-.page-content.tab-depart,.page-content.tab-arrive{
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-orient:horizontal;
-  -ms-box-orient: horizontal;
-  -moz-box-orient: horizontal;
-  -webkit-flex-flow:vertical nowrap;
-  -ms-flex-flow:vertical nowrap;
-  -moz-flex-flow:vertical nowrap;
-  flex-flow:vertical nowrap;
-}
 .page-content.tab-depart .destination-content,.page-content.tab-arrive .destination-content{
   -webkit-box-flex:1;-moz-box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1;padding-top: 4.4rem;;
 }

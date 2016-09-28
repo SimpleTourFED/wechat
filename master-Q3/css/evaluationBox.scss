@@ -1,0 +1,428 @@
+@import "/common/css/base";
+.page-content {
+  background-color: #f5f5f5;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.tourism-info {
+  .head-img {
+    position: relative;
+    width: 100%;
+    height: rem(273px);
+    img{
+      width: 100%;
+      height: 100%;
+    }
+    .tips-wp {
+      position: absolute;
+      width: 100%;
+      height: rem(70px);
+      line-height: 1.8rem;
+      bottom: 0;
+      left: 0;
+      .tips-cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        opacity: .6;
+        z-index: 1;
+      }
+      i {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        width: rem(82px);
+        height: rem(70px);
+        background: url("/master-Q3/images/icon/tips_white_icon.png") no-repeat center;
+        background-size: rem(36px) rem(36px);
+        z-index: 2;
+      }
+      .tips {
+        text-indent: rem(82px);
+        display: inline-block;
+        font-size: rem(24px);
+        color: #ffffff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+      }
+    }
+  }
+  .infos {
+    background-color: #fff;
+    padding: rem(26px) rem(26px) 0;
+    h5 {
+      font-size: rem(32px);
+      color: #4F545B;
+    }
+    .price {
+      position: relative;
+      margin-top: rem(20px);
+      color: #E61E4B;
+      font-size: rem(32px);
+      padding-bottom: rem(20px);
+      border-bottom: rem(2px) solid #EBEBF5;
+      .tags {
+        position: absolute;
+        top: 0;
+        right:0;
+        font-size: 0;
+        span {
+          margin: rem(10px);
+          font-size: rem(24px);
+          color: #F5B950;
+          border: rem(1px) solid #F5B950;
+          border-radius: rem(6px);
+          padding: rem(2px) rem(16px);
+        }
+      }
+    }
+    .bottom-info {
+      height: rem(72px);
+      line-height: rem(72px);
+      @include displayflex();
+      @include flexflowRow();
+      .shuttle{
+        width: rem(170px);
+        color: #83858C;
+        font-size: rem(24px);
+        i {
+          display: inline-block;
+          width: rem(20px);
+          height: rem(20px);
+          background: url("/master-Q3/images/icon/transform_icon@2x.png") no-repeat center;
+          background-size: 100%;
+        }
+        &.single {
+          i {
+            background: url("/master-Q3/images/icon/transform_single_icon@2x.png") no-repeat center;
+            background-size: 100%;
+          }
+        }
+      }
+      .days {
+        @include flex(1);
+        text-align: center;
+        color: #83858C;
+        font-size: rem(24px);
+        i {
+          display: inline-block;
+          width: rem(20px);
+          height: rem(22px);
+          background: url("/master-Q3/images/icon/date_icon@2x.png") no-repeat center;
+          background-size: 100%;
+        }
+      }
+      .sold {
+        @include flex(1);
+        text-align: right;
+        color: #83858C;
+        font-size: rem(24px);
+        i {
+          display: inline-block;
+          width: rem(20px);
+          height: rem(22px);
+          background: url("/master-Q3/images/icon/choosen_icon@2x.png") no-repeat center;
+          background-size: 100%;
+        }
+      }
+    }
+  }
+}
+.hide {
+  display: none !important;
+}
+.evaluations {
+  padding: 0 rem(26px);
+  background-color: #fff;
+  .evaluation {
+    position: relative;
+    height: rem(88px);
+    line-height: rem(90px);
+    font-size: rem(28px);
+    color: #83858C;
+    font-weight: 100;
+    .stars {
+      ul {
+        list-style: none;
+        li {
+          float: left;
+          margin-right: rem(13px);
+          width: rem(29px);
+          height: rem(88px);
+          background: url("/master-Q3/images/icon/star_normal@2x.png") no-repeat center;
+          background-size: contain;
+          &.selected {
+            background: url("/master-Q3/images/icon/star_seleted@2x.png") no-repeat center;
+            background-size: rem(29px) rem(28px);
+          }
+          &.half {
+            background: url("/master-Q3/images/icon/star_half@2x.png") no-repeat center;
+            background-size: rem(29px) rem(28px);
+          }
+        }
+      }
+    }
+    .evaluation-nums {
+      position: absolute;
+      right: 0;
+      top:0;
+      float: left;
+      text-align: right;
+    }
+  }
+}
+.comments {
+  margin-top: rem(32px);
+  background-color: #fff;
+  .comment {
+    border-bottom: rem(2px) solid #E9ECF4;
+    padding: rem(20px) rem(26px) rem(40px);
+    .title {
+      @include displayflex();
+      @include flexflowRow();
+      height: rem(80px);
+      .avatar {
+        width:rem(80px);
+        height:rem(80px);
+        border-radius: rem(80px);
+        overflow: hidden;
+        img {
+          width:100%;
+          height: 100%;
+        }
+      }
+      .infos {
+        width: rem(277px);
+        padding-left: rem(22px);
+        .userName {
+          font-size: rem(28px);
+          color: #5A6473;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          line-height: 1.1rem;
+        }
+        .date{
+          margin-top: rem(3px);
+          color: #83858C;
+          font-size: rem(24px);
+        }
+      }
+      .stars {
+        @include flex(1);
+        ul {
+          list-style: none;
+          font-size: 0;
+          li {
+            float: left;
+            margin-left: rem(15px);
+            width: rem(26px);
+            height: rem(80px);
+            background: url("/master-Q3/images/icon/star_noseleted@2x.png") no-repeat center;
+            background-size: contain;
+            &.selected {
+              background: url("/master-Q3/images/icon/star_seleted@2x.png") no-repeat center;
+              background-size: rem(26px) rem(25px);
+            }
+            &.half {
+              background: url("/master-Q3/images/icon/star_half@2x.png") no-repeat center;
+              background-size: rem(26px) rem(25px);
+            }
+            &:first-child {
+              margin-left: .9rem;
+            }
+          }
+        }
+      }
+    }
+    .comment-content {
+      margin-top: rem(43px);
+      p {
+        font-size: rem(28px);
+        color: #83858C;
+        word-break: break-all;
+        font-weight: 100;
+        line-height: 1rem;
+      }
+    }
+    .bottom-imgs {
+      margin-top: rem(40px);
+      height: rem(130px);
+      .img-wp {
+        position: relative;
+        float: left;
+        margin-right: rem(15px);
+        width: rem(130px);
+        height: rem(130px);
+        img{
+          width:100%;
+          height:100%;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+        .more-cover {
+          position: absolute;
+          top:0;
+          left: 0;
+          width: rem(130px);
+          height: rem(130px);
+          background-color: #000;
+          opacity: .4;
+        }
+        .more {
+          position: absolute;
+          top:0;
+          left: 0;
+          width: rem(130px);
+          line-height: rem(130px);
+          text-align: center;
+          color: #FFF;
+          font-size: rem(24px);
+        }
+      }
+    }
+  }
+}
+.bottom-logo {
+  padding-bottom: rem(30px);
+  .img-wrapper {
+    width:rem(383px);
+    height: rem(87px);
+    margin:rem(30px) auto 0;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+.pay-info {
+  position: absolute;
+  left : 0;
+  bottom: rem(-767px);
+  background-color: #fff;
+  max-height: rem(767px);
+  z-index: 16;
+  -webkit-transition:bottom 0.2s ease-out;
+  transition:bottom 0.2s ease-out;
+  .tourism-pay-info {
+    width: 100%;
+    height: rem(188px);
+    @include displayflex();
+    @include flexflowRow();
+    padding: rem(24px) rem(26px);
+    border-bottom: rem(2px) solid #EBEBF5;
+    .left {
+      width: rem(140px);
+      height: rem(140px);
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .right {
+      @include flex(1);
+      position: relative;
+      margin-left: rem(20px);
+      .tourism-name {
+        width: rem(345px);
+        height: rem(48px);
+        font-size: rem(34px);
+        color: #4F545B;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .close-icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        text-align: right;
+        width: rem(88px);
+        height: rem(88px);
+        img {
+          width: rem(24px);
+          height: rem(24px);
+        }
+      }
+      .now-price {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        color: #E61E4B;
+        font-size: rem(32px);
+      }
+      .old-price {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        color: #83858C;
+        font-size: rem(24px);
+      }
+    }
+  }
+  .select-times {
+    padding: rem(24px) rem(26px) rem(45px);
+    max-height: rem(450px);
+    overflow-y: auto;
+    h5 {
+      font-size: rem(28px);
+      color: #83858C;
+    }
+    ul {
+      list-style: none;
+      font-size: 0;
+      padding-top: rem(2px);
+      li {
+        display: inline-block;
+        width: rem(130px);
+        height: rem(70px);
+        line-height: rem(70px);
+        margin-top: rem(20px);
+        margin-right: rem(22px);
+        text-align: center;
+        border: rem(1px) solid #C0C2C9;
+        border-radius: rem(6px);
+        font-size: rem(28px);
+        color: #83858C;
+        &.selected {
+          border: rem(1px) solid #E61E4B;
+          background-color: #E61E4B;
+          color: #ffffff;
+        }
+        &.last {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  .buy-btn {
+    width: 100%;
+    height: rem(88px);
+    line-height: rem(88px);
+    background-color: #E61E4B;
+    text-align: center;
+    font-size: rem(34px);
+    color: #ffffff;
+  }
+  &.show {
+    bottom: 0;
+  }
+}
+.cover {
+  position: absolute;
+  display: none;
+  background-color: #000;
+  opacity: .4;
+  width: 100%;
+  height: 100%;
+  z-index: 15;
+}
