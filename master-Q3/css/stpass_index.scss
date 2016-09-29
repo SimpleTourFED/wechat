@@ -41,7 +41,7 @@ $borderColor: #E4E4E4;
 }
 
 html, body {
-  background-color: #D8094E;
+  background-color: #CC1533;
 }
 
 * {
@@ -59,7 +59,7 @@ img {
 
 .banner {
   width: 100%;
-  height: rem(568px);
+  height: rem(750px);
 }
 
 .operates {
@@ -97,6 +97,7 @@ img {
   .card {
     background-color: #fff;
     margin-bottom: rem(20px);
+    overflow: hidden;
     @include border-radius(8px);
     &:last-child {
       margin-bottom: rem(20px);
