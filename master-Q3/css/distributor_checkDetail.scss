@@ -133,49 +133,41 @@ header~.page-content{
         text-align: center;
       }
     }
-    .marquee-wrap{
+    .marquee {
       width: 100%;
-      height: rem(70px);
-      overflow: hidden;
-      position: relative;
       background-color: #F5B950;
-      .marquee{
-        min-width: 100%;
-        height: rem(70px);
-        position: absolute;
-        left: 0;
-        top: 0;
-        &:after{
-          content: '';
-          display: block;
-          clear: both;
-        }
-        .tip {
-          float: left;
-          height: rem(70px);
-          white-space: nowrap;
-          color: #fff;
-          font-size: rem(28px);
-          line-height: rem(36px);
-          padding: rem(17px) rem(26px);
-          display: inline-block;
-          vertical-align: top;
-          transition: margin-left 3500ms linear;
-          -moz-transition: margin-left 3500ms linear; /* Firefox 4 */
-          -webkit-transition: margin-left 3500ms linear; /* Safari 和 Chrome */
-          -o-transition: margin-left 3500ms linear; /* Opera */
-          -ms-transition: margin-left 3500ms linear; /* IE 9 */
-          &:before {
-            content: '';
-            display: inline-block;
-            width: rem(36px);
-            height: rem(36px);
-            background: url(/master-Q3/images/icon/tips_white_icon.png) no-repeat center;
-            background-size: contain;
-            vertical-align: top;
-            margin-right: rem(20px);
-          }
-        }
+      padding: rem(17px) rem(26px);
+      @include displayflex;
+      @include flexflowRow;
+      -ms-justify-content: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -ms-justify: center;
+      -webkit-justify: center;
+      justify: center;
+      -ms-box-align: center;
+      -webkit-box-align: center;
+      box-align: center;
+      -ms-align-items: center;
+      -webkit-align-items: center;
+      align-items: center;
+      &:before {
+        content: '';
+        display: inline-block;
+        width: rem(36px);
+        height: rem(36px);
+        background: url(/master-Q3/images/icon/tips_white_icon.png) no-repeat center;
+        background-size: contain;
+        vertical-align: top;
+        margin-right: rem(20px);
+      }
+      .tip {
+        @include flex;
+        color: #fff;
+        font-size: rem(28px);
+        line-height: rem(36px);
+        display: inline-block;
+        vertical-align: top;
       }
     }
     .records {

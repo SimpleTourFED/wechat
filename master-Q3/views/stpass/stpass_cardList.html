@@ -127,17 +127,6 @@
         $('header .back').click(function (e) {
             history.go(-1);
         });
-        var $marquee = $('.marquee-wrap .marquee'),$tip = $marquee.find('span.tip'),$goBind = $('.marquee-wrap .goBind');
-        var $clone = $tip.clone(),$first,width = $tip.width();
-        if((width+$goBind.width()) > document.documentElement.clientWidth){
-            $marquee.width(width*2).append($clone);
-            $first = $('.marquee-wrap .marquee span.tip').eq(0).css('margin-left', -width + 'px');
-            setInterval(function(){
-                $first.css('margin-left', 0);
-                $marquee.append($first);
-                $first = $('.marquee-wrap .marquee span.tip').eq(0).css('margin-left', -width + 'px');
-            }, 4200);
-        }
     });
 </script>
 </body>

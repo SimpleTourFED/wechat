@@ -55,46 +55,46 @@ img {
       .type {
         width: rem(50px);
         height: rem(50px);
-        background: url(/master-Q3/images/icon/red_ticket_icon@2x.png) no-repeat center;
+        background: url(/master-Q3/images/icon/grey_ticket_icon@2x.png) no-repeat center;
         background-size: contain;
         &.ticket {
-          background: url(/master-Q3/images/icon/red_ticket_icon@2x.png) no-repeat center;
+          background: url(/master-Q3/images/icon/grey_ticket_icon@2x.png) no-repeat center;
           background-size: contain;
         }
         &.food {
-          background: url(/master-Q3/images/icon/red_food_icon@2x.png) no-repeat center;
+          background: url(/master-Q3/images/icon/grey_food_icon@2x.png) no-repeat center;
           background-size: contain;
         }
         &.hotel {
-          background: url(/master-Q3/images/icon/red_hotel_icon@2x.png) no-repeat center;
+          background: url(/master-Q3/images/icon/grey_hotel_icon@2x.png) no-repeat center;
           background-size: contain;
         }
         &.entertainment {
-          background: url(/master-Q3/images/icon/red_entertainment_icon@2x.png) no-repeat center;
+          background: url(/master-Q3/images/icon/grey_entertainment_icon@2x.png) no-repeat center;
           background-size: contain;
         }
         &.card {
-          background: url(/master-Q3/images/icon/red_card_icon@2x.png) no-repeat center;
+          background: url(/master-Q3/images/icon/grey_card_icon@2x.png) no-repeat center;
           background-size: contain;
         }
         &.gift {
-          background: url(/master-Q3/images/icon/red_gift_icon@2x.png) no-repeat center;
+          background: url(/master-Q3/images/icon/grey_gift_icon@2x.png) no-repeat center;
           background-size: contain;
         }
-        &.busTicket {
-          background: url(/master-Q3/images/icon/red_busTicket_icon@2x.png) no-repeat center;
+        &.busticket {
+          background: url(/master-Q3/images/icon/grey_busTicket_icon@2x.png) no-repeat center;
           background-size: contain;
         }
         &.presell {
-          background: url(/master-Q3/images/icon/red_presell_icon@2x.png) no-repeat center;
+          background: url(/master-Q3/images/icon/grey_presell_icon@2x.png) no-repeat center;
           background-size: contain;
         }
         &.pinwan {
-          background: url(/master-Q3/images/icon/red_pinwan_icon@2x.png) no-repeat center;
+          background: url(/master-Q3/images/icon/grey_pinwan_icon@2x.png) no-repeat center;
           background-size: contain;
         }
         &.shuttlebus {
-          background: url(/master-Q3/images/icon/red_shuttlebus_icon@2x.png) no-repeat center;
+          background: url(/master-Q3/images/icon/grey_shuttlebus_icon@2x.png) no-repeat center;
           background-size: contain;
         }
       }
@@ -102,55 +102,8 @@ img {
         @include flex;
         font-size: rem(28px);
         line-height: rem(50px);
-        color: #E61E4B;
+        color: #83858C;
         text-align: right;
-      }
-      &.closed {
-        .type {
-          &.ticket {
-            background: url(/master-Q3/images/icon/grey_ticket_icon@2x.png) no-repeat center;
-            background-size: contain;
-          }
-          &.food {
-            background: url(/master-Q3/images/icon/grey_food_icon@2x.png) no-repeat center;
-            background-size: contain;
-          }
-          &.hotel {
-            background: url(/master-Q3/images/icon/grey_hotel_icon@2x.png) no-repeat center;
-            background-size: contain;
-          }
-          &.entertainment {
-            background: url(/master-Q3/images/icon/grey_entertainment_icon@2x.png) no-repeat center;
-            background-size: contain;
-          }
-          &.card {
-            background: url(/master-Q3/images/icon/grey_card_icon@2x.png) no-repeat center;
-            background-size: contain;
-          }
-          &.gift {
-            background: url(/master-Q3/images/icon/grey_gift_icon@2x.png) no-repeat center;
-            background-size: contain;
-          }
-          &.busTicket {
-            background: url(/master-Q3/images/icon/grey_busTicket_icon@2x.png) no-repeat center;
-            background-size: contain;
-          }
-          &.presell {
-            background: url(/master-Q3/images/icon/grey_presell_icon@2x.png) no-repeat center;
-            background-size: contain;
-          }
-          &.pinwan {
-            background: url(/master-Q3/images/icon/grey_pinwan_icon@2x.png) no-repeat center;
-            background-size: contain;
-          }
-          &.shuttlebus {
-            background: url(/master-Q3/images/icon/grey_shuttlebus_icon@2x.png) no-repeat center;
-            background-size: contain;
-          }
-        }
-        .status {
-          color: #83858C;
-        }
       }
     }
     .center-content {
@@ -232,6 +185,55 @@ img {
         margin-bottom: rem(20px);
         margin-left: rem(20px);
       }
+    }
+  }
+  .order.red{
+    .type {
+      background: url(/master-Q3/images/icon/red_ticket_icon@2x.png) no-repeat center;
+      background-size: contain;
+      &.ticket {
+        background: url(/master-Q3/images/icon/red_ticket_icon@2x.png) no-repeat center;
+        background-size: contain;
+      }
+      &.food {
+        background: url(/master-Q3/images/icon/red_food_icon@2x.png) no-repeat center;
+        background-size: contain;
+      }
+      &.hotel {
+        background: url(/master-Q3/images/icon/red_hotel_icon@2x.png) no-repeat center;
+        background-size: contain;
+      }
+      &.entertainment {
+        background: url(/master-Q3/images/icon/red_entertainment_icon@2x.png) no-repeat center;
+        background-size: contain;
+      }
+      &.card {
+        background: url(/master-Q3/images/icon/red_card_icon@2x.png) no-repeat center;
+        background-size: contain;
+      }
+      &.gift {
+        background: url(/master-Q3/images/icon/red_gift_icon@2x.png) no-repeat center;
+        background-size: contain;
+      }
+      &.busTicket {
+        background: url(/master-Q3/images/icon/red_busTicket_icon@2x.png) no-repeat center;
+        background-size: contain;
+      }
+      &.presell {
+        background: url(/master-Q3/images/icon/red_presell_icon@2x.png) no-repeat center;
+        background-size: contain;
+      }
+      &.pinwan {
+        background: url(/master-Q3/images/icon/red_pinwan_icon@2x.png) no-repeat center;
+        background-size: contain;
+      }
+      &.shuttlebus {
+        background: url(/master-Q3/images/icon/red_shuttlebus_icon@2x.png) no-repeat center;
+        background-size: contain;
+      }
+    }
+    .status{
+      color: #E61E4B;
     }
   }
 }
