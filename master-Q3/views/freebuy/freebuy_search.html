@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/master-Q3/css/freebuy_search.scss?__inline" media="screen" title="no title" charset="utf-8">
+    <script type="text/javascript">
+        function filterResult (e){
+            var value = event.target.value;
+            if(!value) {
+                $('.search-bar').removeClass('input-change');
+            } else {
+                $('.search-bar').addClass('input-change');
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="page-group">
+    <!--一个页面,如果有多个就是多个page,要首先显示的需要加上page-current类-->
+    <div class="page page-current" id="tab-depart">
+        <div class="page-content">
+            <div class="search-bar">
+                <div class="back"></div>
+                <div class="search-input">
+                    <label></label>
+                    <input type="text" oninput="filterResult(event)" name="search" placeholder="请输入目的地／景点／酒店" />
+                    <div class="click-zone"></div>
+                </div>
+                <div class="cancel">
+                    搜索
+                </div>
+            </div>
+            <div class="search-result">
+                <div class="result item">成都－九寨沟单程车位</div>
+                <div class="result item">成都－九寨沟单程车位</div>
+                <div class="result item">成都－九寨沟单程车位</div>
+                <div class="result item">成都－九寨沟单程车位</div>
+                <div class="result item">成都－九寨沟单程车位</div>
+                <div class="result item">成都－九寨沟单程车位</div>
+                <div class="result item">成都－九寨沟单程车位</div>
+                <div class="no_search_result">
+                    <img src="/images/no_search_result@2x.png" alt="">
+                    <p>无搜索结果</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                    docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                };
+        if (!doc.addEventListener) return;
+        recalc();
+        var a = document.getElementsByTagName('a');
+        for(var i = 0; i < a.length; i++){
+            a[i].addEventListener('touchstart',function(){},false);
+        }
+        document.body.style.visibility = 'visible';
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script>
+<script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script type="text/javascript" src="/common/js/pages.js"></script>
+<script type="text/javascript" src="/common/js/base.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        // 点击返回按钮
+        $('.search-bar .back').click(function() {
+            history.go(-1);
+        });
+        $('.search-input input').focusin(function (e) {
+            $('.search-bar').addClass('click-search');
+            $('.search-result').addClass('show');
+        });
+        // 这里用一个稍微大一点的div来触发清空按钮的点击事件
+        $('.click-zone').click(function() {
+            $('.search-input input').val('');
+            $('.search-bar').removeClass('input-change');
+        });
+
+        // 搜索事件
+        $('.search-bar .cancel').tap(function() {
+            var $this = $(this);
+            if(!$this.hasClass('disabled')) {
+                var name = $('input[name=search]').val();
+                $this.addClass('disabled');
+                $.ajax({
+                    type: 'POST',
+                    url: '',
+                    contentType:'application/json',
+                    data: JSON.stringify({
+                        name: name
+                    }),
+                    success: function (data) {
+                        var dataJson = JSON.parse(data);
+                        if (dataJson.code == 0) {
+                            $('.no_search_result').hide();
+                        } else if (dataJson.code == 2) {
+                            $('.no_search_result').show();
+                        }
+                    },
+                    error: function () {
+
+                    },
+                    complete: function() {
+                        $this.removeClass('disabled');
+                    }
+                });
+            }
+
+        });
+    })
+</script>
+</body>
+</html>

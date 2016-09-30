@@ -1,0 +1,422 @@
+@import "/common/css/base";
+.page-content {
+  background-color: #f5f5f5;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.tourism-info {
+  .head-img {
+    position: relative;
+    width: 100%;
+    height: rem(273px);
+    img{
+      width: 100%;
+      height: 100%;
+    }
+    .tips-wp {
+      position: absolute;
+      width: 100%;
+      height: rem(70px);
+      line-height: 1.8rem;
+      bottom: 0;
+      left: 0;
+      .tips-cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        opacity: .6;
+        z-index: 1;
+      }
+      i {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        width: rem(82px);
+        height: rem(70px);
+        background: url("/master-Q3/images/icon/travel_icon@2x.png") no-repeat center;
+        background-size: rem(36px) rem(36px);
+        z-index: 2;
+      }
+      .tips {
+        text-indent: rem(82px);
+        display: inline-block;
+        font-size: rem(24px);
+        color: #ffffff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+      }
+    }
+  }
+  .infos {
+    background-color: #fff;
+    padding: rem(26px) rem(26px) 0;
+    h5 {
+      font-size: rem(32px);
+      color: #4F545B;
+    }
+    p {
+      margin-top: rem(4px);
+      font-size: rem(26px);
+      color: #83858C;
+      padding-bottom: rem(14px);
+      border-bottom: rem(1px) solid #EBEBF5;
+    }
+    .bottom-info {
+      height: rem(134px);
+      @include displayflex();
+      @include flexflowRow();
+      .left {
+        @include flex(1);
+        .process-nav {
+          margin-top: rem(39px);
+          width: rem(290px);
+          height: rem(20px);
+          background-color: #FFF2DB;
+          border:rem(2px) solid #F5B950;
+          border-radius: rem(8px);
+        }
+        p {
+          position: relative;
+          width: rem(290px);
+          margin-top: rem(17px);
+          color: #F5B950;
+          font-size: rem(24px);
+          border: none;
+          span {
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: #F5B950;
+            font-size: rem(24px);
+          }
+        }
+      }
+      .right {
+        width: rem(260px);
+        p {
+          margin-top: rem(15px);
+          color: #83858C;
+          border: none;
+          font-size: rem(24px);
+          padding: 0;
+          span {
+            margin-left: rem(59px);
+          }
+        }
+        .countDown {
+          margin-top: rem(14px);
+          font-size: rem(24px);
+          color: #D8D8D8;
+          span {
+            display: inline-block;
+            width: rem(70px);
+            height: rem(60px);
+            line-height: rem(60px);
+            text-align: center;
+            background-color: #DADCE0;
+            color: #4F545B;
+            font-size: rem(32px);
+            border-radius: rem(6px);
+          }
+        }
+      }
+    }
+  }
+}
+.hide {
+  display: none !important;
+}
+.func {
+  width: 100%;
+  height: rem(70px);
+  margin-top: rem(16px);
+  background-color: #fff;
+  ul {
+    width: 100%;
+    list-style: none;
+    li {
+      position: relative;
+      float: left;
+      display: inline-block;
+      text-align: center;
+      width: 25%;
+      line-height: rem(74px);
+      font-size: rem(24px);
+      color: #83858C;
+      text-indent: rem(46px);
+      i {
+        position: absolute;
+        top:rem(20px);
+        left:rem(14px);
+        display: inline-block;
+        width: rem(27px);
+        height: rem(28px);
+        background: url("/master-Q3/images/icon/right_yellow@2x.png") no-repeat center;
+        background-size: contain;
+      }
+    }
+  }
+}
+.contains {
+  width: 100%;
+  margin-top: rem(16px);
+  background-color: #fff;
+  padding: 0 rem(26px);
+  .title {
+    font-size: rem(28px);
+    color: #83858C;
+    height: rem(72px);
+    line-height: rem(72px);
+    border-bottom: rem(2px) solid #EBEBF5;
+  }
+  ul{
+    list-style: none;
+    li{
+      @include displayflex();
+      @include flexflowRow();
+      i {
+        display: block;
+        width: rem(66px);
+        background: url('/master-Q3/images/icon/bus_icon@2x.png') no-repeat left;
+        background-size: rem(40px) rem(40px);
+        &.hotel {
+          background: url('/master-Q3/images/icon/hotel_icon@2x.png') no-repeat left;
+          background-size: rem(40px) rem(40px);
+        }
+        &.catering {
+          background: url(/master-Q3/images/icon/catering_icon@2x.png) no-repeat left;
+          background-size: 1rem 1rem;
+        }
+        &.ticket {
+          background: url(/master-Q3/images/icon/ticket_icon@2x.png) no-repeat left;
+          background-size: 1rem 1rem;
+        }
+        &.activity {
+          background: url(/master-Q3/images/icon/activity_icon@2x.png) no-repeat left;
+          background-size: 1rem 1rem;
+        }
+        &.gift {
+          background: url(/master-Q3/images/icon/gift_icon@2x.png) no-repeat left;
+          background-size: 1rem 1rem;
+        }
+        &.shuttleBus {
+          background: url(/master-Q3/images/icon/shuttleBus_icon@2x.png) no-repeat left;
+          background-size: 1rem 1rem;
+        }
+      }
+      p {
+        @include flex(1);
+        color: #83858C;
+        font-size: rem(26px);
+        font-weight: 300;
+        padding: rem(16px) rem(50px) rem(16px) 0;
+      }
+    }
+  }
+}
+.tourism-detail {
+  margin-top: rem(16px);
+  padding: 0 rem(26px);
+  background-color: #fff;
+  .departureTime {
+    position: relative;
+    width: 100%;
+    height: rem(88px);
+    line-height: rem(88px);
+    font-size: rem(28px);
+    color: #83858C;
+    border-bottom: rem(2px) solid #E9ECF4;
+    padding-right: rem(40px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    span {
+      color: #F8C462;
+    }
+    &:after{
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top:rem(26px);
+      right: 0;
+      width: rem(19px);
+      height: rem(32px);
+      background: url("/master-Q3/images/icon/right_grey_arrow@2x.png") no-repeat center;
+      background-size: contain;
+    }
+  }
+  .evaluation {
+    position: relative;
+    height: rem(88px);
+    line-height: rem(90px);
+    font-size: rem(28px);
+    color: #83858C;
+    font-weight: 100;
+    .stars {
+      ul {
+        list-style: none;
+        li {
+          float: left;
+          margin-right: rem(13px);
+          width: rem(29px);
+          height: rem(88px);
+          background: url("/master-Q3/images/icon/star_normal@2x.png") no-repeat center;
+          background-size: contain;
+          &.selected {
+            background: url("/master-Q3/images/icon/star_seleted@2x.png") no-repeat center;
+            background-size: rem(29px) rem(28px);
+          }
+          &.half {
+            background: url("/master-Q3/images/icon/star_half@2x.png") no-repeat center;
+            background-size: rem(29px) rem(28px);
+          }
+        }
+      }
+    }
+    &:after{
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top:rem(26px);
+      right: 0;
+      width: rem(19px);
+      height: rem(32px);
+      background: url("/master-Q3/images/icon/right_grey_arrow@2x.png") no-repeat center;
+      background-size: contain;
+    }
+  }
+}
+.tabs {
+  margin-top: rem(16px);
+  width: 100%;
+  height: rem(88px);
+  line-height: rem(88px);
+  background-color: #fff;
+  font-size: rem(28px);
+  color: #83858C;
+  border-bottom: rem(2px) solid #EBEBF5;
+  z-index: 10;
+  div {
+    float: left;
+    display: inline-block;
+    text-align: center;
+    width: 50%;
+  }
+  .selected {
+    position: relative;
+    color: #E61E4B;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left:50%;
+      width: rem(120px);
+      margin-left: rem(-60px);
+      height: rem(4px);
+      background-color: #E61E4B;
+    }
+  }
+  &.sticky {
+    position:-webkit-sticky;
+    position:sticky;
+    top:0;
+  }
+}
+.introductions {
+  background-color: #fff;
+  width: 100%;
+  padding: rem(44px) rem(26px) rem(40px) rem(32px);
+  .tourism-days {
+    padding-left: rem(16px);
+    .tourism-day {
+      padding-left: rem(42px);
+      border-left: rem(3px) dotted #EBEBF5;
+      .day {
+        position: relative;
+        height: rem(40px);
+        line-height: rem(40px);
+        font-size: rem(28px);
+        color: #E61E4B;
+        margin-bottom: rem(28px);
+        &:before {
+          content: '';
+          position: absolute;
+          top:rem(-2px);
+          left: rem(-64px);
+          display: inline-block;
+          width: rem(40px);
+          height: rem(40px);
+          background: url("/master-Q3/images/icon/date_red_icon@2x.png") no-repeat center #fff;
+          background-size: rem(36px) rem(36px);
+        }
+      }
+      .destination {
+        position: relative;
+        height: rem(48px);
+        line-height: rem(48px);
+        color: #4F545B;
+        font-size: rem(34px);
+        margin-bottom: rem(6px);
+        &:before {
+          content: '';
+          position: absolute;
+          top:rem(10px);
+          left: rem(-60px);
+          display: inline-block;
+          width: rem(24px);
+          height: rem(24px);
+          border: rem(4px) solid #F5B950;
+          border-radius: rem(25px);
+          background-color: #fff;
+        }
+      }
+      .tourism-content {
+        padding-bottom: rem(34px);
+        p {
+          color: #83858C;
+          font-size: rem(28px);
+          font-weight: 100;
+          line-height: rem(38px);
+          word-break: break-all;
+        }
+        h5 {
+          color: #4F545B;
+          font-size: rem(30px);
+          margin-top: rem(16px);
+          margin-bottom: rem(10px);
+        }
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+.booking {
+  background-color: #fff;
+  padding: rem(44px) rem(26px) rem(40px) rem(32px);
+  p {
+    color: #83858C;
+    font-size: rem(28px);
+    font-weight: 100;
+    line-height: rem(38px);
+    word-break: break-all;
+  }
+  h5 {
+    color: #4F545B;
+    font-size: rem(30px);
+    margin-top: rem(16px);
+    margin-bottom: rem(10px);
+  }
+  img {
+    width: 100%;
+  }
+}
