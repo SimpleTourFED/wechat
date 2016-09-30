@@ -82,6 +82,12 @@
           background-color: #FFF2DB;
           border:rem(2px) solid #F5B950;
           border-radius: rem(8px);
+          overflow: hidden;
+          .process {
+            width: rem(200px);
+            background-color: #F5B950;
+            height: 100%;
+          }
         }
         p {
           position: relative;
@@ -125,6 +131,45 @@
             color: #4F545B;
             font-size: rem(32px);
             border-radius: rem(6px);
+          }
+        }
+      }
+      &.waiting {
+        .left {
+          .process-nav {
+            background-color: #E4E4E4;
+            border:rem(2px) solid #B3B3B3;
+          }
+          p {
+            color: #C0C2C9;
+            span {
+              color: #C0C2C9;
+            }
+          }
+        }
+        .right {
+          p {
+            color: #F5B950;
+          }
+          .countDown {
+            span {
+              background-color: #DADCE0;
+              color: #C0C2C9;
+            }
+          }
+        }
+      }
+
+      &.end {
+        .right {
+          p {
+            color: #F5B950;
+          }
+          .countDown {
+            span {
+              background-color: #DADCE0;
+              color: #4F545B;
+            }
           }
         }
       }
