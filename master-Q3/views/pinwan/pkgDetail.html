@@ -197,17 +197,6 @@
                 }
             });
         }
-        // 初始化page
-        $('.page-group').pageInit({
-            router : '.turnTo' ,//router的className
-            routerFun : function(){}
-        });
-        $('.evaluation.turnTo').click(function() {
-            setTimeout(function() {
-                $(".content.infinite-scroll").scroller('refresh');
-                $.initPage();
-            },400)
-        });
         // 点击返回按钮
         $('header .back').click(function() {
             history.go(-1);
@@ -238,32 +227,6 @@
         });
 
         /* ============================================
-         发车时刻表操作
-         ============================================== */
-        $('.time').click(function() {
-            var $this = $(this);
-            if(!$this.hasClass('selected')) {
-                $('.time').removeClass('selected');
-                $this.addClass('selected');
-                $('.busTime').removeClass('current next prev')
-                        .forEach(function(item) {
-                            if($(item).attr('data-times') == $this.attr('data-times')) {
-                                $(item).removeClass('current next prev').addClass('current');
-                                if($(item).next().length) {
-                                    $(item).nextAll().addClass('next');
-                                }
-                                if($(item).prev().length) {
-                                    $(item).prevAll().addClass('prev');
-                                }
-                            }
-                        })
-            }
-        });
-        /* ============================================
-         发车时刻表操作
-         ============================================== */
-
-        /* ============================================
          点击去购买按钮
          ============================================== */
         $('.buyNow').click(function(e) {
@@ -285,79 +248,6 @@
          点击去购买按钮
          ============================================== */
 
-        /* ============================================
-         **********   旅客评价下拉加载更多  **************
-         ============================================== */
-        var loading = false;
-
-        function addItems(data) {
-            var strPackage = '';
-            $.each(data, function (i, v) {
-                var strTips = '<li class="tourism">车</li>';
-                $.each(v.resourceMap, function (key, value) {
-                    if (key == 'hotel') {
-                        strTips += '<li>住</li>'
-                    } else if (key == 'catering') {
-                        strTips += '<li>餐</li>'
-                    } else if (key == 'entertainment') {
-                        strTips += '<li>娱</li>'
-                    } else if (key == 'scenic') {
-                        strTips += '<li>景</li>'
-                    }
-                });
-                strPackage += '<div class="pkg-gp" data-href="/mobile/gateway/wechat/home/tourism/'+ v.id +
-                        '"><div class="pkg-img">' +
-                        '<img src="' + v.imgUrl + '" alt="">'+
-                        '<div class="pkg-type"><ul>'+ strTips + '</ul></div><div class="triangle"></div>'+
-                        '</div><div class="pkg-title">'+
-                        '<div class="pkg-name">' + v.displayName + '</div>'+
-                        '<div class="pkg-price">'+ v.bidPrice +'元</div></div>'+
-                        '<div class="pkg-content">'+ v.packageDisplayName+ '</div></div>';
-            });
-            $('.recommend-pkg').append(strPackage);
-            $.refreshScroller();
-        }
-        // 上次加载的序号
-        var lastIndex = 1;
-        // 注册'infinite'事件处理函数
-        $(document).on('infinite', '.infinite-scroll-bottom',function() {
-            // 如果正在加载，则退出
-            if (loading) return;
-            // 设置flag
-            loading = true;
-            $.ajax({
-                type: 'POST',
-                url: '/mobile/gateway/wechat/home/recommendmore',
-                data: {
-                    pageIndex: lastIndex,
-                    pageSize: 10
-                },
-                success: function (data) {
-                    var dataJson = JSON.parse(data);
-                    if (dataJson.code == 0) {
-                        if (dataJson.data.length == 0) {
-                            $('#pullUp .pullUpLabel').text('没有更多了…');
-                        } else {
-                            loading = false;
-                            addItems(dataJson.data);
-                            $('#pullUp .pullUpLabel').text('下滑加载更多…');
-                            lastIndex++;
-                        }
-                    } else if (dataJson.code == 2) {
-                        // 加载完毕，则注销无限加载事件，以防不必要的加载
-                        $.detachInfiniteScroll($('.infinite-scroll'));
-                        // 删除加载提示符
-                        $('.infinite-scroll-preloader').remove();
-                    }
-                },
-                error: function () {
-                    loading = false;
-                }
-            });
-        });
-        /* ============================================
-         **********   旅客评价下拉加载更多  **************
-         ============================================== */
     })
 </script>
 </body>
