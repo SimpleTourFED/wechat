@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/master-Q3/css/selectTime.scss?__inline" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+<div class="page-group">
+    <div class="page page-current">
+        <header>
+            <div class="back"></div>
+            <div class="center">请选择发车时间</div>
+        </header>
+        <footer>
+            <div class="pay-btn">去支付</div>
+        </footer>
+        <div class="page-content ">
+            <div class="wrapper">
+                <h5>请选择发车时间</h5>
+                <p>检测该行程有多个发车班次，请选择你想要的发车时间。</p>
+                <div class="contents">
+                    <div class="content">
+                        <span>AM 08:00</span>
+                        <div class="checkbox"></div>
+                    </div>
+                    <div class="content selected">
+                        <span>AM 08:00</span>
+                        <div class="checkbox"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                    docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                };
+        if (!doc.addEventListener) return;
+        recalc();
+        var a = document.getElementsByTagName('a');
+        for(var i = 0; i < a.length; i++){
+            a[i].addEventListener('touchstart',function(){},false);
+        }
+        document.body.style.visibility = 'visible';
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script>
+<script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script type="text/javascript" src="/common/js/pages.js"></script>
+<script type="text/javascript" src="/common/js/scroll.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        // 查看支付详情
+        $('footer .pay-info').tap(function() {
+            var $this = $(this);
+            if(!$this.hasClass('selected')) {
+                $this.addClass('selected');
+                $('.detail-cover').show();
+                $('.pay-info-detail').addClass('show');
+            } else {
+                $this.removeClass('selected');
+                $('.pay-info-detail').removeClass('show');
+                setTimeout(function() {
+                    $('.detail-cover').hide();
+                },150)
+            }
+        });
+    })
+</script>
+</body>
+</html>
