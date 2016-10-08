@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/master-Q3/css/selectContent.scss?__inline" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+<div class="page-group">
+    <div class="page page-current">
+        <header>
+            <div class="back"></div>
+            <div class="center">选择您要参与的内容</div>
+        </header>
+        <footer>
+            <div class="pay-info-detail">
+                <p>
+                    单价 <span>$2333</span> x5
+                </p>
+                <p>
+                    优惠金额 <span>$2333</span>
+                </p>
+            </div>
+            <div class="pay-info">¥233</div>
+            <div class="pay-btn">去支付</div>
+        </footer>
+        <div class="page-content ">
+            <div class="wrapper">
+                <h5>选择您要参与的内容</h5>
+                <div class="contents">
+                    <div class="content">
+                        <div class="top-info">
+                            <div class="price">¥129</div>
+                            <p>275人参与（无限额）</p>
+                        </div>
+                        <div class="bottom-info">
+                            包含成都至都江堰往返车位1个包含成都至都江堰往返车位1个
+                        </div>
+                        <div class="checkbox"></div>
+                    </div>
+                    <div class="content selected">
+                        <div class="top-info">
+                            <div class="price">¥129</div>
+                            <p>275人参与（无限额）</p>
+                        </div>
+                        <div class="bottom-info">
+                            包含成都至都江堰往返车位1个包含成都至都江堰往返车位1个
+                        </div>
+                        <div class="checkbox"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                    docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                };
+        if (!doc.addEventListener) return;
+        recalc();
+        var a = document.getElementsByTagName('a');
+        for(var i = 0; i < a.length; i++){
+            a[i].addEventListener('touchstart',function(){},false);
+        }
+        document.body.style.visibility = 'visible';
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script>
+<script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script type="text/javascript" src="/common/js/pages.js"></script>
+<script type="text/javascript" src="/common/js/scroll.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        // 查看支付详情
+        $('footer .pay-info').tap(function() {
+            var $this = $(this);
+            if(!$this.hasClass('selected')) {
+                $this.addClass('selected');
+                $('.detail-cover').show();
+                $('.pay-info-detail').addClass('show');
+            } else {
+                $this.removeClass('selected');
+                $('.pay-info-detail').removeClass('show');
+                setTimeout(function() {
+                    $('.detail-cover').hide();
+                },150)
+            }
+        });
+    })
+</script>
+</body>
+</html>
