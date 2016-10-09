@@ -17,7 +17,7 @@
 }
 
 html, body {
-  background-color: #E7E7E7;
+  background-color: #F5F5F5;
 }
 
 * {
@@ -110,19 +110,19 @@ img {
   }
 }
 
-.submit {
-  display: block;
-  width: rem(588px);
-  height: rem(88px);
-  line-height: rem(88px);
-  margin: 0 auto;
-  font-size: rem(34px);
-  color: #fff;
-  text-align: center;
-  background-color: #E61E4B;
-  @include border-radius(8px);
-  &:active {
-    background-color: #BF0A33;
+footer{
+  .submit {
+    @include flex;
+    display: block;
+    height: rem(96px);
+    line-height: rem(96px);
+    font-size: rem(34px);
+    color: #fff;
+    text-align: center;
+    background-color: #E61E4B;
+    &:active {
+      background-color: #BF0A33;
+    }
   }
 }
 
@@ -181,6 +181,77 @@ img {
       text-align: center;
       font-size: .8rem;
       color: #4F545B;
+    }
+  }
+}
+.scores{
+  background-color: #fff;
+  .title-bar{
+    @include displayflex;
+    @include flexflowRow;
+    font-size: rem(28px);
+    color: #83858C;
+    line-height: rem(30px);
+    padding: rem(29px) 0;
+    border-bottom: 1px solid #EBEBF5;
+    .tag {
+      color: #83858C;
+      margin-right: rem(20px);
+      @include flex;
+      &:before {
+        content: '';
+        width: rem(10px);
+        height: rem(30px);
+        background-color: #E61E4B;
+        display: inline-block;
+        vertical-align: top;
+        margin-right: rem(16px);
+      }
+    }
+  }
+  .img-stars-bar{
+    padding: rem(20px) 0;
+    margin: 0 rem(26px);
+    border-bottom: 1px solid #EBEBF5;
+    @include displayflex;
+    @include flexflowRow;
+    img{
+      width: rem(90px);
+      height: rem(90px);
+      margin-right: rem(16px);
+    }
+    .title{
+      width: rem(140px);
+      height: rem(90px);
+      line-height: rem(90px);
+      color: #4F545B;
+      font-size: rem(28px);
+      display: block;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .stars {
+      @include flex;
+      font-size: 0;
+      text-align: right;
+      padding: rem(21px) 0 rem(29px);
+      .star {
+        width: rem(40px);
+        height: rem(38.5px);
+        display: inline-block;
+        background: url(/master-Q3/images/icon/star_seleted@2x.png) no-repeat center;
+        background-size: contain;
+        margin-right: rem(28px);
+        text-indent: -99999px;
+      }
+      .star:last-child {
+        margin-right: 0;
+      }
+      .star.hollow {
+        background: url(/master-Q3/images/icon/star_normal@2x.png) no-repeat center;
+        background-size: contain;
+      }
     }
   }
 }

@@ -16,6 +16,9 @@
             <div class="back"></div>
             <div class="center">评价</div>
         </header>
+        <footer>
+            <a class="submit">提交评论</a>
+        </footer>
         <div class="page-content">
             <div class="comment">
                 <textarea placeholder="写下对简途巴士旅行的体验感受吧，对我们的帮助很大很大很大很大～"></textarea>
@@ -38,7 +41,31 @@
                     <span class="star"></span>
                 </div>
             </div>
-            <a class="submit">提交</a>
+            <div class="scores">
+                <div class="title-bar"><span class="tag">为行车助理打分</span></div>
+                <div class="img-stars-bar">
+                    <img src="/master-Q3/images/touxiang.png" alt=""/>
+                    <span class="title">产品评价产</span>
+                    <div class="stars">
+                        <span class="star"></span>
+                        <span class="star"></span>
+                        <span class="star"></span>
+                        <span class="star"></span>
+                        <span class="star"></span>
+                    </div>
+                </div>
+                <div class="img-stars-bar">
+                    <img src="/master-Q3/images/touxiang.png" alt=""/>
+                    <span class="title">产品评价产品评价</span>
+                    <div class="stars">
+                        <span class="star"></span>
+                        <span class="star"></span>
+                        <span class="star"></span>
+                        <span class="star"></span>
+                        <span class="star"></span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -55,7 +82,7 @@
     <div class="cover"></div>
 </div>
 <script type="text/javascript" src="/common/js/zepto.min.js"></script>
-<script type="text/javascript" src="/js/wechat/jweixin-1.0.0.js"></script>
+<!--<script type="text/javascript" src="/js/wechat/jweixin-1.0.0.js"></script>-->
 <script>
     (function (doc, win) {
         var docEl = doc.documentElement,
@@ -142,9 +169,10 @@
         //星评价
         var $stars = $('.stars .star');
         $stars.on('click',function(e){
-            $stars.removeClass('hollow');
+            var $thisStars = $(this).parents('.stars').find('.star');
+            $thisStars.removeClass('hollow');
             for(var i=4;i>$(this).index();i--){
-                $stars.eq(i).addClass('hollow');
+                $thisStars.eq(i).addClass('hollow');
             }
         });
     });
