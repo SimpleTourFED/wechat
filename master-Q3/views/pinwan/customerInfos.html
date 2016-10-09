@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/master-Q3/css/customerInfos.scss?__inline" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+<div class="page-group">
+    <div class="page page-current">
+        <header>
+            <div class="back"></div>
+            <div class="center">选择出行人</div>
+        </header>
+        <footer>
+            <div class="pay-btn">提交出行信息</div>
+        </footer>
+        <div class="page-content">
+            <div class="info-wrapper">
+                <h5>往返票 成都都江堰青城山单程巴士江堰青城山单程巴士</h5>
+                <p>出行日期：2016.07.12  08:00</p>
+            </div>
+            <div class="select-customer">
+                <p>选择乘车人 <span>0 / 3</span></p>
+                <div class="lines"></div>
+                <div class="turnCustomers turnTo" href="#customerList">去选择</div>
+            </div>
+            <div class="passengers"></div>
+
+            <div class="contact-infos">
+                <div class="title">
+                    <p>联系人</p>
+                    <div class="turnCustomers"></div>
+                </div>
+                <div class="content">
+                    <div class="input-group">
+                        <i class="name"></i>
+                        <input name="contactName" type="text" placeholder="姓名"/>
+                    </div>
+                    <div class="input-group">
+                        <i class="mobile"></i>
+                        <input name="contactMobile" type="text" placeholder="手机号"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page" id="customerList">
+        <header>
+            <div class="back"></div>
+            <div class="center">填写信息</div>
+        </header>
+        <div class="confirm-btn">
+            确&nbsp;&nbsp;定
+        </div>
+        <div class="page-content">
+            <div class="add-customer turnTo" href="#addCustomer">
+                <i>
+                    <img src="/master-Q3/images/icon/add_red_icon@2x.png" alt="">
+                </i>
+                新增常用旅客
+            </div>
+
+            <div class="customers">
+                <div class="customer">
+                    <div class="checkbox"></div>
+                    <div class="information turnTo" href="#addCustomer">
+                        <h5>高输出</h5>
+                        <p>身份证  528394775937392</p>
+                        <input type="hidden" name="name" value="高输出" />
+                        <input type="hidden" name="mobile" value="18729578689" />
+                        <input type="hidden" name="idType" data-value="身份证" value="id" />
+                        <input type="hidden" name="idNo" value="528394775937392" />
+                    </div>
+                </div>
+                <div class="customer">
+                    <div class="checkbox"></div>
+                    <div class="information turnTo" href="#addCustomer">
+                        <h5>杨明昆</h5>
+                        <p>身份证  511325199209150014</p>
+                        <input type="hidden" name="name" value="杨明昆" />
+                        <input type="hidden" name="mobile" value="18729578689" />
+                        <input type="hidden" name="idType" data-value="身份证" value="id" />
+                        <input type="hidden" name="idNo" value="511325199209150014" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page" id="addCustomer">
+        <header>
+            <div class="back"></div>
+            <div class="center">添加常用旅客</div>
+        </header>
+        <div class="idType-cover"></div>
+        <div class="idType-wrapper">
+            <div class="idTypes">
+                <ul>
+                    <li data-value="id">身份证</li>
+                    <li data-value="">港澳通行证</li>
+                    <li data-value="passport">护照</li>
+                    <li data-value="">回乡证</li>
+                </ul>
+            </div>
+            <div class="cancel-btn">
+                取消
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="input-wrapper">
+                <div class="input-group">
+                    <i class="name"></i>
+                    <input name="name" type="text" placeholder="姓名"/>
+                </div>
+                <div class="input-group">
+                    <i class="mobile"></i>
+                    <input name="mobile" type="text" placeholder="电话"/>
+                </div>
+                <div class="input-group dropdown">
+                    <i class="idType"></i>
+                    <input name="displayIdType" readonly="readonly" type="text" placeholder="证件类型"/>
+                    <input name="idType"  type="hidden"/>
+                </div>
+                <div class="input-group">
+                    <i class="idNo"></i>
+                    <input name="idNo" type="text" placeholder="证件号码"/>
+                </div>
+            </div>
+            <div class="add-confirm-btn">
+                确&nbsp;&nbsp;定
+            </div>
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript">
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                    docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                };
+        if (!doc.addEventListener) return;
+        recalc();
+        var a = document.getElementsByTagName('a');
+        for(var i = 0; i < a.length; i++){
+            a[i].addEventListener('touchstart',function(){},false);
+        }
+        document.body.style.visibility = 'visible';
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script>
+<script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script type="text/javascript" src="/common/js/pages.js"></script>
+<script type="text/javascript" src="/common/js/base.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        // 点击返回按钮
+        $('header .back').click(function() {
+            history.go(-1);
+        });
+        // 初始化page
+        $('.page-group').pageInit({
+            router : '.turnTo' ,//router的className
+            routerFun : function(){}
+        });
+        // 查看支付详情
+        $('footer .pay-info').tap(function() {
+            var $this = $(this);
+            if(!$this.hasClass('selected')) {
+                $this.addClass('selected');
+                $('.detail-cover').show();
+                $('.pay-info-detail').addClass('show');
+            } else {
+                $this.removeClass('selected');
+                $('.pay-info-detail').removeClass('show');
+                setTimeout(function() {
+                    $('.detail-cover').hide();
+                },150)
+            }
+        });
+        // 删除乘车人操作
+        $('.passengers').on('click','.delete-customer',function() {
+            var $passenger = $(this).parents('.passenger');
+            $.confirm({
+                title:'删除',
+                detail : ['确认移除'+$passenger.find('input[name=passengerName]').val()+'作为乘车人吗？'],
+                yes : '确定',
+                cancel: '取消',
+                yesFun:function(){
+                    $passenger.remove();
+                    $('.checkbox.selected').parents('.customer').forEach(function(customer) {
+                        if($(customer).find('input[name=name]').val() == $passenger.find('input[name=name]').val()
+                                && $(customer).find('input[name=idNo]').val() == $passenger.find('input[name=idNo]').val()) {
+                            $(customer).find('.checkbox').removeClass('selected');
+                        }
+                    })
+                },
+                cancelFun:function(){}
+            })
+        });
+        // 点击浮层关闭支付详情
+        $('.detail-cover').click(function() {
+            $('.detail-cover').hide();
+            $('footer .pay-info').removeClass('selected');
+            $('.pay-info-detail').removeClass('show');
+        });
+        /* ============================================
+         添加编辑旅客页面操作 START
+         ============================================== */
+        $('.dropdown input').click(function(e) {
+            $('.idType-cover').show();
+            $('.idType-wrapper').addClass('show');
+        });
+        $('.cancel-btn').tap(function() {
+            $('.idType-cover').hide();
+            $('.idType-wrapper').removeClass('show');
+        });
+        $('.idType-wrapper li').tap(function() {
+            var $this = $(this);
+            $('.idType-wrapper li').removeClass('selected');
+            $this.addClass('selected');
+            $('input[name=displayIdType]').val($this.text());
+            $('input[name=idType]').val($this.attr('data-value'));
+            $('.idType-cover').hide();
+            $('.idType-wrapper').removeClass('show');
+        });
+        /* ============================================
+         添加编辑旅客页面操作 END
+         ============================================== */
+
+        /* ============================================
+         旅客列表页面操作 START
+         ============================================== */
+        $('.customers').on('click','.checkbox',function() {
+            var $this = $(this);
+            if($this.hasClass('selected')) {
+                $this.removeClass('selected');
+            } else {
+                $this.addClass('selected');
+            }
+        });
+        // 去编辑旅客信息
+        $('.customers').on('click','.information',function() {
+            var $this = $(this);
+            var name = $this.find('input[name=name]').val();
+            var mobile = $this.find('input[name=mobile]').val();
+            var idType = $this.find('input[name=idType]').val();
+            var idNo = $this.find('input[name=idNo]').val();
+            var displayIdType = $this.find('input[name=idType]').attr('data-value');
+
+            // 赋值
+            var $inputWrapper = $('#addCustomer .input-wrapper');
+            $inputWrapper.find('input[name=name]').val(name);
+            $inputWrapper.find('input[name=mobile]').val(mobile);
+            $inputWrapper.find('input[name=idType]').val(idType);
+            $inputWrapper.find('input[name=displayIdType]').val(displayIdType);
+            $inputWrapper.find('input[name=idNo]').val(idNo);
+        });
+        // 点击旅客列表页面的确认按钮
+        $('.confirm-btn').click(function() {
+            var passengers = '';
+            $('.customers .checkbox.selected').forEach(function(item) {
+
+                var $parent = $(item).parents('.customer');
+                var name = $parent.find('input[name=name]').val();
+                var idNo = $parent.find('input[name=idNo]').val();
+                passengers += '<div class="passenger">' +
+                        '<i class="name"></i>' +
+                        '<input name="passengerName" type="text" value="' + name + '"/>' +
+                        '<input name="name" type="hidden" value="' + name + '"/>' +
+                        '<input name="idNo" type="hidden" value="' + idNo + '"/>' +
+                        '<div class="delete-customer"></div>' +
+                        '</div>';
+            });
+            $('.passengers').append(passengers);
+            history.go(-1);
+        });
+        // 新增旅客
+        $('.add-customer').click(function() {
+            // 清空
+            var $inputWrapper = $('#addCustomer .input-wrapper');
+            $inputWrapper.find('input[name=name]').val('');
+            $inputWrapper.find('input[name=mobile]').val('');
+            $inputWrapper.find('input[name=idType]').val('');
+            $inputWrapper.find('input[name=displayIdType]').val('');
+            $inputWrapper.find('input[name=idNo]').val('');
+        });
+        /* ============================================
+         旅客列表页面操作 END
+         ============================================== */
+
+        /* ============================================
+         优惠劵页面操作 START
+         ============================================== */
+        $('.coupon-navbar div').click(function() {
+            var $this = $(this);
+            $('.coupon-navbar div').removeClass('selected');
+            $this.addClass('selected');
+            if($this.hasClass('available')) {
+                $('.disabled-list').removeClass('current');
+                $('.available-list').addClass('current');
+            } else {
+                $('.available-list').removeClass('current');
+                $('.disabled-list').addClass('current');
+            }
+        });
+        $('.coupon-wrapper').click(function() {
+            if(!$(this).hasClass('disabled')) {
+                $('.coupon-wrapper.selected').removeClass('selected');
+                $(this).addClass('selected');
+                history.go(-1);
+            }
+        });
+        /* ============================================
+         优惠劵页面操作 END
+         ============================================== */
+    })
+</script>
+</body>
+</html>

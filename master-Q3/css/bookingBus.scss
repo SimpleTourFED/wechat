@@ -286,10 +286,12 @@ footer {
     display: inline-block;
     margin-right: rem(14px);
     width:rem(36px);
-    height:rem(36px);
-    vertical-align: middle;
-    background: url(/master-Q3/images/icon/add_red_icon@2x.png) no-repeat center;
-    background-size: contain;
+    height:100%;
+    vertical-align: sub;
+    img{
+      width: 100%;
+      height: rem(36px);
+    }
   }
 }
 .customers {
