@@ -1,0 +1,131 @@
+//customerList模块的样式
+
+@mixin displayflex{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+@mixin flex($size:1){
+  -webkit-box-flex:$size;
+  -moz-box-flex:$size;
+  -webkit-flex:$size;
+  -ms-flex:$size;
+  flex:$size;
+}
+@mixin flexflowCol($direction:column,$dir:vertical){
+  -webkit-box-orient:$dir;
+  -ms-box-orient: $dir;
+  -moz-box-orient: $dir;
+  -webkit-flex-flow:$direction nowrap;
+  -ms-flex-flow:$direction nowrap;
+  -moz-flex-flow:$direction nowrap;
+  flex-flow:$direction nowrap;
+}
+@mixin flexflowRow($direction:row,$dir:horizontal) {
+  -webkit-box-orient:$dir;
+  -ms-box-orient: $dir;
+  -moz-box-orient: $dir;
+  -webkit-flex-flow:$direction nowrap;
+  -ms-flex-flow:$direction nowrap;
+  -moz-flex-flow:$direction nowrap;
+  flex-flow:$direction nowrap;
+}
+.add-customer {
+  width: 100%;
+  height: rem(96px);
+  line-height:rem(96px);
+  color: #E61E4B;
+  font-size: rem(28px);
+  background-color: #fff;
+  text-align: center;
+  i {
+    display: inline-block;
+    margin-right: rem(14px);
+    width:rem(36px);
+    height:100%;
+    vertical-align: sub;
+    img {
+      width: 100%;
+      height: rem(36px);
+    }
+  }
+}
+.customers {
+  background-color: #fff;
+  margin-top: rem(16px);
+  margin-bottom: rem(112px);
+  padding: 0 rem(26px) 0;
+  .customer {
+    @include displayflex();
+    @include flexflowRow();
+    height:rem(138px);
+    border-bottom: rem(2px) solid #EBEBF5;
+    .checkbox {
+      width:rem(66px);
+      height:rem(138px);
+      margin-right: rem(14px);
+      background: url(/master-Q3/images/icon/checkbox_normal_icon@2x.png) no-repeat center;
+      background-size: rem(40px);
+      &.selected {
+        background: url(/master-Q3/images/icon/checkbox_selected_icon@2x.png) no-repeat center;
+        background-size: rem(40px);
+      }
+    }
+    .information {
+      @include flex(1);
+      position: relative;
+      h5{
+        font-size: rem(32px);
+        color: #4F545B;
+        margin-top: rem(20px);
+      }
+      p {
+        color: #83858C;
+        font-size: rem(28px);
+        margin-top: rem(13px);
+      }
+      &:after {
+        position: absolute;
+        top: rem(53px);
+        right: 0;
+        display: inline-block;
+        content: '';
+        width: rem(19px);
+        height: rem(32px);
+        background: url("/master-Q3/images/icon/right_grey_arrow@2x.png") no-repeat center;
+        background-size: contain;
+      }
+    }
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+}
+.confirm-btn {
+  position: absolute;
+  height:rem(88px);
+  width:rem(588px);
+  left: 50%;
+  margin-left: rem(-294px);
+  line-height:rem(88px);
+  bottom: rem(24px);
+  background-color: #E61E4B;
+  border-radius: rem(5px);
+  text-align: center;
+  font-size:rem(34px);
+  color: #fff;
+  z-index: 5;
+}
+.add-confirm-btn {
+  height:rem(88px);
+  width:rem(588px);
+  margin: rem(50px) auto;
+  line-height:rem(88px);
+  background-color: #E61E4B;
+  border-radius: rem(5px);
+  text-align: center;
+  color: #fff;
+  font-size: rem(34px);
+}
