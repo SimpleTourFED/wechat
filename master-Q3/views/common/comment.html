@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/master-Q3/css/tourism_comment.scss?__inline">
+</head>
+<body>
+<div class="page-group">
+    <div class="page page-current">
+        <header>
+            <div class="back"></div>
+            <div class="center">评价</div>
+        </header>
+        <div class="page-content">
+            <div class="comment">
+                <textarea placeholder="写下对简途巴士旅行的体验感受吧，对我们的帮助很大很大很大很大～"></textarea>
+                <div class="add_img"></div>
+                <div class="albums" style="display:none">
+                    <img src="/master-Q3/images/home_head_img@2x.png" alt="">
+                    <img src="/master-Q3/images/home_head_img@2x.png" alt="">
+                    <img src="/master-Q3/images/home_head_img@2x.png" alt="">
+                    <img src="/master-Q3/images/home_head_img@2x.png" alt="">
+                    <img src="/master-Q3/images/home_head_img@2x.png" alt="">
+                </div>
+            </div>
+            <div class="stars-bar">
+                <span class="title">产品评价</span>
+                <div class="stars">
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                </div>
+            </div>
+            <a class="submit">提交</a>
+        </div>
+    </div>
+</div>
+<div class="dropdown-wrap">
+    <div class="dropdown">
+        <ul class="items">
+            <li data-value="photo">拍照</li>
+            <li data-value="choose">从相册里选取</li>
+        </ul>
+        <div class="cancel-btn">
+            取消
+        </div>
+    </div>
+    <div class="cover"></div>
+</div>
+<script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script type="text/javascript" src="/js/wechat/jweixin-1.0.0.js"></script>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    // 针对uc横竖屏rem html没有重绘的问题
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+        var a = document.getElementsByTagName('a');
+        for (var i = 0; i < a.length; i++) {
+            a[i].addEventListener('touchstart', function () {
+            }, false);
+        }
+    })(document, window);
+    $(document).ready(function () {
+//        <#if requestByWechat=='true'>
+//        wx.config({
+//            debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开>，参数信息会通过log打出，仅在pc端时才会打印。
+//            appId: '${appId}',
+//            timestamp: ${signature.timestamp}, // 必填，生成签名的时间戳
+//            nonceStr: '${signature.noncestr}', // 必填，生成签名的随机串
+//            signature: '${signature.signature}',// 必填，签名，见附录1
+//            jsApiList: ['hideMenuItems','onMenuShareTimeline','onMenuShareAppMessage'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+//        });
+//        wx.error(function (res) {
+//            alert(res);
+//        });
+//        wx.ready(function () {
+//            wx.chooseImage({
+//                success: function (res) {
+//                    var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
+//                }
+//            });
+//            wx.previewImage({
+//                current: '', // 当前显示的图片链接
+//                urls: [] // 需要预览的图片链接列表
+//            });
+//            wx.uploadImage({
+//                localId: '', // 需要上传的图片的本地ID，由chooseImage接口获得
+//                isShowProgressTips: 1// 默认为1，显示进度提示
+//                success: function (res) {
+//                    var serverId = res.serverId; // 返回图片的服务器端ID
+//                }
+//            });
+//        });
+        //</#if>
+        // 点击返回按钮
+        $('header .back').click(function (e) {
+            history.go(-1);
+        });
+        //选择图片来源类型
+        var $cover = $('.dropdown-wrap .cover');
+        var $dropdown = $('.dropdown-wrap .dropdown');
+        var $items = $('.dropdown-wrap .items li');
+        $('.comment .add_img').click(function (e) {
+            $cover.show();
+            $dropdown.addClass('show');
+        });
+        $('.dropdown-wrap .cancel-btn').click(function (e) {
+            $cover.hide();
+            $dropdown.removeClass('show');
+        });
+        $items.on('click', function (e) {
+            var type = $(this).attr('data-value');
+            if (type == 'photo') {
+
+            } else if (type == 'photo') {
+
+            }
+        });
+        //星评价
+        var $stars = $('.stars .star');
+        $stars.on('click',function(e){
+            $stars.removeClass('hollow');
+            for(var i=4;i>$(this).index();i--){
+                $stars.eq(i).addClass('hollow');
+            }
+        });
+    });
+</script>
+</body>
+</html>

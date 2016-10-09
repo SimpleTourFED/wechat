@@ -235,6 +235,10 @@ footer{
       background: url(/master-Q3/images/icon/profile_index_feedback.png) no-repeat center;
       background-size: contain;
     }
+    &.customerService .border-bottom:before{
+      background: url(/master-Q3/images/icon/profile_index_customerService.png) no-repeat center;
+      background-size: contain;
+    }
   }
 
 }
