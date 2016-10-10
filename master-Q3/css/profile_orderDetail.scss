@@ -280,6 +280,7 @@ img {
     }
   }
 }
+
 .card-wrap {
   background-color: #fff;
   .card-title {
@@ -306,13 +307,13 @@ img {
       background-size: contain;
     }
   }
-  .cards{
+  .cards {
     padding: 0 rem(32px);
     .card {
       padding: rem(28px) 0;
       border-bottom: 1px solid #EBEBF5;
       position: relative;
-      &:last-child{
+      &:last-child {
         border-bottom: none;
       }
       .row {
@@ -332,7 +333,7 @@ img {
         -ms-align-items: flex-start;
         -webkit-align-items: flex-start;
         align-items: flex-start;
-        &:last-child{
+        &:last-child {
           padding-bottom: 0;
         }
         span.red {
@@ -349,18 +350,18 @@ img {
         .value {
           @include flex;
           color: #4F545B;
-          &.binding{
+          &.binding {
             color: #E61E4B;
           }
-          &.bound{
+          &.bound {
             color: #F5B950;
           }
-          &.overdue{
+          &.overdue {
             color: #4F545B;
           }
         }
       }
-      .goBind{
+      .goBind {
         width: rem(144px);
         color: #E61E4B;
         font-size: rem(26px);
@@ -382,11 +383,11 @@ img {
         -ms-align-items: center;
         -webkit-align-items: center;
         align-items: center;
-        span{
+        span {
           display: block;
           @include flex;
         }
-        &:after{
+        &:after {
           content: '';
           display: inline-block;
           width: rem(24px);
@@ -399,6 +400,7 @@ img {
     }
   }
 }
+
 .contact {
   height: rem(88px);
   background-color: #fff;
@@ -426,7 +428,7 @@ img {
   margin-bottom: rem(16px);
 }
 
-.customer,.booker,.check {
+.customer, .booker, .check {
   height: rem(88px);
   padding: rem(14px) 0;
   border-bottom: 1px solid #EBEBF5;
@@ -464,10 +466,49 @@ img {
   }
 }
 
-.check,.booker {
+.check, .booker {
   background-color: #fff;
   padding: rem(14px) rem(26px);
   margin-bottom: rem(16px);
+}
+
+.contactUs {
+  height: rem(88px);
+  background-color: #fff;
+  padding: rem(14px) 0;
+  margin-bottom: rem(16px);
+  @include displayflex;
+  @include flexflowRow;
+  .customService, .telService {
+    @include flex;
+    text-align: center;
+    &:before {
+      content: '';
+      width: rem(34px);
+      height: rem(32px);
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: rem(28px);
+    }
+    span {
+      display: inline-block;
+      line-height: rem(60px);
+      font-size: rem(28px);
+      color: #83858C;
+      vertical-align: middle;
+    }
+  }
+  .customService {
+    border-right: 1px solid #D8D8D8;
+    &:before {
+      background: url(/master-Q3/images/icon/custom_service_yellow.png) no-repeat center;
+      background-size: contain;
+    }
+  }
+  .telService:before {
+    background: url(/master-Q3/images/icon/phone_yellow@2x.png) no-repeat center;
+    background-size: contain;
+  }
 }
 
 .backRule {
@@ -543,7 +584,7 @@ footer {
       background-color: #BF0A33;
     }
   }
-  .contact{
+  .contact {
     display: block;
     width: 100%;
     text-align: center;
@@ -551,7 +592,7 @@ footer {
     font-size: rem(34px);
     line-height: rem(40px);
     @include flex;
-    &:before{
+    &:before {
       content: '';
       display: inline-block;
       width: rem(36px);
@@ -620,18 +661,18 @@ footer {
         .detail {
           padding: rem(20px) rem(32px) 0;
           border-bottom: 1px solid #EBEBF5;
-          &:last-child{
+          &:last-child {
             border-bottom: none;
           }
         }
-        .item{
+        .item {
           border-bottom: 1px solid #EBEBF5;
           .detail {
-            &:last-child{
+            &:last-child {
               border-bottom: none;
             }
           }
-          &:last-child{
+          &:last-child {
             border-bottom: none;
           }
         }
@@ -685,7 +726,7 @@ footer {
       background: url(/master-Q3/images/icon/alertTop_panda.png) no-repeat center;
       background-size: contain;
     }
-    .content-wrap{
+    .content-wrap {
       top: rem(170px);
     }
   }
