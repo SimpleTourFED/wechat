@@ -70,6 +70,19 @@ body{
       font-size: rem(28px);
       color: #4F545B;
       position: relative;
+      &.disabled {
+        &:after{
+          position: absolute;
+          content: '';
+          display: inline-block;
+          top:rem(-4px);
+          right:rem(26px);
+          width:rem(36px);
+          height: rem(36px);
+          background: url('/master-Q3/images/icon/question_mark@2x.png') no-repeat center;
+          background-size: contain;
+        }
+      }
     }
     .check{
       width: rem(200px);

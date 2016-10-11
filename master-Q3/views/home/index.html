@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/master-Q3/css/index.scss?__inline" media="screen" title="no title" charset="utf-8">
+    <script type="text/javascript">
+        function filterResult (e){
+            var value = event.target.value;
+            if(!value) {
+                $('.search-input').removeClass('input-change');
+            } else {
+                $('.search-input').addClass('input-change');
+            }
+        }
+    </script>
+</head>
+<body style="visibility: hidden">
+<div class="page-group">
+    <!--一个页面,如果有多个就是多个page,要首先显示的需要加上page-current类-->
+    <div class="page page-current">
+        <header>
+            <div class="change turnTo" href="#changeDestination">四川</div>
+            <div class="search-back"></div>
+            <div class="search-bar">
+                <div class="search-input">
+                    <label></label>
+                    <input oninput="filterResult(event)" type="text" name="search" placeholder="巴士线路／目的地／途中玩乐" />
+                    <div class="click-zone"></div>
+                </div>
+                <div class="search-btn">
+                    搜索
+                </div>
+            </div>
+        </header>
+        <footer>
+            <a class="home">首页</a>
+            <a class="route">路线</a>
+            <a class="tourism">行程</a>
+            <a class="profile selected">我的</a>
+        </footer>
+        <div class="search-result">
+            <div class="results">
+                <div class="bus-lines">
+                    <h4>巴士线路</h4>
+                    <ul>
+                        <li>成都－九寨沟单程车位</li>
+                        <li>成都－九寨沟单程车位</li>
+                        <li>成都－九寨沟单程车位</li>
+                        <li>成都－九寨沟单程车位</li>
+                        <li>成都－九寨沟单程车位</li>
+                        <li>成都－九寨沟单程车位</li>
+                        <li>成都－九寨沟单程车位</li>
+                    </ul>
+                    <div class="bus-more">
+                        查看更多结果
+                    </div>
+                </div>
+                <div class="products">
+                    <h4>途中玩乐</h4>
+                    <ul>
+                        <li>成都－九寨沟单程车位</li>
+                        <li>成都－九寨沟单程车位</li>
+                        <li>成都－九寨沟单程车位</li>
+                        <li>成都－九寨沟单程车位</li>
+                        <li>成都－九寨沟单程车位</li>
+                        <li>成都－九寨沟单程车位</li>
+                        <li>成都－九寨沟单程车位</li>
+                    </ul>
+                    <div class="products-more">
+                        查看更多结果
+                    </div>
+                </div>
+                <div class="bottom-logo">
+                    <div class="img-wrapper">
+                        <img src="/master-Q3/images/icon/bus_bottom@2x.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="bus-lines-wrapper">
+                <h4>途中玩乐</h4>
+                <ul>
+                    <li>成都－九寨沟单程车位</li>
+                    <li>成都－九寨沟单程车位</li>
+                    <li>成都－九寨沟单程车位</li>
+                    <li>成都－九寨沟单程车位</li>
+                    <li>成都－九寨沟单程车位</li>
+                    <li>成都－九寨沟单程车位</li>
+                    <li>成都－九寨沟单程车位</li>
+                    <li>成都－九寨沟单程车位</li>
+                    <li>成都－九寨沟单程车位</li>
+                    <li>成都－九寨沟单程车位</li>
+                    <li>成都－九寨沟单程车位</li>
+                    <li>成都－九寨沟单程车位</li>
+                </ul>
+            </div>
+            <div class="products-wrapper">
+                <h4>途中玩乐</h4>
+                <ul>
+                    <li>成都－九寨沟单程车位</li>
+                    <li>成都－九寨沟单程车位</li>
+                    <li>成都－九寨沟单程车位</li>
+                    <li>成都－九寨沟单程车位</li>
+                    <li>成都－九寨沟单程车位</li>
+                    <li>成都－九寨沟单程车位</li>
+                    <li>成都－九寨沟单程车位</li>
+                </ul>
+            </div>
+
+            <div class="no-line">
+                <div class="img-wp">
+                    <img src="/master-Q3/images/icon/no_result_icon@2x.png" alt="">
+                </div>
+                <p>无搜索结果</p>
+            </div>
+            <div class="hot-space">
+                <h5>热门</h5>
+                <ul>
+                    <li>成都</li>
+                    <li>峨眉山</li>
+                    <li>九寨沟</li>
+                    <li>熊猫基地</li>
+                    <li class="selected">若尔盖草原测试</li>
+                    <li>乐山</li>
+                </ul>
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="module-wrapper">
+                <div class="order-bus">
+                    <i></i>
+                    <p>订巴士</p>
+                </div>
+                <div class="line"></div>
+                <div class="order-ticket">
+                    <i></i>
+                    <p>订门票</p>
+                </div>
+                <div class="line"></div>
+                <div class="order-catering">
+                    <i></i>
+                    <p>订门票</p>
+                </div>
+                <div class="line"></div>
+                <div class="order-product">
+                    <i></i>
+                    <p>途中玩乐</p>
+                </div>
+            </div>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img data-href="" src="http://images.simpletour.com/simpletour/images/wechat_home/d2b7995b44baf2f29921672be09e07a1.jpg!middle320"/>
+                    </div>
+                    <div class="swiper-slide">
+                        <img data-href="" src="http://images.simpletour.com/simpletour/images/wechat_home/f9bc80dbef637a7d9d0b738fe61fd16b.jpg!middle320"/>
+                    </div>
+                    <div class="swiper-slide">
+                        <img data-href="" src="http://images.simpletour.com/simpletour/images/wechat_home/783ca3272f455de77c64bf88e1bf848c.png!middle320"/>
+                    </div>
+                </div>
+                <!-- 如果需要分页器 -->
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="theme">
+                <div class="module1">
+                    <div class="left">
+                        <div class="theme-wrapper">
+                            <img src="/master-Q3/images/bus_module@2x.png" alt="">
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="theme-wrapper">
+                            <img src="/master-Q3/images/ticket_module@2x.png" alt="">
+                        </div>
+                        <div class="theme-wrapper">
+                        <img src="/master-Q3/images/catering_module@2x.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="module2">
+                    <div class="left">
+                        <div class="theme-wrapper">
+                            <img src="/master-Q3/images/bus_module@2x.png" alt="">
+                        </div>
+                        <div class="theme-wrapper">
+                            <img src="/master-Q3/images/bus_module@2x.png" alt="">
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="theme-wrapper">
+                            <img src="/master-Q3/images/ticket_module@2x.png" alt="">
+                        </div>
+                        <div class="theme-wrapper">
+                            <img src="/master-Q3/images/catering_module@2x.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="module3">
+                    <div class="content">
+                        <div class="left">
+                            <div class="theme-wrapper">
+                                <img src="/master-Q3/images/bus_module@2x.png" alt="">
+                            </div>
+                            <div class="theme-wrapper">
+                                <img src="/master-Q3/images/bus_module@2x.png" alt="">
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="theme-wrapper">
+                                <img src="/master-Q3/images/ticket_module@2x.png" alt="">
+                            </div>
+                            <div class="theme-wrapper">
+                                <img src="/master-Q3/images/catering_module@2x.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="theme-wrapper">
+                            <img src="/master-Q3/images/catering_module@2x.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="module4">
+                    <div class="theme-wrapper">
+                        <img src="/master-Q3/images/catering_module@2x.png" alt="">
+                    </div>
+                    <div class="theme-wrapper">
+                        <img src="/master-Q3/images/catering_module@2x.png" alt="">
+                    </div>
+                    <div class="theme-wrapper">
+                        <img src="/master-Q3/images/catering_module@2x.png" alt="">
+                    </div>
+                    <div class="theme-wrapper">
+                        <img src="/master-Q3/images/catering_module@2x.png" alt="">
+                    </div>
+                </div>
+                <div class="module5">
+                    <div class="left">
+                        <div class="theme-wrapper">
+                            <img src="/master-Q3/images/bus_module@2x.png" alt="">
+                        </div>
+                        <div class="theme-wrapper">
+                            <img src="/master-Q3/images/bus_module@2x.png" alt="">
+                        </div>
+                        <div class="theme-wrapper">
+                            <img src="/master-Q3/images/bus_module@2x.png" alt="">
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="theme-wrapper">
+                            <img src="/master-Q3/images/ticket_module@2x.png" alt="">
+                        </div>
+                        <div class="theme-wrapper">
+                            <img src="/master-Q3/images/catering_module@2x.png" alt="">
+                        </div>
+                        <div class="theme-wrapper">
+                            <img src="/master-Q3/images/catering_module@2x.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bus-wrapper">
+                <h5>巴士自由行</h5>
+                <div class="bus-item">
+                    <div class="left-content">
+                        <div class="old-price">原价¥3000</div>
+                        <div class="price">¥12298.99</div>
+                        <div class="tags">
+                            <div class="tag">特价</div>
+                            <div class="tag">专享价专享价</div>
+                        </div>
+                    </div>
+                    <div class="lines-dot three"></div>
+                    <div class="right-content">
+                        <div class="destinations">
+                            <div class="destination">成都</div>
+                            <div class="destination">黄龙</div>
+                            <div class="destination">九寨沟</div>
+                        </div>
+                        <div class="bus-info">
+                            <span>一日单程</span><span>已售3460张</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bus-item">
+                    <div class="left-content">
+                        <div class="old-price">原价¥3000</div>
+                        <div class="price">¥12298.99</div>
+                        <div class="tags">
+                            <div class="tag">特价</div>
+                            <div class="tag">专享价专享价</div>
+                        </div>
+                    </div>
+                    <div class="lines-dot"></div>
+                    <div class="right-content">
+                        <div class="destinations">
+                            <div class="destination">成都</div>
+                            <div class="destination">九寨沟</div>
+                        </div>
+                        <div class="bus-info">
+                            <span>一日单程</span><span>已售3460张</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="view-more">
+                查看更多车票…
+            </div>
+            <div class="pkg-wrapper">
+                <h5>简途精选套餐</h5>
+                <div class="pkg-item">
+                    <div class="head-image">
+                        <img data-src="http://images.simpletour.com/simpletour/images/wechat_home/cc25479b9e2f87ea81e8fb1eb76cacde.jpg!middle320" src="/master-Q3/images/defalut-img@588250.png" alt="">
+                    </div>
+                    <p>套餐名称好吃好吃的九寨沟豪华十八人七天五夜巴士车套餐</p>
+                    <div class="price">
+                        <span class="left">¥1299.99</span>
+                        <span class="right">原件:¥1299.99</span>
+                    </div>
+                    <div class="tags">
+                        <ul>
+                            <li>app专享价</li>
+                            <li>特价</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pkg-item">
+                    <div class="head-image">
+                        <img data-src="http://images.simpletour.com/simpletour/images/wechat_home/783ca3272f455de77c64bf88e1bf848c.png!middle320" src="/master-Q3/images/defalut-img@588250.png" alt="">
+                    </div>
+                    <div class="decorate">
+                        <div class="left-circle"></div>
+                        <div class="right-circle"></div>
+                    </div>
+                    <p>套餐名称好吃好吃的九寨沟豪华十八人七天五夜巴士车套餐</p>
+                    <div class="price">
+                        <span class="left">¥1299.99</span>
+                        <span class="right">原价:¥1299.99</span>
+                    </div>
+                    <div class="tags">
+                        <ul>
+                            <li>app专享价</li>
+                            <li>特价</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pkg-item">
+                    <div class="head-image">
+                        <img data-src="http://images.simpletour.com/simpletour/images/wechat_home/fef0f95e507b9962a4547c7ecb19026b.jpg!middle320" src="/master-Q3/images/defalut-img@588250.png" alt="">
+                    </div>
+                    <div class="decorate">
+                        <div class="left-circle"></div>
+                        <div class="right-circle"></div>
+                    </div>
+                    <p>套餐名称好吃好吃的九寨沟豪华十八人七天五夜巴士车套餐</p>
+                    <div class="price">
+                        <span class="left">¥1299.99</span>
+                        <span class="right">原价:¥1299.99</span>
+                    </div>
+                    <div class="tags">
+                        <ul>
+                            <li>app专享价</li>
+                            <li>特价</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pkg-item">
+                    <div class="head-image">
+                        <img data-src="http://images.simpletour.com/simpletour/images/wechat_home/c44555f288921145a3e3a3c694f2a56e.png!middle320" src="/master-Q3/images/defalut-img@588250.png" alt="">
+                    </div>
+                    <div class="decorate">
+                        <div class="left-circle"></div>
+                        <div class="right-circle"></div>
+                    </div>
+                    <p>套餐名称好吃好吃的九寨沟豪华十八人七天五夜巴士车套餐</p>
+                    <div class="price">
+                        <span class="left">¥1299.99</span>
+                        <span class="right">原价:¥1299.99</span>
+                    </div>
+                    <div class="tags">
+                        <ul>
+                            <li>app专享价</li>
+                            <li>特价</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pkg-item">
+                    <div class="head-image">
+                        <img data-src="http://images.simpletour.com/simpletour/images/wechat_home/783ca3272f455de77c64bf88e1bf848c.png!middle320" src="/master-Q3/images/defalut-img@588250.png" alt="">
+                    </div>
+                    <div class="decorate">
+                        <div class="left-circle"></div>
+                        <div class="right-circle"></div>
+                    </div>
+                    <p>套餐名称好吃好吃的九寨沟豪华十八人七天五夜巴士车套餐</p>
+                    <div class="price">
+                        <span class="left">¥1299.99</span>
+                        <span class="right">原价:¥1299.99</span>
+                    </div>
+                    <div class="tags">
+                        <ul>
+                            <li>app专享价</li>
+                            <li>特价</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pkg-item">
+                    <div class="head-image">
+                        <img data-src="http://images.simpletour.com/simpletour/images/wechat_home/13435686797059d21f63c30d81eae2de.jpg!middle320" src="/master-Q3/images/defalut-img@588250.png" alt="">
+                    </div>
+                    <div class="decorate">
+                        <div class="left-circle"></div>
+                        <div class="right-circle"></div>
+                    </div>
+                    <p>套餐名称好吃好吃的九寨沟豪华十八人七天五夜巴士车套餐</p>
+                    <div class="price">
+                        <span class="left">¥1299.99</span>
+                        <span class="right">原价:¥1299.99</span>
+                    </div>
+                    <div class="tags">
+                        <ul>
+                            <li>app专享价</li>
+                            <li>特价</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="view-more">
+                查看更多套餐…
+            </div>
+        </div>
+    </div>
+    <div class="page " id="changeDestination">
+        <header>
+            <div class="back">后退</div>
+            <div class="center">切换站点</div>
+        </header>
+        <div class="page-content">
+            <div class="destinations">
+                <div class="destination">
+                    <img src="/master-Q3/images/sichuan.png" alt="">
+                    <!--<h5>- 四川 -</h5>-->
+                    <!--<p>富饶的土地、闲适的人民、大美的风景</p>-->
+                </div>
+                <div class="destination">
+                    <img src="/master-Q3/images/chongqing.png" alt="">
+                    <!--<h5>- 重庆 -</h5>-->
+                    <!--<p>巴山夜雨古辽州，梦幻霓虹今重庆</p>-->
+                </div>
+                <div class="destination">
+                    <img src="/master-Q3/images/taiguo.png" alt="">
+                    <!--<h5>- 泰国 -</h5>-->
+                    <!--<p>天使之城，购物天堂</p>-->
+                </div>
+                <div class="destination waiting">
+                    <img src="/master-Q3/images/yunnan.png" alt="">
+                    <!--<div class="title">即将开始</div>-->
+                    <!--<div class="icon">-->
+                    <!--<img src="/master-Q3/images/yunnan_icon@2x.png" alt="">-->
+                    <!--</div>-->
+                    <!--<h5>- 云南 -</h5>-->
+                    <!--<p>灵秀熊猫故乡、神秘九寨</p>-->
+                </div>
+            </div>
+            <div class="bottom-logo">
+                <div class="img-wrapper">
+                    <img src="/master-Q3/images/icon/bus_bottom@2x.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script type="text/javascript" src="/common/js/swiper-3.3.1.jquery.min.js"></script>
+<script type="text/javascript" src="/common/js/lazyLoad.js"></script>
+<script type="text/javascript" src="/common/js/pages.js"></script>
+<script type="text/javascript">
+    (function (doc, win) {
+        var mySwiper = new Swiper('.swiper-container', {
+            direction: 'horizontal',
+            loop: true,
+            autoplay: 5000,
+            autoplayDisableOnInteraction: false,
+//                        preventClicks :true,
+            // 如果需要分页器
+            pagination: '.swiper-pagination',
+            onTouchEnd: function (swiper) {
+                if (Math.abs(swiper.touches.currentX - swiper.touches.startX) < 5) {
+                    location.href = $('.swiper-container img').eq(swiper.activeIndex).attr('data-href');
+                }
+            }
+        });
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                    docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                };
+        if (!doc.addEventListener) return;
+        recalc();
+        var a = document.getElementsByTagName('a');
+        for(var i = 0; i < a.length; i++){
+            a[i].addEventListener('touchstart',function(){},false);
+        }
+        document.body.style.visibility = 'visible';
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        // 初始化page
+        $('.page-group').pageInit({
+            router : '.turnTo' ,//router的className
+            routerFun : function(){}
+        });
+        $('header .back').click(function() {
+            history.go(-1);
+        });
+        $('.search-input input').focusin(function (e) {
+            $('header').addClass('search-status');
+            $('.search-result').show();
+        });
+        $('header').on('click','.search-status .search-back',function() {
+            if($(this).hasClass('back-more')) {
+                $(this).removeClass('back-more');
+                $('.bus-lines-wrapper').removeClass('current');
+                $('.products-wrapper').removeClass('current');
+            } else {
+                $('header').removeClass('search-status');
+                $('.search-result').hide();
+            }
+        });
+        $('.search-bar .search-btn').click(function (e) {
+        });
+        // 这里用一个稍微大一点的div来触发清空按钮的点击事件
+        $('.click-zone').click(function() {
+            $('.search-input input').val('');
+            $('.search-bar').removeClass('input-change');
+        });
+
+        // 查看更多
+        $('.products-more').click(function() {
+            $('.products-wrapper').addClass('current');
+            $('.search-back').addClass('back-more');
+        });
+        $('.bus-more').click(function() {
+            $('.bus-lines-wrapper').addClass('current');
+            $('.search-back').addClass('back-more');
+        });
+    })
+</script>
+</body>
+</html>

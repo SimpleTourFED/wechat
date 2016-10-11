@@ -21,28 +21,33 @@
 .customers {
   .customer {
     width: rem(588px);
-    height: rem(88px);
-    line-height: rem(88px);
+    height: rem(162px);
     background-color: #fff;
     margin: 0 auto rem(16px);
     @include displayflex();
     @include flexflowRow();
-    .name {
-      font-size: rem(32px);
-      color: #83858C;
-      height:rem(88px);
+    .user-info {
       @include flex(1);
-      text-indent: rem(22px);
-    }
-    .days {
-      width: rem(300px);
-      height: rem(88px);
-      color: #83858C;
-      font-size: rem(26px);
+      padding-left: rem(12px);
+      .name {
+        font-size: rem(32px);
+        color: #4F545B;
+        margin-top: rem(22px);
+      }
+      .days {
+        margin-top: rem(14px);
+        color: #83858C;
+        font-size: rem(26px);
+      }
+      .idNo {
+        margin-top: rem(20px);
+        color: #83858C;
+        font-size: rem(26px);
+      }
     }
     .checkbox {
-      width: rem(82px);
-      height: rem(88px);
+      width: rem(92px);
+      height: rem(162px);
       background: url(/master-Q3/images/icon/checkbox_normal_icon@2x.png) no-repeat center;
       background-size: rem(40px);
     }
@@ -51,6 +56,9 @@
         color: #E61E4B;
       }
       .days {
+        color: #E61E4B;
+      }
+      .idNo {
         color: #E61E4B;
       }
       .checkbox {
@@ -65,11 +73,14 @@
       .days {
         color: #C0C2C9;
       }
+      .idNo {
+        color: #C0C2C9;
+      }
       .checkbox {
         width: rem(40px);
         height: rem(40px);
-        margin-top: rem(24px);
-        margin-left: rem(20px);
+        margin-top: rem(61px);
+        margin-left: rem(26px);
         margin-right: rem(22px);
         background: none;
         background-color: #E4E5E7;
