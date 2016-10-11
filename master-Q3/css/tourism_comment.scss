@@ -123,6 +123,9 @@ footer{
     &:active {
       background-color: #BF0A33;
     }
+    &.disabled{
+      background-color: #737373;
+    }
   }
 }
 

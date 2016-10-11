@@ -1,0 +1,89 @@
+@import "/common/css/base";
+
+@mixin box-sizing($set:border-box) {
+  -webkit-box-sizing: $set;
+  -moz-box-sizing: $set;
+  -ms-box-sizing: $set;
+  -o-box-sizing: $set;
+  box-sizing: $set;
+}
+
+@mixin border-radius($radius:4px) {
+  -webkit-border-radius: rem($radius);
+  -moz-border-radius: rem($radius);
+  -ms-border-radius: rem($radius);
+  -o-border-radius: rem($radius);
+  border-radius: rem($radius);
+}
+
+html, body {
+  background-color: #F5F5F5;
+}
+
+* {
+  @include box-sizing();
+  outline: none;
+  color: #4F545B;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  border: none;
+}
+
+.wrap {
+  img.banner {
+    display: block;
+    margin: 0 auto rem(30px);
+    width: 100%;
+    height: rem(280px);
+  }
+  .title{
+    height: rem(50px);
+    color: #E61E4B;
+    font-size: rem(32px);
+    line-height: rem(50px);
+    vertical-align: top;
+    text-align: center;
+    margin-bottom: rem(20px);
+    &:before{
+      content: '';
+      display: inline-block;
+      width: rem(50px);
+      height: rem(50px);
+      background: url(/master-Q3/images/icon/payFail_icon.png);
+      background-size: contain;
+      vertical-align: top;
+      margin-right: rem(26px);
+    }
+  }
+  .copy {
+    font-size: rem(26px);
+    color: #83858C;
+    line-height: rem(37px);
+    text-align: center;
+    display: block;
+    margin-bottom: rem(60px);
+  }
+  .operate{
+    a {
+      display: block;
+      width: rem(340px);
+      height: rem(86px);
+      font-size: rem(28px);
+      color: #E61E4B;
+      background-color: #fff;
+      line-height: rem(86px);
+      text-align: center;
+      border: 1px solid #E61E4B;
+      margin: 0 auto rem(28px);
+      @include border-radius(8px);
+    }
+    .convertTourism{
+      background-color: #E61E4B;
+      color: #fff;
+    }
+  }
+}

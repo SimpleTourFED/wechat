@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/master-Q3/css/profile_collection.scss?__inline">
+</head>
+<body>
+<div class="page-group">
+    <div class="page page-current">
+        <header>
+            <div class="back"></div>
+            <div class="center">我的收藏</div>
+            <div class="edit">编辑</div>
+        </header>
+        <footer>
+            <a class="delete">删除</a>
+        </footer>
+        <div class="page-content">
+            <div class="collections">
+                <div class="collection">
+                    <span class="checkbox"></span>
+                    <div class="product">
+                        <img src="/master-Q3/images/img1.png" alt=""/>
+                        <div class="name">成都－重庆三天往返行程三天往返三天往返行程三天往返程行程三天往返程行程三天往返程行程三天往返程</div>
+                    </div>
+                </div>
+                <div class="collection">
+                    <span class="checkbox"></span>
+                    <div class="product">
+                        <img src="/master-Q3/images/img1.png" alt=""/>
+                        <div class="name">成都－重庆三天往返行程</div>
+                    </div>
+                </div>
+                <div class="collection">
+                    <span class="checkbox"></span>
+                    <div class="product">
+                        <img src="/master-Q3/images/img1.png" alt=""/>
+                        <div class="name">成都－重庆三天往返行程三天往返三天往返</div>
+                    </div>
+                </div>
+                <div class="collection">
+                    <span class="checkbox"></span>
+                    <div class="product">
+                        <img src="/master-Q3/images/img1.png" alt=""/>
+                        <div class="name">成都－重庆三天往返行程三天往返三天往返行程三天往返程行程三天</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script type="text/javascript" src="/common/js/base.js"></script>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    // 针对uc横竖屏rem html没有重绘的问题
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+        var a = document.getElementsByTagName('a');
+        for (var i = 0; i < a.length; i++) {
+            a[i].addEventListener('touchstart', function () {
+            }, false);
+        }
+    })(document, window);
+    $(document).ready(function () {
+        // 点击返回按钮
+        $('header .back').click(function (e) {
+            history.go(-1);
+        });
+        //编辑状态切换
+        var $collections = $('.collections'),$footer = $('footer');
+        $('header .edit').click(function (e) {
+            $collections.toggleClass('edit');
+            if($collections.hasClass('edit')){
+                $footer.show();
+            }else{
+                $footer.hide();
+            }
+        });
+        //选中状态切换
+        var $checkbox = $('.checkbox');
+        $checkbox.on('click',function (e) {
+            $(this).toggleClass('selected');
+            $footer.find('a').text('删除('+ $('.checkbox.selected').length +')');
+        });
+        //删除事件
+        $footer.click(function(e){
+            $.confirm({
+                title:'删除收藏',
+                detail : ['你确定要删除选中收藏?'],
+                yes : '确定',
+                cancel: false,
+                yesFun:function(){
+
+                },
+                cancelFun:function(){}
+            });
+        });
+    });
+</script>
+</body>
+</html>

@@ -310,6 +310,11 @@
                 <span class="total">¥12999.99</span>
                 <span class="view">查看支付明细</span>
             </div>
+            <!--咨询-->
+            <div class="contactUs">
+                <div class="customService"><span>在线咨询</span></div>
+                <div class="telService"><span>电话咨询</span></div>
+            </div>
             <!--退改规则:所有类型完成状态有(我看产品上貌似是这个意思,具体什么意思各人体会)-->
             <div class="backRule">
                 <div class="title">退改规则</div>
@@ -492,12 +497,6 @@
             var customerDetail = '<div class="row"><span class="label">姓名</span><span class="value">' + data.name + '</span></div>'
                     + '<div class="row"><span class="label">手机号</span><span class="value">' + data.mobile + '</span></div>'
                     + '<div class="row"><span class="label">身份证</span><span class="value">' + data.idNo + '</span></div>';
-//            var billDetail = '<div class="row"><span class="label">商品单价</span><span class="value">' + data.price + '</span></div>'
-//                    + '<div class="row"><span class="label">商品数量</span><span class="value">' + data.goodsNum + '</span></div>'
-//                    + '<div class="row"><span class="label">商品总额</span><span class="value">' + data.totalPrice + '</span></div>'
-//                    + '<div class="row"><span class="label">优惠金额</span><span class="value">' + data.discount + '</span></div>'
-//                    + '<div class="row"><span class="label">支付方式</span><span class="value">' + data.payType + '</span></div>'
-//                    + '<div class="row"><span class="label">实付金额</span><span class="value">' + (data.totalPrice - data.discount) + '</span></div>';
             var end = '</div></div></div></div><div class="close"></div></div><div class="mask"></div> </div>';
             if (type == 'customer') {
                 html = html + customerDetail + end;
