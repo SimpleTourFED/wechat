@@ -62,6 +62,7 @@
         id : validateId,
         isNotNull : isNotNull,
         name : name,
+        tel : tel,
         nameEn:nameEn,
         bindingCode : bindingCode
     }
