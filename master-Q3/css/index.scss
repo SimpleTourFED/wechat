@@ -72,11 +72,7 @@ footer{
 header{
   @include displayflex;
   @include flexflowRow();
-  background-color: $red;
   border-bottom :0;
-  .search-back {
-    width: 0;
-  }
   .change {
     width: rem(159px);
     height: rem(88px);
@@ -84,6 +80,10 @@ header{
     text-indent: rem(26px);
     font-size: rem(28px);
     color: #ffffff;
+    background-color: $red;
+    position: absolute;
+    z-index:11;
+    zoom: 1;
     &:after{
       content: '';
       display: inline-block;
@@ -96,10 +96,17 @@ header{
     }
   }
   .search-bar {
+    left:0;
+    z-index: 10;
+    width: 100%;
+    background-color: $red;
     @include flex(1);
     height: rem(88px);
     @include displayflex();
     @include flexflowRow();
+    position: absolute;
+    -webkit-transform: translate3d(2.15rem, 0, 0);
+    transform: translate3d(2.15rem, 0, 0);
     .search-input {
       position: relative;
       margin-top: rem(16px);
@@ -143,93 +150,116 @@ header{
         font-weight: 300;
       }
     }
-    .search-btn {
-      @include flex(1);
-      text-align: center;
-      color: #E61E4B;
-      line-height: rem(88px);
-      font-size: 0;
-    }
-  }
-  &.search-status {
-    background-color: #fff;
-    .change {
-      -webkit-transition:width 0.4s ease-out;
-      transition:width 0.4s ease-out;
-      width:0;
-      height:100%;
-      text-indent: -9999px;
-    }
     .search-back {
-      display: inline-block;
-      position: static;
-      -webkit-transition:width 0.4s ease-out;
-      transition:width 0.4s ease-out;
-      width: rem(88px);
+      width: rem(73px);
       height: rem(88px);
       background: url("/master-Q3/images/icon/left_red_arrow@2x.png") no-repeat center;
       background-size: rem(21px) rem(34px);
     }
-    .search-input {
-      position: relative;
-      margin-top: rem(16px);
-      width: rem(456px);
-      height: rem(56px);
-      line-height: rem(56px);
-      font-size: rem(28px);
-      label {
-        position: absolute;
-        top: rem(15px);
-        left:rem(16px);
+  }
+  .search-btn {
+    -webkit-transform:scale(0);
+    transform:scale(0);
+    @include flex(1);
+    text-align: center;
+    color: #E61E4B;
+    line-height: rem(88px);
+    font-size: .7rem;
+    word-break: break-all;
+    overflow: hidden;
+  }
+  &.search-status {
+    .change {
+      display: none;
+      background-color: #fff;
+      height:100%;
+      text-indent: -9999px;
+    }
+    .search-bar {
+      background-color: #fff;
+      position: absolute;
+      z-index: 10;
+      width: 100%;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+      -webkit-transition:-webkit-transform 0.4s ease-out;
+      transition:transform 0.4s ease-out;
+      .search-back {
+        position:static;
         display: inline-block;
-        width: rem(31px);
-        height: rem(25px);
-        background: url("/master-Q3/images/icon/search_icon@2x.png") no-repeat center;
-        background-size: contain;
+        width: rem(73px);
+        height: rem(88px);
+        background: url("/master-Q3/images/icon/left_red_arrow@2x.png") no-repeat center;
+        background-size: rem(21px) rem(34px);
       }
-      input {
-        width: 100%;
-        height:100%;
-        background-color: #EBEBEB;
-        border: 0;
-        border-radius: rem(6px);
-        text-indent: rem(64px);
+      .search-input {
+        position: relative;
+        margin-top: rem(16px);
+        width: rem(456px);
+        height: rem(56px);
+        line-height: rem(56px);
         font-size: rem(28px);
-      }
-      input::-webkit-input-placeholder{
-        color: #83858C;
-        font-weight: 300;
-      }
-      input:-moz-placeholder {
-        color: #83858C;
-        font-weight: 300;
-      }
-      input::-moz-placeholder {
-        color: #83858C;
-        font-weight: 300;
-      }
-      input:-ms-input-placeholder{
-        color: #83858C;
-        font-weight: 300;
-      }
-      .click-zone {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 1.7rem;
-        height: 100%;
-        background-color: transparent;
-        z-index: 103;
-      }
-      &.input-change {
+        label {
+          position: absolute;
+          top: rem(15px);
+          left:rem(16px);
+          display: inline-block;
+          width: rem(31px);
+          height: rem(25px);
+          background: url("/master-Q3/images/icon/search_icon@2x.png") no-repeat center;
+          background-size: contain;
+        }
+        input {
+          width: 100%;
+          height:100%;
+          background-color: #EBEBEB;
+          border: 0;
+          border-radius: rem(6px);
+          text-indent: rem(64px);
+          font-size: rem(28px);
+        }
+        input::-webkit-input-placeholder{
+          color: #83858C;
+          font-weight: 300;
+        }
+        input:-moz-placeholder {
+          color: #83858C;
+          font-weight: 300;
+        }
+        input::-moz-placeholder {
+          color: #83858C;
+          font-weight: 300;
+        }
+        input:-ms-input-placeholder{
+          color: #83858C;
+          font-weight: 300;
+        }
         .click-zone {
-          background: url(/master-Q3/images/icon/cancel-icon@2x.png) no-repeat center;
-          background-size: 50%;
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 1.7rem;
+          height: 100%;
+          background-color: transparent;
+          z-index: 103;
+        }
+        &.input-change {
+          .click-zone {
+            background: url(/master-Q3/images/icon/cancel-icon@2x.png) no-repeat center;
+            background-size: 50%;
+          }
         }
       }
     }
     .search-btn {
-      @include flex(1);
+      position: absolute;
+      width: rem(111px);
+      right:0;
+      z-index: 11;
+      -webkit-transform:scale(1);
+      transform:scale(1);
+      -webkit-transition:-webkit-transform 0.4s ease-out;
+      transition:transform 0.4s ease-out;
       text-align: center;
       color: #E61E4B;
       line-height: rem(88px);
