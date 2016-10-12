@@ -1,5 +1,43 @@
 @import "/common/css/base";
 
+.infinite-scroll-preloader {
+  margin-top: 1rem
+}
+
+.infinite-scroll-preloader {
+  margin: .5rem;
+  text-align: center
+}
+
+.infinite-scroll-preloader .preloader {
+  width: 1.5rem;
+  height: 1.5rem
+}
+
+.infinite-scroll-preloader {
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: .6rem;
+  color: #ababab;
+  width: 6rem;
+  margin: 0 auto
+}
+
+.infinite-scroll-preloader .pullUpIcon {
+  display: block;
+  float: left;
+  width: 1rem;
+  height: .5rem;
+  margin-top: .7rem;
+  -webkit-transform: rotate(-180deg) translateZ(0)
+}
+
+.infinite-scroll-preloader.flip .pullUpIcon {
+  -webkit-transform: rotate(0) translateZ(0)
+}
+
 @mixin box-sizing($set:border-box) {
   -webkit-box-sizing: $set;
   -moz-box-sizing: $set;
@@ -36,9 +74,11 @@ img {
 ul, li {
   list-style: none;
 }
-header~.page-content{
+
+header ~ .page-content {
   top: rem(176px);
 }
+
 .tabs {
   @include displayflex;
   @include flexflowRow;
@@ -75,7 +115,7 @@ header~.page-content{
   width: 100%;
   .panel {
     display: none;
-    padding: rem(20px) rem(26px);
+    padding: rem(20px) rem(26px) 0;
     .total {
       background-color: #fff;
       padding: rem(32px) rem(30px);
@@ -124,7 +164,7 @@ header~.page-content{
           color: $red;
         }
       }
-      .cancelOrder{
+      .cancelOrder {
         display: block;
         width: rem(226px);
         font-size: rem(28px);
@@ -135,44 +175,16 @@ header~.page-content{
     }
     .marquee {
       width: 100%;
-      background-color: #F5B950;
       padding: rem(17px) rem(26px);
-      @include displayflex;
-      @include flexflowRow;
-      -ms-justify-content: center;
-      -webkit-justify-content: center;
-      justify-content: center;
-      -ms-justify: center;
-      -webkit-justify: center;
-      justify: center;
-      -ms-box-align: center;
-      -webkit-box-align: center;
-      box-align: center;
-      -ms-align-items: center;
-      -webkit-align-items: center;
-      align-items: center;
-      &:before {
-        content: '';
-        display: inline-block;
-        width: rem(36px);
-        height: rem(36px);
-        background: url(/master-Q3/images/icon/tips_white_icon.png) no-repeat center;
-        background-size: contain;
-        vertical-align: top;
-        margin-right: rem(20px);
-      }
-      .tip {
-        @include flex;
-        color: #fff;
-        font-size: rem(28px);
-        line-height: rem(36px);
-        display: inline-block;
-        vertical-align: top;
-      }
+      color: #83858C;
+      font-size: rem(26px);
+      line-height: rem(36px);
+      display: inline-block;
+      vertical-align: top;
     }
     .records {
       width: rem(588px);
-      margin: rem(20px) auto;
+      margin: rem(20px) auto 0;
       color: #83858C;
       font-size: rem(28px);
       @include border-radius(8px);
@@ -213,15 +225,15 @@ header~.page-content{
         }
       }
     }
-    .withdrawals{
+    .withdrawals {
       width: rem(588px);
-      margin: rem(20px) auto;
+      margin: 0 auto;
       color: #83858C;
       font-size: rem(28px);
       @include border-radius(8px);
       @include shadow(0, 0, 4px, rgba(0, 0, 0, 0.2));
       overflow: hidden;
-      .withdrawal{
+      .withdrawal {
         padding: rem(24px) rem(30px);
         background-color: #fff;
         border-bottom: 1px solid #E5E5E5;
@@ -243,18 +255,18 @@ header~.page-content{
             color: #0FC346;
             line-height: rem(36px);
             font-size: rem(32px);
-            &.refuse{
+            &.refuse {
               color: $red;
             }
-            &.pending{
+            &.pending {
               color: #F5B950;
             }
-            &.already{
+            &.already {
               color: #0FC346;
             }
           }
         }
-        .detail{
+        .detail {
           color: #83858C;
         }
       }
@@ -263,7 +275,25 @@ header~.page-content{
   .panel.selected {
     display: block;
   }
-  .panel:last-child{
+  .panel:last-child {
     padding: 0;
+  }
+}
+footer{
+  .jump{
+    @include flex;
+    display: block;
+    height: rem(96px);
+    line-height: rem(96px);
+    font-size: rem(34px);
+    color: #fff;
+    text-align: center;
+    background-color: #E61E4B;
+    &:active {
+      background-color: #BF0A33;
+    }
+    &.disabled{
+      background-color: #737373;
+    }
   }
 }
