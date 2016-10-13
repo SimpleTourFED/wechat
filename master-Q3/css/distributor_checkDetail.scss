@@ -110,17 +110,53 @@ header ~ .page-content {
     border-bottom: 2px solid $red;
   }
 }
-
-.panels {
-  width: 100%;
-  .panel {
-    display: none;
-    padding: rem(20px) rem(26px) 0;
-    .total {
-      background-color: #fff;
-      padding: rem(32px) rem(30px);
-      @include border-radius(8px);
-      @include shadow(0, 0, 4px, rgba(0, 0, 0, 0.2));
+.page-content{
+  display: none;
+  &.selected{
+    display: block;
+  }
+}
+.panel {
+  padding: rem(20px) rem(26px) 0;
+  display: none;
+  .total {
+    background-color: #fff;
+    padding: rem(32px) rem(30px);
+    @include border-radius(8px);
+    @include shadow(0, 0, 4px, rgba(0, 0, 0, 0.2));
+    .label {
+      font-size: rem(28px);
+      color: #83858C;
+      padding-bottom: rem(26px);
+    }
+    .price {
+      font-size: rem(46px);
+      color: $red;
+    }
+  }
+  .top-header {
+    background-color: #fff;
+    padding: rem(15px) rem(30px);
+    @include border-radius(8px);
+    @include shadow(0, 0, 4px, rgba(0, 0, 0, 0.2));
+    @include displayflex;
+    @include flexflowRow;
+    -ms-justify-content: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -ms-justify: center;
+    -webkit-justify: center;
+    justify: center;
+    -ms-box-align: center;
+    -webkit-box-align: center;
+    box-align: center;
+    -ms-align-items: center;
+    -webkit-align-items: center;
+    align-items: center;
+    .total-price {
+      padding: rem(15px) 0;
+      border-right: 1px solid #D8D8D8;
+      @include flex;
       .label {
         font-size: rem(28px);
         color: #83858C;
@@ -131,156 +167,121 @@ header ~ .page-content {
         color: $red;
       }
     }
-    .top-header {
+    .cancelOrder {
+      display: block;
+      width: rem(226px);
+      font-size: rem(28px);
+      color: #F5B950;
+      margin-left: rem(30px);
+      text-align: center;
+    }
+  }
+  .marquee {
+    width: 100%;
+    padding: 0 0 rem(16px);
+    color: #83858C;
+    font-size: rem(26px);
+    line-height: rem(36px);
+    display: inline-block;
+    vertical-align: top;
+  }
+  .records {
+    width: rem(588px);
+    margin: rem(20px) auto 0;
+    color: #83858C;
+    font-size: rem(28px);
+    @include border-radius(8px);
+    @include shadow(0, 0, 4px, rgba(0, 0, 0, 0.2));
+    overflow: hidden;
+    .record {
+      padding: rem(26px) rem(30px);
       background-color: #fff;
-      padding: rem(15px) rem(30px);
-      @include border-radius(8px);
-      @include shadow(0, 0, 4px, rgba(0, 0, 0, 0.2));
-      @include displayflex;
-      @include flexflowRow;
-      -ms-justify-content: center;
-      -webkit-justify-content: center;
-      justify-content: center;
-      -ms-justify: center;
-      -webkit-justify: center;
-      justify: center;
-      -ms-box-align: center;
-      -webkit-box-align: center;
-      box-align: center;
-      -ms-align-items: center;
-      -webkit-align-items: center;
-      align-items: center;
-      .total-price {
-        padding: rem(15px) 0;
-        border-right: 1px solid #D8D8D8;
-        @include flex;
-        .label {
-          font-size: rem(28px);
-          color: #83858C;
-          padding-bottom: rem(26px);
+      border-bottom: 1px solid #E5E5E5;
+      &:last-child {
+        border-bottom: none;
+      }
+      .title {
+        @include displayflex;
+        @include flexflowRow;
+        margin-bottom: rem(18px);
+        .mobile {
+          line-height: rem(36px);
+          font-size: rem(32px);
+          vertical-align: top;
+          @include flex;
+          &:before {
+            content: '';
+            display: inline-block;
+            width: rem(25px);
+            height: rem(32px);
+            vertical-align: top;
+            background: url(/master-Q3/images/icon/grey_mobile_avatar_icon.png) no-repeat center;
+            background-size: contain;
+            margin-right: rem(20px);
+          }
         }
         .price {
-          font-size: rem(46px);
-          color: $red;
-        }
-      }
-      .cancelOrder {
-        display: block;
-        width: rem(226px);
-        font-size: rem(28px);
-        color: #F5B950;
-        margin-left: rem(30px);
-        text-align: center;
-      }
-    }
-    .marquee {
-      width: 100%;
-      padding: rem(17px) rem(26px);
-      color: #83858C;
-      font-size: rem(26px);
-      line-height: rem(36px);
-      display: inline-block;
-      vertical-align: top;
-    }
-    .records {
-      width: rem(588px);
-      margin: rem(20px) auto 0;
-      color: #83858C;
-      font-size: rem(28px);
-      @include border-radius(8px);
-      @include shadow(0, 0, 4px, rgba(0, 0, 0, 0.2));
-      overflow: hidden;
-      .record {
-        padding: rem(26px) rem(30px);
-        background-color: #fff;
-        border-bottom: 1px solid #E5E5E5;
-        &:last-child {
-          border-bottom: none;
-        }
-        .title {
-          @include displayflex;
-          @include flexflowRow;
-          margin-bottom: rem(18px);
-          .mobile {
-            line-height: rem(36px);
-            font-size: rem(32px);
-            vertical-align: top;
-            @include flex;
-            &:before {
-              content: '';
-              display: inline-block;
-              width: rem(25px);
-              height: rem(32px);
-              vertical-align: top;
-              background: url(/master-Q3/images/icon/grey_mobile_avatar_icon.png) no-repeat center;
-              background-size: contain;
-              margin-right: rem(20px);
-            }
-          }
-          .price {
-            color: #F5B950;
-            line-height: rem(36px);
-            font-size: rem(32px);
-          }
+          color: #F5B950;
+          line-height: rem(36px);
+          font-size: rem(32px);
         }
       }
     }
-    .withdrawals {
-      width: rem(588px);
-      margin: 0 auto;
-      color: #83858C;
-      font-size: rem(28px);
-      @include border-radius(8px);
-      @include shadow(0, 0, 4px, rgba(0, 0, 0, 0.2));
-      overflow: hidden;
-      .withdrawal {
-        padding: rem(24px) rem(30px);
-        background-color: #fff;
-        border-bottom: 1px solid #E5E5E5;
-        &:last-child {
-          border-bottom: none;
-        }
-        .title {
-          @include displayflex;
-          @include flexflowRow;
-          margin-bottom: rem(18px);
-          .message {
-            line-height: rem(36px);
-            font-size: rem(32px);
-            vertical-align: top;
-            color: #83858C;
-            @include flex;
-          }
-          .status {
-            color: #0FC346;
-            line-height: rem(36px);
-            font-size: rem(32px);
-            &.refuse {
-              color: $red;
-            }
-            &.pending {
-              color: #F5B950;
-            }
-            &.already {
-              color: #0FC346;
-            }
-          }
-        }
-        .detail {
+  }
+  .withdrawals {
+    width: rem(588px);
+    margin: 0 auto;
+    color: #83858C;
+    font-size: rem(28px);
+    @include border-radius(8px);
+    @include shadow(0, 0, 4px, rgba(0, 0, 0, 0.2));
+    overflow: hidden;
+    .withdrawal {
+      padding: rem(24px) rem(30px);
+      background-color: #fff;
+      border-bottom: 1px solid #E5E5E5;
+      &:last-child {
+        border-bottom: none;
+      }
+      .title {
+        @include displayflex;
+        @include flexflowRow;
+        margin-bottom: rem(18px);
+        .message {
+          line-height: rem(36px);
+          font-size: rem(32px);
+          vertical-align: top;
           color: #83858C;
+          @include flex;
+        }
+        .status {
+          color: #0FC346;
+          line-height: rem(36px);
+          font-size: rem(32px);
+          &.refuse {
+            color: $red;
+          }
+          &.pending {
+            color: #F5B950;
+          }
+          &.already {
+            color: #0FC346;
+          }
         }
       }
+      .detail {
+        color: #83858C;
+      }
     }
-  }
-  .panel.selected {
-    display: block;
-  }
-  .panel:last-child {
-    padding: 0;
   }
 }
-footer{
-  .jump{
+
+.panel.selected {
+  display: block;
+}
+
+footer {
+  .jump {
     @include flex;
     display: block;
     height: rem(96px);
@@ -292,8 +293,9 @@ footer{
     &:active {
       background-color: #BF0A33;
     }
-    &.disabled{
+    &.disabled {
       background-color: #737373;
     }
   }
 }
+.infinite-scroll-preloader{margin-top:1rem}.infinite-scroll-preloader{margin:.5rem;text-align:center}.infinite-scroll-preloader .preloader{width:1.5rem;height:1.5rem}.infinite-scroll-preloader{height:2rem;line-height:2rem;text-align:center;font-weight:700;font-size:.6rem;color:#ababab;width:6rem;margin:0 auto}.infinite-scroll-preloader .pullUpIcon{display:block;float:left;width:1rem;height:.5rem;margin-top:.7rem;-webkit-transform:rotate(-180deg) translateZ(0)}.infinite-scroll-preloader.flip .pullUpIcon{-webkit-transform:rotate(0) translateZ(0)}
