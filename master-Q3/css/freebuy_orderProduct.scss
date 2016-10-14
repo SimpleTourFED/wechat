@@ -75,45 +75,4 @@ img {
     }
   }
 }
-footer{
-  box-shadow: 0 -2px 6px rgba(0,0,0,0.15);
-  -webkit-box-shadow: 0 -2px 6px rgba(0,0,0,0.15);
-  .tel{
-    width: rem(140px);
-    display: inline-block;
-    &:active{
-      background-color: #F1F1F1;
-    }
-    &:before{
-      display: block;
-      content: '';
-      width: rem(27px);
-      height: rem(36px);
-      background: url(/master-Q3/images/icon/phone_normal@2x.png) no-repeat center;
-      background-size: contain;
-      margin: rem(12px) auto 0;
-    }
-    span{
-      display: block;
-      font-size: rem(24px);
-      line-height: rem(33px);
-      color: #83858C;
-      text-align: center;
-      margin-top: rem(5px);
-    }
-  }
-  .buy{
-    width: rem(500px);
-    @include flex;
-    display: inline-block;
-    line-height: rem(96px);
-    text-align: center;
-    background-color: #E61E4B;
-    font-size: rem(34px);
-    color: #fff;
-    &:active{
-      background-color: #BF0A33;
-    }
-  }
-}
 
