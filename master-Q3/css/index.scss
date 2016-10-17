@@ -383,7 +383,7 @@ header{
     position: relative;
     border-bottom: rem(2px) solid #D8D8D8;
     .left-content {
-      width: rem(230px);
+      width: rem(240px);
       padding: rem(24px) rem(26px);
       .old-price {
         color: #83858C;
@@ -430,12 +430,32 @@ header{
       .destinations {
         background-color: #fff;
         .destination {
+          position: relative;
           height: rem(76px);
           line-height: rem(76px);
           color: #4F545B;
           font-size: rem(36px);
           border-bottom: rem(2px) solid #F5F4F4;
+          margin-bottom: 0;
+          &:before {
+            content: "";
+            position: absolute;
+            top: rem(30px);
+            left:-.8rem;
+            width: rem(18px);
+            height:rem(80px);
+            background: url('/master-Q3/images/icon/dot_and_line@2x.png') no-repeat center;
+            background-size: contain;
+          }
           &:last-child {
+            &:before {
+              content: "";
+              left: -.75rem;
+              width: rem(14px);
+              height:rem(14px);
+              background: url('/master-Q3/images/icon/dot@2x.png') no-repeat center;
+              background-size: contain;
+            }
             border-bottom: 0;
           }
         }
