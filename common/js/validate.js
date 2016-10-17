@@ -43,27 +43,32 @@
     var isNotNull = function (text) {
         return $.trim(text) == ''?true:false
     };
-    var tel = function (tel) {
-        return /^0?(13|14|15|17|18)[0-9]{9}$/.test($.trim(tel))
+    var mobile = function (tel) {
+        return /^[0-9]{11}$/.test($.trim(tel))
     };
     var name = function (value) {
-        return (/^\s*[a-zA-Z]+[\s]?[a-zA-Z]{1,}\s*$/.test(value) || /^\s*[\u4e00-\u9fa5]{1,}\s*$/.test(value))
+        return (/^\s*[a-zA-Z]{1,15}\s*$/.test(value) || /^\s*[\u4e00-\u9fa5]{1,15}\s*$/.test(value))
     };
     var nameEn = function (value) {
-        return /^\s*[a-zA-Z]+[\s]?[a-zA-Z]{1,}\s*$/.test(value)
+        return /^\s*[a-zA-Z]{1,50}\s*$/.test(value)
     };
-    var code = function (value) {
-        return /^[0-9]{5}$/.test($.trim(value))
+    var loginCode = function(value) {
+        return /^[0-9]{5}$/.test(value);
     };
-    var bindingCode = function (value) {
-        return /^[1-9A-HJKM-Za-hjkm-z]{4}$/.test($.trim(value))
+    var cdKey = function(value) {
+        return /^[a-hj-np-zA-HJ-NP-Z1-9]{8}$/.test(value);
+    };
+    var captcha = function (value) {
+        return /^[a-hjkmnp-zA-HJKMNP-Z1-9]{4}$/.test($.trim(value))
     };
     $.validate = {
         id : validateId,
         isNotNull : isNotNull,
         name : name,
-        tel : tel,
+        mobile : mobile,
         nameEn:nameEn,
-        bindingCode : bindingCode
+        loginCode: loginCode,
+        cdKey : cdKey,
+        captcha : captcha
     }
 }(Zepto);
