@@ -81,7 +81,10 @@
         doc.addEventListener('DOMContentLoaded', recalc, false);
     })(document, window);
     $(document).ready(function () {
-
+        // 点击返回按钮
+        $('.search-bar .back').click(function() {
+            history.go(-1);
+        });
     });
 </script>
 </body>
