@@ -240,5 +240,62 @@ footer{
       background-size: contain;
     }
   }
-
+}
+.dropdown-wrap {
+  .cover {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 200;
+    display: none;
+  }
+  .dropdown {
+    position: absolute;
+    width: 100%;
+    z-index: 201;
+    bottom: -13rem;
+    -webkit-transition: bottom .25s ease-out;
+    transition: bottom .25s ease-out;
+    &.show{
+      -webkit-transition: bottom .25s ease-out;
+      transition: bottom .25s ease-out;
+      bottom: .6rem;
+    }
+    ul.items {
+      width: 14.7rem;
+      margin: 0 auto;
+      background-color: #fff;
+      border-radius: .15rem;
+      list-style: none;
+      li {
+        height: 2.2rem;
+        line-height: 2.2rem;
+        text-align: center;
+        color: #4F545B;
+        font-size: .8rem;
+        border-bottom: .05rem solid #D8D8D8;
+        &:last-child {
+          border-bottom: 0;
+        }
+        &.selected{
+          color: #E61E4B;
+        }
+        &:active{
+          color: #E61E4B;
+        }
+      }
+    }
+    .cancel-btn{
+      width: rem(588px);
+      height: rem(112px);
+      border-radius: .15rem;
+      background-color: #fff;
+      margin: .65rem auto;
+      line-height: 2.8rem;
+      text-align: center;
+      font-size: .8rem;
+      color: #4F545B;
+    }
+  }
 }
