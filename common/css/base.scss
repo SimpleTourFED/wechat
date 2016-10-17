@@ -183,6 +183,9 @@ footer{
         background-size: contain;
       }
     }
+    &.hide{
+      display: none;
+    }
   }
   .advisory {
     position: relative;
@@ -207,6 +210,9 @@ footer{
       background-color: #000;
       opacity: .2;
     }
+    &.hide{
+      display: none;
+    }
   }
   .online {
     position: relative;
@@ -230,6 +236,9 @@ footer{
       background-color: #000;
       opacity: .2;
     }
+    &.hide{
+      display: none;
+    }
   }
   .buyNow {
     display: block;
@@ -240,6 +249,12 @@ footer{
     font-size: rem(34px);
     &:active {
       background-color: #BF0A33;
+    }
+    &.hide{
+      display: none;
+    }
+    &.disabled{
+      background-color: #737373;
     }
   }
 }
