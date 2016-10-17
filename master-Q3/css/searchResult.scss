@@ -184,6 +184,10 @@ body {
               margin-right: toRem(7.5px);
               @include border-radius(2px);
             }
+            span.time{
+              font-size: rem(24px);
+              border: none;
+            }
           }
         }
         .right {
