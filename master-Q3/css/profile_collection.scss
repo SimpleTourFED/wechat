@@ -33,6 +33,14 @@ img {
   vertical-align: middle;
   border: none;
 }
+.hidden{
+  width:0;
+  height:0;
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
 
 header {
   .edit {
@@ -73,10 +81,6 @@ header {
       height: rem(40px);
       background: url(/master-Q3/images/icon/checkbox_grey_normal_icon@2x.png) no-repeat center;
       background-size: contain;
-      &.selected {
-        background: url(/master-Q3/images/icon/checkbox_selected_icon@2x.png) no-repeat center;
-        background-size: contain;
-      }
     }
     .product {
       @include flex;
@@ -117,6 +121,10 @@ header {
         -webkit-box-orient: vertical;
       }
     }
+    &.selected .checkbox{
+      background: url(/master-Q3/images/icon/checkbox_selected_icon@2x.png) no-repeat center;
+      background-size: contain;
+    }
   }
   &.edit {
     padding: rem(28px) 0 0 rem(26px);
@@ -129,7 +137,6 @@ header {
 }
 
 footer {
-  display: none;
   .delete {
     @include flex;
     display: block;
@@ -142,5 +149,39 @@ footer {
     &:active {
       background-color: #BF0A33;
     }
+    &.selected{
+      background-color:#737373;
+    }
   }
 }
+.no_collections{
+  img.icon {
+    display: block;
+    margin: rem(100px) auto rem(30px);
+    width: rem(288px);
+    height: rem(184px);
+  }
+  .copy {
+    width: rem(544px);
+    font-size: rem(28px);
+    color: #83858C;
+    line-height: rem(45px);
+    text-align: center;
+    display: block;
+    margin: 0 auto rem(60px);
+  }
+  a {
+    display: block;
+    width: rem(272px);
+    height: rem(88px);
+    margin: 0 auto rem(30px);
+    font-size: rem(32px);
+    color: #E61E4B;
+    background-color: #fff;
+    line-height: rem(88px);
+    text-align: center;
+    border: 1px solid #E61E4B;
+    @include border-radius(8px);
+  }
+}
+.infinite-scroll-preloader{margin-top:1rem}.infinite-scroll-preloader{margin:.5rem;text-align:center}.infinite-scroll-preloader .preloader{width:1.5rem;height:1.5rem}.infinite-scroll-preloader{height:2rem;line-height:2rem;text-align:center;font-weight:700;font-size:.6rem;color:#ababab;width:6rem;margin:0 auto}.infinite-scroll-preloader .pullUpIcon{display:block;float:left;width:1rem;height:.5rem;margin-top:.7rem;-webkit-transform:rotate(-180deg) translateZ(0)}.infinite-scroll-preloader.flip .pullUpIcon{-webkit-transform:rotate(0) translateZ(0)}

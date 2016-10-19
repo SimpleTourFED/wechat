@@ -51,6 +51,10 @@
                     </div>
                 </div>
             </div>
+            <div class="no_collections">
+                <img class="icon" src="/master-Q3/images/icon/profile_orders_noOrders.png" alt=""/>
+                <div class="copy">您还没有收藏商品</div>
+            </div>
         </div>
     </div>
 </div>
@@ -101,8 +105,8 @@
         //选中状态切换
         var $checkbox = $('.checkbox');
         $checkbox.on('click',function (e) {
-            $(this).toggleClass('selected');
-            $footer.find('a').text('删除('+ $('.checkbox.selected').length +')');
+            $(this).parents('.collection').toggleClass('selected');
+            $footer.find('a').text('删除('+ $('.collection.selected').length +')');
         });
         //删除事件
         $footer.click(function(e){
