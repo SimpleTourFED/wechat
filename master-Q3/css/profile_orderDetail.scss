@@ -288,7 +288,6 @@ img {
     line-height: rem(36px);
     color: #737373;
     padding: rem(23px) rem(26px);
-    border-bottom: 1px solid #E4E4E4;
     @include displayflex;
     @include flexflowRow();
     span {
@@ -309,6 +308,7 @@ img {
   }
   .cards {
     padding: 0 rem(32px);
+    border-top: 1px solid #E4E4E4;
     .card {
       padding: rem(28px) 0;
       border-bottom: 1px solid #EBEBF5;
@@ -480,6 +480,7 @@ img {
   @include displayflex;
   @include flexflowRow;
   .customService, .telService {
+    display: block;
     @include flex;
     text-align: center;
     &:before {
