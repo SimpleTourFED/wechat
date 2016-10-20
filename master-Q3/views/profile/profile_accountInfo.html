@@ -19,10 +19,10 @@
         <div class="page-content">
             <div class="header">
                 <span class="label">头像</span>
-                <img class="value" src="/master-Q3/images/avatar.png" alt=""/>
+                <img class="value" data-src="http://images.simpletour.com/simpletour/images/wechat_home/cc25479b9e2f87ea81e8fb1eb76cacde.jpg!middle320" src="/master-Q3/images/defalut-img@588250.png" alt=""/>
             </div>
             <div class="content">
-                <a class="next">
+                <a class="next turnTo" href="#modifyInfo-depart">
                     <span class="label">昵称</span>
                     <span class="value">简途大牛</span>
                 </a>
@@ -50,8 +50,22 @@
             <a class="logout">退出登录</a>
         </div>
     </div>
+    <div class="page" id="modifyInfo-depart">
+        <header>
+            <div class="back"></div>
+            <div class="center">修改昵称</div>
+        </header>
+        <div class="page-content">
+            <form>
+                <input type="text"/>
+                <div class="demand">以中文或英文字幕开头，限4-16个字符，一个汉字为两个字符</div>
+                <a class="save">保存</a>
+            </form>
+        </div>
+    </div>
 </div>
 <script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script type="text/javascript" src="/common/js/pages.js"></script>
 <script>
     (function (doc, win) {
         var docEl = doc.documentElement,
@@ -83,6 +97,11 @@
         // 点击返回按钮
         $('header .back').click(function (e) {
             history.go(-1);
+        });
+        // 初始化page
+        $('.page-group').pageInit({
+            router : '.turnTo' ,//router的className
+            routerFun : function(){}
         });
     });
 </script>

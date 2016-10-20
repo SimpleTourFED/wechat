@@ -8,13 +8,35 @@
     <meta name="wap-font-scale" content="no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="/master-Q3/css/route_index.scss?__inline">
+    <script type="text/javascript">
+        function filterResult (e){
+            var value = event.target.value;
+            if(!value) {
+                $('.search-bar').removeClass('input-change');
+            } else {
+                $('.search-bar').addClass('input-change');
+            }
+            $('.search-result .result').each(function(key, item) {
+                if($(item).text().indexOf(value) >= 0) {
+                    $(item).show().addClass('show');
+                } else {
+                    $(item).hide().removeClass('show');
+                }
+            });
+            if($('.search-result .result.show').length > 0) {
+                $('.no_search_result').hide();
+            } else {
+                $('.no_search_result').show();
+            }
+        }
+    </script>
 </head>
 <body>
 <div class="page-group">
     <div class="page page-current">
         <header>
             <div class="center">路线</div>
-            <div class="search"></div>
+            <div class="search turnTo" href="#query"></div>
         </header>
         <footer>
             <a class="home selected">首页</a>
@@ -156,8 +178,38 @@
             </div>
         </div>
     </div>
+    <div class="page" id="query">
+        <div class="page-content">
+            <div class="search-bar">
+                <div class="back"></div>
+                <div class="search-input">
+                    <label></label>
+                    <input type="text" oninput="filterResult(event)" name="search" placeholder="请输入关键词" />
+                    <div class="click-zone"></div>
+                </div>
+                <div class="cancel">
+                    搜索
+                </div>
+            </div>
+            <div class="search-result">
+                <div class="result item">成都－九寨沟单程车位</div>
+                <div class="result item">成都－九寨沟单程车位</div>
+                <div class="result item">成都－九寨沟单程车位</div>
+                <div class="result item">成都－九寨沟单程车位</div>
+                <div class="result item">成都－九寨沟单程车位</div>
+                <div class="result item">成都－九寨沟单程车位</div>
+                <div class="result item">成都－九寨沟单程车位</div>
+                <div class="no_search_result">
+                    <img src="/master-Q3/images/icon/no_result_icon@2x.png" alt="">
+                    <p>无搜索结果</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script type="text/javascript" src="/common/js/scroll.js"></script>
+<script type="text/javascript" src="/common/js/pages.js"></script>
 <script>
     (function (doc, win) {
         var docEl = doc.documentElement,
@@ -186,7 +238,48 @@
         }
     })(document, window);
     $(document).ready(function () {
+        // 点击返回按钮
+        $('header .back').click(function (e) {
+            history.go(-1);
+        });
+        $('.search-bar .back').click(function (e) {
+            history.go(-1);
+        });
+        // 初始化page
+        $('.page-group').pageInit({
+            router : '.turnTo' ,//router的className
+            routerFun : function(){}
+        });
+        // 搜索事件
+        $('.search-bar .cancel').tap(function() {
+            var $this = $(this);
+            if(!$this.hasClass('disabled')) {
+                var name = $('input[name=search]').val();
+                $this.addClass('disabled');
+                $.ajax({
+                    type: 'POST',
+                    url: '',
+                    contentType:'application/json',
+                    data: JSON.stringify({
+                        name: name
+                    }),
+                    success: function (data) {
+                        var dataJson = JSON.parse(data);
+                        if (dataJson.code == 0) {
+                            $('.no_search_result').hide();
+                        } else if (dataJson.code == 2) {
+                            $('.no_search_result').show();
+                        }
+                    },
+                    error: function () {
 
+                    },
+                    complete: function() {
+                        $this.removeClass('disabled');
+                    }
+                });
+            }
+        });
     });
 </script>
 </body>

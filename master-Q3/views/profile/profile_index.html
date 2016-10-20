@@ -85,6 +85,18 @@
         </div>
     </div>
 </div>
+<div class="dropdown-wrap">
+    <div class="dropdown">
+        <ul class="items">
+            <li><a href="tel:4008003351">境内客服&nbsp;&nbsp;400&nbsp;800&nbsp;3351</a></li>
+            <li><a href="tel:0869186666">泰国客服&nbsp;&nbsp;086&nbsp;918&nbsp;6666</a></li>
+        </ul>
+        <div class="cancel-btn">
+            取消
+        </div>
+    </div>
+    <div class="cover"></div>
+</div>
 <script type="text/javascript" src="/common/js/zepto.min.js"></script>
 <script>
     (function (doc, win) {
@@ -117,6 +129,18 @@
         // 点击返回按钮
         $('header .back').click(function (e) {
             history.go(-1);
+        });
+        //选择图片来源类型
+        var $cover = $('.dropdown-wrap .cover');
+        var $dropdown = $('.dropdown-wrap .dropdown');
+        var $items = $('.dropdown-wrap .items li');
+        $('.customerService').click(function (e) {
+            $cover.show();
+            $dropdown.addClass('show');
+        });
+        $('.dropdown-wrap .cancel-btn').click(function (e) {
+            $cover.hide();
+            $dropdown.removeClass('show');
         });
     });
 </script>

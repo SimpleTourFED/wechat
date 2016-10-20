@@ -70,7 +70,6 @@
       border-bottom: rem(1px) solid #EBEBF5;
     }
     .bottom-info {
-      height: rem(134px);
       @include displayflex();
       @include flexflowRow();
       .left {
@@ -119,6 +118,7 @@
         }
         .countDown {
           margin-top: rem(14px);
+          margin-bottom: .375rem;
           font-size: rem(24px);
           color: #D8D8D8;
           span {
@@ -159,7 +159,6 @@
           }
         }
       }
-
       &.end {
         .right {
           p {
