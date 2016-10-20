@@ -386,6 +386,8 @@ img {
         span {
           display: block;
           @include flex;
+          color: #E61E4B;
+          font-size: rem(26px);
         }
         &:after {
           content: '';
