@@ -144,24 +144,24 @@ img {
       line-height: toRem(15px);
       border-bottom: 1px solid #EBEBF5;
       .title {
-        height: toRem(40px);
-        line-height: toRem(15px);
-        color: #4F545B;
-        padding: toRem(12.5px) 0;
-        .tag {
-          color: #E61E4B;
-          margin-right: toRem(10px);
-          &:before {
-            content: '';
-            width: toRem(5px);
-            height: toRem(15px);
-            background-color: #E61E4B;
-            display: inline-block;
-            vertical-align: top;
-            margin-right: toRem(8px);
+            height: toRem(40px);
+            line-height: toRem(15px);
+            color: #4F545B;
+            padding: toRem(12.5px) 0;
+            .tag {
+              color: #E61E4B;
+              margin-right: toRem(10px);
+              &:before {
+                content: '';
+                width: toRem(5px);
+                height: toRem(15px);
+                background-color: #E61E4B;
+                display: inline-block;
+                vertical-align: top;
+                margin-right: toRem(8px);
+              }
+            }
           }
-        }
-      }
       .more {
         display: block;
         line-height: toRem(40px);
@@ -520,10 +520,16 @@ header .search {
 .search-result .item .names p {
   margin-top: .6rem
 }
+
 .search-result .result.show {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+}
+
+.search-bar.input-change .search-input .click-zone {
+  background: url(/master-Q3/images/icon/cancel-icon@2x.png) no-repeat center;
+  background-size: 50%
 }

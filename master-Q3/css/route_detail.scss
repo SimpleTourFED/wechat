@@ -66,7 +66,7 @@ $baseFont : 20px !default;
 }
 
 html, body {
-  background-color: #E7E7E7;
+  background-color: #F5F5F5;
 }
 
 * {
@@ -84,7 +84,7 @@ img {
 
 .briefly {
   background-color: #fff;
-  margin-bottom: toRem(16px);
+  margin-bottom: toRem(8px);
   .banner {
     width: 100%;
     height: toRem(135px);
@@ -254,7 +254,7 @@ img {
 }
 
 .tourisms {
-  margin-bottom: toRem(14px);
+  margin-bottom: toRem(8px);
   .tourism {
     background-color: #fff;
     &:active{
@@ -476,13 +476,12 @@ img {
     @include displayflex;
     @include flexflowRow;
     font-size: toRem(13px);
-    padding: toRem(12.5px) 0;
     border-bottom: 1px solid #EBEBF5;
     .title {
-      height: toRem(15px);
+      height: toRem(40px);
       line-height: toRem(15px);
       color: #4F545B;
-      @include flex;
+      padding: toRem(12.5px) 0;
       .tag {
         color: #E61E4B;
         margin-right: toRem(10px);
@@ -498,8 +497,11 @@ img {
       }
     }
     .more {
+      display: block;
+      line-height: toRem(40px);
       color: #83858C;
-      line-height: toRem(15px);
+      text-align: right;
+      @include flex;
       &:after {
         content: '';
         display: inline-block;
@@ -508,7 +510,7 @@ img {
         background: url(/master-Q3/images/icon/right_grey_arrow@2x.png) no-repeat center;
         background-size: cover;
         vertical-align: top;
-        margin: 0 toRem(13px) 0 toRem(5px);
+        margin: toRem(12.5px) toRem(13px) 0 toRem(5px);
       }
     }
   }
@@ -516,7 +518,7 @@ img {
     padding: toRem(15px) toRem(13px);
     margin-left: toRem(-10px);
     margin-top: toRem(-10px);
-    margin-bottom: toRem(14px);
+    margin-bottom: toRem(8px);
     font-size: 0;
     overflow: hidden;
     a{
