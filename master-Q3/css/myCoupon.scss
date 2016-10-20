@@ -49,9 +49,9 @@ body {
   @include flex(1);
   overflow: hidden;
   position: relative;
-  padding: rem(16px) rem(26px);
   .available-list {
     overflow: auto;
+    padding: rem(16px) rem(26px);
     position: absolute;
     width: 100%;
     height:100%;
@@ -102,10 +102,13 @@ body {
         .price {
           text-align: center;
           margin-top:.6rem;
-          font-size: rem(60px);
           color: #F5B950;
           span {
-            font-size: rem(24px);
+            font-size: rem(60px);
+            &:last-child {
+              font-size: rem(24px);
+              vertical-align: middle;
+            }
           }
         }
         .coupon-type {
@@ -161,6 +164,7 @@ body {
   }
   .used-list {
     overflow: auto;
+    padding: rem(16px) rem(26px);
     height:100%;
     position: absolute;
     width: 100%;
@@ -211,10 +215,13 @@ body {
         .price {
           text-align: center;
           margin-top:.6rem;
-          font-size: rem(60px);
           color: #C0C2C9;
           span {
-            font-size: rem(24px);
+            font-size: rem(60px);
+            &:last-child {
+              font-size: rem(24px);
+              vertical-align: middle;
+            }
           }
         }
         .coupon-type {
@@ -257,6 +264,7 @@ body {
   }
   .disabled-list {
     overflow: auto;
+    padding: rem(16px) rem(26px);
     height:100%;
     position: absolute;
     width: 100%;
@@ -307,10 +315,13 @@ body {
         .price {
           text-align: center;
           margin-top:.6rem;
-          font-size: rem(60px);
           color: #C0C2C9;
           span {
-            font-size: rem(24px);
+            font-size: rem(60px);
+            &:last-child {
+              font-size: rem(24px);
+              vertical-align: middle;
+            }
           }
         }
         .coupon-type {

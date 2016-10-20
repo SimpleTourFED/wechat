@@ -6,92 +6,15 @@
     <title>简途旅行</title>
     <meta name="format-detection" content="telephone=no" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="/master-Q3/css/bookingBus.scss?__inline" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/master-Q3/css/customers.scss?__inline" media="screen" title="no title" charset="utf-8">
 </head>
 <body>
 <div class="page-group">
-    <div class="page page-current">
+    <div class="page page-current" id="customerList">
         <header>
             <div class="back"></div>
-            <div class="center">填写信息</div>
+            <div class="center">常用旅客</div>
         </header>
-        <div class="detail-cover"></div>
-        <footer>
-            <div class="pay-info-detail">
-                <p>
-                    单价 <span>$2333</span> x5
-                </p>
-                <p>
-                    优惠金额 <span>$2333</span>
-                </p>
-            </div>
-            <div class="pay-info">¥233</div>
-            <div class="pay-btn">去支付</div>
-        </footer>
-        <div class="page-content">
-            <div class="infos">
-                <h5>往返票 成都都江堰青城山单程巴士江堰青城山单程巴士</h5>
-                <div class="bottom-info">
-                    <div class="shuttle single">
-                        <i></i>
-                        往返车票
-                    </div>
-                    <div class="days">
-                        <i></i>
-                        1日行程
-                    </div>
-                    <div class="times">
-                        <i></i>
-                        07:00发车
-                    </div>
-                </div>
-                <div class="cutline"></div>
-                <p>乘车日期 <span>2016.07.12</span></p>
-            </div>
-
-            <div class="select-customer">
-                <p>选择乘车人</p>
-                <div class="lines"></div>
-                <div class="turnCustomers turnTo" href="#customerList">去选择</div>
-            </div>
-            <div class="passengers"></div>
-
-            <div class="contact-infos">
-                <div class="title">
-                    <p>联系人</p>
-                    <div class="turnCustomers"></div>
-                </div>
-                <div class="content">
-                    <div class="input-group">
-                        <i class="name"></i>
-                        <input name="contactName" type="text" placeholder="姓名"/>
-                    </div>
-                    <div class="input-group">
-                        <i class="mobile"></i>
-                        <input name="contactMobile" type="text" placeholder="手机号"/>
-                    </div>
-                </div>
-            </div>
-
-            <div class="select-coupon">
-                <p>选择优惠劵</p>
-                <div class="lines"></div>
-                <div class="turnCustomers turnTo" href="#coupon">去选择</div>
-            </div>
-
-            <div class="service">
-                点击去支付表示已阅读 <a href="">《简途订购协议》</a>
-            </div>
-        </div>
-    </div>
-    <div class="page" id="customerList">
-        <header>
-            <div class="back"></div>
-            <div class="center">填写信息</div>
-        </header>
-        <div class="confirm-btn">
-            确&nbsp;&nbsp;定
-        </div>
         <div class="page-content">
             <div class="add-customer turnTo" href="#addCustomer">
                 <i>
@@ -170,158 +93,6 @@
             </div>
         </div>
     </div>
-    <div class="page " id="coupon">
-        <header>
-            <div class="back"></div>
-            <div class="center">我的优惠劵</div>
-        </header>
-        <div class="page-content">
-            <div class="coupon-navbar">
-                <div class="available selected">
-                    可用优惠劵
-                    <span></span>
-                </div>
-                <div class="not-available">
-                    不可用优惠劵
-                    <span></span>
-                </div>
-            </div>
-            <div class="coupon-content">
-                <div class="available-list current">
-                    <div class="coupon-wrapper">
-                        <div class="coupon-info">
-                            <h5>简途四川三日优惠券</h5>
-                            <div class="date">有效期  2015.09.25－2015.09.31</div>
-                        </div>
-                        <div class="value">
-                            <div class="top-circle"></div>
-                            <div class="bottom-circle"></div>
-                            <div class="price"><span>¥</span>156</div>
-                            <div class="coupon-type">简途·代金券</div>
-                        </div>
-                    </div>
-                    <div class="coupon-wrapper">
-                        <div class="coupon-info">
-                            <h5>简途四川三日优惠券</h5>
-                            <div class="date">有效期  2015.09.25－2015.09.31</div>
-                        </div>
-                        <div class="value">
-                            <div class="top-circle"></div>
-                            <div class="bottom-circle"></div>
-                            <div class="price"><span>¥</span>156</div>
-                            <div class="coupon-type">简途·代金券</div>
-                        </div>
-                    </div>
-                    <div class="coupon-wrapper">
-                        <div class="coupon-info">
-                            <h5>简途四川三日优惠券</h5>
-                            <div class="date">有效期  2015.09.25－2015.09.31</div>
-                        </div>
-                        <div class="value">
-                            <div class="top-circle"></div>
-                            <div class="bottom-circle"></div>
-                            <div class="price"><span>¥</span>156</div>
-                            <div class="coupon-type">简途·代金券</div>
-                        </div>
-                    </div>
-                    <div class="coupon-wrapper">
-                        <div class="coupon-info">
-                            <h5>简途四川三日优惠券</h5>
-                            <div class="date">有效期  2015.09.25－2015.09.31</div>
-                        </div>
-                        <div class="value">
-                            <div class="top-circle"></div>
-                            <div class="bottom-circle"></div>
-                            <div class="price"><span>¥</span>156</div>
-                            <div class="coupon-type">简途·代金券</div>
-                        </div>
-                    </div>
-                    <div class="coupon-wrapper">
-                        <div class="coupon-info">
-                            <h5>简途四川三日优惠券</h5>
-                            <div class="date">有效期  2015.09.25－2015.09.31</div>
-                        </div>
-                        <div class="value">
-                            <div class="top-circle"></div>
-                            <div class="bottom-circle"></div>
-                            <div class="price"><span>¥</span>156</div>
-                            <div class="coupon-type">简途·代金券</div>
-                        </div>
-                    </div>
-                    <div class="coupon-wrapper">
-                        <div class="coupon-info">
-                            <h5>简途四川三日优惠券</h5>
-                            <div class="date">有效期  2015.09.25－2015.09.31</div>
-                        </div>
-                        <div class="value">
-                            <div class="top-circle"></div>
-                            <div class="bottom-circle"></div>
-                            <div class="price"><span>¥</span>156</div>
-                            <div class="coupon-type">简途·代金券</div>
-                        </div>
-                    </div>
-                    <div class="coupon-wrapper">
-                        <div class="coupon-info">
-                            <h5>简途四川三日优惠券</h5>
-                            <div class="date">有效期  2015.09.25－2015.09.31</div>
-                        </div>
-                        <div class="value">
-                            <div class="top-circle"></div>
-                            <div class="bottom-circle"></div>
-                            <div class="price"><span>¥</span>156</div>
-                            <div class="coupon-type">简途·代金券</div>
-                        </div>
-                    </div>
-                    <div class="coupon-wrapper">
-                        <div class="coupon-info">
-                            <h5>简途四川三日优惠券</h5>
-                            <div class="date">有效期  2015.09.25－2015.09.31</div>
-                        </div>
-                        <div class="value">
-                            <div class="top-circle"></div>
-                            <div class="bottom-circle"></div>
-                            <div class="price"><span>¥</span>156</div>
-                            <div class="coupon-type">简途·代金券</div>
-                        </div>
-                    </div>
-                    <div class="coupon-wrapper">
-                        <div class="coupon-info">
-                            <h5>简途四川三日优惠券</h5>
-                            <div class="date">有效期  2015.09.25－2015.09.31</div>
-                        </div>
-                        <div class="value">
-                            <div class="top-circle"></div>
-                            <div class="bottom-circle"></div>
-                            <div class="price"><span>¥</span>156</div>
-                            <div class="coupon-type">简途·代金券</div>
-                        </div>
-                    </div>
-                    <div class="no-coupon">
-                        <i></i>
-                        <p>您还没有可用优惠券</p>
-                    </div>
-                </div>
-                <div class="disabled-list">
-                    <div class="coupon-wrapper disabled">
-                        <div class="coupon-info">
-                            <h5>简途四川三日优惠券</h5>
-                            <div class="date">有效期  2015.09.25－2015.09.31</div>
-                        </div>
-                        <div class="value">
-                            <div class="top-circle"></div>
-                            <div class="bottom-circle"></div>
-                            <div class="price"><span>¥</span>156</div>
-                            <div class="coupon-type">简途·代金券</div>
-                        </div>
-                    </div>
-                    <div class="no-coupon">
-                        <i></i>
-                        <p>您还没有不可用优惠券</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 <script type="text/javascript">
     (function (doc, win) {
@@ -392,7 +163,7 @@
                     $passenger.remove();
                     $('.checkbox.selected').parents('.customer').forEach(function(customer) {
                         if($(customer).find('input[name=name]').val() == $passenger.find('input[name=name]').val()
-                        && $(customer).find('input[name=idNo]').val() == $passenger.find('input[name=idNo]').val()) {
+                                && $(customer).find('input[name=idNo]').val() == $passenger.find('input[name=idNo]').val()) {
                             $(customer).find('.checkbox').removeClass('selected');
                         }
                     })
@@ -520,3 +291,4 @@
 </script>
 </body>
 </html>
+
