@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/common/css/base.scss" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/common/css/select.scss">
+</head>
+<body>
+<div class="page-group">
+    <!--一个页面,如果有多个就是多个page,要首先显示的需要加上page-current类-->
+    <div class="page page-current">
+        <!--每个page的页头-->
+        <header>
+            <div class="center">我的行程</div>
+        </header>
+        <!--每个page的页脚-->
+        <footer></footer>
+        <!--内容区域-->
+        <div class="page-content">
+            <a class="date" href="#" value="2016-10-15">2016-10-15</a>
+            <a class="province" href="#">成都</a>
+            <!--<a href="#" value="2016-10-16">2016-10-16</a>-->
+        </div>
+    </div>
+</div>
+<!--<div class="ios-select ios-select-in">-->
+    <!--<div class="ios-select-header">请选择<button>确认</button></div>-->
+    <!--<div class="ios-select-content">-->
+        <!--<div class="ios-select-col">-->
+            <!--<div class="ios-select-col-wrapper" style="transform: translate3d(0px, 90px, 0px); transition-duration: 300ms;">-->
+                <!--<div class="ios-select-col-item ios-select-col-item-selected" data-value="1">成都</div>-->
+                <!--<div class="ios-select-col-item" data-value="2">德阳</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="ios-select-col">-->
+            <!--<div class="ios-select-col-wrapper" style="transform: translate3d(0px, 90px, 0px); transition-duration: 300ms;">-->
+                <!--<div class="ios-select-col-item ios-select-col-item-selected" data-value="1">成都</div>-->
+                <!--<div class="ios-select-col-item" data-value="2">德阳</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="ios-select-col">-->
+            <!--<div class="ios-select-col-wrapper" style="transform: translate3d(0px, 90px, 0px); transition-duration: 300ms;">-->
+                <!--<div class="ios-select-col-item ios-select-col-item-selected" data-value="1">成都</div>-->
+                <!--<div class="ios-select-col-item" data-value="2">德阳</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="ios-select-highlight">-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+<!--<div class="alert-msg in">这里是错误提示</div>-->
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                    docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                };
+        if (!doc.addEventListener) return;
+        recalc();
+        document.body.style.visibility = 'visible';
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script>
+<script src="/common/js/zepto.min.js"></script>
+<script src="/common/js/base.js"></script>
+<script src="/common/js/province.js"></script>
+<script src="/common/js/select.js"></script>
+<script>
+     var date = $('.date').select({
+        title:'请选择',
+        date:true,
+        ok : function () {
+            console.log(date.result());
+        }
+    });
+     var province = $('.province').select({
+         title:'请选择',
+         address : true ,
+         ok : function () {
+             console.log(province.result());
+         }
+     });
+</script>
+</body>
+</html>
