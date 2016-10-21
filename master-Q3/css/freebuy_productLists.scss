@@ -115,8 +115,7 @@ img {
       }
     }
   }
-  &:before {
-    content: '';
+  .before-cover {
     width: rem(59px);
     height: rem(86px);
     display: inline-block;
@@ -126,8 +125,7 @@ img {
     top: rem(88px);
     z-index: 104;
   }
-  &:after {
-    content: '';
+  .after-cover {
     width: rem(120px);
     height: rem(86px);
     display: inline-block;
@@ -191,6 +189,9 @@ img {
     .item:active {
       background-color: #F1F1F1;
     }
+    a:last-child .item .item-content {
+      border-bottom: 0;
+    }
     .item {
       padding: 0 rem(26px);
       .item-content {
@@ -198,18 +199,18 @@ img {
         padding: rem(26px) 0 rem(24px);
         @include displayflex;
         @include flexflowRow;
-        -ms-justify-content: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        -ms-justify: center;
-        -webkit-justify: center;
-        justify: center;
-        -ms-box-align: center;
-        -webkit-box-align: center;
-        box-align: center;
-        -ms-align-items: center;
-        -webkit-align-items: center;
-        align-items: center;
+        //-ms-justify-content: center;
+        //-webkit-justify-content: center;
+        //justify-content: center;
+        //-ms-justify: center;
+        //-webkit-justify: center;
+        //justify: center;
+        //-ms-box-align: center;
+        //-webkit-box-align: center;
+        //box-align: center;
+        //-ms-align-items: center;
+        //-webkit-align-items: center;
+        //align-items: center;
         .thumbnail {
           width: rem(140px);
           height: rem(140px);
@@ -302,6 +303,15 @@ img {
               line-height: rem(32px);
               color: #E61E4B;
               @include flex;
+              &:after {
+                content: '起';
+                color: #C0C2C9;
+                font-size: rem(24px);
+                margin-left: rem(6px);
+              }
+              &.free:after{
+                content: '';
+              }
             }
             .numbers {
               display: inline-block;
@@ -311,11 +321,6 @@ img {
               margin-left: rem(30px);
             }
           }
-        }
-      }
-      &:last-child {
-        .item-content {
-          border-bottom: 0;
         }
       }
     }

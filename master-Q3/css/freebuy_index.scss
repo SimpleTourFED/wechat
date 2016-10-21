@@ -571,3 +571,88 @@ img {
   background: url(/images/left_red_arrow@2x.png) center no-repeat;
   background-size: .5rem
 }
+
+.route-content {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  overflow: hidden;
+  position: relative
+}
+
+.route-content .domestic-list {
+  overflow: auto;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 2rem;
+  -webkit-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
+  -webkit-transition: -webkit-transform .2s ease-out;
+  transition: transform .2s ease-out
+}
+
+.route-content .domestic-list.current {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0)
+}
+
+.route-content .abroad-list {
+  overflow: auto;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  padding-bottom: 2rem;
+  -webkit-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+  -webkit-transition: -webkit-transform .2s ease-out;
+  transition: transform .2s ease-out
+}
+
+.route-content .abroad-list.current {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0)
+}
+
+.hot-space {
+  width: 100%;
+  padding-top: .65rem;
+  background-color: #E0E0E0
+}
+
+.hot-space h5 {
+  height: .75rem;
+  border-left: .25rem solid #E61E4B;
+  font-size: .65rem;
+  color: #83858C;
+  text-indent: .4rem
+}
+
+.hot-space ul {
+  font-size: 0;
+  padding: .6rem .35rem 1rem
+}
+
+.hot-space ul li {
+  display: inline-block;
+  margin: .25rem .3rem;
+  padding: 0 .45rem;
+  color: #4F545B;
+  font-size: .7rem;
+  text-align: center;
+  width: 7.05rem;
+  height: 2.2rem;
+  line-height: 2.2rem;
+  background-color: #fff;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border-radius: .15rem
+}
+
+.hot-space ul li.selected {
+  background-color: #E61E4B;
+  color: #fff
+}
