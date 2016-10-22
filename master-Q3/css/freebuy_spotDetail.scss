@@ -1,4 +1,5 @@
 @import "/common/css/base";
+@import "/common/css/viewImg";
 
 @mixin box-sizing($set:border-box) {
   -webkit-box-sizing: $set;
@@ -17,7 +18,7 @@
 }
 
 html, body {
-  background-color: #E7E7E7;
+  background-color: #F5F5F5;
 }
 
 * {
@@ -37,7 +38,7 @@ img {
   width: 100%;
   overflow: hidden;
   background-color: #fff;
-  margin-bottom: rem(32px);
+  margin-bottom: rem(16px);
   .banner {
     width: 100%;
     height: rem(270px);
@@ -55,7 +56,7 @@ img {
   width: 100%;
   overflow: hidden;
   background-color: #fff;
-  margin-bottom: rem(28px);
+  margin-bottom: rem(16px);
   a:last-child .border-bottom {
     border: none;
   }
@@ -159,32 +160,32 @@ img {
     }
   }
   .open-time .border-bottom:before {
-      background: url(/master-Q3/images/icon/freebuy_time@2x.png) no-repeat center;
-      background-size: contain;
+    background: url(/master-Q3/images/icon/freebuy_time@2x.png) no-repeat center;
+    background-size: contain;
   }
   .spot-feature .border-bottom:before {
-      background: url(/master-Q3/images/icon/freebuy_scenic@2x.png) no-repeat center;
-      background-size: contain;
+    background: url(/master-Q3/images/icon/freebuy_scenic@2x.png) no-repeat center;
+    background-size: contain;
   }
   .hotel-intro .border-bottom:before {
-      background: url(/master-Q3/images/icon/freebuy_hotel@2x.png) no-repeat center;
-      background-size: contain;
+    background: url(/master-Q3/images/icon/freebuy_hotel@2x.png) no-repeat center;
+    background-size: contain;
   }
   .food-intro .border-bottom:before {
-      background: url(/master-Q3/images/icon/freebuy_food@2x.png) no-repeat center;
-      background-size: contain;
+    background: url(/master-Q3/images/icon/freebuy_food@2x.png) no-repeat center;
+    background-size: contain;
   }
   .activity-feature .border-bottom:before {
-      background: url(/master-Q3/images/icon/freebuy_activity@2x.png) no-repeat center;
-      background-size: contain;
+    background: url(/master-Q3/images/icon/freebuy_activity@2x.png) no-repeat center;
+    background-size: contain;
   }
   .product-feature .border-bottom:before {
-      background: url(/master-Q3/images/icon/freebuy_product_features@2x.png) no-repeat center;
-      background-size: contain;
+    background: url(/master-Q3/images/icon/freebuy_product_features@2x.png) no-repeat center;
+    background-size: contain;
   }
   .product-intro .border-bottom:before {
-      background: url(/master-Q3/images/icon/freebuy_product_introduction@2x.png) no-repeat center;
-      background-size: contain;
+    background: url(/master-Q3/images/icon/freebuy_product_introduction@2x.png) no-repeat center;
+    background-size: contain;
   }
 }
 
@@ -192,7 +193,7 @@ img {
   width: 100%;
   overflow: hidden;
   background-color: #fff;
-  margin-bottom: rem(28px);
+  margin-bottom: rem(16px);
   @include displayflex;
   @include flexflowRow;
   -ms-justify-content: center;
@@ -250,7 +251,7 @@ img {
 .tickets {
   width: 100%;
   overflow: hidden;
-  margin-bottom: rem(28px);
+  margin-bottom: rem(16px);
   .title {
     font-size: rem(26px);
     color: #83858C;
@@ -407,7 +408,7 @@ img {
   width: 100%;
   overflow: hidden;
   background-color: #fff;
-  margin-bottom: rem(50px);
+  margin-bottom: rem(16px);
   .title-bar {
     @include displayflex;
     @include flexflowRow;
