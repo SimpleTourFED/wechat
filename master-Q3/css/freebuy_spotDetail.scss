@@ -383,7 +383,7 @@ img {
         width: rem(26px);
         height: rem(26px);
         @include border-radius(50px);
-        background-color: #E7E7E7;
+        background-color: #F5F5F5;
         position: absolute;
         left: rem(-13px);
         bottom: rem(-13px);
@@ -394,12 +394,55 @@ img {
         width: rem(26px);
         height: rem(26px);
         @include border-radius(50px);
-        background-color: #E7E7E7;
+        background-color: #F5F5F5;
         position: absolute;
         right: rem(-13px);
         bottom: rem(-13px);
         z-index: 10;
       }
+    }
+  }
+}
+.features{
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: rem(16px);
+  .title {
+    font-size: rem(26px);
+    color: #83858C;
+    line-height: rem(30px);
+    padding: rem(24px) 0 rem(26px) 0;
+    background: #fff;
+    border-bottom: 1px solid #EBEBF5;
+    &:before {
+      content: '';
+      width: rem(10px);
+      height: rem(30px);
+      background-color: #E61E4B;
+      display: inline-block;
+      vertical-align: top;
+      margin-right: rem(16px);
+    }
+  }
+  .content{
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    padding: rem(8px) rem(32px) rem(147px) rem(32px);
+    color: #83858C;
+    font-size: rem(28px);
+    line-height: rem(40px);
+    h3{
+      font-size: rem(30px);
+      color: #4F545B;
+      line-height: rem(40px);
+      margin-bottom: rem(10px);
+    }
+    img{
+      width: 100%;
+      margin: rem(12px) 0 rem(9px);
+      display: block;
     }
   }
 }
@@ -586,5 +629,19 @@ img {
       vertical-align: middle;
       margin-left: rem(30px);
     }
+  }
+}
+header .collection{
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: rem(28px) rem(26px);
+  width: rem(36px);
+  height: rem(32px);
+  background: url(/master-Q3/images/icon/love_normal_icon@2x.png) no-repeat center;
+  background-size: contain;
+  &.selected{
+    background: url(/master-Q3/images/icon/love_selected_icon.png) no-repeat center;
+    background-size: contain;
   }
 }

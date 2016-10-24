@@ -280,4 +280,18 @@ img {
     }
   }
 }
+footer{
+  padding: rem(18px) 0;
+  background-color: #E61E4B;
+  a{
+    @include flex;
+    text-align: center;
+    font-size: rem(34px);
+    color: #FFFFFF;
+    line-height: rem(60px);
+  }
+  .goBind{
+    border-right: 1px solid #FFFFFF;
+  }
+}
 
