@@ -45,6 +45,8 @@ form{
     background-color: #fff;
     margin-bottom: rem(28px);
     outline: none;
+    border: none;
+    @include border-radius(0px);
   }
   .demand{
     padding: 0 rem(26px);

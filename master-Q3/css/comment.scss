@@ -124,7 +124,7 @@ img {
   &:active {
     background-color: #BF0A33;
   }
-  &.disabled{
+  &.disabled {
     background-color: #737373;
   }
 }
@@ -145,7 +145,7 @@ img {
     bottom: -13rem;
     -webkit-transition: bottom .25s ease-out;
     transition: bottom .25s ease-out;
-    &.show{
+    &.show {
       -webkit-transition: bottom .25s ease-out;
       transition: bottom .25s ease-out;
       bottom: .6rem;
@@ -166,15 +166,15 @@ img {
         &:last-child {
           border-bottom: 0;
         }
-        &.selected{
+        &.selected {
           color: #E61E4B;
         }
-        &:active{
+        &:active {
           color: #E61E4B;
         }
       }
     }
-    .cancel-btn{
+    .cancel-btn {
       width: rem(588px);
       height: rem(112px);
       border-radius: .15rem;
@@ -186,4 +186,156 @@ img {
       color: #4F545B;
     }
   }
+}
+
+.img-viewer-overlay {
+  position: absolute;
+  z-index: 10200;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .4);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition-duration: 400ms;
+  transition-duration: 400ms
+}
+
+.img-viewer-overlay.overlay-visible {
+  visibility: visible;
+  opacity: 1
+}
+
+.img-viewer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10400;
+  background-color: #fff;
+  box-sizing: border-box;
+  display: none;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: transform;
+  opacity: 0;
+  -webkit-transition: 400ms;
+  transition: 400ms
+}
+
+.img-viewer.visible {
+  opacity: 1
+}
+
+.img-viewer-header, .img-viewer-footer {
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  height: 2.2rem;
+  padding-right: .5rem;
+  padding-left: .5rem;
+  box-sizing: border-box;
+  background-color: #f7f7f8;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden
+}
+
+.img-viewer-content {
+  position: absolute;
+  top: 2.2rem;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  overflow: hidden
+}
+
+.img-viewer-content .img-viewer-swiper-container {
+  -webkit-transition-duration: 400ms;
+  transition-duration: 400ms;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: transform;
+  box-sizing: content-box
+}
+
+.img-viewer-content .img-viewer-swiper-item {
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-flex-shrink: 0;
+  -ms-flex: 0 0 auto;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  box-sizing: border-box
+}
+
+.img-viewer-content .img-viewer-swiper-item img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%
+}
+
+.img-viewer-header {
+  top: 0;
+  height: 2.2rem;
+  line-height: 2.2rem
+}
+
+.img-viewer-header:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: auto;
+  top: auto;
+  height: 1px;
+  width: 100%;
+  background-color: #e7e7e7;
+  display: block;
+  z-index: 15;
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%
+}
+
+.img-viewer-header .img-viewer-header-text {
+  color: #4F545B;
+  font-size: .8rem;
+  text-align: center
+}
+
+.img-viewer-header a {
+  position: absolute;
+  width: 1rem;
+  height: 100%;
+  top: 0;
+  z-index: 20;
+  background: url(/images/left_red_arrow@2x.png) center no-repeat;
+  background-size: .5rem
 }
