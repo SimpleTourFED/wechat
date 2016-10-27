@@ -202,9 +202,16 @@ img {
     padding: toRem(10px) toRem(11px) toRem(10px) toRem(13px);
     @include displayflex;
     @include flexflowRow;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    box-sizing: border-box;
     .left {
       width: toRem(188px);
-      height: toRem(40px);
+      max-height: toRem(40px);
       line-height: toRem(20px);
       font-size: toRem(14px);
       color: #4F545B;
@@ -217,7 +224,7 @@ img {
     }
     .right {
       @include flex;
-      height: toRem(40px);
+      max-height: toRem(40px);
       line-height: toRem(40px);
       font-size: toRem(16px);
       color: #E61E4B;
