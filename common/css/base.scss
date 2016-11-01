@@ -151,7 +151,6 @@ footer{
   background-color: #fff;
   @include displayflex();
   @include flexflowRow();
-  @include shadow(0px,-3px,10px,#E7E7E7);
   z-index: 5;
   .collection {
     position: relative;
@@ -159,16 +158,17 @@ footer{
     width: rem(116px);
     color: #83858C;
     font-size: rem(24px);
+    border-top : rem(2px) solid #e4e4e4;
     line-height: 3.5rem;
     text-align: center;
     border-right: rem(2px) solid #D8D8D8;
     &:before {
       content: '';
       position: absolute;
-      width: rem(34px);
-      height: rem(30px);
-      top:rem(19px);
-      left:rem(38px);
+      width: rem(40px);
+      height: rem(40px);
+      top:0.33rem;
+      left:rem(30px);
       background: url("/master-Q3/images/icon/love_normal_icon@2x.png") no-repeat center;
       background-size: contain;
     }
@@ -178,7 +178,10 @@ footer{
     }
     &.selected {
       &:before {
-        content:'';position:absolute;width:.85rem;height:.75rem;top:.475rem;left:.775rem;
+        content:'';position:absolute;width: rem(40px);
+        height: rem(40px);
+        top:0.33rem;
+        left:rem(30px);
         background: url(/images/love_selected_icon.png) no-repeat center;
         background-size: contain;
       }
@@ -191,6 +194,7 @@ footer{
     position: relative;
     display: inline-block;
     width: rem(116px);
+    border-top : rem(2px) solid #e4e4e4;
     border-right: rem(2px) solid #D8D8D8;
     line-height: 3.5rem;
     color: #83858C;
@@ -199,10 +203,10 @@ footer{
     &:before {
       content: '';
       position: absolute;
-      width: rem(27px);
-      height: rem(36px);
-      top:rem(15px);
-      left:rem(45px);
+      width: rem(40px);
+      height: rem(40px);
+      top:0.33rem;
+      left:rem(30px);
       background: url("/master-Q3/images/icon/phone_normal@2x.png") no-repeat center;
       background-size: contain;
     }
@@ -215,6 +219,7 @@ footer{
     }
   }
   .online {
+    border-top : rem(2px) solid #e4e4e4;
     position: relative;
     display: inline-block;
     width: rem(116px);
@@ -225,10 +230,10 @@ footer{
     &:before {
       content: '';
       position: absolute;
-      width: rem(38px);
-      height: rem(35px);
-      top:rem(13px);
-      left:rem(39px);
+      width: rem(40px);
+      height: rem(40px);
+      top:0.33rem;
+      left:rem(30px);
       background: url("/master-Q3/images/icon/online_service_icon@2x.png") no-repeat center;
       background-size: contain;
     }
