@@ -55,6 +55,9 @@
     var loginCode = function(value) {
         return /^[0-9]{5}$/.test(value);
     };
+    var password = function (value) {
+        return true
+    };
     var cdKey = function(value) {
         return /^[a-hj-np-zA-HJ-NP-Z1-9]{8}$/.test(value);
     };
@@ -69,6 +72,7 @@
         nameEn:nameEn,
         loginCode: loginCode,
         cdKey : cdKey,
-        captcha : captcha
+        captcha : captcha,
+        password : password
     }
 }(Zepto);

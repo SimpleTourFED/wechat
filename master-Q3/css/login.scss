@@ -1,0 +1,126 @@
+@import "/common/css/base";
+body{
+  background-color: #F5F5F5;
+}
+header .search{
+  font-size:rem(28px);
+  line-height: rem(88px);
+  color:#E61E4B;
+  background: transparent;
+}
+.page-header{
+  background-color: white;
+  @include displayflex;
+  @include flexflowRow();
+  div{
+    @include flex(1);
+    text-align: center;
+  }
+  div.selected span{
+    color:#575759;
+  }
+  div.selected span:after{
+    display: block;
+  }
+  span{
+    display:inline-block;
+    position: relative;
+    color:#83858C;
+    padding: 0 rem(16px);
+    height: rem(96px);
+    line-height: rem(96px);
+    &:after{
+      position: absolute;
+      display: none;
+      content: '';
+      height: rem(6px);
+      bottom:0;
+      left:0;
+      right: 0;
+      background-color: #E9194D;
+    }
+  }
+}
+.content{
+  margin-top: rem(16px);
+  .info{
+    background-color: white;
+    padding: 0 rem(26px);
+  }
+  .input-group{
+    height: rem(94px);
+    box-sizing: content-box;
+    border-bottom: 1px solid #E9ECF4;
+    input{
+      display: block;
+      width: 100%;
+      border:none;
+      padding: 0 rem(6px);
+      height: rem(94px);
+      line-height: rem(94px);
+      font-size: rem(28px);
+      color:#4F545B;
+    }
+    input::-webkit-input-placeholder{
+      color:#83858C;
+    }
+    &:last-child{
+      border-bottom: none;
+    }
+  }
+  .input-group.flex{
+    @include displayflex;
+    @include flexflowRow();
+    input{
+      @include flex(1);
+    }
+    button{
+      &.disabled{
+        background-color: #DDDEE1;
+      }
+      border-radius: rem(9px);
+      background-color: white;
+      display: block;
+      width: rem(240px);
+      height: rem(70px);
+      box-sizing: border-box;
+      border:1px solid #C0C2C9;
+      font-size: rem(28px);
+      color:#4F545B;
+      margin-top: rem(13px);
+    }
+  }
+}
+.submit{
+  width: rem(588px);
+  border:none;
+  border-radius: rem(5px);
+  display: block;
+  height: rem(88px);
+  font-size: rem(34px);
+  margin: rem(32px);
+  color:white;
+  background-color: #E61E4B;
+  box-shadow: 0 2px 14px rgba(0,0,0,.1);
+  &.disabled{
+    background-color: #747474;
+  }
+}
+p{
+  padding:0 rem(32px);
+  line-height: rem(26*1.5px);
+  color:#83858C;
+  font-size: rem(26px);
+  &.center{
+    text-align: center;
+  }
+  a{
+    color:#E61E4B;
+  }
+}
+.content.password,.content.mobile{
+  display: none;
+  &.show{
+    display: block;
+  }
+}
