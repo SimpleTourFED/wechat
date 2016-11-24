@@ -24,6 +24,7 @@ header .search{
   }
   span{
     display:inline-block;
+    font-size: .7rem;
     position: relative;
     color:#83858C;
     padding: 0 rem(16px);
@@ -107,8 +108,9 @@ header .search{
   }
 }
 p{
-  padding:0 rem(32px);
-  line-height: rem(26*1.5px);
+  line-height: 1rem;
+  height: rem(40*1.5px);
+  padding: .8rem;
   color:#83858C;
   font-size: rem(26px);
   &.center{

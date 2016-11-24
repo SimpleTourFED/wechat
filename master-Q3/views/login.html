@@ -13,11 +13,9 @@
 <div class="page-group">
     <div class="page page-current">
         <header>
-            <header>
-                <div class="back"></div>
-                <div class="center">登陆</div>
-                <a href="#"><div class="search">注册</div></a>
-            </header>
+            <div class="back"></div>
+            <div class="center">登陆</div>
+            <a href="#"><div class="search">注册</div></a>
         </header>
         <div class="page-content">
             <div class="page-header">
@@ -59,6 +57,7 @@
 <script src="/common/js/zepto.min.js"></script>
 <script src="/common/js/validate.js"></script>
 <script src="/common/js/base.js"></script>
+<script type="text/javascript" src="/js/md5.min.js"></script>
 <script>
     (function (doc, win) {
         var docEl = doc.documentElement,
@@ -91,23 +90,44 @@
     //发送验证码
     $('.loginCode').click(function (e) {
         e.preventDefault();
-        if(!$(this).hasClass('disabled')){
-            $(this).addClass('disabled');
-            var $text = $(this).prev().val();
+        var $this = $(this);
+        if(!$this.hasClass('disabled')){
+            $this.addClass('disabled');
+            var $text = $this.prev().val();
             if($.validate.mobile($text)){
                 //添加发送验证码的代码
-                var $second = 10;//返回的倒计时 秒
-                $(this).html($second+'秒后重新获取');
-                var $this = $(this);
-                var t = setInterval(function () {
-                    if(--$second > 0){
-                        $this.html($second +'秒后重新获取');
-                    }else{
-                        $this.html('重新发送验证码');
+                $.ajax({
+                    type: 'POST',
+                    url: '/mobile/gateway/wechat/account/sendverifycode',
+                    data: {mobile: $text, token: '${loginToken}'},
+                    success: function (data) {
+                        if (data.code == 0) {
+                            var $second = data.data - 1;//返回的倒计时 秒
+                            $this.html($second+'秒后重新获取');
+                            var t = setInterval(function () {
+                                if(--$second > 0){
+                                    $this.html($second +'秒后重新获取');
+                                }else{
+                                    $this.html('重新发送验证码');
+                                    $this.removeClass('disabled');
+                                    clearInterval(t);
+                                }
+                            },1000)
+                        } else {
+                            $this.removeClass('disabled');
+                            $.alert({
+                                msg: data.msg
+                            });
+                        }
+                    },
+                    error: function () {
                         $this.removeClass('disabled');
-                        clearInterval(t);
+                        $.alert({
+                            msg: '网络异常,请重试'
+                        });
                     }
-                },1000)
+                })
+
             }else{
                 $.alert({
                     msg : '手机号格式错误'
@@ -118,44 +138,129 @@
     //短信验证码登陆
     $('.submit.mobile').click(function (e) {
         e.preventDefault();
-        if(!$(this).hasClass('disabled')){
-            $(this).addClass('disabled');
-            var $mobile = $.validate.mobile($('input[name=mobile]').val());
-            var $code = $.validate.loginCode($.trim($('input[name=loginCode]').val()));
-            if(!$mobile){
+        var $this = $(this);
+
+        if(!$this.hasClass('disabled')){
+            var mobile = $('input[name=mobile]').val();
+            var loginCode = $('input[name=loginCode]').val();
+            $this.addClass('disabled');
+            var $mobile = $.validate.mobile($.trim(mobile));
+            var $code = $.validate.loginCode($.trim(loginCode));
+            if(!mobile) {
+                $.alert({
+                    msg:'手机号不能为空!'
+                });
+                $this.removeClass('disabled');
+            }else if(!loginCode) {
+                $.alert({
+                    msg:'验证码不能为空!'
+                });
+                $this.removeClass('disabled');
+            }else if(!$mobile){
                 $.alert({
                     msg:'手机号格式错误'
                 });
-                $(this).removeClass('disabled');
+                $this.removeClass('disabled');
             }else if(!$code){
                 $.alert({
                     msg:'验证码格式错误'
                 });
-                $(this).removeClass('disabled');
+                $this.removeClass('disabled');
             }else{
                 //提交代码
+                $.ajax({
+                    type: 'POST',
+                    beforeSend: function() {
+                        $.preloader.show();
+                    },
+                    url: '/mobile/gateway/wechat/account/login/mobile',
+                    data: {account: $.trim(mobile), vcode: $.trim(loginCode)},
+                    success: function (data) {
+                        if (data.code == 0) {
+                            location.href = data.url;
+                        } else {
+                            $.confirm({
+                                title: '登录失败',
+                                detail:[data.msg],
+                                yes:'确认',
+                                yesFun: function() {}
+                            });
+                            $this.removeClass('disabled');
+                        };
+                        $.preloader.hide();
+                    },
+                    error: function (data) {
+                        $this.removeClass('disabled');
+                        $.preloader.hide();
+                        $.alert({
+                            msg:'网络异常,请重试'
+                        });
+                    }
+                })
             }
         }
     });
     //账号密码登陆
     $('.submit.password').click(function (e) {
         e.preventDefault();
-        if(!$(this).hasClass('disabled')){
-            $(this).addClass('disabled');
-            var $mobile = $.validate.mobile($('input[name=passwordMobile]').val());
-            var $password = $.validate.password($.trim($('input[name=password]').val()));
-            if(!$mobile){
+        var $this = $(this);
+        if(!$this.hasClass('disabled')){
+            $this.addClass('disabled');
+            var mobile = $('input[name=passwordMobile]').val();
+            var password = $('input[name=password]').val();
+            var $mobile = $.validate.mobile($.trim(mobile));
+            var $password = $.validate.password($.trim(password));
+            if(!mobile) {
+                $.alert({
+                    msg:'手机号不能为空!'
+                });
+                $this.removeClass('disabled');
+            }else if(!password) {
+                $.alert({
+                    msg:'密码不能为空!'
+                });
+                $this.removeClass('disabled');
+            }else if(!$mobile){
                 $.alert({
                     msg:'手机号格式错误'
                 });
-                $(this).removeClass('disabled');
+                $this.removeClass('disabled');
             }else if(!$password){
                 $.alert({
                     msg:'密码格式错误'
                 });
-                $(this).removeClass('disabled');
+                $this.removeClass('disabled');
             }else{
                 //提交代码
+                $.ajax({
+                    type:'POST',
+                    beforeSend: function() {
+                        $.preloader.show();
+                    },
+                    url:'/mobile/gateway/wechat/account/login/password',
+                    data:{account:$.trim(mobile),password:md5(password),token:'${loginToken}'},
+                    success:function(data){
+                        if(data.code == 0){
+                            location.href = data.url;
+                        }else {
+                            $.confirm({
+                                title: '登录失败',
+                                detail:[data.msg],
+                                yes:'确认',
+                                yesFun: function() {}
+                            });
+                            $this.removeClass('disabled');
+                        };
+                        $.preloader.hide();
+                    },
+                    error:function(data){
+                        $this.removeClass('disabled');
+                        $.alert({
+                            msg: '网络异常,请重试'
+                        });
+                        $.preloader.hide();
+                    }
+                })
             }
         }
     })
