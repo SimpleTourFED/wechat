@@ -47,6 +47,7 @@ header .search{
   .info{
     background-color: white;
     padding: 0 rem(26px);
+    margin-bottom: rem(16px);
   }
   .input-group{
     height: rem(94px);
@@ -110,7 +111,7 @@ header .search{
 p{
   line-height: 1rem;
   height: rem(40*1.5px);
-  padding: .8rem;
+  padding:0 .8rem;
   color:#83858C;
   font-size: rem(26px);
   &.center{

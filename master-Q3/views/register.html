@@ -1,10 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/master-Q3/css/login.scss?__inline" media="screen" title="no title" charset="utf-8">
 </head>
-<body>
-
+<body style="visibility: hidden">
+<div class="page-group">
+    <div class="page page-current">
+        <header>
+            <div class="back"></div>
+            <div class="center">注册</div>
+        </header>
+        <div class="page-content">
+            <div class="content mobile show">
+                <div class="info">
+                    <div class="input-group flex">
+                        <input type="text" name="mobile" placeholder="请输入手机号">
+                        <button class="loginCode">发送验证码</button>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" name="loginCode" placeholder="请输入短信验证码">
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="input-group">
+                        <input type="text" name="password" placeholder="设置密码">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" name="passwordAgain" placeholder="再次输入密码">
+                    </div>
+                </div>
+                <button class="submit">注册</button>
+                <p class="center">
+                    点击[注册]表示您已同意<a href="#">《简途用户协议》</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/common/js/zepto.min.js"></script>
+<script src="/common/js/validate.js"></script>
+<script src="/common/js/base.js"></script>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                    docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                };
+        if (!doc.addEventListener) return;
+        recalc();
+        document.body.style.visibility = 'visible';
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script>
 </body>
 </html>
