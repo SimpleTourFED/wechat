@@ -94,7 +94,12 @@
         if(!$this.hasClass('disabled')){
             $this.addClass('disabled');
             var $text = $this.prev().val();
-            if($.validate.mobile($text)){
+            if(!$text) {
+                $this.removeClass('disabled');
+                $.alert({
+                    msg: '手机号不能为空!'
+                });
+            } else if($.validate.mobile($text)){
                 //添加发送验证码的代码
                 $.ajax({
                     type: 'POST',
