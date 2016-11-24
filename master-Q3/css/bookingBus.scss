@@ -480,6 +480,8 @@ footer {
     bottom:rem(24px);
   }
 }
+
+
 .coupon-navbar {
   width: 100%;
   height:rem(88px);
@@ -521,12 +523,12 @@ footer {
   @include flex(1);
   overflow: hidden;
   position: relative;
-  padding: rem(16px) rem(26px);
   .available-list {
     overflow: auto;
     position: absolute;
     width: 100%;
     height:100%;
+    padding: .4rem .65rem;
     -webkit-transform: translate3d(-100%, 0, 0);
     transform: translate3d(-100%, 0, 0);
     -webkit-transition:-webkit-transform 0.2s ease-out;
@@ -541,6 +543,7 @@ footer {
     height:100%;
     position: absolute;
     width: 100%;
+    padding: .4rem .65rem;
     -webkit-transform: translate3d(100%, 0, 0);
     transform: translate3d(100%, 0, 0);
     -webkit-transition:-webkit-transform 0.2s ease-out;
@@ -568,12 +571,27 @@ footer {
         font-size: rem(32px);
         color: #4F545B;
       }
-      .date {
+      .describe{
         position: absolute;
         bottom:rem(20px);
         left:rem(16px);
         color: #83858C;
         font-size: rem(24px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width:100%;
+      }
+      .date {
+        position: absolute;
+        bottom: 1.4rem;
+        left:rem(16px);
+        color: #83858C;
+        font-size: rem(24px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width:100%;
       }
     }
     .value {
@@ -586,7 +604,10 @@ footer {
         font-size: rem(60px);
         color: #F5B950;
         span {
-          font-size: rem(24px);
+          font-size: rem(28px);
+          &.fold{
+            vertical-align: super;
+          }
         }
       }
       .coupon-type {
@@ -612,6 +633,17 @@ footer {
         border-radius: rem(12px);
         left:rem(-6px);
         background-color: #f5f5f5;
+      }
+    }
+    .bottom-icon{
+      position:absolute;
+      bottom:0;
+      right:2.375rem;
+      width:7.45rem;
+      height:3.225rem;
+      img{
+        width: 100%;
+        height: 100%;
       }
     }
     &.selected {
@@ -643,9 +675,6 @@ footer {
         h5{
           color: #83858C;
         }
-        .date {
-          color: #C0C2C9;
-        }
       }
       .value{
         .price {
@@ -653,30 +682,6 @@ footer {
         }
         .coupon-type {
           color: #C0C2C9;
-        }
-        &:before {
-          content: '';
-          width: rem(24px);
-          height:rem(4px);
-          display: inline-block;
-          position: absolute;
-          top:.3rem;
-          right:rem(4px);
-          transform:rotate(-45deg);
-          -webkit-transform:rotate(-45deg);
-          background-color: #C0C2C9;
-        }
-        &:after {
-          content: '';
-          width: rem(24px);
-          height:rem(4px);
-          display: inline-block;
-          position: absolute;
-          bottom:.3rem;
-          left:rem(4px);
-          transform:rotate(-45deg);
-          -webkit-transform:rotate(-45deg);
-          background-color: #C0C2C9;
         }
       }
     }
