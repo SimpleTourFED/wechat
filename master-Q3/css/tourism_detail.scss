@@ -35,16 +35,21 @@ img {
 }
 
 .oneDay {
-  &:first-child {
-    margin-top: rem(16px);
-  }
+  border-bottom: 0.05rem dashed #D9D5D5;
+  padding-top: rem(30px);
   &:last-child{
-    margin-bottom: rem(50px);
+    border-bottom: none;
+    padding-bottom: rem(30px);
+  }
+  &:first-child  .content .line{
+      margin-top: 0;
   }
   .title {
     height: rem(50px);
     line-height: rem(50px);
     font-size: 0;
+    position: relative;
+    z-index: 5;
     span {
       display: inline-block;
       font-size: rem(28px);
@@ -73,11 +78,12 @@ img {
       width: rem(55px);
       display: block;
       border-right: 1px solid #D9D5D5;
+      margin-top: rem(-80px);
     }
     .stops {
       @include flex;
       display: block;
-      padding-bottom: rem(48px);
+      padding-bottom: rem(30px);
       .stop {
         margin-left: rem(-47px);
         padding-top: rem(40px);
@@ -238,5 +244,8 @@ img {
         }
       }
     }
+  }
+  .no-content .line{
+    width: rem(54.996px);
   }
 }

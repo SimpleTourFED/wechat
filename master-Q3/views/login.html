@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/master-Q3/css/login.scss?__inline" media="screen" title="no title" charset="utf-8">
+</head>
+<body style="visibility: hidden">
+<div class="page-group">
+    <div class="page page-current">
+        <header>
+            <header>
+                <div class="back"></div>
+                <div class="center">登陆</div>
+                <a href="#"><div class="search">注册</div></a>
+            </header>
+        </header>
+        <div class="page-content">
+            <div class="page-header">
+                <div data-id="mobile" class="selected"><span>短信验证码登陆</span></div>
+                <div data-id="password"><span>账号密码登陆</span></div>
+            </div>
+            <div class="content mobile show">
+                <div class="info">
+                    <div class="input-group flex">
+                        <input type="text" name="mobile" placeholder="请输入手机号">
+                        <button class="loginCode">发送验证码</button>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" name="loginCode" placeholder="请输入短信验证码">
+                    </div>
+                </div>
+                <button class="submit mobile">验证并登陆</button>
+                <p>
+                    温馨提示：未注册简途账号的手机号，快捷登录时将自动注册简途账号，且代表恁已同意<a href="#">《简途用户协议》</a>
+                </p>
+            </div>
+            <div class="content password">
+                <div class="info">
+                    <div class="input-group">
+                        <input type="text" name="passwordMobile" placeholder="请输入手机号">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" name="password" placeholder="请输入密码">
+                    </div>
+                </div>
+                <button class="submit password">验证并登陆</button>
+                <p class="center">
+                    <a href="#">找回密码</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/common/js/zepto.min.js"></script>
+<script src="/common/js/validate.js"></script>
+<script src="/common/js/base.js"></script>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                    docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                };
+        if (!doc.addEventListener) return;
+        recalc();
+        document.body.style.visibility = 'visible';
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+    $('.page-header div').click(function (e) {
+        $('.page-header div').removeClass('selected');
+        $(this).addClass('selected');
+        $('.content').removeClass('show');
+        $('.content.'+$(this).attr('data-id')).addClass('show');
+    });
+    //发送验证码
+    $('.loginCode').click(function (e) {
+        e.preventDefault();
+        if(!$(this).hasClass('disabled')){
+            $(this).addClass('disabled');
+            var $text = $(this).prev().val();
+            if($.validate.mobile($text)){
+                //添加发送验证码的代码
+                var $second = 10;//返回的倒计时 秒
+                $(this).html($second+'秒后重新获取');
+                var $this = $(this);
+                var t = setInterval(function () {
+                    if(--$second > 0){
+                        $this.html($second +'秒后重新获取');
+                    }else{
+                        $this.html('重新发送验证码');
+                        $this.removeClass('disabled');
+                        clearInterval(t);
+                    }
+                },1000)
+            }else{
+                $.alert({
+                    msg : '手机号格式错误'
+                })
+            }
+        }
+    });
+    //短信验证码登陆
+    $('.submit.mobile').click(function (e) {
+        e.preventDefault();
+        if(!$(this).hasClass('disabled')){
+            $(this).addClass('disabled');
+            var $mobile = $.validate.mobile($('input[name=mobile]').val());
+            var $code = $.validate.loginCode($.trim($('input[name=loginCode]').val()));
+            if(!$mobile){
+                $.alert({
+                    msg:'手机号格式错误'
+                });
+                $(this).removeClass('disabled');
+            }else if(!$code){
+                $.alert({
+                    msg:'验证码格式错误'
+                });
+                $(this).removeClass('disabled');
+            }else{
+                //提交代码
+            }
+        }
+    });
+    //账号密码登陆
+    $('.submit.password').click(function (e) {
+        e.preventDefault();
+        if(!$(this).hasClass('disabled')){
+            $(this).addClass('disabled');
+            var $mobile = $.validate.mobile($('input[name=passwordMobile]').val());
+            var $password = $.validate.password($.trim($('input[name=password]').val()));
+            if(!$mobile){
+                $.alert({
+                    msg:'手机号格式错误'
+                });
+                $(this).removeClass('disabled');
+            }else if(!$password){
+                $.alert({
+                    msg:'密码格式错误'
+                });
+                $(this).removeClass('disabled');
+            }else{
+                //提交代码
+            }
+        }
+    })
+</script>
+</body>
+</html>

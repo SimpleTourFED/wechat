@@ -1,4 +1,5 @@
 @import "/common/css/base";
+@import "/common/css/viewImg";
 
 @mixin box-sizing($set:border-box) {
   -webkit-box-sizing: $set;
@@ -17,7 +18,7 @@
 }
 
 html, body {
-  background-color: #E7E7E7;
+  background-color: #F5F5F5;
 }
 
 * {
@@ -37,7 +38,7 @@ img {
   width: 100%;
   overflow: hidden;
   background-color: #fff;
-  margin-bottom: rem(32px);
+  margin-bottom: rem(16px);
   .banner {
     width: 100%;
     height: rem(270px);
@@ -55,7 +56,7 @@ img {
   width: 100%;
   overflow: hidden;
   background-color: #fff;
-  margin-bottom: rem(28px);
+  margin-bottom: rem(16px);
   a:last-child .border-bottom {
     border: none;
   }
@@ -159,32 +160,32 @@ img {
     }
   }
   .open-time .border-bottom:before {
-      background: url(/master-Q3/images/icon/freebuy_time@2x.png) no-repeat center;
-      background-size: contain;
+    background: url(/master-Q3/images/icon/freebuy_time@2x.png) no-repeat center;
+    background-size: contain;
   }
   .spot-feature .border-bottom:before {
-      background: url(/master-Q3/images/icon/freebuy_scenic@2x.png) no-repeat center;
-      background-size: contain;
+    background: url(/master-Q3/images/icon/freebuy_scenic@2x.png) no-repeat center;
+    background-size: contain;
   }
   .hotel-intro .border-bottom:before {
-      background: url(/master-Q3/images/icon/freebuy_hotel@2x.png) no-repeat center;
-      background-size: contain;
+    background: url(/master-Q3/images/icon/freebuy_hotel@2x.png) no-repeat center;
+    background-size: contain;
   }
   .food-intro .border-bottom:before {
-      background: url(/master-Q3/images/icon/freebuy_food@2x.png) no-repeat center;
-      background-size: contain;
+    background: url(/master-Q3/images/icon/freebuy_food@2x.png) no-repeat center;
+    background-size: contain;
   }
   .activity-feature .border-bottom:before {
-      background: url(/master-Q3/images/icon/freebuy_activity@2x.png) no-repeat center;
-      background-size: contain;
+    background: url(/master-Q3/images/icon/freebuy_activity@2x.png) no-repeat center;
+    background-size: contain;
   }
   .product-feature .border-bottom:before {
-      background: url(/master-Q3/images/icon/freebuy_product_features@2x.png) no-repeat center;
-      background-size: contain;
+    background: url(/master-Q3/images/icon/freebuy_product_features@2x.png) no-repeat center;
+    background-size: contain;
   }
   .product-intro .border-bottom:before {
-      background: url(/master-Q3/images/icon/freebuy_product_introduction@2x.png) no-repeat center;
-      background-size: contain;
+    background: url(/master-Q3/images/icon/freebuy_product_introduction@2x.png) no-repeat center;
+    background-size: contain;
   }
 }
 
@@ -192,7 +193,7 @@ img {
   width: 100%;
   overflow: hidden;
   background-color: #fff;
-  margin-bottom: rem(28px);
+  margin-bottom: rem(16px);
   @include displayflex;
   @include flexflowRow;
   -ms-justify-content: center;
@@ -250,7 +251,7 @@ img {
 .tickets {
   width: 100%;
   overflow: hidden;
-  margin-bottom: rem(28px);
+  margin-bottom: rem(16px);
   .title {
     font-size: rem(26px);
     color: #83858C;
@@ -382,7 +383,7 @@ img {
         width: rem(26px);
         height: rem(26px);
         @include border-radius(50px);
-        background-color: #E7E7E7;
+        background-color: #F5F5F5;
         position: absolute;
         left: rem(-13px);
         bottom: rem(-13px);
@@ -393,7 +394,7 @@ img {
         width: rem(26px);
         height: rem(26px);
         @include border-radius(50px);
-        background-color: #E7E7E7;
+        background-color: #F5F5F5;
         position: absolute;
         right: rem(-13px);
         bottom: rem(-13px);
@@ -402,12 +403,55 @@ img {
     }
   }
 }
+.features{
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: rem(16px);
+  .title {
+    font-size: rem(26px);
+    color: #83858C;
+    line-height: rem(30px);
+    padding: rem(24px) 0 rem(26px) 0;
+    background: #fff;
+    border-bottom: 1px solid #EBEBF5;
+    &:before {
+      content: '';
+      width: rem(10px);
+      height: rem(30px);
+      background-color: #E61E4B;
+      display: inline-block;
+      vertical-align: top;
+      margin-right: rem(16px);
+    }
+  }
+  .content{
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    padding: rem(8px) rem(32px) rem(147px) rem(32px);
+    color: #83858C;
+    font-size: rem(28px);
+    line-height: rem(40px);
+    h3{
+      font-size: rem(30px);
+      color: #4F545B;
+      line-height: rem(40px);
+      margin-bottom: rem(10px);
+    }
+    img{
+      width: 100%;
+      margin: rem(12px) 0 rem(9px);
+      display: block;
+    }
+  }
+}
 
 .comments {
   width: 100%;
   overflow: hidden;
   background-color: #fff;
-  margin-bottom: rem(50px);
+  margin-bottom: rem(16px);
   .title-bar {
     @include displayflex;
     @include flexflowRow;
@@ -585,5 +629,19 @@ img {
       vertical-align: middle;
       margin-left: rem(30px);
     }
+  }
+}
+header .collection{
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: rem(28px) rem(26px);
+  width: rem(36px);
+  height: rem(32px);
+  background: url(/master-Q3/images/icon/love_normal_icon@2x.png) no-repeat center;
+  background-size: contain;
+  &.selected{
+    background: url(/master-Q3/images/icon/love_selected_icon.png) no-repeat center;
+    background-size: contain;
   }
 }
