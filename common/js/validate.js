@@ -40,11 +40,14 @@
         }
         return pass;
     };
-    var isNotNull = function (text) {
-        return $.trim(text) == ''?true:false
+    var otherIdNo = function(idNo) {
+        return /^\s*[0-9a-zA-Z]{1,20}\s*$/.test(idNo);
     };
-    var mobile = function (tel) {
-        return /^[0-9]{11}$/.test($.trim(tel))
+    var mobile = function (mobile) {
+        return /^[0-9]{11}$/.test($.trim(mobile))
+    };
+    var email= function (value) {
+        return /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/.test($.trim(value))
     };
     var name = function (value) {
         return (/^\s*[a-zA-Z]{1,15}\s*$/.test(value) || /^\s*[\u4e00-\u9fa5]{1,15}\s*$/.test(value))
@@ -52,11 +55,11 @@
     var nameEn = function (value) {
         return /^\s*[a-zA-Z]{1,50}\s*$/.test(value)
     };
+    var nickName = function (value) {
+        return (/^\s*[A-Za-z0-9]{1,16}\s*$/.test(value) || /^\s*[\u4e00-\u9fa5]{1,16}\s*$/.test(value))
+    };
     var loginCode = function(value) {
         return /^[0-9]{5}$/.test(value);
-    };
-    var password = function (value) {
-        return true
     };
     var cdKey = function(value) {
         return /^[a-hj-np-zA-HJ-NP-Z1-9]{8}$/.test(value);
@@ -64,15 +67,24 @@
     var captcha = function (value) {
         return /^[a-hjkmnp-zA-HJKMNP-Z1-9]{4}$/.test($.trim(value))
     };
+    var isNotNull = function (text) {
+        return $.trim(text) == ''?true:false
+    };
+    var password = function (value) {
+        return /^[^\s]{6,16}$/.test(value);
+    };
     $.validate = {
         id : validateId,
-        isNotNull : isNotNull,
+        isNotNull: isNotNull,
+        otherIdNo : otherIdNo,
         name : name,
+        nickName: nickName,
         mobile : mobile,
+        email : email,
         nameEn:nameEn,
         loginCode: loginCode,
+        password: password,
         cdKey : cdKey,
-        captcha : captcha,
-        password : password
+        captcha : captcha
     }
 }(Zepto);
