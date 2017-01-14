@@ -69,6 +69,143 @@
         win.addEventListener(resizeEvt, recalc, false);
         doc.addEventListener('DOMContentLoaded', recalc, false);
     })(document, window);
+    $(document).ready(function() {
+        //发送验证码
+        $('.loginCode').click(function (e) {
+            e.preventDefault();
+            var $this = $(this);
+            if(!$this.hasClass('disabled')){
+                $this.addClass('disabled');
+                var $text = $this.prev().val();
+                if(!$text) {
+                    $this.removeClass('disabled');
+                    $.alert({
+                        msg: '手机号不能为空!'
+                    });
+                } else if($.validate.mobile($text)){
+                    //添加发送验证码的代码
+                    $.ajax({
+                        type: 'POST',
+                        url: '/mobile/gateway/wechat/account/sendverifycode',
+                        data: {mobile: $text, token: '${loginToken}'},
+                        success: function (data) {
+                            if (data.code == 0) {
+                                var $second = data.data - 1;//返回的倒计时 秒
+                                $this.html($second+'秒后重新获取');
+                                var t = setInterval(function () {
+                                    if(--$second > 0){
+                                        $this.html($second +'秒后重新获取');
+                                    }else{
+                                        $this.html('重新发送验证码');
+                                        $this.removeClass('disabled');
+                                        clearInterval(t);
+                                    }
+                                },1000)
+                            } else {
+                                $this.removeClass('disabled');
+                                $.alert({
+                                    msg: data.msg
+                                });
+                            }
+                        },
+                        error: function () {
+                            $this.removeClass('disabled');
+                            $.alert({
+                                msg: '网络异常,请重试'
+                            });
+                        }
+                    })
+
+                }else{
+                    $this.removeClass('disabled');
+                    $.alert({
+                        msg : '手机号格式错误'
+                    })
+                }
+            }
+        });
+        //短信验证码登陆
+        $('.submit').click(function (e) {
+            e.preventDefault();
+            var $this = $(this);
+
+            if(!$this.hasClass('disabled')){
+                var mobile = $('input[name=mobile]').val();
+                var loginCode = $('input[name=loginCode]').val();
+                var password = $('input[name=password]').val();
+                var passwordAgain = $('input[name=passwordAgain]').val();
+
+                var $mobile = $.validate.mobile($.trim(mobile));
+                var $code = $.validate.loginCode($.trim(loginCode));
+                var $password = $.validate.password($.trim(password));
+                if(!mobile) {
+                    $.alert({
+                        msg:'手机号不能为空!'
+                    });
+                }else if(!loginCode) {
+                    $.alert({
+                        msg:'验证码不能为空!'
+                    });
+                }else if(!password) {
+                    $.alert({
+                        msg:'密码不能为空!'
+                    });
+                }else if(!passwordAgain) {
+                    $.alert({
+                        msg:'确认密码不能为空!'
+                    });
+                }else if(!$mobile){
+                    $.alert({
+                        msg:'手机号格式错误'
+                    });
+                }else if(!$code){
+                    $.alert({
+                        msg:'验证码格式错误'
+                    });
+                }else if(!$password){
+                    $.alert({
+                        msg : '密码格式错误'
+                    })
+                }else if(password != passwordAgain){
+                    $.alert({
+                        msg : '两次密码不一致'
+                    })
+                }else{
+                    $this.addClass('disabled');
+                    //提交代码
+                    $.ajax({
+                        type: 'POST',
+                        beforeSend: function() {
+                            $.preloader.show();
+                        },
+                        url: '/mobile/gateway/wechat/account/login/mobile',
+                        data: {account: $.trim(mobile), vcode: $.trim(loginCode),password: $.trim(password)},
+                        success: function (data) {
+                            if (data.code == 0) {
+                                location.href = data.url;
+                            } else {
+                                $.confirm({
+                                    title: '注册失败',
+                                    detail:[data.msg],
+                                    yes:'确认',
+                                    yesFun: function() {}
+                                });
+                                $this.removeClass('disabled');
+                            };
+                            $.preloader.hide();
+                        },
+                        error: function (data) {
+                            $this.removeClass('disabled');
+                            $.preloader.hide();
+                            $.alert({
+                                msg:'网络异常,请重试'
+                            });
+                        }
+                    })
+                }
+            }
+        });
+    });
 </script>
 </body>
 </html>
