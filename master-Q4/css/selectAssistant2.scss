@@ -8,6 +8,15 @@ footer{
     padding-left: rem(26px);
     color: #B1B3B9;
     font-size: rem(26px);
+    div {
+      color: #4F545B;
+      font-size: rem(32px);
+      span {
+        margin-left: rem(30px);
+        font-size: rem(20px);
+        color: #83858C;
+      }
+    }
   }
   .confirm-btn{
     width: 6rem;
@@ -84,6 +93,7 @@ footer{
 }
 .tips-wrapper {
   width: 100%;
+  overflow: hidden;
   text-align: center;
   background-color: #fff;
   margin-top: rem(88px);
@@ -170,14 +180,18 @@ p{
 }
 .swiper-container {
   margin-top: rem(64px);
+  font-size: 0;
+  overflow: auto;
 }
 .swiper-slide {
   width: rem(174px);
+  display: inline-block;
+  margin-right: .3rem;
 }
 .assistant-wrapper {
   width: 100%;
   height: rem(315px);
-  margin: 0 rem(12px);
+  border: rem(2px) solid #DDDDDD;
   .img-wp {
     width: 100%;
     height: rem(220px);
@@ -193,5 +207,12 @@ p{
     color: #4F545B;
     text-align: center;
     font-size:rem(28px);
+  }
+  &.selected {
+    border: rem(2px) solid #E61E4B;
+    .name {
+      background-color: #E61E4B;
+      color: #fff;
+    }
   }
 }

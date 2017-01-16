@@ -6,7 +6,6 @@
     <title>简途旅行</title>
     <meta name="format-detection" content="telephone=no" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="/common/css/swiper.min.css">
     <link rel="stylesheet" href="/master-Q4/css/selectAssistant2.scss?__inline" media="screen" title="no title" charset="utf-8">
     <script type="text/javascript">
         function filterResult (e){
@@ -44,7 +43,7 @@
         </header>
         <footer>
             <div class="assistant-infos">
-                未选择助理
+                <div>助理:韩梅梅 <span>编号:006</span></div>
             </div>
             <div class="confirm-btn">确定</div>
         </footer>
@@ -98,7 +97,7 @@
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <div class="assistant-wrapper">
+                            <div class="assistant-wrapper" data-name="hanmeimei" data-no="005">
                                 <div class="img-wp">
                                     <img src="/master-Q4/images/Bitmap.png" alt="">
                                 </div>
@@ -131,7 +130,7 @@
                         </div>
 
                         <div class="swiper-slide">
-                            <div class="assistant-wrapper">
+                            <div class="assistant-wrapper selected">
                                 <div class="img-wp">
                                     <img src="/master-Q4/images/Bitmap.png" alt="">
                                 </div>
@@ -152,16 +151,6 @@
                             </div>
                         </div>
 
-                        <div class="swiper-slide">
-                            <div class="assistant-wrapper">
-                                <div class="img-wp">
-                                    <img src="/master-Q4/images/Bitmap.png" alt="">
-                                </div>
-                                <div class="name">
-                                    韩梅梅
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -175,15 +164,9 @@
     </div>
 </div>
 <script type="text/javascript" src="/common/js/zepto.min.js"></script>
-<script type="text/javascript" src="/common/js/swiper-3.4.1.jquery.min.js"></script>
+<script type="text/javascript" src="/common/js/base.js"></script>
 <script type="text/javascript">
     (function (doc, win) {
-        var swiper = new Swiper('.swiper-container', {
-            pagination: '.swiper-pagination',
-            slidesPerView: 'auto',
-            paginationClickable: true,
-            spaceBetween: 12
-        });
         var docEl = doc.documentElement,
                 resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
                 recalc = function () {
@@ -213,6 +196,9 @@
 </script>
 <script type="text/javascript">
     $(document).ready(function() {
+        var widthRem = $('.assistant-wrapper').length * 4.65 + 0.6;
+        $('.swiper-wrapper').css('width',widthRem+'rem');
+
         $('header .back').click(function() {
             if($(this).parents('header').hasClass('search-status')) {
                 $('header').removeClass('search-status');
@@ -231,6 +217,19 @@
         $('.click-zone').click(function() {
             $('.search-input input').val('');
             $('.search-bar').removeClass('input-change');
+        });
+
+        $.aClick({
+            clickNode:'.assistant-wrapper',
+            parentNode : '.tips-wrapper',
+            clickFun : function($this){
+                //$this为当前点击dom的zepto对象
+                $('.assistant-wrapper').removeClass('selected');
+                $this.addClass('selected');
+                var name = $this.attr('data-name');
+                var no = $this.attr('data-no');
+                $('footer .assistant-infos').html('<div>助理:'+name+' <span>编号:'+no+'</span></div>');
+            }
         });
     });
 </script>
