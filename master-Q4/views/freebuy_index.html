@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/master-Q4/css/freebuy_index.scss?__inline">
+    <script type="text/javascript">
+        function filterResult (e){
+            var value = event.target.value;
+            if(!value) {
+                $('.search-input').removeClass('input-change');
+            } else {
+                $('.search-input').addClass('input-change');
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="page-group">
+    <div class="page page-current">
+        <header class="red">
+            <div class="back"></div>
+            <div class="search-bar">
+                <div class="search-input">
+                    <label></label>
+                    <input type="text" oninput="filterResult(event)" name="search" placeholder="巴士线路／目的地／途中玩乐" />
+                    <div class="click-zone"></div>
+                </div>
+            </div>
+            <div class="search-btn">
+                搜索
+            </div>
+        </header>
+
+        <div class="search-result">
+            <div class="results">
+            </div>
+
+            <div class="no-line">
+                <div class="img-wp">
+                    <img src="/master-Q3/images/icon/no_result_icon@2x.png" alt="">
+                </div>
+                <p>无搜索结果</p>
+            </div>
+            <div class="hot-space">
+                <h5>热门搜索</h5>
+                <ul>
+                    <li>成都</li>
+                    <li>峨眉山</li>
+                    <li>九寨沟</li>
+                    <li>熊猫基地</li>
+                    <li class="selected">若尔盖草原测试</li>
+                    <li>乐山</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="page-content">
+            <div class="briefly">
+                <div class="banner">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="/master-Q3/images/route_detail_banner.png" alt=""/>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/master-Q3/images/route_detail_banner.png" alt=""/>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/master-Q3/images/route_detail_banner.png" alt=""/>
+                            </div>
+                        </div>
+                        <!-- 如果需要分页器 -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="sorts">
+                    <a class="scenics" href="#">
+                        <div>门票</div>
+                    </a>
+                    <a class="caterings" href="#">
+                        <div>美食</div>
+                    </a>
+                    <a class="hotels" href="#">
+                        <div>住宿</div>
+                    </a>
+                    <a class="activities" href="#">
+                        <div>娱乐</div>
+                    </a>
+                    <a class="gifts" href="#">
+                        <div>伴手礼</div>
+                    </a>
+                    <a class="buses" href="#">
+                        <div>接驳车</div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="recommend">
+                <h5>查询到你订购了九寨沟的巴士</h5>
+                <div class="products">
+                    <div class="product-wrapper">
+                        <div class="product">
+                            <div class="showImg">
+                                <img src="/master-Q3/images/detail_001.png" alt=""/>
+                            </div>
+                            <div class="name">臧家晚餐优惠券一张券臧家臧家晚餐优惠券一张券臧家晚餐优惠券一张券晚餐优惠券一张券</div>
+                            <div class="price">¥29899.00</div>
+                        </div>
+                    </div>
+                    <div class="product-wrapper">
+                        <div class="product">
+                            <div class="showImg">
+                                <img src="/master-Q3/images/detail_001.png" alt=""/>
+                            </div>
+                            <div class="name">臧家晚餐优惠券一张</div>
+                            <div class="price">¥29899.00</div>
+                        </div>
+                    </div>
+                    <div class="product-wrapper">
+                        <div class="product">
+                            <div class="showImg">
+                                <img src="/master-Q3/images/detail_001.png" alt=""/>
+                            </div>
+                            <div class="name">臧家晚餐优惠券一张券臧家臧家晚餐优惠券一张券臧家晚餐优惠券一张券晚餐优惠券一张券</div>
+                            <div class="price">¥29899.00</div>
+                        </div>
+                    </div>
+                    <div class="product-wrapper">
+                        <div class="product">
+                            <div class="showImg">
+                                <img src="/master-Q3/images/detail_001.png" alt=""/>
+                            </div>
+                            <div class="name">臧家晚餐优惠券一张券</div>
+                            <div class="price">¥29899.00</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="check-moreFoods">查看该线路全部途中玩乐…</a>
+            </div>
+
+            <div class="product-recommend">
+                <div class="products ticket">
+                    <div class="title">
+                        <h5>娱乐</h5>
+                        <div class="goAll">查看全部</div>
+                    </div>
+                    <div class="scroll-wrapper">
+                        <div class="item-wrapper">
+                            <div class="item">
+                                <div class="showImg">
+                                    <img src="/master-Q3/images/detail_001.png" alt=""/>
+                                </div>
+                                <div class="name">臧家晚餐优惠券一张券</div>
+                                <div class="price">¥29899.00</div>
+                            </div>
+                            <div class="item">
+                                <div class="showImg">
+                                    <img src="/master-Q3/images/detail_001.png" alt=""/>
+                                </div>
+                                <div class="name">臧家晚餐优惠券一张券</div>
+                                <div class="price">¥29899.00</div>
+                            </div>
+                            <div class="item">
+                                <div class="showImg">
+                                    <img src="/master-Q3/images/detail_001.png" alt=""/>
+                                </div>
+                                <div class="name">臧家晚餐优惠券一张券</div>
+                                <div class="price">¥29899.00</div>
+                            </div>
+                            <div class="item">
+                                <div class="showImg">
+                                    <img src="/master-Q3/images/detail_001.png" alt=""/>
+                                </div>
+                                <div class="name">臧家晚餐优惠券一张券</div>
+                                <div class="price">¥29899.00</div>
+                            </div>
+                            <div class="item">
+                                <div class="showImg">
+                                    <img src="/master-Q3/images/detail_001.png" alt=""/>
+                                </div>
+                                <div class="name">臧家晚餐优惠券一张券</div>
+                                <div class="price">¥29899.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="products caterings">
+                    <div class="title">
+                        <h5>美食</h5>
+                        <div class="goAll">查看全部</div>
+                    </div>
+                    <div class="scroll-wrapper">
+                        <div class="item-wrapper">
+                            <div class="item">
+                                <div class="showImg">
+                                    <img src="/master-Q3/images/detail_001.png" alt=""/>
+                                </div>
+                                <div class="name">臧家晚餐优惠券一张券</div>
+                                <div class="price">¥29899.00</div>
+                            </div>
+                            <div class="item">
+                                <div class="showImg">
+                                    <img src="/master-Q3/images/detail_001.png" alt=""/>
+                                </div>
+                                <div class="name">臧家晚餐优惠券一张券</div>
+                                <div class="price">¥29899.00</div>
+                            </div>
+                            <div class="item">
+                                <div class="showImg">
+                                    <img src="/master-Q3/images/detail_001.png" alt=""/>
+                                </div>
+                                <div class="name">臧家晚餐优惠券一张券</div>
+                                <div class="price">¥29899.00</div>
+                            </div>
+                            <div class="item">
+                                <div class="showImg">
+                                    <img src="/master-Q3/images/detail_001.png" alt=""/>
+                                </div>
+                                <div class="name">臧家晚餐优惠券一张券</div>
+                                <div class="price">¥29899.00</div>
+                            </div>
+                            <div class="item">
+                                <div class="showImg">
+                                    <img src="/master-Q3/images/detail_001.png" alt=""/>
+                                </div>
+                                <div class="name">臧家晚餐优惠券一张券</div>
+                                <div class="price">¥29899.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="products gifts">
+                    <div class="title">
+                        <h5>伴手礼</h5>
+                        <div class="goAll">查看全部</div>
+                    </div>
+                    <div class="scroll-wrapper">
+                        <div class="item-wrapper">
+                            <div class="item">
+                                <div class="showImg">
+                                    <img src="/master-Q3/images/detail_001.png" alt=""/>
+                                </div>
+                                <div class="name">臧家晚餐优惠券一张券</div>
+                                <div class="price">¥29899.00</div>
+                            </div>
+                            <div class="item">
+                                <div class="showImg">
+                                    <img src="/master-Q3/images/detail_001.png" alt=""/>
+                                </div>
+                                <div class="name">臧家晚臧家晚餐优惠券一张券臧家晚餐优惠券一张券餐优惠券一张券</div>
+                                <div class="price">¥29899.00</div>
+                            </div>
+                            <div class="item">
+                                <div class="showImg">
+                                    <img src="/master-Q3/images/detail_001.png" alt=""/>
+                                </div>
+                                <div class="name">臧家晚餐优惠券一张券</div>
+                                <div class="price">¥29899.00</div>
+                            </div>
+                            <div class="item">
+                                <div class="showImg">
+                                    <img src="/master-Q3/images/detail_001.png" alt=""/>
+                                </div>
+                                <div class="name">臧家晚餐优惠券一张券</div>
+                                <div class="price">¥29899.00</div>
+                            </div>
+                            <div class="item">
+                                <div class="showImg">
+                                    <img src="/master-Q3/images/detail_001.png" alt=""/>
+                                </div>
+                                <div class="name">臧家晚餐优惠券一张券</div>
+                                <div class="price">¥29899.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script type="text/javascript" src="/common/js/swiper-3.3.1.jquery.min.js"></script>
+<script>
+    (function (doc, win) {
+        var mySwiper = new Swiper('.swiper-container', {
+            direction: 'horizontal',
+            loop: true,
+            autoplay: 5000,
+            autoplayDisableOnInteraction: false,
+//                        preventClicks :true,
+            // 如果需要分页器
+            pagination: '.swiper-pagination',
+            onTouchEnd: function (swiper) {
+                if (Math.abs(swiper.touches.currentX - swiper.touches.startX) < 5) {
+                    location.href = $('.swiper-container img').eq(swiper.activeIndex).attr('data-href');
+                }
+            }
+        });
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    // 针对uc横竖屏rem html没有重绘的问题
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+        var a = document.getElementsByTagName('a');
+        for(var i = 0; i < a.length; i++){
+            a[i].addEventListener('touchstart',function(){},false);
+        }
+    })(document, window);
+    $(document).ready(function () {
+        $('.products.ticket .item-wrapper').css('width',$('.products.ticket .item').length * 6.5 + 'rem');
+        $('.products.caterings .item-wrapper').css('width',$('.products.caterings .item').length * 6.5 + 'rem');
+        $('.products.gifts .item-wrapper').css('width',$('.products.gifts .item').length * 6.5 + 'rem');
+
+        // 点击返回按钮
+        $('header .back').click(function(e) {
+            if($('header').hasClass('search-status')) {
+                $('header').removeClass('search-status');
+                $('.search-input.input-change').removeClass('input-change');
+                $('.search-input input').val('');
+                $('.search-result').hide();
+                //            $('.search-input input').attr('placeholder','目的地／景点／酒店／美食等');
+            } else {
+                history.go(-1);
+            }
+        });
+
+        $('.search-input input').focusin(function (e) {
+            $('header').addClass('search-status');
+            $('.search-result').show();
+        });
+
+        // 这里用一个稍微大一点的div来触发清空按钮的点击事件
+        $('.click-zone').click(function() {
+            $('.search-input').removeClass('input-change');
+            $('.search-input input').val('').focus();
+        });
+    });
+</script>
+</body>
+</html>
