@@ -1,0 +1,56 @@
+@import "/common/css/base";
+
+@mixin box-sizing($set:border-box) {
+  -webkit-box-sizing: $set;
+  -moz-box-sizing: $set;
+  -ms-box-sizing: $set;
+  -o-box-sizing: $set;
+  box-sizing: $set;
+}
+
+@mixin border-radius($radius:4px) {
+  -webkit-border-radius: rem($radius);
+  -moz-border-radius: rem($radius);
+  -ms-border-radius: rem($radius);
+  -o-border-radius: rem($radius);
+  border-radius: rem($radius);
+}
+
+html, body {
+  background-color: #E7E7E7;
+}
+
+* {
+  @include box-sizing();
+  outline: none;
+  color: #4F545B;
+}
+
+.albums {
+  width: 100%;
+  font-size: 0;
+  span{
+    display: inline-block;
+    width: rem(208px);
+    height: rem(208px);
+    background-color: #000;
+    margin-right: rem(8px);
+    margin-bottom: rem(8px);
+  }
+  span:nth-child(3n){
+    margin-right: 0;
+  }
+  img {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: #fff;
+  }
+  img:active{
+    opacity: .5;
+  }
+}
+
+
+
