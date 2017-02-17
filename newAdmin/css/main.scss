@@ -1,0 +1,453 @@
+*{box-sizing:border-box;margin:0;padding:0;font-size:12px;color:#556783;font-family:"Helvetica Neue",Helvetica,Microsoft Yahei,Hiragino Sans GB,WenQuanYi Micro Hei,sans-serif}
+html,body{width:100%;height:100%;overflow: hidden}
+@mixin clear{
+  content:'';
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+$color : #556783 !default;
+$red : #FE1A65 !default;
+$hoverBg : #E5E7EA !default;
+$buttonBlue:#4089FB !default;
+$buttonBlueHover:#1F6ADF !default;
+$buttonDisable:#BCC1C8 !default;
+@mixin fontFun($s:16px,$c:#556783){
+  font-size: $s;
+  color:$c;
+}
+a {
+  text-decoration: none;
+  cursor: pointer
+}
+
+a:link,a:visited,a:hover,a:active{
+  text-decoration: none
+}
+.head{
+  background-color: #2B2B4C;
+  height: 50px;
+  position: relative;
+  padding:0 50px 0 300px;
+  text-align: right;
+  .left{
+    position: absolute;
+    left: 0;
+    top:0;
+    bottom: 0;
+    width: 280px;
+    line-height: 50px;
+    text-align: center;
+    color:white;
+    background: url("/newAdmin/images/topTitle.png") no-repeat;
+    font-size: 24px;
+  }
+  .user{
+    display: inline-block;
+    width: 133px;
+    padding-left: 30px;
+    padding-right:14px;
+    height: 50px;
+    line-height: 50px;
+    background: url("/newAdmin/images/user.png") no-repeat left center;
+    text-align: left;
+    position: relative;
+    color:#CCD3DA;
+    font-size: 14px;
+    &:after{
+      content: '';
+      position: absolute;
+      width: 14px;
+      top:0;
+      right: 0;
+      bottom: 0;
+      background: url("/newAdmin/images/downArrowGray.png") no-repeat center;
+    }
+  }
+}
+.container{
+  position: absolute;
+  width: 100%;
+  top:50px;
+  bottom: 0;
+  left: 0;
+  .nav{
+    font-size: 0;
+    position: absolute;
+    overflow-y: auto;
+    left: 0;
+    width: 280px;
+    top:0;
+    bottom:0;
+    ul{
+      list-style: none;
+    }
+    li{
+      display: block;
+      &>a{
+        position: relative;
+        font-size: 18px;
+        display: block;
+        height: 60px;
+        line-height: 60px;
+        padding-left: 104px;
+        background: url("/newAdmin/images/1.png") no-repeat 58px 21px;
+        &.hover,&.selected{
+          color:$red;
+          background: url("/newAdmin/images/11.png") no-repeat 58px 21px;
+        }
+        &.selected{
+          background-color:#EEF1F5;
+        }
+        &.message{
+          background: url("/newAdmin/images/2.png") no-repeat 58px 21px;
+          &.hover,&.selected{
+            background: url("/newAdmin/images/22.png") no-repeat 58px 21px;
+          }
+          &.selected{
+            background-color:#EEF1F5;
+          }
+        }
+        &.order{
+          background: url("/newAdmin/images/3.png") no-repeat 58px 21px;
+          &.hover,&.selected{
+            background: url("/newAdmin/images/33.png") no-repeat 58px 21px;
+          }
+          &.selected{
+            background-color:#EEF1F5;
+          }
+        }
+        &.product{
+          background: url("/newAdmin/images/4.png") no-repeat 58px 21px;
+          &.hover,&.selected{
+            background: url("/newAdmin/images/44.png") no-repeat 58px 21px;
+          }
+          &.selected{
+            background-color:#EEF1F5;
+          }
+        }
+        &.myStore{
+          background: url("/newAdmin/images/5.png") no-repeat 58px 21px;
+          &.hover,&.selected{
+            background: url("/newAdmin/images/55.png") no-repeat 58px 21px;
+          }
+          &.selected{
+            background-color:#EEF1F5;
+          }
+        }
+
+        &.down,&.up,&.selected{
+          &:after{
+            content: '';
+            width: 14px;
+            position: absolute;
+            top:0;
+            right: 42px;
+            bottom: 0;
+            background: url("/newAdmin/images/downArrow.png") no-repeat center;
+          }
+        }
+        &.up:after{
+          background: url("/newAdmin/images/upArrow.png") no-repeat center;
+        }
+        &.selected:after{
+          background: url("/newAdmin/images/leftArrow.png") no-repeat center;
+        }
+      }
+    }
+    .submenu li>a{
+      height: 46px;
+      color:#99A6B8;
+      background: none;
+      font-size: 16px;
+      line-height: 46px;
+      &.hover{
+        color:$red;
+      }
+      &.selected{
+        color:$red;
+        background-color:#EEF1F5;
+      }
+    }
+  }
+  .main-content{
+    margin-left: 280px;
+    height: 100%;
+    background-color: #F3F5F7;
+    overflow: auto;
+  }
+}
+.page{
+  padding: 40px;
+  width: 740px;
+  h3{
+    color:$color;
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  .steps{
+    div{
+      position: relative;
+      font-size: 16px;
+      padding-left: 20px;
+      background: url("/newAdmin/images/circle-gray.png") no-repeat left center;
+      margin-bottom: 26px;
+      color:#B0BAC9;
+      &:after{
+        content: '';
+        position: absolute;
+        height: 21px;
+        border-left:1px solid #D2D5D9;
+        left:4px;
+        top:16px;
+      }
+      &.last:after{
+        top:auto;
+        bottom: 15px;
+      }
+      &.selected{
+        color:$red;
+        background: url("/newAdmin/images/circle.png") no-repeat left center;
+        &:after{
+          border-left:1px solid $red;
+        }
+      }
+    }
+  }
+  .content{
+    margin-top: 50px;
+    h5{
+      font-size: 14px;
+      color:$color;
+      margin-bottom: 10px;
+    }
+    div.productStyle{
+      width: 482px;
+      border-left:1px solid #D2D5D9;
+      border-top:1px solid #D2D5D9;
+      &:after{
+        @include clear;
+      }
+      div{
+        text-align: center;
+        height: 55px;
+        line-height: 54px;
+        float: left;
+        width: 160px;
+        border-right: 1px solid #D2D5D9;
+        border-bottom: 1px solid #D2D5D9;
+        color:$color;
+        background-color: white;
+        cursor:pointer;
+        &.hover{
+          background-color: $hoverBg;
+        }
+        &.selected{
+          background-color: $red;
+          color:white;
+        }
+      }
+    }
+  }
+  button.next{
+    border:none;
+    cursor: pointer;
+    border-radius: 6px;
+    width: 180px;
+    height: 50px;
+    background-color: $buttonBlue;
+    font-size: 18px;
+    margin-top: 30px;
+    margin-right: 15px;
+    color:white;
+    outline: none;
+    &.hover{
+      background-color: $buttonBlueHover;
+    }
+    &.disabled{
+      background-color: $buttonDisable;
+      cursor: default;
+    }
+  }
+  .tabs{
+    .tabsHead{
+      position: relative;
+      height: 40px;
+    }
+    .tab{
+      width: 123px;
+      height: 40px;
+      line-height: 40px;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      background-color: #E1E6EB;
+      font-size: 16px;
+      color: $color;
+      text-align: center;
+      position: absolute;
+      &.first{
+        left:0;
+        z-index:5;
+      }
+      &.second{
+        left:113px;
+        z-index:4;
+      }
+      &.third{
+        left:226px;
+        z-index:3;
+      }
+      &.forth{
+        left:339px;
+        z-index:2;
+      }
+      &.active{
+        background-color: white;
+        z-index:6;
+      }
+    }
+    .tabsContent{
+      padding: 30px;
+      background-color: white;
+      div.item{
+        position: relative;
+        padding-left: 102px;
+        height: 30px;
+        margin-bottom: 14px;
+        span.label{
+          position: absolute;
+          width: 102px;
+          height: 30px;
+          line-height: 30px;
+          left:0;
+          &:after{
+            @include clear;
+          }
+          p{
+            @include fontFun(16px,$color);
+            height: 100%;
+            float: left;
+          }
+          div{
+            width: 12px;
+            height: 100%;
+            float: left;
+            margin-left: 4px;
+            background: url("/newAdmin/images/required.png") no-repeat center;
+          }
+        }
+        .itemRight{
+          &:after{
+            @include clear;
+          }
+          input[type=text]{
+            height: 30px;
+            padding: 6px;
+            font-size: 16px;
+            border:1px solid #D2D5D9;
+            border-radius: 4px;
+          }
+          &.radios{
+            .radio-wrap{
+              float: left;
+              height: 30px;
+              line-height: 30px;
+              margin-right: 50px;
+            }
+            .radio{
+              position: relative;
+              margin-right: 11px;
+              float: left;
+              padding: 0;
+              width: 20px;
+              height: 30px;
+              background: url("/newAdmin/images/radio.png") no-repeat 3px 7px;
+              &.selected{
+                background: url("/newAdmin/images/radio-select.png") no-repeat 3px 7px;
+              }
+            }
+            input[type=radio]{
+              cursor: pointer;
+              opacity: 0;
+              position: absolute;
+              width: 20px;
+              height: 30px;
+              display: block;
+              padding: 0;
+              margin: 0;
+              filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+            }
+          }
+          &.checkboxes{
+            .checkbox-wrap{
+              float: left;
+              height: 30px;
+              line-height: 30px;
+              margin-right: 50px;
+            }
+            .checkbox{
+              position: relative;
+              margin-right: 11px;
+              float: left;
+              padding: 0;
+              width: 20px;
+              height: 30px;
+              background: url("/newAdmin/images/checkbox.png") no-repeat 3px 7px;
+              &.selected{
+                background: url("/newAdmin/images/checkbox-select.png") no-repeat 3px 7px;
+              }
+              &.disabled-empty{
+                cursor: default;
+                background: url("/newAdmin/images/checkbox-disable-empty.png") no-repeat 3px 7px;
+              }
+              &.disabled{
+                cursor: default;
+                background: url("/newAdmin/images/checkbox-disable.png") no-repeat 3px 7px;
+              }
+            }
+            input[type=checkbox]{
+              &:disabled{
+                cursor: default;
+              }
+              cursor: pointer;
+              opacity: 0;
+              position: absolute;
+              width: 20px;
+              height: 30px;
+              display: block;
+              padding: 0;
+              margin: 0;
+              filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+            }
+          }
+
+          &.input_1{
+            input{
+              width: 100%;
+            }
+          }
+          &.input_2,&.input_3{
+            input{
+              float: left;
+              width: 50%;
+            }
+            p{
+              float: left;
+              margin-left: 25px;
+              line-height: 30px;
+              @include fontFun;
+            }
+          }
+          &.input_3{
+            input{
+              width: 80px;
+            }
+            p{
+              margin-left: 11px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

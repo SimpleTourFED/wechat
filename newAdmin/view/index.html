@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title>简途供应商系统</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" type="image/x-icon" href="/newAdmin/images/logo.ico">
+    <link rel="stylesheet" type="text/css" href="/newAdmin/css/main.scss">
+</head>
+<body ng-controller="mainController">
+    <div class="head">
+        <div class="left">简途供应商系统</div>
+        <div class="user">18180647922</div>
+    </div>
+    <div class="container">
+        <div class="nav" ng-nicescroll="" nice-option="{cursorcolor:'#E0E6EB'}">
+            <img src="/newAdmin/images/logo.jpg">
+            <ul>
+                <li>
+                    <a ng-click="navSelect($event)" st-hover href="#">店铺首页</a>
+                </li>
+                <li>
+                    <a ng-click="navSelect($event)" st-hover class="message">消息</a>
+                </li>
+                <li>
+                    <a st-hover class="order">订单</a>
+                </li>
+                <li>
+                    <a st-hover class="product">商品</a>
+                </li>
+                <li>
+                    <a class="myStore down">我的店铺</a>
+                    <ul class="submenu">
+                        <li>
+                            <a ng-click="navSelect($event)" st-hover class="selected" href="#">商家结算</a>
+                        </li>
+                        <li>
+                            <a st-hover href="#">供应协议</a>
+                        </li>
+                        <li>
+                            <a st-hover href="#">系统日志</a>
+                        </li>
+                        <li>
+                            <a st-hover href="#">成员管理</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+        <div class="main-content" ng-nicescroll="" nice-option="{cursorcolor:'#E0E6EB'}">
+            <!--<div class="page">-->
+                <!--<h3>新增商品</h3>-->
+                <!--<div class="steps">-->
+                    <!--<div class="selected">第一步:选择类型</div>-->
+                    <!--<div class="last">第二步:详细信息</div>-->
+                <!--</div>-->
+                <!--<form action="">-->
+                    <!--<div class="content">-->
+                        <!--<h5>请选择您要新增商品的类型</h5>-->
+                        <!--<div class="productStyle">-->
+                            <!--<div st-hover="" class="selected">1</div>-->
+                            <!--<div st-hover="">1</div>-->
+                            <!--<div st-hover="">1</div><div st-hover="">1</div><div>1</div><div>1</div><div>1</div><div>1</div><div>1</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<button st-hover class="next">下一步</button>-->
+                <!--</form>-->
+            <!--</div>-->
+            <div class="page">
+                <h3>新增商品</h3>
+                <div class="steps">
+                    <div>第一步:选择类型</div>
+                    <div class="last selected">第二步:详细信息</div>
+                </div>
+                <div class="tabs">
+                    <div class="tabsHead">
+                        <span class="tab first active">基本信息</span>
+                        <span class="tab second">其他说明</span>
+                    </div>
+                    <div class="tabsContent">
+                        <div class="item">
+                            <span class="label"><p>类型</p><div></div></span>
+                            <div class="itemRight input_1">
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <span class="label"><p>类型</p><div></div></span>
+                            <div class="itemRight input_2">
+                                <input type="text">
+                                <p>根据定位识别无需填写</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <span class="label"><p>行程天数</p><div></div></span>
+                            <div class="itemRight input_3">
+                                <input type="text">
+                                <p>天</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <span class="label"><p>行程天数</p><div></div></span>
+                            <div class="itemRight radios">
+                                <span class="radio-wrap">
+                                    <input type="radio" st-radio="" ng-checked="isRecommend == true" name="isRecommend" ng-value=true ng-model="isRecommend">
+                                    否
+                                </span>
+                                <span class="radio-wrap">
+                                    <input type="radio" st-radio="" ng-checked="isRecommend == false" name="isRecommend" ng-value=false ng-model="isRecommend">
+                                    否
+                                </span>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <span class="label"><p>行程天数</p><div></div></span>
+                            <div class="itemRight radios">
+                                <span class="radio-wrap">
+                                    <input type="radio" st-radio="" ng-checked="isRecommend == true" name="isRecommend" ng-value=true ng-model="isRecommend">
+                                    否
+                                </span>
+                                <span class="radio-wrap">
+                                    <input type="radio" st-radio="" ng-checked="isRecommend == false" name="isRecommend" ng-value=false ng-model="isRecommend">
+                                    否
+                                </span>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <span class="label"><p>行程天数</p><div></div></span>
+                            <div class="itemRight checkboxes">
+                                <span class="checkbox-wrap" ng-repeat="i in checkList">
+                                    <input type="checkbox" st-checkbox="" name="isRecommend" ng-value=true ng-model="i.checked">
+                                    {{i.label}}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="/common/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/newAdmin/js/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="/common/js/angular.min.js"></script>
+    <script type="text/javascript" src="/newAdmin/js/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="/newAdmin/js/ngPlugin.js"></script>
+    <script type="text/javascript" src="/newAdmin/js/ocLazyLoad.min.js"></script>
+    <script type="text/javascript" src="/newAdmin/js/angular-nicescroll.js"></script>
+    <script type="text/javascript">
+        var app = angular.module('app',['ui.router','oc.lazyLoad','angular-nicescroll','ngPlugin']);
+        app.controller('mainController',['$scope','$rootScope','$state','$http',function($scope,$rootScope,$state,$http){
+            $scope.navSelect = function ($event) {
+                angular.element($event.target).parents('.nav').find('a').removeClass('selected');
+                angular.element($event.target).addClass('selected');
+            }
+//            $scope.isRecommend = undefined
+            $scope.checkList = [{label:'app',value:'1'},{label:'wx',value:'2',checked:false},{label:'wxx',value:'3',checked:true},{label:'wxxx',value:'4'}]
+        }])
+    </script>
+</body>
+</html>
