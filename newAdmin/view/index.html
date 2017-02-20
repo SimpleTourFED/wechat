@@ -5,6 +5,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="icon" type="image/x-icon" href="/newAdmin/images/logo.ico">
     <link rel="stylesheet" type="text/css" href="/newAdmin/css/main.scss">
+    <link rel="stylesheet" href="/newAdmin/css/jquery.datetimepicker.css">
+    <script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&amp;ak=v7cmA7sPIOlhyVGISwFzQZqy&amp;services=&amp;t=20170207140543"></script>
 </head>
 <body ng-controller="mainController">
     <div class="head">
@@ -86,6 +88,17 @@
                         </div>
                         <div class="item">
                             <span class="label"><p>类型</p><div></div></span>
+                            <div class="itemRight">
+                                <select ng-cloak st-dropdown="" ng-model="dropdown" width = '200' name="" id="">
+                                    <option value="">请选择</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <span class="label"><p>类型</p><div></div></span>
                             <div class="itemRight input_2">
                                 <input type="text">
                                 <p>根据定位识别无需填写</p>
@@ -94,6 +107,42 @@
                         <div class="item">
                             <span class="label"><p>行程天数</p><div></div></span>
                             <div class="itemRight input_3">
+                                <input type="text" ng-model="time" datetimepicker format="Y/m/d">
+                                <p>天</p>
+                                <input type="text">
+                                <p>天</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <span class="label"><p>行程天数</p><div></div></span>
+                            <div class="itemRight input_3">
+                                <input type="text" disabled="disabled" ng-model="address.province">
+                                <p>省</p>
+                                <input type="text" disabled="disabled" ng-model="address.city">
+                                <p>市</p>
+                                <input type="text" disabled="disabled" ng-model="address.district">
+                                <p>区</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <span class="label"><p>行程天数</p><div></div></span>
+                            <div class="itemRight">
+                                天
+                            </div>
+                        </div>
+                        <div class="item map">
+                            <span class="label"><p>行程天数</p><div></div></span>
+                            <div class="itemRight">
+                                <div st-map address="address" class="mapContent">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <span class="label"><p>行程天数</p><div></div></span>
+                            <div class="itemRight input_3">
+                                <input type="text">
+                                <span class="cutline"></span>
                                 <input type="text">
                                 <p>天</p>
                             </div>
@@ -125,7 +174,7 @@
                             </div>
                         </div>
                         <div class="item">
-                            <span class="label"><p>行程天数</p><div></div></span>
+                            <span class="label" ng-click="click()"><p>行程天数</p><div></div></span>
                             <div class="itemRight checkboxes">
                                 <span class="checkbox-wrap" ng-repeat="i in checkList">
                                     <input type="checkbox" st-checkbox="" name="isRecommend" ng-value=true ng-model="i.checked">
@@ -139,6 +188,7 @@
         </div>
     </div>
     <script type="text/javascript" src="/common/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/newAdmin/js/jquery.datetimepicker.js"></script>
     <script type="text/javascript" src="/newAdmin/js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="/common/js/angular.min.js"></script>
     <script type="text/javascript" src="/newAdmin/js/angular-ui-router.min.js"></script>
@@ -147,12 +197,22 @@
     <script type="text/javascript" src="/newAdmin/js/angular-nicescroll.js"></script>
     <script type="text/javascript">
         var app = angular.module('app',['ui.router','oc.lazyLoad','angular-nicescroll','ngPlugin']);
-        app.controller('mainController',['$scope','$rootScope','$state','$http',function($scope,$rootScope,$state,$http){
+        app.controller('mainController',['$scope','$rootScope','$state','$http','alert',function($scope,$rootScope,$state,$http,alert){
             $scope.navSelect = function ($event) {
                 angular.element($event.target).parents('.nav').find('a').removeClass('selected');
                 angular.element($event.target).addClass('selected');
-            }
+            };
 //            $scope.isRecommend = undefined
+            $scope.address = {
+
+            };
+            $scope.click=function () {
+                alert.alert({
+                    type:'success'
+                });
+            }
+            $scope.dropdown = '';
+            $scope.time = '2017/1/3';
             $scope.checkList = [{label:'app',value:'1'},{label:'wx',value:'2',checked:false},{label:'wxx',value:'3',checked:true},{label:'wxxx',value:'4'}]
         }])
     </script>

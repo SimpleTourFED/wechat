@@ -24,6 +24,9 @@ a {
 a:link,a:visited,a:hover,a:active{
   text-decoration: none
 }
+input[disabled=disabled]{
+  background-color: white;
+}
 .head{
   background-color: #2B2B4C;
   height: 50px;
@@ -174,12 +177,13 @@ a:link,a:visited,a:hover,a:active{
     margin-left: 280px;
     height: 100%;
     background-color: #F3F5F7;
+    position: relative;
     overflow: auto;
   }
 }
 .page{
   padding: 40px;
-  width: 740px;
+  width: 820px;
   h3{
     color:$color;
     font-size: 20px;
@@ -310,6 +314,13 @@ a:link,a:visited,a:hover,a:active{
       padding: 30px;
       background-color: white;
       div.item{
+        &.map{
+          height: auto;
+          .mapContent{
+            width: 578px;
+            height: 160px;
+          }
+        }
         position: relative;
         padding-left: 102px;
         height: 30px;
@@ -340,6 +351,9 @@ a:link,a:visited,a:hover,a:active{
           &:after{
             @include clear;
           }
+          line-height: 30px;
+          font-size: 16px;
+          color: #556783;
           input[type=text]{
             height: 30px;
             padding: 6px;
@@ -438,16 +452,123 @@ a:link,a:visited,a:hover,a:active{
               @include fontFun;
             }
           }
+          .cutline{
+            width: 20px;
+            height: 1px;
+            float: left;
+            margin: 13px 10px 0 10px;
+            background-color: $color;
+          }
           &.input_3{
             input{
               width: 80px;
             }
             p{
               margin-left: 11px;
+              margin-right: 14px;
             }
           }
         }
       }
     }
+  }
+}
+.dropdown{
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 69px;
+  height: 30px;
+  line-height: 28px;
+  text-align: left;
+  border: 1px solid #4089FB;
+  border-radius: 4px;
+  &.radius{
+    border-radius:0;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+  .old{
+    position: absolute;
+    height: 0;
+    width: 0;
+    left: 0;
+    padding: 0;
+    top: 0;
+    overflow: hidden;
+  }
+  .selected{
+    display: block;
+    text-align: left;
+    padding-left: 12px;
+    padding-right: 30px;
+    cursor: pointer;
+    &:after{
+      position: absolute;
+      right: 0;
+      top: 0;
+      content: ' ';
+      width: 30px;
+      height: 28px;
+      text-align: center;
+      background: url("/newAdmin/images/dropdown.png") no-repeat;
+    }
+  }
+  div{
+    z-index: 8000;
+    position: absolute;
+    display: none;
+    left: -1px;
+    right: -1px;
+    top: 100%;
+    overflow: hidden;
+    border: 1px solid #4089FB;
+    background-color: white;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    ul{
+      list-style: none;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      margin: 0;
+      overflow: hidden;
+      overflow-y: auto;
+      li{
+        padding: 5px 12px 5px 12px;
+        background-color: white;
+        text-align: left;
+        &.hover{
+          background-color: #EEF1F5;
+        }
+      }
+    }
+  }
+}
+.alertmsg{
+  position: fixed;
+  z-index:10000;
+  left: 280px;
+  right: 0;
+  height: 100px;
+  top: -100px;
+  background: url("/newAdmin/images/wrong-icon.png") no-repeat 49px 33px;
+  background-color: #FE1A65;
+  &.success{
+    background-image: url("/newAdmin/images/right-icon.png");
+    background-color: #69D1FF;
+  }
+  .alertcontent{
+      padding-left: 106px;
+  }
+  .alertmsg_title{
+    padding-top: 27px;
+    font-size: 20px;
+    color:white;
+  }
+  .alertmsg_detailed{
+    color:white;
+    font-size: 12px;
   }
 }
