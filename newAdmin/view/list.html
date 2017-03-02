@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title>简途供应商系统</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" type="image/x-icon" href="/newAdmin/images/logo.ico">
+    <link rel="stylesheet" type="text/css" href="/newAdmin/css/main.scss">
+    <link rel="stylesheet" href="/newAdmin/css/jquery.datetimepicker.css">
+    <script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&amp;ak=v7cmA7sPIOlhyVGISwFzQZqy&amp;services=&amp;t=20170207140543"></script>
+</head>
+<body ng-controller="mainController">
+<div class="head">
+    <div class="left">简途供应商系统</div>
+    <div class="user">18180647922</div>
+</div>
+<div class="container">
+    <div class="nav" ng-nicescroll="" nice-option="{cursorcolor:'#E0E6EB'}">
+        <img src="/newAdmin/images/logo.jpg">
+        <ul>
+            <li>
+                <a ng-click="navSelect($event)" st-hover href="#">店铺首页</a>
+            </li>
+            <li>
+                <a ng-click="navSelect($event)" st-hover class="message">消息</a>
+            </li>
+            <li>
+                <a st-hover class="order">订单</a>
+            </li>
+            <li>
+                <a st-hover class="product">商品</a>
+            </li>
+            <li>
+                <a class="myStore down">我的店铺</a>
+                <ul class="submenu">
+                    <li>
+                        <a ng-click="navSelect($event)" st-hover class="selected" href="#">商家结算</a>
+                    </li>
+                    <li>
+                        <a st-hover href="#">供应协议</a>
+                    </li>
+                    <li>
+                        <a st-hover href="#">系统日志</a>
+                    </li>
+                    <li>
+                        <a st-hover href="#">成员管理</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+    <div class="main-content" ng-nicescroll="" nice-option="{cursorcolor:'#E0E6EB'}">
+        <div class="page list">
+            <h3>待结算</h3>
+            <div class="subtitle">对账周期:每周二可申请结算/每月20日可申请结算</div>
+            <div class="list-search">
+                <div class="list-left">
+                    <div class="list-left-item">
+                        <div class="full">
+                            <span class="label">订单ID/名称</span>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="list-left-item">
+                        <div class="half">
+                            <span class="label">订单ID/名称</span>
+                            <input type="text">
+                        </div>
+                        <div class="half">
+                            <span class="label">订单ID/名称</span>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="list-left-item">
+                        <div class="half">
+                            <span class="label">订单状态</span>
+                            <select name="type" st-dropdown="" width="258" n="4" ng-model="a">
+                                <option value="">请选择</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                        <div class="half">
+                            <span class="label">订单ID/名称</span>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="list-left-buttons">
+                        <button st-hover="">我是master</button>
+                        <button st-hover="">我是master</button>
+                        <button st-hover="">我是master</button>
+                        <button st-hover="">我是master</button>
+                    </div>
+                </div>
+                <div class="list-right">
+                    <button class="search-button">
+                        <span class="icon"></span>
+                        <span>搜索</span>
+                    </button>
+                    <button class="add-button">
+                        <span class="icon"></span>
+                        <span>新增</span>
+                    </button>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th width="10%" class="up"><div><span>id</span><span class="icon"></span></div></th>
+                        <th width="20%" class="down"><div><span>name</span><span class="icon"></span></div></th>
+                        <th width="30%"><div><span>timeBegin</span></div></th>
+                        <th width="30%"><div><span>timeEnd</span></div></th>
+                        <th width="10%"><div><span>hahahaha</span></div></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="center">1</td>
+                        <td>李寅</td>
+                        <td>2017/6/5</td>
+                        <td>2017/6/5</td>
+                        <td>哈哈哈</td>
+                    </tr>
+                    <tr class="selected">
+                        <td class="center">
+                            <input type="checkbox" st-checkbox="" name="v" ng-value=true ng-model="checked">
+                        </td>
+                        <td>李寅</td>
+                        <td>2017/6/5</td>
+                        <td>2017/6/5</td>
+                        <td>哈哈哈</td>
+                    </tr>
+                    <tr>
+                        <td class="center">
+                            <input type="checkbox" st-checkbox="" name="v" ng-value=true ng-model="checked">
+                        </td>
+                        <td>李寅</td>
+                        <td>2017/6/5</td>
+                        <td>2017/6/5</td>
+                        <td>哈哈哈</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>李寅</td>
+                        <td>2017/6/5</td>
+                        <td>2017/6/5</td>
+                        <td>哈哈哈</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>李寅</td>
+                        <td>2017/6/5</td>
+                        <td>2017/6/5</td>
+                        <td>哈哈哈</td>
+                    </tr>
+                    <tr class="selected">
+                        <td>1</td>
+                        <td>李寅</td>
+                        <td>2017/6/5</td>
+                        <td>2017/6/5</td>
+                        <td><a href="#">aaaa</a><a href="#">aaaa</a><a href="#">aaaa</a><a href="#">aaaa</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="pagination-content">
+                <div class="total">132条</div>
+                <div class="pagination-items" st-paging="" show-prev-next="true" text-prev-class="prev" text-next-class="next" paging-action="pageClick(page,pageSize,total)" page="currentPage" page-size="10" total="total">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="input_tips"><div class="arrow"></div><div class="content"><ul><li>我是李寅</li><li class="error">我是master</li></ul></div></div>
+</div>
+
+<script type="text/ng-template" id="m.html">
+    <div class="modal-header">
+        <div class="title">我是马斯特尔</div>
+    </div>
+    <div class="modal-container">
+        <label class="modal-container-item" ng-repeat="i in c">
+                <span class="checkbox-wrap">
+                    <input type="checkbox" st-checkbox="" name="v" ng-value=true ng-model="i.checked">
+                </span>
+            我是master我是master我是master我是master我是master我是master我是master我是master我是master
+        </label>
+        <label class="modal-container-item">
+                <span class="radio-wrap">
+                    <input type="radio" st-radio="" ng-checked="s == false" name="s" ng-value=false ng-model="s">
+                </span>
+            我也是master
+        </label>
+        <label class="modal-container-item">
+                <span class="radio-wrap">
+                    <input type="radio" st-radio="" ng-checked="s == false" name="s" ng-value=false ng-model="s">
+                </span>
+            我也是master
+        </label>
+        <label class="modal-container-item">
+                <span class="radio-wrap">
+                    <input type="radio" st-radio="" ng-checked="s == false" name="s" ng-value=false ng-model="s">
+                </span>
+            我也是master
+        </label>
+        <label class="modal-container-item">
+                <span class="radio-wrap">
+                    <input type="radio" st-radio="" ng-checked="s == false" name="s" ng-value=false ng-model="s">
+                </span>
+            我也是master
+        </label>
+    </div>
+    <div class="modal-footer">
+        <button class="cancel" st-hover="">
+            <span class="icon"></span>
+            <span>取消</span>
+        </button>
+        <button class="ok" st-hover="">
+            <span class="icon"></span>
+            <span>确定</span>
+        </button>
+    </div>
+</script>
+<script type="text/javascript" src="/common/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/newAdmin/js/jquery.datetimepicker.js"></script>
+<script type="text/javascript" src="/newAdmin/js/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="/common/js/angular.min.js"></script>
+<script type="text/javascript" src="/newAdmin/js/angular-ui-router.min.js"></script>
+<script type="text/javascript" src="/newAdmin/js/ngPlugin.js"></script>
+<script type="text/javascript" src="/newAdmin/js/ocLazyLoad.min.js"></script>
+<script type="text/javascript" src="/newAdmin/js/angular-nicescroll.js"></script>
+<script type="text/javascript">
+    var app = angular.module('app',['ui.router','oc.lazyLoad','angular-nicescroll','ngPlugin']);
+    app.controller('mainController',['$scope','$rootScope','$state','$http','alert','$modal',function($scope,$rootScope,$state,$http,alert,$modal){
+        $scope.navSelect = function ($event) {
+            angular.element($event.target).parents('.nav').find('a').removeClass('selected');
+            angular.element($event.target).addClass('selected');
+        };
+//            $scope.isRecommend = undefined
+        $scope.address = {
+
+        };
+        $scope.open = function (size) {
+            var modalInstance = $modal.open({
+                templateUrl : 'm.html',
+                controller: 'mController',
+                size:size
+            });
+            modalInstance.result.then(function(selectedItem) {
+                console.log(1)
+            }, function() {
+                console.log(2)
+            });
+        }
+        $scope.click=function () {
+            alert.alert({
+                type:'success'
+            });
+        }
+        $scope.pageClick = function (page,pageSize,total){
+            console.log(page+'/'+pageSize+'/'+total)
+        }
+        $scope.currentPage = 1;
+        $scope.pageSize = 10;
+        $scope.total = 1000;
+        $scope.a = '1';
+        $scope.b = '2';
+        $scope.dropdown = '';
+        $scope.time = '2017/1/3';
+        $scope.checkList = [{label:'app',value:'1'},{label:'wx',value:'2',checked:false},{label:'wxx',value:'3',checked:true},{label:'wxxx',value:'4'}]
+    }])
+    app.controller('mController',function ($scope,$modalInstance,$http) {
+        $scope.s = '';
+        $scope.c = [{label:'app',value:'1'},{label:'wx',value:'2',checked:false},{label:'wxx',value:'3',checked:true},{label:'wxxx',value:'4'}]
+        $scope.ok = function () {
+            $modalInstance.ok = function () {
+                $modalInstance.close();
+            }
+        }
+        $scope.cancel = function () {
+            $modalInstance.dismiss();
+        }
+    })
+</script>
+</body>
+</html>

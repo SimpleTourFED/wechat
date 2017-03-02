@@ -182,11 +182,164 @@
                                 </span>
                             </div>
                         </div>
+                        <div class="calendar-button">
+                            价格日历
+                        </div>
+                        <div class="page-btn-group">
+                            <button class="save">
+                                <span class="icon"></span>
+                                <span>保存</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="tabsContent">
+                        <div class="item">
+                            <span class="label"><p>商品介绍</p><div></div></span>
+                        </div>
+                        <textarea name=""></textarea>
+                        <div class="item">
+                            <span class="label"><p>费用说明</p><div></div></span>
+                        </div>
+                        <textarea name=""></textarea>
+                        <div class="item">
+                            <span class="label"><p>退改说明</p><div></div></span>
+                            <button class="use-template">使用模板</button>
+                        </div>
+                        <div class="cancel-rule">
+                            <div class="cancel-rule-item">
+                                <span class="text">出行（使用）</span>
+                                <select st-dropdown="" n="5" width="147" ng-model="dropdown" name="" >
+                                    <option value="">请选择</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <span class="text">天的</span>
+                                <select st-dropdown="" n="5" width="98" ng-model="dropdown" name="" >
+                                    <option value="">请选择</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <span class="text">前申请退款,退</span>
+                                <input type="text">
+                                <span class="text">%</span>
+                                <a href="#">添加</a>
+                            </div>
+                            <div class="cancel-rule-item">
+                                <span class="text">出行（使用）</span>
+                                <select st-dropdown="" n="5" width="147" ng-model="dropdown" name="" >
+                                    <option value="">请选择</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <span class="text">天的</span>
+                                <select st-dropdown="" n="5" width="98" ng-model="dropdown" name="" >
+                                    <option value="">请选择</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <span class="text">前申请退款,退</span>
+                                <input type="text">
+                                <span class="text">%</span>
+                                <a class="del" href="#">删除</a>
+                            </div>
+                            <div class="cancel-rule-item">
+                                <span class="text">出行（使用）</span>
+                                <select st-dropdown="" n="5" width="147" ng-model="dropdown" name="" >
+                                    <option value="">请选择</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <span class="text">天的</span>
+                                <select st-dropdown="" n="5" width="98" ng-model="dropdown" name="" >
+                                    <option value="">请选择</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <span class="text">前申请退款,退</span>
+                                <input type="text">
+                                <span class="text">%</span>
+                                <a href="#">添加</a>
+                            </div>
+                        </div>
+                        <textarea name=""></textarea>
+                        <div class="item">
+                            <span class="label"><p>预定须知</p><div></div></span>
+                        </div>
+                        <textarea name=""></textarea>
+                        <div class="item">
+                            <span class="label"><p>图片</p><div></div></span>
+                        </div>
+                        <div class="album">
+                            <div class="img-box">
+                                <div class="del"></div>
+                                <div class="img-box-hidden">
+                                    <img src="/master-Q3/images/oscars/bg.png" alt="">
+                                </div>
+                                <input type="text">
+                            </div>
+                            <div class="img-add" ng-click="open()"></div>
+                            <div class="img-add" ng-click="open('lg')"></div>
+                            <div class="img-add" ng-click="open('sm')"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="input_tips"><div class="arrow"></div><div class="content"><ul><li>我是李寅</li><li class="error">我是master</li></ul></div></div>
     </div>
+    <script type="text/ng-template" id="m.html">
+        <div class="modal-header">
+            <div class="title">我是马斯特尔</div>
+        </div>
+        <div class="modal-container">
+            <label class="modal-container-item" ng-repeat="i in c">
+                <span class="checkbox-wrap">
+                    <input type="checkbox" st-checkbox="" name="v" ng-value=true ng-model="i.checked">
+                </span>
+                我是master我是master我是master我是master我是master我是master我是master我是master我是master
+            </label>
+            <label class="modal-container-item">
+                <span class="radio-wrap">
+                    <input type="radio" st-radio="" ng-checked="s == false" name="s" ng-value=false ng-model="s">
+                </span>
+                我也是master
+            </label>
+            <label class="modal-container-item">
+                <span class="radio-wrap">
+                    <input type="radio" st-radio="" ng-checked="s == false" name="s" ng-value=false ng-model="s">
+                </span>
+                我也是master
+            </label>
+            <label class="modal-container-item">
+                <span class="radio-wrap">
+                    <input type="radio" st-radio="" ng-checked="s == false" name="s" ng-value=false ng-model="s">
+                </span>
+                我也是master
+            </label>
+            <label class="modal-container-item">
+                <span class="radio-wrap">
+                    <input type="radio" st-radio="" ng-checked="s == false" name="s" ng-value=false ng-model="s">
+                </span>
+                我也是master
+            </label>
+        </div>
+        <div class="modal-footer">
+            <button class="cancel" st-hover="">
+                <span class="icon"></span>
+                <span>取消</span>
+            </button>
+            <button class="ok" st-hover="">
+                <span class="icon"></span>
+                <span>确定</span>
+            </button>
+        </div>
+    </script>
     <script type="text/javascript" src="/common/js/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="/newAdmin/js/jquery.datetimepicker.js"></script>
     <script type="text/javascript" src="/newAdmin/js/jquery.nicescroll.min.js"></script>
@@ -197,7 +350,7 @@
     <script type="text/javascript" src="/newAdmin/js/angular-nicescroll.js"></script>
     <script type="text/javascript">
         var app = angular.module('app',['ui.router','oc.lazyLoad','angular-nicescroll','ngPlugin']);
-        app.controller('mainController',['$scope','$rootScope','$state','$http','alert',function($scope,$rootScope,$state,$http,alert){
+        app.controller('mainController',['$scope','$rootScope','$state','$http','alert','$modal',function($scope,$rootScope,$state,$http,alert,$modal){
             $scope.navSelect = function ($event) {
                 angular.element($event.target).parents('.nav').find('a').removeClass('selected');
                 angular.element($event.target).addClass('selected');
@@ -206,15 +359,41 @@
             $scope.address = {
 
             };
+            $scope.open = function (size) {
+                var modalInstance = $modal.open({
+                    templateUrl : 'm.html',
+                    controller: 'mController',
+                    size:size
+                });
+                modalInstance.result.then(function(selectedItem) {
+                    console.log(1)
+                }, function() {
+                    console.log(2)
+                });
+            }
             $scope.click=function () {
                 alert.alert({
                     type:'success'
                 });
             }
+            $scope.a = '1';
+            $scope.b = '2';
             $scope.dropdown = '';
             $scope.time = '2017/1/3';
             $scope.checkList = [{label:'app',value:'1'},{label:'wx',value:'2',checked:false},{label:'wxx',value:'3',checked:true},{label:'wxxx',value:'4'}]
         }])
+        app.controller('mController',function ($scope,$modalInstance,$http) {
+            $scope.s = '';
+            $scope.c = [{label:'app',value:'1'},{label:'wx',value:'2',checked:false},{label:'wxx',value:'3',checked:true},{label:'wxxx',value:'4'}]
+            $scope.ok = function () {
+                $modalInstance.ok = function () {
+                    $modalInstance.close();
+                }
+            }
+            $scope.cancel = function () {
+                $modalInstance.dismiss();
+            }
+        })
     </script>
 </body>
 </html>

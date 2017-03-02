@@ -7,91 +7,44 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="wap-font-scale" content="no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="/master-Q3/css/seat.scss" media="screen" title="no_title" charset="utf-8">
+    <link rel="stylesheet" href="/css/seat.scss" media="screen" title="no_title" charset="utf-8">
     <style>
-        footer ~ .page-content{
-            bottom: 3rem;
-        }
-        .seat .seat-no{
-            color:#8a2024;
-        }
         .seat-items{
-            background:url("/master-Q3/images/valentine/bg.png") no-repeat 0 5rem, -webkit-linear-gradient(#e43b45, #e4565d);
-            background:url("/master-Q3/images/valentine/bg.png") no-repeat 0 5rem, linear-gradient(#e43b45, #e4565d);
+            background:url("/images/iwd/bg.jpg") no-repeat 0 -6.8rem;
             background-size: 16rem;
         }
-        footer{
-            background-color: #e4565d;
-        }
-        .seat-no{
-            background-color: transparent !important;
-        }
         .placeholder{
-            color:white;
+            color:#fff0a6;
         }
         .armrestLeft,.armrestRight{
             display: none !important;
         }
         .page-content .seat-header{
-            color:#c10827;
-            border-bottom-color:#c10827;
-        }
-        .seat{
-            background: url("/master-Q3/images/valentine/seat.png") no-repeat;
-            background-size: 2.5rem 2rem;
-        }
-        .seat.disabled{
-            background: url("/master-Q3/images/valentine/seat-disabled.png") no-repeat;
-            background-size: 2.5rem 2rem;
+            border-bottom:none;
+            height: 2rem;
         }
         .seat.selected{
-            background: url("/master-Q3/images/valentine/seat-select.png") no-repeat;
+            background: url("/images/iwd/seat-select.png") no-repeat;
             background-size: 2.5rem 2rem;
             text-indent:-9999px;
         }
-        .seat-items .arrow{
-            position: absolute;
-            top:2.5rem;
-            left: .5rem;
-            width: 15rem;
+        .seat.selected .seat-no{
+            background-color: transparent;
         }
-        .seat-items .bottom{
-            position: absolute;
-            bottom:0;
-            left:.5rem;
-            width: 15rem;
-        }
-        .seat-footer{
-            margin-top: 0;
-            background: url(/master-Q3/images/valentine/bottom.png) no-repeat center center;
-            background-size: 15rem;
-            height: 3.5rem;
-        }
-        .seat-footer .item{
-            margin-top: 1rem;
-        }
-        .seat-footer .status{
-            border:1px solid #8a2024;
-        }
-        .seat-footer .status.disabled{
-            background-color:#ff8a8d;
+        .seats{
+            position: relative;
         }
         .seat-footer .status.selected{
             border:none;
-            background: url("/master-Q3/images/valentine/seat-selected.png") no-repeat;
+            background: url("/images/iwd/seat-selected.png") no-repeat;
             background-size:.75rem;
         }
         footer{
-            height: 3rem;
-            padding-top: 0;
+            background-color: #91576c;
         }
         footer div{
-            background: url("/master-Q3/images/valentine/button.png") repeat-x;
+            background: url("/images/iwd/button.jpg") repeat-x;
             background-size:auto 2.2rem;
-            color:#8a2024;
-        }
-        .seat.none{
-            background: none;
         }
     </style>
 </head>
@@ -229,7 +182,7 @@
                 })
             };
             _.renderContent = function (v) {
-                var seatContent = '<div class="seats"><div class="seat-header">车窗前</div><div class="seat-content" style="width: '+(2.5*v.colTotal+.15*(v.colTotal+1)+2)+'rem">';
+                var seatContent = '<div class="seats"><div class="seat-header"></div><div class="seat-content" style="width: '+(2.5*v.colTotal+.15*(v.colTotal+1)+2)+'rem">';
                 var result = [];
                 for(var i = 0;i<v.seats.length;i+=v.colTotal){
                     result.push(v.seats.slice(i,i+v.colTotal))
@@ -247,7 +200,7 @@
                 return seatContent+'</div>'+_.renderFooter(v)+'</div></div>'
             };
             _.renderHeader = function (v) {
-                return '<div class="seat-page"><div class="seat-items"><img class="arrow" src="/master-Q3/images/valentine/arrow.png"><div class="page-header"><span>'+v.name+'</span><span>0/'+_.option.max+'</span></div>'
+                return '<div class="seat-page"><div class="seat-items"><div class="page-header"><span>'+v.name+'</span><span>0/'+_.option.max+'</span></div>'
             };
             _.renderFooter = function () {
                 return '<div class="seat-footer"><div class="item"><div class="status disabled"></div><div class="text">不可选</div></div><div class="item"><div class="status"></div><div class="text">可选</div></div><div class="item"><div class="status selected"></div><div class="text">选中</div></div></div>';
