@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/master-Q4/css/selectAssistant.scss?__inline" media="screen" title="no_title" charset="utf-8">
+    <script type="text/javascript">
+        function filterResult (e){
+            var value = event.target.value;
+            if(!value) {
+                $('.search-input').removeClass('input-change');
+            } else {
+                $('.search-input').addClass('input-change');
+            }
+            $('.search-result li').each(function(key, item) {
+                if(isNaN(value)) {
+                    if($(item).find('.assistant .name').text().indexOf(value) >= 0) {
+                        $(item).show();
+                    } else {
+                        $(item).hide();
+                    }
+                } else {
+                    if($(item).find('.assistant .no span').text().indexOf(value) >= 0) {
+                        $(item).show();
+                    } else {
+                        $(item).hide();
+                    }
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<div class="page-group">
+    <!--一个页面,如果有多个就是多个page,要首先显示的需要加上page-current类-->
+    <div class="page page-current">
+        <header>
+            <div class="back"></div>
+            <div class="center">选择行车助理</div>
+        </header>
+        <footer>
+            <div class="assistant-infos">
+                未选择助理
+            </div>
+            <div class="confirm-btn">确定</div>
+        </footer>
+        <div class="search-result">
+            <div class="results">
+                <ul>
+                    <li>
+                        <div class="assistant-avatar">
+                            <img src="/master-Q4/images/Bitmap.png" alt="">
+                        </div>
+                        <div class="assistant">
+                            <div class="name">高圆圆</div>
+                            <div class="no">助理编号: <span>001</span></div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="assistant-avatar">
+                            <img src="/master-Q4/images/Bitmap.png" alt="">
+                        </div>
+                        <div class="assistant">
+                            <div class="name">angular baby</div>
+                            <div class="no">助理编号: <span>002</span></div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="assistant-avatar">
+                            <img src="/master-Q4/images/Bitmap.png" alt="">
+                        </div>
+                        <div class="assistant">
+                            <div class="name">文天祥</div>
+                            <div class="no">助理编号: <span>003</span></div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="search-bar">
+                <div class="search-input">
+                    <label></label>
+                    <input type="text" oninput="filterResult(event)"  name="search" placeholder="输入编号或行车助理姓名" />
+                    <div class="click-zone"></div>
+                </div>
+            </div>
+            <div class="tips-wrapper">
+                <h5>选择您的行车助理</h5>
+                <img src="/master-Q4/images/assistantIcon@2x.png" alt="">
+            </div>
+
+            <p>系统无法匹配到您的行车助理</p>
+            <p>您可以通过搜索手动添加您的行车助理</p>
+            <div class="skip">
+                跳过此步骤
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                    docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                };
+        if (!doc.addEventListener) return;
+        recalc();
+        var a = document.getElementsByTagName('a');
+        for(var i = 0; i < a.length; i++){
+            a[i].addEventListener('touchstart',function(){},false);
+        }
+        document.body.style.visibility = 'visible';
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script>
+<script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('header .back').click(function() {
+            if($(this).parents('header').hasClass('search-status')) {
+                $('header').removeClass('search-status');
+                $('.search-input.input-change').removeClass('input-change');
+                $('.search-input input').val('');
+                $('.search-result').hide();
+            } else {
+                history.go(-1);
+            }
+        });
+        $('.search-input input').focusin(function (e) {
+            $('header').addClass('search-status');
+            $('.search-result').show();
+        });
+        // 这里用一个稍微大一点的div来触发清空按钮的点击事件
+        $('.click-zone').click(function() {
+            $('.search-input input').val('');
+            $('.search-bar').removeClass('input-change');
+        });
+    });
+</script>
+</body>
+</html>
