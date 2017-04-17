@@ -150,3 +150,125 @@
         hide : preloader.hide
     }
 })(Zepto);
+(function ($) {
+    function Actions(option) {
+        var defaultOption = {
+            title: '',
+            pick: '',
+            items: ['选项1', '选项2'],
+            clickFun: function (value) {
+            },
+            cancelFun: function () {
+            }
+        }
+        var $modal, _this = this;
+        var opts = $.extend(defaultOption, option);
+        var html = '<div class="actions-wrap"><div class="modal-overlay"></div><div class="actions-modal"><ul class="items">';
+        if (opts.title) {
+            html += '<li class="title">' + opts.title + '</li>';
+        }
+        for (var i = 0; i < opts.items.length; i++) {
+            html += '<li>' + opts.items[i] + '</li>';
+        }
+        html += '</ul><div class="cancel-btn">取消</div></div></div>';
+        $modal = $(html).appendTo(document.body);
+
+        if (opts.pick && $(opts.pick).length) {
+            $(opts.pick).on('click', function (e) {
+                _this.open();
+            });
+        }
+        $modal.on('click', '.cancel-btn', function (e) {
+            _this.close($modal);
+            opts.cancelFun();
+        });
+        $modal.on('click', '.items li:not(.title)', function (e) {
+            _this.close($modal);
+            opts.clickFun($(this).text());
+        });
+        _this.open = function () {
+            $modal.find('.actions-modal').addClass('show');
+            $modal.find('.modal-overlay').addClass('visible');
+        }
+        _this.close = function () {
+            $modal.find('.actions-modal').removeClass('show');
+            $modal.find('.modal-overlay').removeClass('visible');
+        }
+        return _this;
+    }
+    $.actions = function (option) {
+        return new Actions(option);
+    };
+})(Zepto);
+(function ($) {
+    function Popup(option) {
+        var defaultOption = {
+            title: '这是标题',
+            pick: '',
+            type: 'ttype',
+            content: '',
+            format: true,
+            cancelFun: function () {
+            }
+        }
+        var $modal, _this = this, html,$wrap;
+        var opts = $.extend(defaultOption, option);
+        html = '<div class="popup-modal-wrap"><div class="popup-overlay"></div><div class="popup-modal ' + opts.type + '"><div class="modal-content"><div class="header">'
+            + opts.title + '</div><div class="content">';
+        function ctype(){
+            var subhtml = '<ul>';
+            subhtml += '<li><span class="label">姓名</span><span class="value">'+opts.content.name+'</span></li>';
+            if(opts.content.lastName){
+                subhtml += '<li><span class="label">英文姓</span><span class="value">'+opts.content.lastName+'</span></li>';
+            }
+            if(opts.content.firstName){
+                subhtml += '<li><span class="label">英文名</span><span class="value">'+opts.content.firstName+'</span></li>';
+            }
+            subhtml += '<li><span class="label">手机号</span><span class="value">'+opts.content.mobile+'</span></li>'
+                +'<li><span class="label">'+opts.content.idType+'</span><span class="value">'+opts.content.idNo+'</span></li></ul>';
+            return subhtml;
+        }
+        if (opts.type == 'ctype' && opts.format) {
+            html += ctype();
+        }else{
+            html += opts.content[0];
+        }
+
+        html += '</div><div class="close">取消</div></div></div></div>';
+        $wrap = $(html).appendTo(document.body);
+        $modal = $wrap.find('.popup-modal');
+
+
+        if (opts.pick && $(opts.pick).length) {
+            $(opts.pick).on('click', function (e) {
+                _this.open();
+            });
+        }
+        $modal.on('click', '.close', function (e) {
+            _this.close($modal);
+            opts.cancelFun();
+        });
+        _this.open = function () {
+            $wrap.show();
+            $wrap[0].clientLeft;
+            $modal.addClass('show');
+            if($modal.siblings('.popup-overlay').length){
+                $modal.siblings('.popup-overlay').addClass('visible');
+            }else{
+                $('.popup-overlay').addClass('visible');
+            }
+        }
+        _this.close = function () {
+            $modal.removeClass('show');
+            // $modal.siblings('.popup-overlay').removeClass('visible');
+            $('.popup-overlay').removeClass('visible');
+            setTimeout(function () {
+                $('.popup-modal-wrap').hide();
+            }, 400);
+        }
+        return _this;
+    }
+    $.popup = function (option) {
+        return new Popup(option);
+    };
+})(Zepto);
