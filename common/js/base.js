@@ -161,7 +161,7 @@
             cancelFun: function () {
             }
         }
-        var $modal, _this = this;
+        var $modal,$wrap,$overlay, _this = this;
         var opts = $.extend(defaultOption, option);
         var html = '<div class="actions-wrap"><div class="modal-overlay"></div><div class="actions-modal"><ul class="items">';
         if (opts.title) {
@@ -171,7 +171,9 @@
             html += '<li>' + opts.items[i] + '</li>';
         }
         html += '</ul><div class="cancel-btn">取消</div></div></div>';
-        $modal = $(html).appendTo(document.body);
+        $wrap = $(html).appendTo(document.body);
+        $modal = $wrap.find('.actions-modal');
+        $overlay = $wrap.find('.modal-overlay');
 
         if (opts.pick && $(opts.pick).length) {
             $(opts.pick).on('click', function (e) {
@@ -179,7 +181,7 @@
             });
         }
         $modal.on('click', '.cancel-btn', function (e) {
-            _this.close($modal);
+            _this.close();
             opts.cancelFun();
         });
         $modal.on('click', '.items li:not(.title)', function (e) {
@@ -187,18 +189,25 @@
             opts.clickFun($(this).text());
         });
         _this.open = function () {
-            $modal.find('.actions-modal').addClass('show');
-            $modal.find('.modal-overlay').addClass('visible');
+            $wrap.show();
+            $wrap[0].clientLeft;
+            $modal.addClass('show');
+            $overlay.addClass('visible');
         }
         _this.close = function () {
-            $modal.find('.actions-modal').removeClass('show');
-            $modal.find('.modal-overlay').removeClass('visible');
+            $modal.removeClass('show');
+            $overlay.removeClass('visible');
+            setTimeout(function () {
+                $wrap.hide();
+            }, 400);
         }
         return _this;
     }
+
     $.actions = function (option) {
         return new Actions(option);
     };
+
 })(Zepto);
 (function ($) {
     function Popup(option) {
@@ -206,12 +215,12 @@
             title: '这是标题',
             pick: '',
             type: 'ttype',
-            content: '',
+            content: [''],
             format: true,
             cancelFun: function () {
             }
         }
-        var $modal, _this = this, html,$wrap;
+        var $modal, _this = this, html, $wrap, $overlay;
         var opts = $.extend(defaultOption, option);
         html = '<div class="popup-modal-wrap"><div class="popup-overlay"></div><div class="popup-modal ' + opts.type + '"><div class="modal-content"><div class="header">'
             + opts.title + '</div><div class="content">';
@@ -233,37 +242,32 @@
         }else{
             html += opts.content[0];
         }
-
         html += '</div><div class="close">取消</div></div></div></div>';
         $wrap = $(html).appendTo(document.body);
         $modal = $wrap.find('.popup-modal');
-
+        $overlay = $wrap.find('.popup-overlay');
 
         if (opts.pick && $(opts.pick).length) {
             $(opts.pick).on('click', function (e) {
                 _this.open();
             });
         }
+
         $modal.on('click', '.close', function (e) {
-            _this.close($modal);
+            _this.close();
             opts.cancelFun();
         });
         _this.open = function () {
             $wrap.show();
             $wrap[0].clientLeft;
             $modal.addClass('show');
-            if($modal.siblings('.popup-overlay').length){
-                $modal.siblings('.popup-overlay').addClass('visible');
-            }else{
-                $('.popup-overlay').addClass('visible');
-            }
+            $overlay.addClass('visible');
         }
         _this.close = function () {
             $modal.removeClass('show');
-            // $modal.siblings('.popup-overlay').removeClass('visible');
-            $('.popup-overlay').removeClass('visible');
+            $overlay.removeClass('visible');
             setTimeout(function () {
-                $('.popup-modal-wrap').hide();
+                $wrap.hide();
             }, 400);
         }
         return _this;
