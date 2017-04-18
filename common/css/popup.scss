@@ -1,0 +1,262 @@
+@import "default.scss";
+.popup-modal-wrap{
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+.popup-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 10010;
+  visibility: hidden;
+  opacity: 0;
+  transition-duration: 400ms;
+  -webkit-transition-duration: 400ms;
+  &.visible {
+    visibility: visible;
+    opacity: 1;
+    transition-duration: 400ms;
+    -webkit-transition-duration: 400ms;
+  }
+}
+.popup-modal {
+  width: rem(500px);
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  margin-left: rem(-250px);
+  z-index: 10400;
+  box-sizing: border-box;
+  transition-duration: 400ms;
+  -webkit-transition-duration: 400ms;
+  transition-property: transform;
+  -webkit-transition-property: transform;
+  @include transform(translate3d(0, 100%, 0));
+  &.show {
+    transition-property: transform;
+    -webkit-transition-property: transform;
+    transition-duration: 400ms;
+    -webkit-transition-duration: 400ms;
+    @include transform(translate3d(0, 0, 0));
+  }
+  &:before {
+    content: '';
+    display: block;
+    width: rem(500px);
+    min-height: rem(156px);
+    background: url(/images/popup_customer.png) no-repeat center;
+    background-size: contain;
+  }
+  .modal-content {
+    position: relative;
+    .header {
+      width: 100%;
+      height: rem(72px);
+      padding: rem(11px) rem(20px);
+      line-height: rem(40px);
+      color: #E61E4B;
+      font-size: rem(34px);
+      font-weight: 600;
+      text-align: center;
+      border-bottom: rem(2px) solid #EBEBF5;
+      border-top: rem(8px) solid #E61E4B;
+      background: #fff;
+      -webkit-border-radius: 6px 6px 0 0;
+      -moz-border-radius: 6px 6px 0 0;
+      -ms-border-radius: 6px 6px 0 0;
+      -o-border-radius: 6px 6px 0 0;
+      border-radius: 6px 6px 0 0;
+    }
+    .content {
+      width: 100%;
+      min-height: rem(400px);
+      max-height: rem(600px);
+      font-size: rem(28px);
+      line-height: rem(40px);
+      color: #4F545B;
+      overflow: scroll;
+      background: #fff;
+      * {
+        font-size: rem(28px);
+        line-height: rem(40px);
+        color: #4F545B;
+      }
+    }
+    .close {
+      width: rem(40px);
+      height: rem(40px);
+      display: block;
+      position: absolute;
+      right: 0;
+      top: rem(-156px);
+      text-indent: -9999px;
+      background: url(/images/popup_close.png) no-repeat center;
+      background-size: contain;
+    }
+  }
+}
+
+.popup-modal.ctype {
+  &:before {
+    content: '';
+    display: block;
+    width: rem(500px);
+    min-height: rem(156px);
+    background: url(/images/popup_customer.png) no-repeat center;
+    background-size: contain;
+  }
+  .modal-content .close {
+    top: rem(-156px);
+  }
+  .modal-content .content{
+    padding: rem(22px) rem(26px) 0;
+    ul,li{
+      list-style: none;
+    }
+    ul li{
+      padding-bottom: rem(20px);
+      @include displayflex;
+      @include flexflowRow;
+      -ms-justify-content: flex-start;
+      -webkit-justify-content: flex-start;
+      justify-content: flex-start;
+      -ms-justify: flex-start;
+      -webkit-justify: flex-start;
+      justify: flex-start;
+      -ms-box-align: flex-start;
+      -webkit-box-align: start;
+      box-align: flex-start;
+      -ms-align-items: flex-start;
+      -webkit-align-items: flex-start;
+      align-items: flex-start;
+      span {
+        display: block;
+        word-break: break-all;
+      }
+      .label {
+        margin-right: rem(20px);
+        color: #83858C;
+      }
+      .value {
+        @include flex;
+        color: #4F545B;
+      }
+    }
+  }
+}
+
+.popup-modal.ttype {
+  &:before {
+    content: '';
+    display: block;
+    width: rem(500px);
+    min-height: rem(156px);
+    background: url(/images/popup_tip.png) no-repeat center;
+    background-size: contain;
+  }
+  .modal-content .close {
+    top: rem(-156px);
+  }
+  .modal-content .content{
+    padding: rem(16px) rem(26px);
+  }
+}
+
+.popup-modal.btype {
+  &:before {
+    content: '';
+    display: block;
+    width: rem(500px);
+    min-height: rem(140px);
+    background: url(/images/popup_bill.png) no-repeat center;
+    background-size: contain;
+  }
+  .modal-content .close {
+    top: rem(-140px);
+  }
+  .modal-content .content{
+    .item{
+      border-bottom: rem(2px) solid #EBEBF5;
+      &:last-child{
+        border: none;
+      }
+      .item-up{
+        padding: rem(22px) rem(26px) 0;
+        border-bottom: rem(2px) solid #EBEBF5;
+      }
+      .item-down{
+        padding: rem(18px) rem(26px) 0;
+      }
+      .item-up,.item-down{
+        .row {
+          padding-bottom: rem(20px);
+          @include displayflex;
+          @include flexflowRow;
+          -ms-justify-content: flex-start;
+          -webkit-justify-content: flex-start;
+          justify-content: flex-start;
+          -ms-justify: flex-start;
+          -webkit-justify: flex-start;
+          justify: flex-start;
+          -ms-box-align: flex-start;
+          -webkit-box-align: start;
+          box-align: flex-start;
+          -ms-align-items: flex-start;
+          -webkit-align-items: flex-start;
+          align-items: flex-start;
+          span {
+            display: block;
+            word-break: break-all;
+          }
+          .label {
+            margin-right: rem(20px);
+            color: #83858C;
+          }
+          .value {
+            @include flex;
+            color: #4F545B;
+          }
+        }
+      }
+      .item-down{
+        .row{
+          .label{
+            color: #4F545B;
+          }
+          .value {
+            @include flex;
+            color: #E61E4B;
+          }
+        }
+      }
+    }
+  }
+}
+
+.popup-modal.stype {
+  &:before {
+    content: '';
+    display: block;
+    width: rem(500px);
+    min-height: rem(200px);
+    background: url(/images/popup_seat.png) no-repeat center;
+    background-size: contain;
+  }
+  .modal-content .close {
+    top: rem(-200px);
+  }
+  .modal-content .content{
+    padding: rem(16px) rem(26px);
+  }
+}
+html{position:relative;width:100%;height:100%;overflow:hidden;}
