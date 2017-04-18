@@ -401,7 +401,7 @@ angular.module('ngPlugin',[])
             });
         }
     }])
-    .directive('modalWindow', ['$modalStack', '$q', function ($modalStack, $q) {
+    .directive('modalWindow', ['$modalStack', '$q','$modal', function ($modalStack, $q,$modal) {
         return {
             restrict: 'EA',
             scope: {

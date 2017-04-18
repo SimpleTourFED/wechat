@@ -129,6 +129,8 @@
               }else{
                   return _.provinceArray[0]+'-'+_.provinceArray[1];
               }
+          }else{
+              return _.nomalResult
           }
         };
         _.show = function(){
@@ -185,53 +187,57 @@
                             var $translateY = 90-36*_.top1;
                             _.$select.find('.ios-select-col').eq(2).find('.ios-select-col-wrapper').css({'-webkit-transform':'translate3d(0,'+$translateY+'px,0)','transform':'translate3d(0,'+$translateY+'px,0)','-webkit-transition-duration':'0ms','transition-duration':'0ms'})
                         },300)
+                    }else{
+                        _.nomalResult = {name:_.$select.find('.ios-select-col').eq(0).find('.ios-select-col-item-selected').html(), value:_.$select.find('.ios-select-col').eq(0).find('.ios-select-col-item-selected').attr('data-value')}
                     }
 
                 });
-                _.lengthSecond = _.$select.find('.ios-select-col').eq(1).find('.ios-select-col-item').length;
-                _.$select.find('.ios-select-col')[1].addEventListener('touchstart',function(e){
-                    _.startY = e.touches[0].pageY;
-                    _.translate = 90-36*_.top1;
-                });
-                _.$select.find('.ios-select-col')[1].addEventListener('touchmove',function(e){
-                    e.preventDefault();
-                    e.stopPropagation();
-                    _.endY = e.touches[0].pageY;
-                    var $translateY = _.translate -_.startY+_.endY;
-                    _.top1 = Math.round((90-$translateY)/36);
-                    if(_.top1<0){
-                        _.top1 = 0;
-                    }else if(_.top1>(_.lengthSecond-1)){
-                        _.top1 = _.lengthSecond-1;
-                    }
-                    _.$select.find('.ios-select-col').eq(1).find('.ios-select-col-item').removeClass('ios-select-col-item-selected');
-                    _.$select.find('.ios-select-col').eq(1).find('.ios-select-col-item').eq(_.top1).addClass('ios-select-col-item-selected');
-                    _.$select.find('.ios-select-col').eq(1).find('.ios-select-col-wrapper').css({'-webkit-transform':'translate3d(0,'+$translateY+'px,0)','transform':'translate3d(0,'+$translateY+'px,0)','-webkit-transition-duration':'0ms','transition-duration':'0ms'})
-                });
-                _.$select.find('.ios-select-col')[1].addEventListener('touchend',function(e){
-                    var $translateY = 90-36*_.top1;
-                    _.$select.find('.ios-select-col').eq(1).find('.ios-select-col-wrapper').css({'-webkit-transform':'translate3d(0,'+$translateY+'px,0)','transform':'translate3d(0,'+$translateY+'px,0)','-webkit-transition-duration':'300ms','transition-duration':'300ms'});
-                    if(_.option.date){
-                        _.dateArray[1] = _.$select.find('.ios-select-col').eq(1).find('.ios-select-col-item-selected').attr('data-value');
-                        setTimeout(function () {
-                            _.$select.find('.ios-select-col').eq(2).find('.ios-select-col-wrapper').html(_.renderDay());
-                            _.lengthThird = _.$select.find('.ios-select-col').eq(2).find('.ios-select-col-item').length;
-                            var $valid = _.dateArray[2] > _.lengthThird ?_.lengthThird :_.dateArray[2];
-                            _.dateArray[2] = $valid;
-                            _.$select.find('.ios-select-col').eq(2).find('.ios-select-col-item').each(function (i,item) {
-                                if($(item).attr('data-value')==$valid){
-                                    _.top2 = i;
-                                    $(item).addClass('ios-select-col-item-selected');
-                                    var $translateY = 90-36*_.top2;
-                                    _.$select.find('.ios-select-col').eq(2).find('.ios-select-col-wrapper').css({'-webkit-transform':'translate3d(0,'+$translateY+'px,0)','transform':'translate3d(0,'+$translateY+'px,0)','-webkit-transition-duration':'0ms','transition-duration':'0ms'})
-                                }
-                            });
-                        },300)
-                    }else if(_.option.address){
-                        _.provinceArray[1] = _.$select.find('.ios-select-col').eq(1).find('.ios-select-col-item-selected').html();
-                    }
+                if(_.$select.find('.ios-select-col').eq(1).length){
+                    _.lengthSecond = _.$select.find('.ios-select-col').eq(1).find('.ios-select-col-item').length;
+                    _.$select.find('.ios-select-col')[1].addEventListener('touchstart',function(e){
+                        _.startY = e.touches[0].pageY;
+                        _.translate = 90-36*_.top1;
+                    });
+                    _.$select.find('.ios-select-col')[1].addEventListener('touchmove',function(e){
+                        e.preventDefault();
+                        e.stopPropagation();
+                        _.endY = e.touches[0].pageY;
+                        var $translateY = _.translate -_.startY+_.endY;
+                        _.top1 = Math.round((90-$translateY)/36);
+                        if(_.top1<0){
+                            _.top1 = 0;
+                        }else if(_.top1>(_.lengthSecond-1)){
+                            _.top1 = _.lengthSecond-1;
+                        }
+                        _.$select.find('.ios-select-col').eq(1).find('.ios-select-col-item').removeClass('ios-select-col-item-selected');
+                        _.$select.find('.ios-select-col').eq(1).find('.ios-select-col-item').eq(_.top1).addClass('ios-select-col-item-selected');
+                        _.$select.find('.ios-select-col').eq(1).find('.ios-select-col-wrapper').css({'-webkit-transform':'translate3d(0,'+$translateY+'px,0)','transform':'translate3d(0,'+$translateY+'px,0)','-webkit-transition-duration':'0ms','transition-duration':'0ms'})
+                    });
+                    _.$select.find('.ios-select-col')[1].addEventListener('touchend',function(e){
+                        var $translateY = 90-36*_.top1;
+                        _.$select.find('.ios-select-col').eq(1).find('.ios-select-col-wrapper').css({'-webkit-transform':'translate3d(0,'+$translateY+'px,0)','transform':'translate3d(0,'+$translateY+'px,0)','-webkit-transition-duration':'300ms','transition-duration':'300ms'});
+                        if(_.option.date){
+                            _.dateArray[1] = _.$select.find('.ios-select-col').eq(1).find('.ios-select-col-item-selected').attr('data-value');
+                            setTimeout(function () {
+                                _.$select.find('.ios-select-col').eq(2).find('.ios-select-col-wrapper').html(_.renderDay());
+                                _.lengthThird = _.$select.find('.ios-select-col').eq(2).find('.ios-select-col-item').length;
+                                var $valid = _.dateArray[2] > _.lengthThird ?_.lengthThird :_.dateArray[2];
+                                _.dateArray[2] = $valid;
+                                _.$select.find('.ios-select-col').eq(2).find('.ios-select-col-item').each(function (i,item) {
+                                    if($(item).attr('data-value')==$valid){
+                                        _.top2 = i;
+                                        $(item).addClass('ios-select-col-item-selected');
+                                        var $translateY = 90-36*_.top2;
+                                        _.$select.find('.ios-select-col').eq(2).find('.ios-select-col-wrapper').css({'-webkit-transform':'translate3d(0,'+$translateY+'px,0)','transform':'translate3d(0,'+$translateY+'px,0)','-webkit-transition-duration':'0ms','transition-duration':'0ms'})
+                                    }
+                                });
+                            },300)
+                        }else if(_.option.address){
+                            _.provinceArray[1] = _.$select.find('.ios-select-col').eq(1).find('.ios-select-col-item-selected').html();
+                        }
 
-                });
+                    });
+                }
                 if(_.$select.find('.ios-select-col').length >= 3){
                     _.lengthThird = _.$select.find('.ios-select-col').eq(2).find('.ios-select-col-item').length;
                     _.$select.find('.ios-select-col')[2].addEventListener('touchstart',function(e){

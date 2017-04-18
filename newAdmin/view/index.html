@@ -49,249 +49,128 @@
             </ul>
 
         </div>
-        <div class="main-content" ng-nicescroll="" nice-option="{cursorcolor:'#E0E6EB'}">
+        <div class="main-content" >
             <!--<div class="page">-->
                 <!--<h3>新增商品</h3>-->
                 <!--<div class="steps">-->
                     <!--<div class="selected">第一步:选择类型</div>-->
                     <!--<div class="last">第二步:详细信息</div>-->
                 <!--</div>-->
-                <!--<form action="">-->
-                    <!--<div class="content">-->
-                        <!--<h5>请选择您要新增商品的类型</h5>-->
-                        <!--<div class="productStyle">-->
-                            <!--<div st-hover="" class="selected">1</div>-->
-                            <!--<div st-hover="">1</div>-->
-                            <!--<div st-hover="">1</div><div st-hover="">1</div><div>1</div><div>1</div><div>1</div><div>1</div><div>1</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<button st-hover class="next">下一步</button>-->
-                <!--</form>-->
-            <!--</div>-->
-            <div class="page">
-                <h3>新增商品</h3>
-                <div class="steps">
-                    <div>第一步:选择类型</div>
-                    <div class="last selected">第二步:详细信息</div>
-                </div>
-                <div class="tabs">
-                    <div class="tabsHead">
-                        <span class="tab first active">基本信息</span>
-                        <span class="tab second">其他说明</span>
-                    </div>
-                    <div class="tabsContent">
-                        <div class="item">
-                            <span class="label"><p>类型</p><div></div></span>
-                            <div class="itemRight input_1">
-                                <input type="text">
-                            </div>
-                        </div>
-                        <div class="item">
-                            <span class="label"><p>类型</p><div></div></span>
-                            <div class="itemRight">
-                                <select ng-cloak st-dropdown="" ng-model="dropdown" width = '200' name="" id="">
-                                    <option value="">请选择</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <span class="label"><p>类型</p><div></div></span>
-                            <div class="itemRight input_2">
-                                <input type="text">
-                                <p>根据定位识别无需填写</p>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <span class="label"><p>行程天数</p><div></div></span>
-                            <div class="itemRight input_3">
-                                <input type="text" ng-model="time" datetimepicker format="Y/m/d">
-                                <p>天</p>
-                                <input type="text">
-                                <p>天</p>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <span class="label"><p>行程天数</p><div></div></span>
-                            <div class="itemRight input_3">
-                                <input type="text" disabled="disabled" ng-model="address.province">
-                                <p>省</p>
-                                <input type="text" disabled="disabled" ng-model="address.city">
-                                <p>市</p>
-                                <input type="text" disabled="disabled" ng-model="address.district">
-                                <p>区</p>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <span class="label"><p>行程天数</p><div></div></span>
-                            <div class="itemRight">
-                                天
-                            </div>
-                        </div>
-                        <div class="item map">
-                            <span class="label"><p>行程天数</p><div></div></span>
-                            <div class="itemRight">
-                                <div st-map address="address" class="mapContent">
 
+            <!--</div>-->
+            <div class="page-scroll-wrap" ng-nicescroll="" nice-option="{cursorcolor:'#E0E6EB'}">
+                <div class="page">
+                    <div class="page-title"><span ng-bind="postData.name+'-查看'"></span><a href="#" ui-sref-opts="{reload:true}" ui-sref="product({searchData:true})">返回</a></div>
+                    <div class="tabs">
+                        <form action="" name="form" novalidate="novalidate">
+                            <div class="tabsContent">
+                                <h3>基础信息</h3>
+                                <div class="product-detail">
+                                    <div class="product-detail-day">
+                                        <div class="day-title">D1</div>
+                                        <div class="day">
+                                            <div class="node-subtitle">
+                                                <span>成都-九寨沟</span>
+                                                <span class="down">收起</span>
+                                            </div>
+                                            <div class="node-item">
+                                                <span class="node-item-title">上车地点</span>
+                                                <span>百花潭公园西门</span>
+                                            </div>
+                                            <div class="node-item">
+                                                <span class="node-item-title">上车地点</span>
+                                                <span>百花潭公园西门</span>
+                                            </div>
+                                            <div class="node-item">
+                                                <span class="node-item-title">上车地点</span>
+                                                <span>百花潭公园西门</span>
+                                            </div>
+                                            <div class="node-item full">
+                                                出行当天之前3天00时申请退款
+                                            </div>
+                                            <div class="nodes">
+                                                <div class="node-title">
+                                                    <div class="no">1.1</div>
+                                                    <div class="node-name">
+                                                        <span class="big">节点名称</span>
+                                                        <span>成都才打打错打错打错</span>
+                                                    </div>
+                                                    <div class="node-name">
+                                                        <span class="big">节点名称</span>
+                                                        <span>换乘点</span>
+                                                    </div>
+                                                    <div class="node-name">
+                                                        <span class="big">抵达</span>
+                                                        <span>15：00</span>
+                                                    </div>
+                                                    <div class="node-name">
+                                                        <span class="big">出发</span>
+                                                        <span>16：00</span>
+                                                    </div>
+                                                </div>
+                                                <div class="node-subtitle">
+                                                    <span>成都-九寨沟</span>
+                                                    <span class="down">收起</span>
+                                                </div>
+                                                <div class="node-item">
+                                                    <span class="node-item-title">上车地点</span>
+                                                    <span>百花潭公园西门</span>
+                                                </div>
+                                                <div class="node-item">
+                                                    <span class="node-item-title">上车地点</span>
+                                                    <span>百花潭公园西门</span>
+                                                </div>
+                                                <div class="node-item">
+                                                    <span class="node-item-title">上车地点</span>
+                                                    <span>百花潭公园西门</span>
+                                                </div>
+                                                <div class="node-item full">
+                                                    出行当天之前3天00时申请退款
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <span class="label"><p>儿童价</p></span>
+                                    <div class="itemRight" ng-bind="postData.childPriceInfo"></div>
+                                </div>
+                                <h3>成人包含</h3>
+                                <div class="item detail-list" ng-repeat="adult in postData.adultInclude track by $index">
+                                    <div class="itemRight" ng-bind="adult"></div>
+                                </div>
+                                <h3>儿童包含</h3>
+                                <div class="item detail-list" ng-repeat="child in postData.childInclude track by $index">
+                                    <div class="itemRight" ng-bind="child"></div>
+                                </div>
+                                <h3>退款规则</h3>
+                                <div class="item detail-list" ng-repeat="rule in postData.refundRule track by $index">
+                                    <div class="itemRight" ng-bind="rule"></div>
+                                </div>
+                                <h3>产品亮点</h3>
+                                <div class="item detail-list" ng-repeat="highLight in postData.highLight track by $index">
+                                    <div class="itemRight" ng-bind="highLight"></div>
+                                </div>
+                                <h3>使用说明</h3>
+                                <div class="item detail-list" ng-repeat="manual in postData.manual track by $index">
+                                    <div class="itemRight" ng-bind="manual"></div>
+                                </div>
+                                <h3>费用包含</h3>
+                                <div class="item detail-list" ng-repeat="priceInclude in postData.priceInclude track by $index">
+                                    <div class="itemRight" ng-bind="priceInclude"></div>
+                                </div>
+                                <h3>预定须知</h3>
+                                <div class="item detail-list" ng-repeat="notice in postData.notice track by $index">
+                                    <div class="itemRight" ng-bind="notice"></div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="item">
-                            <span class="label"><p>行程天数</p><div></div></span>
-                            <div class="itemRight input_3">
-                                <input type="text">
-                                <span class="cutline"></span>
-                                <input type="text">
-                                <p>天</p>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <span class="label"><p>行程天数</p><div></div></span>
-                            <div class="itemRight radios">
-                                <span class="radio-wrap">
-                                    <input type="radio" st-radio="" ng-checked="isRecommend == true" name="isRecommend" ng-value=true ng-model="isRecommend">
-                                    否
-                                </span>
-                                <span class="radio-wrap">
-                                    <input type="radio" st-radio="" ng-checked="isRecommend == false" name="isRecommend" ng-value=false ng-model="isRecommend">
-                                    否
-                                </span>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <span class="label"><p>行程天数</p><div></div></span>
-                            <div class="itemRight radios">
-                                <span class="radio-wrap">
-                                    <input type="radio" st-radio="" ng-checked="isRecommend == true" name="isRecommend" ng-value=true ng-model="isRecommend">
-                                    否
-                                </span>
-                                <span class="radio-wrap">
-                                    <input type="radio" st-radio="" ng-checked="isRecommend == false" name="isRecommend" ng-value=false ng-model="isRecommend">
-                                    否
-                                </span>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <span class="label" ng-click="click()"><p>行程天数</p><div></div></span>
-                            <div class="itemRight checkboxes">
-                                <span class="checkbox-wrap" ng-repeat="i in checkList">
-                                    <input type="checkbox" st-checkbox="" name="isRecommend" ng-value=true ng-model="i.checked">
-                                    {{i.label}}
-                                </span>
-                            </div>
-                        </div>
-                        <div class="calendar-button">
-                            价格日历
-                        </div>
-                        <div class="page-btn-group">
-                            <button class="save">
-                                <span class="icon"></span>
-                                <span>保存</span>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="tabsContent">
-                        <div class="item">
-                            <span class="label"><p>商品介绍</p><div></div></span>
-                        </div>
-                        <textarea name=""></textarea>
-                        <div class="item">
-                            <span class="label"><p>费用说明</p><div></div></span>
-                        </div>
-                        <textarea name=""></textarea>
-                        <div class="item">
-                            <span class="label"><p>退改说明</p><div></div></span>
-                            <button class="use-template">使用模板</button>
-                        </div>
-                        <div class="cancel-rule">
-                            <div class="cancel-rule-item">
-                                <span class="text">出行（使用）</span>
-                                <select st-dropdown="" n="5" width="147" ng-model="dropdown" name="" >
-                                    <option value="">请选择</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select>
-                                <span class="text">天的</span>
-                                <select st-dropdown="" n="5" width="98" ng-model="dropdown" name="" >
-                                    <option value="">请选择</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select>
-                                <span class="text">前申请退款,退</span>
-                                <input type="text">
-                                <span class="text">%</span>
-                                <a href="#">添加</a>
-                            </div>
-                            <div class="cancel-rule-item">
-                                <span class="text">出行（使用）</span>
-                                <select st-dropdown="" n="5" width="147" ng-model="dropdown" name="" >
-                                    <option value="">请选择</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select>
-                                <span class="text">天的</span>
-                                <select st-dropdown="" n="5" width="98" ng-model="dropdown" name="" >
-                                    <option value="">请选择</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select>
-                                <span class="text">前申请退款,退</span>
-                                <input type="text">
-                                <span class="text">%</span>
-                                <a class="del" href="#">删除</a>
-                            </div>
-                            <div class="cancel-rule-item">
-                                <span class="text">出行（使用）</span>
-                                <select st-dropdown="" n="5" width="147" ng-model="dropdown" name="" >
-                                    <option value="">请选择</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select>
-                                <span class="text">天的</span>
-                                <select st-dropdown="" n="5" width="98" ng-model="dropdown" name="" >
-                                    <option value="">请选择</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select>
-                                <span class="text">前申请退款,退</span>
-                                <input type="text">
-                                <span class="text">%</span>
-                                <a href="#">添加</a>
-                            </div>
-                        </div>
-                        <textarea name=""></textarea>
-                        <div class="item">
-                            <span class="label"><p>预定须知</p><div></div></span>
-                        </div>
-                        <textarea name=""></textarea>
-                        <div class="item">
-                            <span class="label"><p>图片</p><div></div></span>
-                        </div>
-                        <div class="album">
-                            <div class="img-box">
-                                <div class="del"></div>
-                                <div class="img-box-hidden">
-                                    <img src="/master-Q3/images/oscars/bg.png" alt="">
-                                </div>
-                                <input type="text">
-                            </div>
-                            <div class="img-add" ng-click="open()"></div>
-                            <div class="img-add" ng-click="open('lg')"></div>
-                            <div class="img-add" ng-click="open('sm')"></div>
-                        </div>
+                        </form>
                     </div>
                 </div>
+
             </div>
+
         </div>
-        <div class="input_tips"><div class="arrow"></div><div class="content"><ul><li>我是李寅</li><li class="error">我是master</li></ul></div></div>
     </div>
     <script type="text/ng-template" id="m.html">
         <div class="modal-header">

@@ -11,7 +11,13 @@
 <body ng-controller="mainController">
 <div class="head">
     <div class="left">简途供应商系统</div>
-    <div class="user">18180647922</div>
+    <div class="user" st-hover="">
+        <span>18180647922</span>
+        <ul>
+            <li st-hover=""><a href="#">修改密码</a></li>
+            <li st-hover=""><a href="#">退出登陆</a></li>
+        </ul>
+    </div>
 </div>
 <div class="container">
     <div class="nav" ng-nicescroll="" nice-option="{cursorcolor:'#E0E6EB'}">
@@ -21,16 +27,16 @@
                 <a ng-click="navSelect($event)" st-hover href="#">店铺首页</a>
             </li>
             <li>
-                <a ng-click="navSelect($event)" st-hover class="message">消息</a>
+                <a ng-click="navSelect($event)" class="message" st-hover >消息通知<span>123</span></a>
             </li>
             <li>
-                <a st-hover class="order">订单</a>
+                <a st-hover >订单</a>
             </li>
             <li>
-                <a st-hover class="product">商品</a>
+                <a st-hover >商品</a>
             </li>
             <li>
-                <a class="myStore down">我的店铺</a>
+                <a class="down">我的店铺</a>
                 <ul class="submenu">
                     <li>
                         <a ng-click="navSelect($event)" st-hover class="selected" href="#">商家结算</a>
@@ -87,24 +93,28 @@
                             <input type="text">
                         </div>
                     </div>
+                    <div class="list-search-buttons">
+                        <button class="search-button" st-hover="">
+                            <span class="icon"></span>
+                            <span>搜索</span>
+                        </button>
+                        <button class="add-button">
+                            <span class="icon"></span>
+                            <span>新增</span>
+                        </button>
+                    </div>
                     <div class="list-left-buttons">
-                        <button st-hover="">我是master</button>
+                        <button st-hover="" ng-click="open()">我是master</button>
                         <button st-hover="">我是master</button>
                         <button st-hover="">我是master</button>
                         <button st-hover="">我是master</button>
                     </div>
                 </div>
-                <div class="list-right">
-                    <button class="search-button">
-                        <span class="icon"></span>
-                        <span>搜索</span>
-                    </button>
-                    <button class="add-button">
-                        <span class="icon"></span>
-                        <span>新增</span>
-                    </button>
-                </div>
             </div>
+            <!--<div class="table-none">-->
+                <!--<img src="/newAdmin/images/table-no-data.png">-->
+                <!--<div>对不起，没有找到相关数据</div>-->
+            <!--</div>-->
             <table>
                 <thead>
                     <tr>
@@ -117,7 +127,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="center">1</td>
+                        <td class="center important">1</td>
                         <td>李寅</td>
                         <td>2017/6/5</td>
                         <td>2017/6/5</td>
@@ -173,55 +183,225 @@
 
         </div>
     </div>
+    <div class="confirm-bg message"><div class="confirm-container"><div class="confirm-content">你有订单需要处理
+    </div><div class="confirm-footer"><button ng-click="no($event)" class="cancel" st-hover=""><span class="icon"></span><span>no</span>
+    </button><button class="ok" ng-click="yes($event)" st-hover=""><span class="icon"></span><span>yes</span>
+    </button></div></div></div>
     <div class="input_tips"><div class="arrow"></div><div class="content"><ul><li>我是李寅</li><li class="error">我是master</li></ul></div></div>
 </div>
-
 <script type="text/ng-template" id="m.html">
     <div class="modal-header">
-        <div class="title">我是马斯特尔</div>
+        <div class="modal-search">
+            <input type="text" />
+            <button class="search-button">
+                <span class="icon"></span>
+                <span>搜索</span>
+            </button>
+        </div>
     </div>
     <div class="modal-container">
-        <label class="modal-container-item" ng-repeat="i in c">
-                <span class="checkbox-wrap">
-                    <input type="checkbox" st-checkbox="" name="v" ng-value=true ng-model="i.checked">
-                </span>
-            我是master我是master我是master我是master我是master我是master我是master我是master我是master
-        </label>
-        <label class="modal-container-item">
+        <div class="modal-container-item">
                 <span class="radio-wrap">
-                    <input type="radio" st-radio="" ng-checked="s == false" name="s" ng-value=false ng-model="s">
+                    <input type="radio" st-radio="" name="list" ng-value="1" ng-model="$parent.selected">
                 </span>
-            我也是master
-        </label>
-        <label class="modal-container-item">
+            <span class="modal-container-item-text">123123123123123123</span>
+
+        </div>
+        <div class="modal-container-item">
                 <span class="radio-wrap">
-                    <input type="radio" st-radio="" ng-checked="s == false" name="s" ng-value=false ng-model="s">
+                    <input type="radio" st-radio="" name="list" ng-value="1" ng-model="$parent.selected">
                 </span>
-            我也是master
-        </label>
-        <label class="modal-container-item">
+            <span class="modal-container-item-text">123123123123123123</span>
+
+        </div><div class="modal-container-item">
                 <span class="radio-wrap">
-                    <input type="radio" st-radio="" ng-checked="s == false" name="s" ng-value=false ng-model="s">
+                    <input type="radio" st-radio="" name="list" ng-value="1" ng-model="$parent.selected">
                 </span>
-            我也是master
-        </label>
-        <label class="modal-container-item">
+        <span class="modal-container-item-text">123123123123123123</span>
+
+    </div><div class="modal-container-item">
                 <span class="radio-wrap">
-                    <input type="radio" st-radio="" ng-checked="s == false" name="s" ng-value=false ng-model="s">
+                    <input type="radio" st-radio="" name="list" ng-value="1" ng-model="$parent.selected">
                 </span>
-            我也是master
-        </label>
+        <span class="modal-container-item-text">123123123123123123</span>
+
+    </div><div class="modal-container-item">
+                <span class="radio-wrap">
+                    <input type="radio" st-radio="" name="list" ng-value="1" ng-model="$parent.selected">
+                </span>
+        <span class="modal-container-item-text">123123123123123123</span>
+
+    </div><div class="modal-container-item">
+                <span class="radio-wrap">
+                    <input type="radio" st-radio="" name="list" ng-value="1" ng-model="$parent.selected">
+                </span>
+        <span class="modal-container-item-text">123123123123123123</span>
+
+    </div><div class="modal-container-item">
+                <span class="radio-wrap">
+                    <input type="radio" st-radio="" name="list" ng-value="1" ng-model="$parent.selected">
+                </span>
+        <span class="modal-container-item-text">123123123123123123</span>
+
+    </div><div class="modal-container-item">
+                <span class="radio-wrap">
+                    <input type="radio" st-radio="" name="list" ng-value="1" ng-model="$parent.selected">
+                </span>
+        <span class="modal-container-item-text">123123123123123123</span>
+
+    </div>
+        <div class="modal-loading">
+            <img src="/newAdmin/images/loading.gif">
+            <span>正在加载</span>
+        </div>
     </div>
     <div class="modal-footer">
-        <button class="cancel" st-hover="">
+        <button class="cancel" st-hover="" ng-click="cancel()">
             <span class="icon"></span>
             <span>取消</span>
         </button>
-        <button class="ok" st-hover="">
+        <button class="ok" st-hover="" ng-click="ok()">
             <span class="icon"></span>
             <span>确定</span>
         </button>
     </div>
+</script>
+<script type="text/ng-template" id="h.html">
+    <div class="calendar">
+        <div class="calendar-wrap">
+            <div class="calendar-left">
+                <div class="placeholder"></div>
+                <div class="day">
+                    <div class="date"></div>
+                    <div>990元</div>
+                    <div>9999元</div>
+                    <div>剩余：40</div>
+                </div>
+            </div>
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <span class="left"></span>
+                    <span class="text">2017年1月</span>
+                    <span class="right"></span>
+                </div>
+                <div>
+                    <div class="week">
+                <span class="week-item first">
+                    <input st-checkbox="" type="checkbox">
+                    <span class="week-text">
+                        日
+                    </span>
+                </span>
+                        <span class="week-item">
+                    <input st-checkbox="" type="checkbox">
+                    <span class="week-text">
+                        一
+                    </span>
+                </span>
+                        <span class="week-item">
+                    <input st-checkbox="" type="checkbox">
+                    <span class="week-text">
+                        二
+                    </span>
+                </span>
+                        <span class="week-item">
+                    <input st-checkbox="" type="checkbox">
+                    <span class="week-text">
+                        三
+                    </span>
+                </span>
+                        <span class="week-item">
+                    <input st-checkbox="" type="checkbox">
+                    <span class="week-text">
+                        四
+                    </span>
+                </span>
+                        <span class="week-item">
+                    <input st-checkbox="" type="checkbox">
+                    <span class="week-text">
+                        五
+                    </span>
+                </span>
+                        <span class="week-item selected">
+                    <input st-checkbox="" type="checkbox">
+                    <span class="week-text">
+                        六
+                    </span>
+                </span>
+                    </div>
+                    <div class="calendar-content">
+                        <div class="day first">
+                            <div class="date">01</div>
+                            <div>990元</div>
+                            <div>9999元</div>
+                            <div>剩余：40</div>
+                        </div>
+                        <div class="day selected">
+                            <div class="date">01</div>
+                            <div>990元</div>
+                            <div>9999元</div>
+                            <div>剩余：40</div>
+                        </div>
+                        <div class="day">
+                            <div class="date">01</div>
+                            <div>990元</div>
+                            <div>9999元</div>
+                            <div>剩余：40</div>
+                        </div>
+                        <div class="day">
+                            <div class="date">01</div>
+                            <div>990元</div>
+                            <div>9999元</div>
+                            <div>剩余：40</div>
+                        </div>
+                        <div class="day">
+                            <div class="date">01</div>
+                            <div>990元</div>
+                            <div>9999元</div>
+                            <div>剩余：40</div>
+                        </div>
+                        <div class="day">
+                            <div class="date">01</div>
+                            <div>990元</div>
+                            <div>9999元</div>
+                            <div>剩余：40</div>
+                        </div>
+                        <div class="day">
+                            <div class="date">01</div>
+                            <div>990元</div>
+                            <div>9999元</div>
+                            <div>剩余：40</div>
+                        </div>
+                        <div class="day">
+                            <div class="date">01</div>
+                            <div>990元</div>
+                            <div>9999元</div>
+                            <div>剩余：40</div>
+                        </div>
+                        <div class="day">
+                            <div class="date">01</div>
+                            <div>990元</div>
+                            <div>9999元</div>
+                            <div>剩余：40</div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+            <div class="modal-footer">
+                <button class="cancel" st-hover="">
+                <span class="icon"></span>
+                <span>取消</span>
+                </button>
+                <button class="ok" st-hover="">
+                <span class="icon"></span>
+                <span>确定</span>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
 </script>
 <script type="text/javascript" src="/common/js/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="/newAdmin/js/jquery.datetimepicker.js"></script>
@@ -237,6 +417,7 @@
         $scope.navSelect = function ($event) {
             angular.element($event.target).parents('.nav').find('a').removeClass('selected');
             angular.element($event.target).addClass('selected');
+            angular.element($event.target).parents('a').addClass('selected');
         };
 //            $scope.isRecommend = undefined
         $scope.address = {
@@ -244,14 +425,14 @@
         };
         $scope.open = function (size) {
             var modalInstance = $modal.open({
-                templateUrl : 'm.html',
+                templateUrl : 'h.html',
                 controller: 'mController',
-                size:size
+                size:'calendar-detail'
             });
             modalInstance.result.then(function(selectedItem) {
                 console.log(1)
-            }, function() {
-                console.log(2)
+            }, function(reason) {
+                console.log(reason)
             });
         }
         $scope.click=function () {
@@ -272,15 +453,18 @@
         $scope.checkList = [{label:'app',value:'1'},{label:'wx',value:'2',checked:false},{label:'wxx',value:'3',checked:true},{label:'wxxx',value:'4'}]
     }])
     app.controller('mController',function ($scope,$modalInstance,$http) {
-        $scope.s = '';
+        $scope.s = '66';
         $scope.c = [{label:'app',value:'1'},{label:'wx',value:'2',checked:false},{label:'wxx',value:'3',checked:true},{label:'wxxx',value:'4'}]
         $scope.ok = function () {
             $modalInstance.ok = function () {
                 $modalInstance.close();
             }
         }
+        $scope.close = function () {
+            $modalInstance.dismiss($scope.s)
+        };
         $scope.cancel = function () {
-            $modalInstance.dismiss();
+            $modalInstance.dismiss($scope.s);
         }
     })
 </script>

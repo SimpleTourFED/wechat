@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title>简途供应商系统</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" type="image/x-icon" href="/newAdmin/images/logo.ico">
+    <link rel="stylesheet" type="text/css" href="/newAdmin/css/main.scss">
+</head>
+<body ng-controller="login" style="background-color: #F3F5F7">
+    <div class="login-wrap">
+        <img src="/newAdmin/images/logo.png">
+        <div class="login-container">
+            <div class="login-header">
+                简途供应商系统
+            </div>
+            <div class="login-content">
+                <div class="login-item">
+                    <span class="login-item-text">
+                        用户账号
+                    </span>
+                    <input type="text">
+                </div>
+                <div class="login-item">
+                    <span class="login-item-text">
+                        登陆密码
+                    </span>
+                    <input type="password">
+                </div>
+                <div class="login-item">
+                    <input type="checkbox" name="remember" ng-value="true" ng-model="checkbox" st-checkbox="">
+                    <span>
+                        记住账号
+                    </span>
+                </div>
+                <button class="login-button" st-hover="">
+                    <span class="icon"></span>
+                    <span>登录</span>
+                </button>
+                <div class="login-footer-link">
+                    <a href="/user/toGetPwdPage">忘记密码</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="/common/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/common/js/angular.min.js"></script>
+    <script type="text/javascript" src="/newAdmin/js/ngPlugin.js"></script>
+    <script>
+         var app = angular.module('app',['ngPlugin']);
+         app.controller('login',['$scope','$http',function ($scope,$http) {
+            $scope.checkbox = true;
+        }])
+    </script>
+</body>
+</html>

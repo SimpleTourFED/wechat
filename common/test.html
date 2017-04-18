@@ -24,6 +24,7 @@
         <div class="page-content">
             <a class="date" href="#" value="2016-10-15">2016-10-15</a>
             <a class="province" href="#">成都</a>
+            <a href="#" class="id" value="">123</a>
             <!--<a href="#" value="2016-10-16">2016-10-16</a>-->
         </div>
     </div>
@@ -91,6 +92,16 @@
             $('.date').html(date.result());
         }
     });
+     var da = $('.id').select({
+         options:[{value:1,name:'s'},{value:2,name:'ss'},{value:3,name:'sss'}],
+         title:'请选择退款原因',
+         type:'(value as name) in array',
+         ok : function () {
+             console.log(da.result());
+             $('.id').text(da.result().name);
+             $('.id').attr('value',da.result().value);
+         }
+     });
      var province = $('.province').select({
          title:'请选择',
          address : true ,
