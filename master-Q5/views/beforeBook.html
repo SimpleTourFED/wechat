@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>行程说明</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/master-Q5/css/beforeBook.scss?__inline" media="screen" title="no_title" charset="utf-8">
+</head>
+<body>
+<div class="beforeBook hide">
+    <div class="bb-title"><i></i><span>预定须知</span></div>
+    <div class="bb-content">
+        <h2>费用包含的项目</h2>
+        <div>如果遇到前方塌方等不可抗因素，行程可能有变更，请大家谅解。如果遇到前方塌方等不可抗因素，行程可能有变更，请大家谅解。如果遇到前方塌方等不可抗因素，行程可能有变更，请大家谅解。</div>
+        <h3>特种票特别赠送：</h3>
+        <div>如果遇到前方塌方等不可抗因素，行程可能有变更，请大家谅解。如果遇到前方塌方等不可抗因素，行程可能有变更，请大家谅解。如果遇到前方塌方等不可抗因素，行程可能有变更，请大家谅解。<br/>
+        如果遇到前方塌方等不可抗因素，行程可能有变更，请大家谅解。如果遇到前方塌方等不可抗因素，行程可能有变更，请大家谅解。如果遇到前方塌方等不可抗因素，行程可能有变更，请大家谅解。</div>
+        <h3>特种票特别赠送：</h3>
+        <div>还记得看好风格经典款式更多是看过很多风景可是更好的方式</div>
+        <h2>费用包含的项目</h2>
+        <div>如果遇到前方塌方等不可抗因素，行程可能有变更，请大家谅解。如果遇到前方塌方等不可抗因素，行程可能有变更，请大家谅解。如果遇到前方塌方等不可抗因素，行程可能有变更，请大家谅解。</div>
+        <h2>费用包含的项目</h2>
+        <div>如果遇到前方塌方等不可抗因素，行程可能有变更，请大家谅解。如果遇到前方塌方等不可抗因素，行程可能有变更，请大家谅解。如果遇到前方塌方等不可抗因素，行程可能有变更，请大家谅解。</div>
+</div>
+<script type="text/javascript">
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                    docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                };
+        if (!doc.addEventListener) return;
+        recalc();
+        var a = document.getElementsByTagName('a');
+        for(var i = 0; i < a.length; i++){
+            a[i].addEventListener('touchstart',function(){},false);
+        }
+        document.body.style.visibility = 'visible';
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script>
+<script type="text/javascript" src="/common/js/zepto.min.js"></script>
+</body>
+</html>

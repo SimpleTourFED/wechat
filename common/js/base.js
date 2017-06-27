@@ -26,9 +26,13 @@
             $.each(o.detail,function(i,item){
                 _.detail += '<p>'+item+'</p>'
             });
-            _.buttons += o.cancel?'<div class="confirm-msg-btns"><span>'+o.yes+'</span><span>'+o.cancel+'</span></div>':'<div class="confirm-msg-close"></div>';
-            var $bts = o.cancel?'<div class="confirm-msg-content has-btn">'+_.detail+'</div>'+_.buttons+'</div>':'<div class="confirm-msg-content">'+_.detail+'</div>'+_.buttons+'</div>'
-            _.modalContent = '<div class="confirm-msg"><div class="confirm-msg-title">'+o.title+'</div>'+$bts;
+            _.buttons += o.cancel?'<div class="confirm-msg-btns"><span style="color:#4F545B">'+o.cancel+'</span><span style="color:#E61E4B">'+o.yes+'</span></div>':'<div class="confirm-msg-close"></div>';
+            var $title = o.title ? '<div class="confirm-msg-title">'+o.title+'</div>' : '';
+            var no_title_style = o.title ? '' : 'style="padding: 1rem .65rem;border-top-left-radius: .25rem;border-top-right-radius: .25rem;"';
+            var $bts = o.cancel
+                ?'<div class="confirm-msg-content has-btn" '+no_title_style+'>'+_.detail+'</div>'+_.buttons+'</div>'
+                :'<div class="confirm-msg-content">'+_.detail+'</div>'+_.buttons+'</div>';
+            _.modalContent = '<div class="confirm-msg">'+$title+$bts;
         }
         _.alert = function(){
             if($('.alert-msg').length == 0){
@@ -46,13 +50,27 @@
                 $('.confirm-msg').remove();
                 _.$modalContent = $(_.modalContent).appendTo('body');
             }
-            _.$modalContent.css('marginTop',-_.$modalContent.height()/2/1.185);
+            if(_.type=='alert') {
+                _.$modalContent.css('marginTop',-_.$modalContent.height()/2/1.185);
+            } else {
+                _.$modalContent.css({
+                    '-webkit-transform': 'translate3d(0,'+-_.$modalContent.height()/2+'px,0)' ,
+                    'transform': 'translate3d(0,'+-_.$modalContent.height()/2+'px,0)'
+                });
+            }
             $('.confirm-bg').length == 0?$(_.bg).appendTo('body'):false;
         };
         _.open = function(){
             _.type=='alert'?_.alert():_.confirm();
             var clientLeft = _.$modalContent[0].clientLeft;
-            _.$modalContent.css({'marginTop':-_.$modalContent.height()/2,'marginLeft':-_.$modalContent.width()/2/1.185});
+            if(_.type=='alert') {
+                _.$modalContent.css({'marginTop':-_.$modalContent.height()/2,'marginLeft':-_.$modalContent.width()/2/1.185});
+            } else {
+                _.$modalContent.css({
+                    '-webkit-transform': 'translate3d(0,'+-_.$modalContent.height()/2+'px,0)' ,
+                    'transform': 'translate3d(0,'+-_.$modalContent.height()/2+'px,0)'
+                });
+            }
             _.$modalContent.addClass('in');
             _.type == 'confirm'?$('.confirm-bg').addClass('confirm-bg-visible'):false;
             if(_.type == 'alert'){
@@ -65,11 +83,11 @@
                     _.close();
                 });
                 _.$modalContent.find('.confirm-msg-btns span').eq(0).click(function(){
-                    o.yesFun();
+                    o.cancelFun();
                     _.close();
                 });
                 _.$modalContent.find('.confirm-msg-btns span').eq(1).click(function(){
-                    o.cancelFun();
+                    o.yesFun();
                     _.close();
                 })
             }
@@ -117,7 +135,7 @@
             endObj.x = event.touches[0].pageX - startObj.x;
             endObj.y = event.touches[0].pageY - startObj.y;
         });
-        $(o.parentNode).on('tap',o.clickNode,function(e){
+        $(o.parentNode).on('click',o.clickNode,function(e){
             var $this = $(this);
             e.preventDefault();
             if (Math.abs(endObj.x) < 2 && Math.abs(endObj.y) < 2) {

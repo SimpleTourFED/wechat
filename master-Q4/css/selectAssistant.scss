@@ -171,3 +171,51 @@ p{
     }
   }
 }
+.upgradeTipSpec{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: rem(70px);
+  line-height: rem(70px);
+  background-color: #F5B950;
+  font-size: rem(28px);
+  color: #fff;
+  z-index: 10000;
+  span:first-child{
+    display: block;
+    width: 100%;
+    padding-right: rem(74px);
+    i{
+      padding: 0 rem(26px);
+      font-style: normal;
+      white-space: nowrap;
+      word-break: keep-all;
+      word-wrap: normal;
+      margin-left: 0;
+      transition: margin-left 8s linear;
+      -webkit-transition: margin-left 8s linear;
+      -webkit-backface-visibility:hidden;
+      -webkit-perspective:1000;
+    }
+  }
+  span:last-child{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: rem(74px);
+    height: rem(70px);
+    display: block;
+    background-color: #F5B950;
+    background-size: contain;
+    i{
+      display: block;
+      width: rem(28px);
+      height: rem(28px);
+      margin-top: rem(21px);
+      margin-left: rem(26px);
+      background: url(/master-M410/images/close.png) no-repeat center;
+      background-size: contain;
+    }
+  }
+}

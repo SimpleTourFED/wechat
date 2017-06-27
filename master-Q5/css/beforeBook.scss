@@ -1,0 +1,157 @@
+$baseFontSize : 40px !default;
+$red : #E61E4B !default;
+$fontRed : #E61E4B !default;
+$opacity: 1 !default;
+@function rem($px) {
+  @return $px / $baseFontSize * 1rem;
+}
+@mixin displayflex{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+@mixin flex($size:1){
+  -webkit-box-flex:$size;
+  -moz-box-flex:$size;
+  -webkit-flex:$size;
+  -ms-flex:$size;
+  flex:$size;
+}
+@mixin flexflowCol($direction:column,$dir:vertical){
+  -webkit-box-orient:$dir;
+  -ms-box-orient: $dir;
+  -moz-box-orient: $dir;
+  -webkit-flex-flow:$direction nowrap;
+  -ms-flex-flow:$direction nowrap;
+  -moz-flex-flow:$direction nowrap;
+  flex-flow:$direction nowrap;
+}
+@mixin flexflowRow($direction:row,$dir:horizontal) {
+  -webkit-box-orient:$dir;
+  -ms-box-orient: $dir;
+  -moz-box-orient: $dir;
+  -webkit-flex-flow:$direction nowrap;
+  -ms-flex-flow:$direction nowrap;
+  -moz-flex-flow:$direction nowrap;
+  flex-flow:$direction nowrap;
+}
+@mixin shadow($x:0,$y:0px,$z:5px,$color:#bdbdbd) {
+  box-shadow : $x $y $z $color;
+  -webkit-box-shadow:  $x $y $z $color;
+  -moz-box-shadow:  $x $y $z $color;
+}
+@mixin box-sizing($set:border-box) {
+  -webkit-box-sizing: $set;
+  -moz-box-sizing: $set;
+  -ms-box-sizing: $set;
+  -o-box-sizing: $set;
+  box-sizing: $set;
+}
+
+@mixin border-radius($radius:4px) {
+  -webkit-border-radius: rem($radius);
+  -moz-border-radius: rem($radius);
+  -ms-border-radius: rem($radius);
+  -o-border-radius: rem($radius);
+  border-radius: rem($radius);
+}
+*{
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color:rgba(255,255,255,0);
+  font-family: Helvetica, sans-serif;
+  -webkit-touch-callout: none;
+  box-sizing: border-box;
+}
+a:active,a:hover,a:link,a:visited{
+  text-decoration: none;
+  outline: none;
+}
+html {
+  font-size: 20px;
+}
+
+html, body {
+  background-color: #F5F5F5;
+  width: 100%;
+  height: auto;
+}
+
+* {
+  @include box-sizing();
+  outline: none;
+  color: #4F545B;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  border: none;
+}
+.beforeBook{
+  background-color: #fff;
+  color: #83858C;
+  font-size: .7rem;
+  line-height: .95rem;
+  word-break: break-all;
+  .bb-title{
+    height: rem(80px);
+    line-height: rem(80px);
+    padding: 0 rem(26px);
+    border-bottom: .05rem solid #EBEBF5;
+    i {
+      width: .8rem;
+      height: .8rem;
+      display: inline-block;
+      background: url(/master-Q5/images/yellow-horn-icon@3x.png) no-repeat center;
+      background-size: contain;
+      margin-right: .35rem;
+      vertical-align: middle;
+    }
+    span {
+      color: #4F545B;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+  .bb-content{
+    padding: rem(24px) rem(26px);
+    font-weight: 100;
+    h2{
+      color: #F5B950;
+      font-size: .75rem;
+      margin-bottom: .5rem;
+      margin-bottom: rem(12px);
+      &:before{
+        content: '';
+        display: inline-block;
+        width: 0.2rem;
+        height: rem(26px);
+        background-color: #F5B950;
+        margin-right: .15rem;
+      }
+    }
+    div{
+      margin-bottom: rem(32px);
+    }
+    h3{
+      font-size: .7rem;
+      color: #F5B950;
+      font-weight: 200;
+      &:before{
+        content: '';
+        display: inline-block;
+        font-size: rem(36px);
+        width: rem(8px);
+        height: rem(8px);
+        background-color: #F5B950;
+        @include border-radius(8px);
+        margin-right: .15rem;
+        vertical-align: middle;
+      }
+    }
+  }
+}
